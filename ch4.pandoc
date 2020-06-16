@@ -1,0 +1,441 @@
+Entailment and Models for SL {#ch.SLmodels}
+============================
+
+This chapter offers a formal semantics for SL, allowing us to be more
+precise about the notion of truth in SL. We'll also highlight some
+important features of *entailment*, a key concept in formal logic.
+
+A formal, logical language is built from two kinds of elements: logical
+symbols and non-logical symbols. Connectives like '' and '' are logical
+symbols, because their meaning is specified within the formal language.
+When writing a symbolization key, you are not allowed to change the
+meaning of the logical symbols. You cannot say, for instance, that the
+'' symbol will mean 'not' in one argument and 'perhaps' in another. The
+'' symbol always means logical negation. It is used to translate the
+English language word 'not', but it is a symbol of a formal language and
+is defined by its truth conditions.
+
+The sentence letters in SL are non-logical symbols, because their
+meaning is not defined by the logical structure of SL. When we translate
+an argument from English to SL, for example, the sentence letter $M$
+does not have its meaning fixed in advance; instead, we provide a
+symbolization key that says how $M$ should be interpreted in that
+argument.
+
+In translating from English to a formal language, we provided
+symbolization keys which were interpretations of all the non-logical
+symbols we used in the translation. An gives a meaning to all the
+non-logical elements of the language. We'll also use the term '' as
+another word for an interpretation. In our simple formal language SL,
+meaning is simply a matter of truth and falsity, relative to a given
+interpretation. These notions too need to be characterized in a formal
+way.
+
+Semantics for SL {#sec.semanticsSL}
+----------------
+
+This section provides a rigorous, formal characterization of *truth in
+SL* which builds on what we already know from doing truth tables. We
+were able to use truth tables to reliably test whether a sentence was a
+tautology in SL, whether two sentences were equivalent, whether an
+argument was valid, and so on. For instance: is a tautology in SL if and
+only if it is assigned '1' on every line of a complete truth table.
+
+This worked because each line of a truth table corresponds to a way the
+world might be. We considered all the possible combinations of 1 and 0
+for the sentence letters that made a difference to the sentences we
+cared about. The truth table allowed us to determine what would happen
+given these different combinations. Each of those combinations of truth
+values is an *interpretation* in SL.
+
+Once we construct a truth table, the symbols '1' and '0' are divorced
+from their metalinguistic meaning of 'true' and 'false'. We interpret
+'1' as meaning 'true', but the formal properties of 1 are defined by the
+characteristic truth tables for the various connectives. The symbols in
+a truth table have a formal meaning that we can specify entirely in
+terms of how the connectives operate. For example, if $A$ is value 1,
+then $\enot A$ is value 0.
+
+To formally define truth in SL, then, we want a function that assigns,
+for each model, a 1 or 0 to each of the sentences of SL. We can
+interpret this function as a definition of truth for SL if it assigns 1
+to all of the true sentences of SL and 0 to all of the false sentences
+of SL. Call this function '$v$' (for 'valuation'). We want $v$ to be a
+function such that for any sentence , $v(\metaA{})=1$ if is true and
+$v(\metaA{})=0$ if is false.
+
+Recall that the recursive definition of a wff for SL had two stages: The
+first step said that atomic sentences (solitary sentence letters) are
+wffs. The second stage allowed for wffs to be constructed out of more
+basic wffs. There were clauses of the definition for all of the
+sentential connectives. For example, if is a wff, then is a wff.
+
+Our strategy for defining the truth function, $v$, will also be in two
+steps. The first step will handle truth for atomic sentences; the second
+step will handle truth for compound sentences.
+
+Defining truth in SL
+--------------------
+
+How can we define truth for an atomic sentence of SL? Consider, for
+example, the sentence $M$. Without an interpretation, we cannot say
+whether $M$ is true or false. It might mean anything. If we use $M$ to
+symbolize 'The moon orbits the Earth', then $M$ is true. If we use $M$
+to symbolize 'The moon is a giant turnip', then $M$ is false.
+
+When we give a symbolization key for SL, we provide an interpretation of
+the sentence letters that we use. The key gives an English language
+sentence for each sentence letter that we use. In this way, the
+interpretation specifies what each of the sentence letters *means*.
+However, this is not enough to determine whether or not that sentence is
+true. The sentences about the moon, for instance, require that you know
+some rudimentary astronomy. Imagine a small child who became convinced
+that the moon is a giant turnip. She could understand what the sentence
+'The moon is a giant turnip' means, but mistakenly think that it was
+true.
+
+So an interpretation alone does not determine whether a sentence is true
+or false. Truth or falsity depends also on what the world is like. If
+$M$ meant 'The moon is a giant turnip' and the real moon were a giant
+turnip, then $M$ would be true. To put the point in a general way, truth
+or falsity is determined by an interpretation *plus* a way that the
+world is.
+
+INTERPRETATION + STATE OF THE WORLD $\Longrightarrow$ TRUTH/FALSITY
+
+In providing a logical definition of truth, we will not be able to give
+an account of how an atomic sentence is made true or false by the world.
+Instead, we will introduce a *truth value assignment*. Formally, this
+will be a function that tells us the truth value of all the atomic
+sentences. Call this function '$a$' (for 'assignment'). We define $a$
+for all sentence letters , such that $$a(\script{P}) =
+\left\{
+    \begin{array}{ll}
+    1 & \mbox{if \script{P} is true},\\
+    0 & \mbox{otherwise.}
+    \end{array}
+\right.$$ This means that $a$ takes any atomic sentence of SL and
+assigns it either a one or a zero; one if the sentence is true, zero if
+the sentence is false.
+
+You can think of $a$ as being like a row of a truth table. Whereas a
+truth table row assigns a truth value to a few atomic sentences, the
+truth value assignment assigns a value to every atomic sentence of SL.
+There are infinitely many sentence letters, and the truth value
+assignment gives a value to each of them. When constructing a truth
+table, we only care about sentence letters that affect the truth value
+of sentences that interest us. As such, we ignore the rest. Strictly
+speaking, every row of a truth table gives a *partial* truth value
+assignment.
+
+It is important to note that the truth value assignment, $a$, is not
+part of the language SL. Rather, it is part of the mathematical
+machinery that we are using to describe SL. It encodes which atomic
+sentences are true and which are false.
+
+We now define the truth function, $v$, using the same recursive
+structure that we used to define a wff of SL.
+
+1.  If is a sentence letter, then $v(\metaA{})=a(\metaA{})$.
+
+2.  If is ${\enot}\metaB{}$ for some sentence , then $$v(\metaA{}) =
+        \left\{\begin{array}{ll}
+        1 & \mbox{if $v(\metaB{}) = 0$},\\
+        0 & \mbox{otherwise.}
+        \end{array}\right.$$
+
+3.  If is $(\metaB{}\eand\metaC{})$ for some sentences , , then
+    $$v(\metaA{}) =
+        \left\{\begin{array}{ll}
+        1 & \mbox{if $v(\metaB{}) = 1$ and $v(\metaC{}) = 1$,}\\
+        0 & \mbox{otherwise.}
+        \end{array}\right.$$
+
+[\[truthdefinition\]]{#truthdefinition label="truthdefinition"} You may
+be tempted to worry that this definition is circular, because it uses
+the word 'and' in trying to define 'and.' But remember, we are not
+attempting to give a definition of the English word 'and'; we are giving
+a definition of truth for sentences of SL containing the logical symbol
+'.' We define truth for object language sentences containing the symbol
+'' using the metalanguage word 'and.' There is nothing circular about
+that.
+
+1.  If is $(\metaB{}\eor\metaC{})$ for some sentences , , then
+    $$v(\metaA{}) =
+        \left\{\begin{array}{ll}
+        0 & \mbox{if $v(\metaB{}) = 0$ and $v(\metaC{}) = 0$,}\\
+        1 & \mbox{otherwise.}
+        \end{array}\right.$$
+
+2.  If is $(\metaB{}\eif\metaC{})$ for some sentences , , then
+    $$v(\metaA{}) =
+        \left\{\begin{array}{ll}
+        0 & \mbox{if $v(\metaB{}) = 1$ and $v(\metaC{}) = 0$,}\\
+        1 & \mbox{otherwise.}
+        \end{array}\right.$$
+
+3.  If is $(\metaB{}\eiff\metaC{})$ for some sentences , , then
+    $$v(\metaA{}) =
+        \left\{\begin{array}{ll}
+        1 & \mbox{if $v(\metaB{}) = v(\metaC{})$},\\
+        0 & \mbox{otherwise.}
+        \end{array}\right.$$
+
+Since the definition of $v$ has the same structure as the definition of
+a wff, we know that $v$ assigns a value to *every* wff of SL. Since the
+sentences of SL and the wffs of SL are the same, this means that $v$
+returns the truth value of every sentence of SL.
+
+Truth in SL is always truth *relative to* some interpretation, because
+the definition of truth for SL does not say whether a given sentence is
+true or false. Rather, it says how the truth of that sentence relates to
+a truth value assignment.
+
+Semantic entailment
+-------------------
+
+We are now in a position to give more precise definitions of terms like
+'tautology', 'contradiction', and so on. Truth tables provided a way to
+*check* whether a sentence was a tautology in SL, but they did not
+*define* what it means to be a tautology in SL. We will give definitions
+of these concepts for SL in terms of .
+
+The relation of semantic entailment is about satisfiability --- that is,
+whether there is any possible interpretation that meets a certain set of
+conditions. ' entails ', means that there is no interpretation for which
+is true and is false. In SL, an interpretation is just an assignment of
+truth values to atomic sentences; so entails if and only if every
+assignment of truth values to atomic sentences that makes true also
+makes true.
+
+We abbreviate entailment with a symbol called the *double turnstile*:
+$\metaA{}\models\metaB{}$ means ' semantically entails .'
+
+The double turnstile, like '', etc., is part of the *metalanguage* we
+use to discuss SL; it is not part of SL itself.
+
+Entailment, validity, and informally good arguments
+---------------------------------------------------
+
+Entailment is a formal notion. It is connected in important ways to the
+informal notion of a good argument, but when considering entailment in
+SL, it is important to remember to apply the definitions rigorously and
+precisely, rather than relying on your sense of whether the argument is
+a good one. The notions can come apart in some surprising ways.
+
+Let's start with a straightforward example. Consider whether this
+entailment claim is true: $$(P\eand Q) \models (P\eor Q)$$ This is true
+if and only if every interpretation that satisfies $(P\eand Q)$, also
+satisfies $(P\eor Q)$. Hopefully it is obvious to you why this is. Only
+an interpretation that assigns 1 to both $P$ and $Q$ will satisfy the
+left, and any such interpretation will certainly satisfy the right as
+well. (You could draw the truth table to verify this if you want the
+practice.) So, as one might naturally expect,
+$(P\eand Q) \models (P\eor Q)$.
+
+Here is a less intuitive example. What should we make of this claim?
+
+> $(P\eand Q) \models (A\eiff\enot\enot A)$
+
+Notice that the sentence letters on the left-hand-side here are
+completely different letters from those on the right-hand-side. So there
+is a straightforward sense in which the two sides of the turnstile have
+*nothing to do with one another*. Nevertheless, this *is* a true
+entailment claim. This is because it satisfies the definition: every
+interpretation that satisfies the left (i.e., every interpretation that
+assigns '1' to both $P$ and $Q$), also satisfies $(A\eiff\enot\enot A)$.
+This for the simple reason that every interpretation *whatsoever*
+satisfies $(A\eiff\enot\enot A)$; it is a tautology.
+
+From this example we can see that a tautology will be entailed by
+anything whatsoever. If the right-hand-side of the entailment claim is a
+tautology, it doesn't matter what's on the left --- you know it's going
+to be true.
+
+So these are all true:
+
+$P \models (P \eor \enot P)$
+
+$Q \models (P \eor \enot P)$
+
+$(P \eand \enot P) \models (P \eor \enot P)$
+
+Tautologies are entailed by the empty set
+-----------------------------------------
+
+In the examples so far, we've been talking about one sentence entailing
+another. But we can also describe a set of several sentences as jointly
+entailing an SL sentence:
+$$\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\models\metaB{}$$ means that
+there is no truth value assignment for which all of the sentences in the
+set $\{\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\}$ are true and is false.
+It will sometimes be convenient to use a variable that can stand in for
+any set of sentences; just as '' can stand for any sentence of SL, we
+can let '' stand in for any set of sentences in SL. (In the case of
+'$\metaA{}\models\metaB{}$' above, '' is the singleton set containing
+just .)
+
+In general, we may say that $$\metaSetX{}\models\metaB{}$$ means that
+there's no interpretation satisfying every member of set without also
+satisfying sentence .
+
+We saw in the previous section that a tautology --- an SL sentence that
+is true in every interpretation --- is entailed by any sentence. The
+reasoning applies more generally: a tautology will be entailed by any
+set of sentences. This includes the *empty set*, which can be written
+'$\emptyset$'. In general '$\metaSetX{} \models \metaA{}$' says that
+every interpretation that satisfies everything in , satisfies ; in the
+special case where is $\emptyset$, every interpretation trivially
+satisfies everything in . So '$\emptyset \models \metaA{}$' says that
+absolutely every interpretation satisfies . That is, it says that is a
+tautology.
+
+By convention, we can leave the left side of an entailment claim blank,
+instead of writing in $\emptyset$. In other words, $$\models \metaA{}$$
+is shorthand for $$\emptyset \models \metaA{}.$$
+
+So these entailment claims are true, because in each case the sentence
+on the right is a tautology:
+
+$\models (P \eor \enot P)$
+
+$\models (P \eiff P)$
+
+$\models ((P \eand\enot P)\eif (A \eor B))$
+
+And these entailment claims are not true, because each sentence on the
+right is not a tautology:
+
+$\models P$
+
+$\models (P \eand \enot P)$
+
+$\models \enot(P \eif \enot P)$
+
+(If you need help seeing why a given sentence is or is not a tautology,
+draw out the truth table and check to see whether it has a 1 on every
+row. See
+§[\[sec.usingtruthtables\]](#sec.usingtruthtables){reference-type="ref"
+reference="sec.usingtruthtables"}.)
+
+Inconsistent sentences entail absurdities
+-----------------------------------------
+
+Consider this entailment claim: $$(P \eand \enot P) \models Q$$This
+statement is true. It says that every interpretation satisfying
+$(P \eand \enot P)$ also satisfies $Q$. But $(P \eand \enot P)$ is a
+contradiction --- no interpretations satisfy it. So trivially, 'every'
+interpretation that satisfies it satisfies $Q$.
+
+This explanation had nothing to do with the specifics of the sentence
+$Q$. Exactly the same considerations would demonstrate that, for any
+sentence , $(P \eand \enot P) \models \metaB{}$. And the same goes for
+any other contradictory sentence, or any set of sentences that are
+mutually inconsistent. These are all true:
+
+$(P \eand \enot P) \models (\enot Q \eif R)$
+
+$P, (\enot Q \eand \enot P) \models (Q \eiff P)$
+
+$(P \eand\enot P) \models ((A_1 \eor A_2) \eif \enot (A_3 \eiff (A_4 \eand \enot A_2)))$
+
+You can think of evaluating an entailment claim as like checking to see
+whether a rule is being violated or not. If there's a rule that says
+every student with a dog has to have a permit, you check each student
+with a dog, and make sure they have a permit. If you find someone
+without a dog, it doesn't matter whether they have a permit or not. (If
+you don't have a dog, you're not breaking the rule.) Or if you find
+someone with a permit, it doesn't matter whether they have a dog.
+(Nobody with a permit can be breaking the rule.) An entailment claim is
+like a rule that says every interpretation that satisfies the
+left-hand-side must also satisfy the right-hand-side. To verify it, you
+can ignore any interpretation that falsifies the left, or that satisfies
+the right.
+
+In each of the cases above, you don't even need to examine the sentence
+at the right to confirm that the entailment claim is true, since you
+already know that no interpretations satisfy the sentences on the left.
+(This is analogous to knowing that no students have a dog --- in this
+case you don't have to check to see whether anyone has a permit to
+confirm that the rule is being respected.) Any entailment claim with an
+unsatisfiable set of sentences on the left is true. Unsatisfiable sets
+of sentences entail *every* sentence.
+
+We have a special notation for describing this situation. We write:
+$$\metaSetX{} \models \bot$$ to indicate that the set entails an
+*absurdity*; think of '$\bot$' as standing in for an arbitrary
+unsatisfiable SL wff. So you can think of '$\metaSetX{} \models \bot$'
+as saying that every interpretation that satisfies $\metaSetX{}$
+satisfies the unsatisfiable. That's just another way of saying that *no*
+interpretation satisfies $\metaSetX{}$. (Compare: 'the only Klingons who
+hate honour are the Klingons who aren't Klingons at all.')
+
+So these entailment claims are true, because the set of sentences on the
+left is not satisfiable:
+
+$(P \eand \enot P) \models \bot$
+
+$P, (\enot Q \eand \enot P) \models\bot$
+
+$(P \eiff\enot P) \models\bot$
+
+And these entailment claims are not true, because the sentences on the
+left *can* be satisfied:
+
+$(P \eor \enot P) \models\bot$
+
+$P, \enot Q, (R \eor Q) \models\bot$
+
+$\enot P, \enot Q, (P \eif \enot\enot Q) \models\bot$
+
+(If you need help seeing why a given set of sentences can be satisfied,
+draw out the truth table and check to see if any row assigns a 1 to each
+sentence. See
+§[\[sec.usingtruthtables\]](#sec.usingtruthtables){reference-type="ref"
+reference="sec.usingtruthtables"}.)
+
+Defining concepts in terms of entailment
+----------------------------------------
+
+The double turnstile symbol allows us to give concise definitions for
+various concepts in SL:
+
+> A is a sentence such that $\emptyset\models\metaA{}$.
+>
+> A is a sentence such that $\metaA{}\models\bot$.
+>
+> A sentence is if and only if it is neither a tautology nor a
+> contradiction.
+>
+> An argument with premises and conclusion is if and only if
+> $\metaSetX{}\models\metaA{}$.
+>
+> Two sentences and are if and only if both $\metaA{}\models\metaB{}$
+> and $\metaB{}\models\metaA{}$.
+>
+> A set of sentences $\metaSetX{}$ is if and only if
+> $\metaSetX{}\models \bot$. Otherwise $\metaSetX{}$ is
+> .[\[def.consistencySL\]]{#def.consistencySL label="def.consistencySL"}
+
+Determine whether each entailment claim is true. You may construct a
+truth table to test it if you like, but these examples are simple enough
+so that you may be able to just think it through and get the right
+answer.
+
+$Q \models (P \eor Q)$
+
+$P, Q \models (P \eor P)$
+
+$S \models (Q \eif Q)$
+
+$(P \eand \enot P) \models (Q \eand \enot Q)$
+
+$(P \eor \enot P) \models$
+
+$\models (P \eor \enot P)$
+
+$\models (P \eand \enot P)$
+
+$(A \eor B) \eif \enot P \models (P \eor \enot P)$
+
+$(P \eiff Q) \models ((P \eand Q) \eor \enot (P \eor Q))$

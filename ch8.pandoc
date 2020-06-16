@@ -1,0 +1,1724 @@
+Quantified logic {#ch.QL}
+================
+
+This chapter introduces a logical language called QL. It is a version of
+*quantified logic*, because it allows for quantifiers like *all* and
+*some*. Quantified logic is also sometimes called *predicate logic*,
+because the basic units of the language are predicates and terms.
+
+From sentences to predicates
+----------------------------
+
+Consider the following argument, which is valid in English:
+
+> If everyone knows logic, then either no one will be confused or
+> everyone will. Everyone will be confused only if we try to believe a
+> contradiction. Everyone knows logic.\
+>  If we don't try to believe a contradiction, then no one will be
+> confused.
+
+In order to symbolize this in SL, we will need a symbolization key.
+
+Everyone knows logic.
+
+No one will be confused.
+
+Everyone will be confused.
+
+We try to believe a contradiction.
+
+Notice that $N$ and $E$ are both about people being confused, but they
+are two separate sentence letters. We can't replace $E$ with $\enot N$.
+Why not? $\enot N$ means 'It is not the case that no one will be
+confused.' This would be the case if even one person were confused, so
+it is a long way from saying that *everyone* will be confused.
+
+Because we have separate sentence letters for $N$ and $E$, however, our
+formalization does not encode any connection between the two. They are
+just two atomic sentences which might be true or false independently. It
+is impossible for it to be the case that both no one and everyone was
+confused. As sentences of SL, however, there is a truth-value assignment
+for which $N$ and $E$ are both true. This is a limitation of the
+descriptive power of SL. Some features of English sentences are not
+preserved in SL. Our new language, QL, will preserve more of this
+structure.
+
+Expressions like 'no one', 'everyone', and 'anyone' are called
+*quantifiers*. By translating $N$ and $E$ as separate atomic sentences,
+we leave out the *quantifier structure* of the sentences. In the example
+we've been discussing, the quantifier structure is not terribly
+important. The argument is valid without reference to it. As such, we
+can safely ignore it. To see this, we translate the argument to SL:
+
+$L \eif (N \eor E)$
+
+$E \eif B$
+
+$L$
+
+$\enot B \eif N$
+
+This is a valid argument form in SL. (You can construct a truth table, a
+tree, or a natural deduction proof to confirm this.)
+
+Now consider another argument. This one is also valid in English.
+
+> [\[willard1\]]{#willard1 label="willard1"} Willard is a logician. All
+> logicians wear funny hats.\
+>  Willard wears a funny hat.
+
+To symbolize it in SL, we define a symbolization key:
+
+Willard is a logician.
+
+All logicians wear funny hats.
+
+Willard wears a funny hat.
+
+Now we symbolize the argument:
+
+$L$
+
+$A$
+
+$F$
+
+This is pretty obviously an *invalid* SL form. Nevertheless, this is
+clearly a valid argument in English. It's impossible for the premises to
+be true without the conclusion also being true. But the SL symbolization
+leaves out all quantificational structure in virtue of which it is
+valid. The sentence 'All logicians wear funny hats' says something
+specific about both logicians and hat-wearing. By not translating this
+structure, treating the whole sentence as an atom, we lose the
+connection between Willard's being a logician and Willard's wearing a
+hat.
+
+Some arguments with quantifier structure can be captured in SL, like the
+first example, even though SL ignores the quantifier structure. Other
+arguments' validity cannot be captured in SL, like the second example.
+Notice that the problem is not that we have made a mistake while
+symbolizing the second argument. We gave a perfectly appropriate
+translation; indeed, these are the best symbolizations we can give for
+these arguments *in SL*.
+
+If an English argument is properly translated into a form that is valid
+in SL, that argument is valid, even if it involves quantifiers. But if
+it does not have a valid SL form, that doesn't mean the English argument
+is invalid; valid arguments can have invalid forms. It just means that
+SL doesn't *show* that the argument is valid. This will be the case when
+the argument's quantifier structure plays an important role in its
+validity.
+
+Similarly, if a sentence with quantifiers comes out as a *tautology in
+SL*, then the English sentence is logically true. If it comes out as
+*contingent in SL*, then this might be because of the structure of the
+quantifiers that gets removed when we translate into the formal
+language.
+
+In order to symbolize arguments that rely on quantifier structure, we
+need to develop a different, richer, logical language. We will call this
+language 'quantified logic', or QL.
+
+Building blocks of QL
+---------------------
+
+Our first key notion in QL will be . A predicate is analogous to an
+English description --- an expression like 'is a dog' or 'has black
+fur'. Such descriptions are not sentences on their own. They are neither
+true nor false. They are descriptions that apply to some objects, but
+not to others. In order to be true or false, we need to specify an
+object: Who or what is it that is said to be a dog, or to have black
+fur? In SL, we have no way to give meaningful translations to English
+terms that are not full sentences. In QL, we will.
+
+The details of this will be explained in the rest of the chapter, but
+here is the basic idea: In QL, we will represent predicates with capital
+letters. For instance, we might let $D$ stand for ' is a dog.' We will
+use lower-case letters as the names of specific things. For instance, we
+might let $b$ stand for Bertie. The expression $Db$ will be a sentence
+in QL. Given this symbolization, $Db$ is a translation of the sentence
+'Bertie is a dog.'
+
+In order to represent quantifier structure, we will also have symbols
+that represent quantifiers. For instance, '$\exists$' will mean 'There
+is some.' So to say that there is a dog, we can write $\exists x Dx$;
+that is: There is some $x$ such that $x$ is a dog.
+
+That will come later. We start by defining singular terms and
+predicates.
+
+Singular terms
+--------------
+
+In English, a is a word or phrase that refers to a *specific* person,
+place, or thing. The word 'dog' is not a singular term, because it is a
+general term that could apply to many individual animals. The phrase
+'Jonathan's dog Mezzo' is a singular term, because it refers to a
+specific little poodle mix. She is black, and soft, and wonderful.
+
+A is a singular term that picks out an individual directly. The name
+'Emerson' is a proper name, and the name alone does not tell you
+anything about Emerson. Of course, some names are traditionally given to
+boys, and others are traditionally given to girls. If 'Jack Hathaway' is
+used as a singular term, you might guess that it refers to a man.
+However, the name does not necessarily mean that the person referred to
+is a man --- or even that the creature referred to is a person. Jack
+might be a giraffe for all you could tell just from the name. There is a
+great deal of philosophical action surrounding this issue, but the
+important point here is that a name is a singular term because it picks
+out a single, specific individual.
+
+Other singular terms more obviously convey information about the thing
+to which they refer. For instance, you can tell without being told
+anything further that 'Jonathan's dog Mezzo' is a singular term that
+refers to a dog. A picks out an individual by means of a unique
+description. In English, definite descriptions are often phrases of the
+form 'the such-and-so.' They refer to *the* specific thing that matches
+the given description. For example, 'the tallest member of Monty Python'
+and 'the first emperor of China' are definite descriptions. A
+description that does not pick out a specific individual is not a
+definite description. 'A member of Monty Python' and 'an emperor of
+China' are not definite descriptions. We'll discuss definite
+descriptions in more detail in Chapter
+[\[ch.identity\]](#ch.identity){reference-type="ref"
+reference="ch.identity"}.
+
+In English, the specification of a singular term may depend on context;
+'Willard' means a specific person and not just someone named Willard;
+'P.D. Magnus' as a logical singular term means the original author of
+this textbook, not the other person who has the same name. We live with
+this kind of ambiguity in English, but it is important to keep in mind
+that singular terms in QL must refer to just one specific thing.
+
+In QL, we will symbolize singular terms with lower-case letters $a$
+through $w$. We can add subscripts if we want to use some letter more
+than once. So $a,b,c,\ldots w, a_1, f_{32}, j_{390}$, and $m_{12}$ are
+all terms in QL.
+
+Singular terms are called because they pick out specific individuals.
+Note that $x, y$, and $z$ are not constants in QL. They will be ,
+letters which do not stand for any specific thing. We will need them
+when we introduce quantifiers.
+
+Predicates
+----------
+
+Simple one-place predicates are properties of individuals. They are
+things you can say about an object. Here are some one-place predicates:
+
+' is a dog'
+
+' is a member of Monty Python'
+
+' 's favourite ramen place is in Gastown'
+
+'An anvil was dropped from a very high height onto  's head'
+
+Predicates like these are called or , because there is only one blank to
+fill in. A one-place predicate and a singular term combine to make a
+sentence.
+
+Other predicates are about the *relation* between two things. For
+instance:
+
+' is bigger than '
+
+' is to the left of '
+
+' owes money to '
+
+These are or predicates, because they need to be filled in with two
+terms in order to make a sentence.
+
+In general, you can think about predicates as schematic sentences that
+need to be filled out with some number of terms. Conversely, you can
+start with sentences and make predicates out of them by removing terms.
+Consider the sentence, 'Buchanan Tower is North of Barber but South of
+Buchanan E.' By removing a singular term, we can recognize this sentence
+as using any of three different monadic predicates:
+
+is North of Barber but South of Buchanan E.\
+
+Buchanan Tower is North of but South of Buchanan E.\
+
+Buchanan Tower is North of Barber but South of .
+
+By removing two singular terms, we can recognize three different dyadic
+predicates:
+
+Buchanan Tower is North of but South of .\
+
+is North of Barber but South of .\
+
+is North of but South of Buchanan E.\
+
+By removing all three singular terms, we can recognize one or predicate:
+
+is North of but South of .\
+
+If we are translating this sentence into QL, should we translate it with
+a one-, two-, or three-place predicate? It depends on what we want to be
+able to say. If we're only interested in discussing the location of
+buildings relative to Barber, then the generality of the three-place
+predicate is unnecessary. If we only want to discuss whether buildings
+are North of Barber and South of BUCH E, a one-place predicate will be
+enough.
+
+In general, we can have predicates with as many places as we need.
+Predicates with more than one place are called . Predicates with $n$
+places, for some number $n$, are called or . You can make an $n$-adic
+predicate by replacing $n$ names in any sentence with blanks. You can
+even have a 0-place predicate --- this would be the result of replacing
+$0$ names in a sentence with blanks. In other words, a 0-place predicate
+is just a sentence.
+
+In QL, we symbolize predicates with capital letters $A$ through $Z$,
+with or without subscripts. When we give a symbolization key for
+predicates, we will not use blanks; instead, we will use variables. By
+convention, constants are listed at the end of the key. So we might
+write a key that looks like this:
+
+$x$ is angry.
+
+$x$ is happy.
+
+$x$ is at least as tall as $y$.
+
+$x$ is at least as tough as $y$.
+
+$y$ is between $x$ and $z$.
+
+Donald
+
+Gregor
+
+Marybeth
+
+We can symbolize sentences that use any combination of these predicates
+and terms. For example:
+
+Donald is angry.
+
+If Donald is angry, then so are Gregor and Marybeth.
+
+Marybeth is at least as tall and as tough as Gregor.
+
+Donald is shorter than Gregor.
+
+Gregor is between Donald and Marybeth.
+
+Sentence [\[terms1\]](#terms1){reference-type="ref" reference="terms1"}
+is straightforward: $Ad$. The '$x$' in the key entry '$Ax$' is just a
+placeholder; we replace it with other terms when translating.
+
+Sentence [\[terms2\]](#terms2){reference-type="ref" reference="terms2"}
+can be paraphrased as, 'If $Ad$, then $Ag$ and $Am$.' QL has all the
+truth-functional connectives of SL, so we translate this as
+$Ad \eif (Ag \eand Am)$.
+
+Sentence [\[terms3\]](#terms3){reference-type="ref" reference="terms3"}
+can be translated as $T_1mg \eand T_2mg$.
+
+Sentence [\[terms4\]](#terms4){reference-type="ref" reference="terms4"}
+might seem as if it requires a new predicate. If we only needed to
+symbolize this sentence, we could define a predicate like $Sxy$ to mean
+'$x$ is shorter than $y$.' However, this would ignore the logical
+connection between 'shorter' and 'taller.' Considered only as symbols of
+QL, there is no connection between $S$ and $T_1$. They might mean
+anything at all. Instead of introducing a new predicate, we paraphrase
+sentence [\[terms4\]](#terms4){reference-type="ref" reference="terms4"}
+using predicates already in our key: 'It is not the case that Donald is
+as tall or taller than Gregor.' We can translate it as $\enot T_1dg$.
+
+Sentence [\[terms5\]](#terms5){reference-type="ref" reference="terms5"}
+requires that we pay careful attention to the order of terms in the key.
+It becomes $Bdgm$.
+
+Quantifiers
+-----------
+
+We are now ready to introduce quantifiers. Quantifiers (unlike names and
+predicates) are a new kind of logical connective; like conjunction,
+negation, etc., they can govern the interpretation of a QL sentence.
+Consider these English sentences:
+
+Everyone is happy.
+
+Everyone is at least as tough as Donald.
+
+Someone is angry.
+
+It might be tempting to translate sentence
+[\[q.a\]](#q.a){reference-type="ref" reference="q.a"} as
+$Hd \eand Hg \eand Hm$. Yet this would only say that Donald, Gregor, and
+Marybeth are happy. We want to say that *everyone* is happy, even if we
+have not defined a constant to name them. In order to do this, we
+introduce the '$\forall$' symbol. This is called the .
+
+A quantifier is placed in front of the formula that it binds. It always
+comes along with an associated variable. Typically that formula will
+include the same variable. We can translate sentence
+[\[q.a\]](#q.a){reference-type="ref" reference="q.a"} as $\forall x Hx$.
+Paraphrased partially into English, this means 'For all $x$, $x$ is
+happy.'
+
+We call $\forall x$ an *x-quantifier*. The formula that follows the
+quantifier is called the *scope* of the quantifier. We will give a
+formal definition of scope later, but intuitively it is the part of the
+sentence that the quantifier quantifies over. In $\forall x Hx$, the
+scope of the universal quantifier is $Hx$.
+
+Sentence [\[q.ac\]](#q.ac){reference-type="ref" reference="q.ac"} can be
+paraphrased as, 'For all $x$, $x$ is at least as tough as Donald.' This
+translates as $\forall x T_2xd$.
+
+In these quantified sentences, the variable $x$ is serving as a kind of
+placeholder. The expression $\forall x$ means that you can pick anyone
+and put them in as $x$. There is no special reason to use $x$ rather
+than some other variable. The sentence $\forall x Hx$ means exactly the
+same thing as $\forall y Hy$, $\forall z Hz$, and $\forall x_5 Hx_5$.
+
+To translate sentence [\[q.e\]](#q.e){reference-type="ref"
+reference="q.e"}, we introduce another new symbol: the , $\exists$. Like
+the universal quantifier, the existential quantifier requires a
+variable. Sentence [\[q.e\]](#q.e){reference-type="ref" reference="q.e"}
+can be translated as $\exists x Ax$. This means that there is some $x$
+which is angry. More precisely, it means that there is *at least one*
+angry person. Once again, the variable is a kind of placeholder; we
+could just as easily have translated sentence
+[\[q.e\]](#q.e){reference-type="ref" reference="q.e"} as $\exists z Az$.
+
+Consider these further sentences:
+
+No one is angry.
+
+There is someone who is not happy.
+
+Not everyone is happy.
+
+Sentence [\[q.ne\]](#q.ne){reference-type="ref" reference="q.ne"} can be
+paraphrased as, 'It is not the case that someone is angry.' This can be
+translated using negation and an existential quantifier:
+$\enot \exists x Ax$. Yet sentence
+[\[q.ne\]](#q.ne){reference-type="ref" reference="q.ne"} could also be
+paraphrased as, 'Everyone is not angry.' With this in mind, it can be
+translated using negation and a universal quantifier:
+$\forall x \enot Ax$. Both of these are acceptable translations, because
+they are logically equivalent. The critical thing is whether the
+negation comes before or after the quantifier.
+
+In general, $\forall x\metaA{}$ is logically equivalent to
+$\enot\exists x\enot\metaA{}$. This means that any sentence which can be
+symbolized with a universal quantifier can be symbolized with an
+existential quantifier, and vice versa. One translation might seem more
+natural than the other, but there is no logical difference in
+translating with one quantifier rather than the other. For some
+sentences, it will simply be a matter of taste.
+
+Sentence [\[q.en\]](#q.en){reference-type="ref" reference="q.en"} is
+most naturally paraphrased as, 'There is some $x$ such that $x$ is not
+happy.' This becomes $\exists x \enot Hx$. Equivalently, we could write
+$\enot\forall x Hx$.
+
+Sentence [\[q.na\]](#q.na){reference-type="ref" reference="q.na"} is
+most naturally translated as $\enot\forall x Hx$. This is logically
+equivalent to sentence [\[q.en\]](#q.en){reference-type="ref"
+reference="q.en"} and so could also be translated as
+$\exists x \enot Hx$.
+
+Universe of discourse
+---------------------
+
+Given the symbolization key we have been using, $\forall xHx$ means
+'Everyone is happy.' Who is included in this *everyone*? When we use
+sentences like this in English, we usually do not mean everyone now
+alive on the Earth. We certainly do not mean everyone who was ever alive
+or who will ever live. We mean something more modest: everyone in the
+building, everyone in the class, or everyone in the room.
+
+In order to eliminate this ambiguity, we will need to specify a ---
+abbreviated UD. The UD is the set of things that we are talking about.
+So if we want to talk about people in Chicago, we define the UD to be
+people in Chicago. We write this at the beginning of the symbolization
+key, like this:
+
+people in Chicago
+
+The quantifiers *range over* the universe of discourse. Given this UD,
+$\forall x$ means 'Everyone in Chicago' and $\exists x$ means 'Someone
+in Chicago.' Each constant names some member of the UD, so we can only
+use this UD with the symbolization key above if Donald, Gregor, and
+Marybeth are all in Chicago. If we want to talk about people in places
+besides Chicago, then we need to include those people in the UD.
+
+In QL, the UD must be *non-empty*; that is, it must include at least one
+thing. It is possible to construct formal languages that allow for empty
+UDs, but this introduces complications; such languages are beyond the
+scope of this book.
+
+Even allowing for a UD with just one member can produce some strange
+results. Suppose we have this as a symbolization key:
+
+the Eiffel Tower
+
+$x$ is in Paris.
+
+The sentence $\forall x Px$ might be paraphrased in English as
+'Everything is in Paris.' Yet that would be misleading. It means that
+everything *in the UD* is in Paris. This UD contains only the Eiffel
+Tower, so with this symbolization key $\forall x Px$ just means that the
+Eiffel Tower is in Paris. We will rarely work with such bizarre domains
+as this.
+
+It is a rule in QL that each constant will pick out exactly one member
+of the UD. (There is no rule prohibiting multiple different constants
+from referring to the same member of the UD.)
+
+Translating to QL
+-----------------
+
+We now have the basic pieces of QL. Translating more complicated
+sentences will only be a matter of knowing the right way to combine
+predicates, constants, quantifiers, variables, and sentential
+connectives. Consider these sentences:
+
+Every coin in my pocket is a loonie.
+
+Some coin on the table is a dime.
+
+Not all the coins on the table are loonies.
+
+None of the coins in my pocket are dimes.
+
+In providing a symbolization key, we need to specify a UD. Since we are
+talking about coins in my pocket and on the table, the UD must at least
+contain all of those coins. Since we are not talking about anything
+besides coins, we let the UD be all coins. Since we are not talking
+about any specific coins, we do not need to define any constants. So we
+define this key:
+
+all coins
+
+$x$ is in my pocket.
+
+$x$ is on the table.
+
+$x$ is a loonie.
+
+$x$ is a dime.
+
+Sentence [\[quan1\]](#quan1){reference-type="ref" reference="quan1"} is
+most naturally translated with a universal quantifier. The universal
+quantifier says something about everything in the UD, not just about the
+coins in my pocket. Sentence [\[quan1\]](#quan1){reference-type="ref"
+reference="quan1"} means that, for any coin, *if* that coin is in my
+pocket, *then* it is a loonie. So we can translate it as
+$\forall x(Px \eif Lx)$.
+
+Since sentence [\[quan1\]](#quan1){reference-type="ref"
+reference="quan1"} is about coins that are both in my pocket *and* that
+are loonies, it might be tempting to translate it using a conjunction.
+However, the sentence $\forall x(Px \eand Lx)$ would mean that
+everything in the UD is both in my pocket and a loonie: All the coins
+that exist are loonies in my pocket. This would be nice, but it means
+something very different than sentence
+[\[quan1\]](#quan1){reference-type="ref" reference="quan1"}.
+
+Sentence [\[quan2\]](#quan2){reference-type="ref" reference="quan2"} is
+most naturally translated with an existential quantifier. It says that
+there is some coin which is both on the table and which is a dime. So we
+can translate it as $\exists x(Tx \eand Dx)$.
+
+Notice that we needed to use a conditional with the universal
+quantifier, but we used a conjunction with the existential quantifier.
+This is a common pattern. What would it mean to write
+$\exists x(Tx \eif Dx)$? Probably not what you think. It means that
+there is some member of the UD which would satisfy the subformula;
+roughly speaking, there is some name $\alpha$ such that
+$(T\alpha \eif D\alpha)$ is true. In SL, $\metaA{} \eif \metaB{}$ is
+logically equivalent to $\enot\metaA{} \eor \metaB{}$, and this will
+also hold in QL. So $\exists x(Tx \eif Dx)$ is true if there is some
+$\alpha$ such that $(\enot T\alpha \eor D\alpha)$; i.e., it is true if
+some coin is *either* not on the table *or* is a dime. Of course there
+is a coin that is not on the table --- there are coins in lots of other
+places. So $\exists x(Tx \eif Dx)$ makes an extremely weak claim. A
+conditional will usually be the natural connective to use with a
+universal quantifier, but a conditional within the scope of an
+existential quantifier can do very strange things. It's a pretty good
+rule of thumb that you shouldn't be putting conditionals in the scope of
+existential quantifiers. This is pretty much never a good translation of
+any natural English sentence.
+
+Sentence [\[quan3\]](#quan3){reference-type="ref" reference="quan3"} can
+be paraphrased as, 'It is not the case that every coin on the table is a
+loonie.' So we can translate it as $\enot \forall x(Tx \eif Lx)$. You
+might look at sentence [\[quan3\]](#quan3){reference-type="ref"
+reference="quan3"} and paraphrase it instead as, 'Some coin on the table
+is not a loonie.' You would then translate it as
+$\exists x(Tx \eand \enot Lx)$. Although it is probably not obvious,
+these two translations are logically equivalent. (This is due to the
+logical equivalence between $\enot\forall x\metaA{}$ and
+$\exists x\enot\metaA{}$, along with the equivalence between
+$\enot(\metaA{}\eif\metaB{})$ and $\metaA{}\eand\enot\metaB{}$. We'll be
+able to prove this later.)
+
+Sentence [\[quan4\]](#quan4){reference-type="ref" reference="quan4"} can
+be paraphrased as, 'It is not the case that there is some dime in my
+pocket.' This can be translated as $\enot\exists x(Px \eand Dx)$. It
+might also be paraphrased as, 'Everything in my pocket is a non-dime,'
+and then could be translated as $\forall x(Px \eif \enot Dx)$. Again the
+two translations are logically equivalent. Both are correct translations
+of sentence [\[quan4\]](#quan4){reference-type="ref" reference="quan4"}.
+
+We can now translate the argument from p. , the one that motivated the
+need for quantifiers:
+
+> Willard is a logician. All logicians wear funny hats.\
+>  Willard wears a funny hat.
+
+people
+
+$x$ is a logician.
+
+$x$ wears a funny hat.
+
+Willard
+
+Translating, we get:
+
+$Lw$
+
+$\forall x(Lx \eif Fx)$
+
+$Fw$
+
+This captures the structure that was left out of the SL translation of
+this argument, and this is a valid argument in QL.
+
+Empty predicates
+----------------
+
+A predicate need not apply to anything in the UD. A predicate that
+applies to nothing in the UD is called an predicate.
+
+Suppose we want to symbolize these two sentences:
+
+Every monkey knows sign language.
+
+Some monkey knows sign language.
+
+It is possible to write the symbolization key for these sentences in
+this way:
+
+animals
+
+$x$ is a monkey.
+
+$x$ knows sign language.
+
+Sentence [\[monkey1\]](#monkey1){reference-type="ref"
+reference="monkey1"} can now be translated as $\forall x(Mx \eif Sx)$.
+
+Sentence [\[monkey2\]](#monkey2){reference-type="ref"
+reference="monkey2"} becomes $\exists x(Mx \eand Sx)$.
+
+It is tempting to say that sentence
+[\[monkey1\]](#monkey1){reference-type="ref" reference="monkey1"}
+entails sentence [\[monkey2\]](#monkey2){reference-type="ref"
+reference="monkey2"}; that is: if every monkey knows sign language, then
+it must be that some monkey knows sign language. However, the entailment
+does not hold in QL. It is possible for the sentence
+$\forall x(Mx \eif Sx)$ to be true even though the sentence
+$\exists x(Mx \eand Sx)$ is false.
+
+How can this be? The answer comes from considering whether these
+sentences would be true or false *if there were no monkeys*.
+
+We have defined $\forall$ and $\exists$ in such a way that
+$\forall\metaA{}$ is equivalent to $\enot \exists\enot \metaA{}$. As
+such, the universal quantifier doesn't involve the existence of anything
+--- only non-existence. If sentence
+[\[monkey1\]](#monkey1){reference-type="ref" reference="monkey1"} is
+true, then there are *no* monkeys who don't know sign language. If there
+were no monkeys, then $\forall x(Mx \eif Sx)$ would be true and
+$\exists x(Mx \eand Sx)$ would be false.
+
+A second reason to allow empty predicates is that we want to be able to
+say things like, 'I do not know if there are any monkeys, but any
+monkeys that there are know sign language.' That is, we want to be able
+to have predicates that do not (or might not) refer to anything.
+
+Third, consider: $\forall x (Px \eif Px)$. This should be a tautology.
+But if sentence [\[monkey1\]](#monkey1){reference-type="ref"
+reference="monkey1"} implied sentence
+[\[monkey2\]](#monkey2){reference-type="ref" reference="monkey2"}, then
+this would imply $\exists x (Px \eand Px)$. It would become a logical
+truth that for any predicate there is something that satisfies that
+predicate.
+
+What happens if we add an empty predicate $R$ to the interpretation
+above? For example, we might define $Rx$ to mean '$x$ is a
+refrigerator.' Now the sentence $\forall x(Rx \eif Mx)$ will be true.
+This is counterintuitive, since we do not want to say that there are a
+whole bunch of refrigerator monkeys. It is important to remember,
+though, that $\forall x(Rx \eif Mx)$ means that any member of the UD
+which is a refrigerator is a monkey. Since the UD is animals, there are
+no refrigerators in the UD and so the sentence is trivially true.
+
+If you were actually translating the sentence 'All refrigerators are
+monkeys', then you would want to include appliances in the UD. Then the
+predicate $R$ would not be empty and the sentence
+$\forall x(Rx \eif Mx)$ would be false.
+
+Picking a universe of discourse
+-------------------------------
+
+The appropriate symbolization of an English language sentence in QL will
+depend on the symbolization key. In some ways, this is obvious: It
+matters whether $Dx$ means '$x$ is dainty' or '$x$ is dangerous.' The
+meaning of sentences in QL also depends on the UD.
+
+Let $Rx$ mean '$x$ is a rose,' let $Tx$ mean '$x$ has a thorn,' and
+consider this sentence:
+
+Every rose has a thorn.
+
+It is tempting to say that sentence
+[\[pickUDrose\]](#pickUDrose){reference-type="ref"
+reference="pickUDrose"} should be translated as $\forall x(Rx \eif Tx)$.
+If the UD contains all roses, that would be correct. Yet if the UD is
+merely *things on my kitchen table*, then $\forall x(Rx \eif Tx)$ would
+only mean that every rose on my kitchen table has a thorn. If there are
+no roses on my kitchen table, the sentence would be trivially true.
+
+The universal quantifier only ranges over members of the UD, so we need
+to include all roses in the UD in order to translate sentence
+[\[pickUDrose\]](#pickUDrose){reference-type="ref"
+reference="pickUDrose"}. We have two options. First, we can restrict the
+UD to include all roses but *only* roses. Then sentence
+[\[pickUDrose\]](#pickUDrose){reference-type="ref"
+reference="pickUDrose"} becomes $\forall x Tx$. This means that
+everything in the UD has a thorn; since the UD just is the set of roses,
+this means that every rose has a thorn. This option can save us trouble
+if every sentence that we want to translate using the symbolization key
+is about roses.
+
+Second, we can let the UD contain things besides roses: rhododendrons,
+rats, rifles, and whatall else. Then sentence
+[\[pickUDrose\]](#pickUDrose){reference-type="ref"
+reference="pickUDrose"} must be $\forall x(Rx \eif Tx)$.
+
+If we wanted the universal quantifier to mean *every* thing, without
+restriction, then we might try to specify a UD that contains everything.
+But this notion is somewhat obscure. Does 'everything' include things
+that have only been imagined, like fictional characters? On the one
+hand, we want to be able to symbolize arguments about Hamlet or Sherlock
+Holmes. So we need to have the option of including fictional characters
+in the UD. On the other hand, we never need to talk about every thing
+that does not exist. That might not even make sense. There are
+philosophical issues here that we will not try to address. We can avoid
+these difficulties by always specifying the UD. For example, if we mean
+to talk about plants, people, and cities, then the UD might be 'living
+things and places.'
+
+Suppose that we want to translate sentence
+[\[pickUDrose\]](#pickUDrose){reference-type="ref"
+reference="pickUDrose"} and, with the same symbolization key, translate
+these sentences:
+
+Esmerelda has a rose in her hair.
+
+Everyone is cross with Esmerelda.
+
+We need a UD that includes roses (so that we can symbolize sentence
+[\[pickUDrose\]](#pickUDrose){reference-type="ref"
+reference="pickUDrose"}) and a UD that includes people (so we can
+translate sentence [\[pickUDhair\]](#pickUDhair){reference-type="ref"
+reference="pickUDhair"}--[\[pickUDcross\]](#pickUDcross){reference-type="ref"
+reference="pickUDcross"}.) Here is a suitable key:
+
+people and plants
+
+$x$ is a person.
+
+$x$ is a rose.
+
+$x$ has a thorn.
+
+$x$ is cross with $y$.
+
+$x$ has $y$ in their hair.
+
+Esmerelda
+
+Since we do not have a predicate that means '$\ldots$ has a rose in her
+hair', translating sentence
+[\[pickUDhair\]](#pickUDhair){reference-type="ref"
+reference="pickUDhair"} will require paraphrasing. The sentence says
+that there is a rose in Esmerelda's hair; that is, there is something
+which is both a rose and is in Esmerelda's hair. So we get:
+$\exists x(Rx \eand Hex)$.
+
+It is tempting to translate sentence
+[\[pickUDcross\]](#pickUDcross){reference-type="ref"
+reference="pickUDcross"} as $\forall x Cxe$. Unfortunately, this would
+mean that every member of the UD is cross with Esmerelda --- both people
+and plants. It would mean, for instance, that the rose in Esmerelda's
+hair is cross with her. Of course, sentence
+[\[pickUDcross\]](#pickUDcross){reference-type="ref"
+reference="pickUDcross"} does not mean that.
+
+'Everyone' means every person, not every member of the UD. So we can
+paraphrase sentence [\[pickUDcross\]](#pickUDcross){reference-type="ref"
+reference="pickUDcross"} as, 'Every person is cross with Esmerelda.' We
+know how to translate sentences like this: $\forall x(Px \eif Cxe)$.
+
+In general, the universal quantifier can be used to mean 'everyone' if
+the UD contains only people. If there are people and other things in the
+UD, then 'everyone' must be treated as 'every person'.
+
+Translating pronouns
+--------------------
+
+When translating to QL, it is important to understand the structure of
+the sentences you want to translate. What matters is the final
+translation in QL, and sometimes you will be able to move from an
+English language sentence directly to a sentence of QL. Other times, it
+helps to paraphrase the sentence one or more times. Each successive
+paraphrase should move from the original sentence closer to something
+that you can translate directly into QL.
+
+For the next several examples, we will use this symbolization key:
+
+people
+
+$x$ can play guitar.
+
+$x$ is a rock star.
+
+Chris
+
+Lemmy
+
+Now consider these sentences:
+
+If Chris can play guitar, then they are a rock star.
+
+If a person can play guitar, then they are a rock star.
+
+Sentence [\[pronoun1\]](#pronoun1){reference-type="ref"
+reference="pronoun1"} and sentence
+[\[pronoun2\]](#pronoun2){reference-type="ref" reference="pronoun2"}
+have the same words in the consequent ('$\ldots$ they are a rock star'),
+but they cannot be translated in the same way. It helps to paraphrase
+the original sentences, replacing pronouns with explicit references.
+
+Sentence [\[pronoun1\]](#pronoun1){reference-type="ref"
+reference="pronoun1"} can be paraphrased as, 'If Chris can play guitar,
+then *Chris* is a rockstar.' The word 'they' in sentence
+[\[pronoun1\]](#pronoun1){reference-type="ref" reference="pronoun1"} is
+being used to refer to a specific individual, Chris. This can obviously
+be translated as $Gc \eif Rc$.
+
+Sentence [\[pronoun2\]](#pronoun2){reference-type="ref"
+reference="pronoun2"} must be paraphrased differently: 'If a person can
+play guitar, then *that person* is a rock star.' The pronoun 'they' here
+is not about any particular person, so we need a variable. Translating
+halfway, we can paraphrase the sentence as, 'For any person $x$, if $x$
+can play guitar, then $x$ is a rock star.' Now this can be translated as
+$\forall x (Gx \eif Rx)$. This is the same as, 'Everyone who can play
+guitar is a rock star.'
+
+Consider these further sentences:
+
+If anyone can play guitar, then Lemmy can.
+
+If anyone can play guitar, then they are a rock star.
+
+These two sentences have the same antecedent ('If anyone can play
+guitar$\ldots$'), but they have different logical structures.
+
+Sentence [\[anyone1\]](#anyone1){reference-type="ref"
+reference="anyone1"} can be paraphrased, 'If someone can play guitar,
+then Lemmy can play guitar.' The antecedent and consequent are separate
+sentences, so it can be symbolized with a conditional as the main
+logical operator: $\exists x Gx \eif Gl$.
+
+Sentence [\[anyone2\]](#anyone2){reference-type="ref"
+reference="anyone2"} can be paraphrased, 'For anyone, if that one can
+play guitar, then that one is a rock star.' It would be a mistake to
+symbolize this with an existential quantifier, because it is talking
+about everybody. The sentence is equivalent to 'All guitar players are
+rock stars.' It is best translated as $\forall x(Gx \eif Rx)$.
+
+The English words 'any' and 'anyone' should typically be translated
+using quantifiers. As these two examples show, they sometimes call for
+an existential quantifier (as in sentence
+[\[anyone1\]](#anyone1){reference-type="ref" reference="anyone1"}) and
+sometimes for a universal quantifier (as in sentence
+[\[anyone2\]](#anyone2){reference-type="ref" reference="anyone2"}). If
+you have a hard time determining which is required, paraphrase the
+sentence with an English language sentence that uses words besides 'any'
+or 'anyone.'
+
+Quantifiers and scope
+---------------------
+
+In the sentence $\exists x Gx \eif Gl$, the scope of the existential
+quantifier is the expression $Gx$. Would it matter if the scope of the
+quantifier were the whole sentence? That is, does the sentence
+$\exists x (Gx \eif Gl)$ mean something different?
+
+With the key given above, $\exists x Gx \eif Gl$ means that if there is
+some guitarist, then Lemmy is a guitarist. $\exists x (Gx \eif Gl)$
+would mean that there is some person such that if that person were a
+guitarist, then Lemmy would be a guitarist. Recall that the conditional
+here is a material conditional; the conditional is true any time the
+antecedent is false. Let the constant $p$ denote the author of this
+book, someone who is certainly not a guitarist. The sentence
+$Gp \eif Gl$ is true because $Gp$ is false. Since someone (namely $p$)
+satisfies the sentence, then $\exists x (Gx \eif Gl)$ is true. The
+sentence is true because there is a non-guitarist, regardless of Lemmy's
+skill with the guitar.
+
+Something strange happened when we changed the scope of the quantifier,
+because the conditional in QL is a material conditional. In order to
+keep the meaning the same, we would have to change the quantifier:
+$\exists x Gx \eif Gl$ means the same thing as $\forall x (Gx \eif Gl)$,
+and $\exists x (Gx \eif Gl)$ means the same thing as
+$\forall x Gx \eif Gl$.
+
+Note that quantifiers count as logical connectives, so one can sensibly
+ask whether the main connective of a given sentence is a quantifier or
+something else. (Calling it a 'connective' can be slightly confusing,
+since, unlike connectives like conjunction and disjunction, it doesn't
+literally *connect* two sentences. Quantifiers are like negations in
+this respect --- each does count as a connective.) If the scope of the
+quantifier is the entire sentence, then that quantifier is the main
+connective, as in $\forall x (Gx \eif Gl)$. If the scope of the
+quantifier is limited to a subsentence, then that quantifier is not the
+main connective. For example, in $\exists x Gx \eif Gl$, the main
+quantifier is the conditional; the existential is part of the
+antecedent.
+
+Ambiguous predicates
+--------------------
+
+Suppose we just want to translate this sentence:
+
+Adina is a skilled surgeon.
+
+Let the UD be people, let $Kx$ mean '$x$ is a skilled surgeon', and let
+$a$ mean Adina. Sentence [\[surgeon1\]](#surgeon1){reference-type="ref"
+reference="surgeon1"} is simply $Ka$.
+
+Suppose instead that we want to translate this argument:
+
+> The hospital will only hire a skilled surgeon. All surgeons are
+> greedy. Billy is a surgeon, but is not skilled. Therefore, Billy is
+> greedy, but the hospital will not hire him.
+
+We need to distinguish being a *skilled surgeon* from merely being a
+*surgeon*. So we define this symbolization key:
+
+people
+
+$x$ is greedy.
+
+The hospital will hire $x$.
+
+$x$ is a surgeon.
+
+$x$ is skilled.
+
+Billy
+
+Now the argument can be translated in this way:
+
+[\[surgeon2\]]{#surgeon2 label="surgeon2"}
+
+$\forall x\bigl[\enot (Rx \eand Kx) \eif \enot Hx\bigr]$
+
+$\forall x(Rx \eif Gx)$
+
+$Rb \eand \enot Kb$
+
+$Gb \eand \enot Hb$
+
+Next suppose that we want to translate this argument:
+
+> [\[surgeon3\]]{#surgeon3 label="surgeon3"} Carol is a skilled surgeon
+> and a tennis player. Therefore, Carol is a skilled tennis player.
+
+If we start with the symbolization key we used for the previous
+argument, we could add a predicate (let $Tx$ mean '$x$ is a tennis
+player') and a constant (let $c$ mean Carol). Then the argument becomes:
+
+$(Rc \eand Kc) \eand Tc$
+
+$Tc \eand Kc$
+
+This translation is a disaster! It takes what in English is a terrible
+argument and translates it as a valid argument in QL. The problem is
+that there is a difference between being *skilled as a surgeon* and
+*skilled as a tennis player*. Translating this argument correctly
+requires two separate predicates, one for each type of skill. If we let
+$K_1x$ mean '$x$ is skilled as a surgeon' and $K_2x$ mean '$x$ is
+skilled as a tennis player,' then we can symbolize the argument in this
+way:
+
+[\[surgeon3correct\]]{#surgeon3correct label="surgeon3correct"}
+
+$(Rc \eand K_1c) \eand Tc$
+
+$Tc \eand K_2c$
+
+Like the English language argument it translates, this is invalid.
+
+The moral of these examples is that you need to be careful of
+symbolizing predicates in an ambiguous way. Similar problems can arise
+with predicates like *good*, *bad*, *big*, and *small*. Just as skilled
+surgeons and skilled tennis players have different skills, big dogs, big
+mice, and big problems are big in different ways.
+
+Is it enough to have a predicate that means '$x$ is a skilled surgeon',
+rather than two predicates '$x$ is skilled' and '$x$ is a surgeon'?
+Sometimes. As sentence [\[surgeon1\]](#surgeon1){reference-type="ref"
+reference="surgeon1"} shows, sometimes we do not need to distinguish
+between skilled surgeons and other surgeons.
+
+Must we always distinguish between different ways of being skilled,
+good, bad, or big? No. As the argument about Billy shows, sometimes we
+only need to talk about one kind of skill. If you are translating an
+argument that is just about dogs, it is fine to define a predicate that
+means '$x$ is big.' If the UD includes dogs and mice, however, it is
+probably best to make the predicate mean '$x$ is big for a dog.'
+
+Multiple quantifiers
+--------------------
+
+Consider this following symbolization key and the sentences that follow
+it:
+
+UD: People and dogs
+
+Dx: $x$ is a dog.
+
+Fxy: $x$ is a friend of $y$.
+
+Oxy: $x$ owns $y$.
+
+f: Fifi
+
+g: Gerald
+
+Fifi is a dog.
+
+Gerald is a dog owner.
+
+Someone is a dog owner.
+
+All of Gerald's friends are dog owners.
+
+Every dog owner is the friend of a dog owner.
+
+Sentence [\[dog1\]](#dog1){reference-type="ref" reference="dog1"} is
+easy: $Df$.
+
+Sentence [\[dog2\]](#dog2){reference-type="ref" reference="dog2"} can be
+paraphrased as, 'There is a dog that Gerald owns.' This can be
+translated as $\exists x(Dx \eand Ogx)$.
+
+Sentence [\[dog3\]](#dog3){reference-type="ref" reference="dog3"} can be
+paraphrased as, 'There is some $y$ such that $y$ is a dog owner.' The
+subsentence '$y$ is a dog owner' is just like sentence
+[\[dog2\]](#dog2){reference-type="ref" reference="dog2"}, except that it
+is about $y$ rather than being about Gerald. So we can translate
+sentence [\[dog3\]](#dog3){reference-type="ref" reference="dog3"} as
+$\exists y \exists x(Dx \eand Oyx)$.
+
+Sentence [\[dog4\]](#dog4){reference-type="ref" reference="dog4"} can be
+paraphrased as, 'Every friend of Gerald is a dog owner.' Translating
+part of this sentence, we get
+$\forall x(Fxg \eif\mbox{`$x$ is a dog owner'})$. Again, it is important
+to recognize that '$x$ is a dog owner' is structurally just like
+sentence [\[dog2\]](#dog2){reference-type="ref" reference="dog2"}. Since
+we already have an x-quantifier, we will need a different variable for
+the existential quantifier. Any other variable will do. Using $z$,
+sentence [\[dog4\]](#dog4){reference-type="ref" reference="dog4"} can be
+translated as $\forall x\bigl[Fxg \eif\exists z(Dz \eand Oxz)\bigr]$.
+
+Sentence [\[dog5\]](#dog5){reference-type="ref" reference="dog5"} can be
+paraphrased as 'For any $x$ that is a dog owner, there is a dog owner
+who is $x$'s friend.' Partially translated, this becomes
+$$\forall x\bigl[\mbox{$x$ is a dog owner}\eif\exists y(\mbox{$y$ is a dog owner}\eand Fxy)\bigr].$$
+Completing the translation, sentence
+[\[dog5\]](#dog5){reference-type="ref" reference="dog5"} becomes
+$$\forall x\bigl[\exists z(Dz \eand Oxz)\eif\exists y\bigl(\exists z(Dz \eand Oyz)\eand Fxy\bigr)\bigr].$$
+
+Consider this symbolization key and these sentences:
+
+people
+
+$x$ likes $y$.
+
+Imre.
+
+Karl.
+
+Imre likes everyone that Karl likes.
+
+There is someone who likes everyone who likes everyone that he likes.
+
+Sentence [\[likes1\]](#likes1){reference-type="ref" reference="likes1"}
+can be partially translated as
+$\forall x(\mbox{Karl likes $x$}\eif\mbox{Imre likes $x$})$. This
+becomes $\forall x(Lkx\eif Lix)$.
+
+Sentence [\[likes2\]](#likes2){reference-type="ref" reference="likes2"}
+is complex. There is little hope of writing down the whole translation
+immediately, but we can proceed by small steps. An initial, partial
+translation might look like this:
+$$\exists x\ \mbox{everyone who likes everyone that $x$ likes is liked by $x$}$$
+The part that remains in English is a universal sentence, so we
+translate further:
+$$\exists x\forall y(\mbox{$y$ likes everyone that $x$ likes}\eif\mbox{$x$ likes $y$}).$$
+The antecedent of the conditional is structurally just like sentence
+[\[likes1\]](#likes1){reference-type="ref" reference="likes1"}, with $y$
+and $x$ in place of Imre and Karl. So sentence
+[\[likes2\]](#likes2){reference-type="ref" reference="likes2"} can be
+completely translated in this way
+$$\exists x\forall y\bigl[\forall z(Lxz \eif Lyz) \eif Lxy\bigr]$$
+
+When symbolizing sentences with multiple quantifiers, it is best to
+proceed by small steps. Paraphrase the English sentence so that the
+logical structure is readily symbolized in QL. Then translate piecemeal,
+replacing the daunting task of translating a long sentence with the
+simpler task of translating shorter formulae.
+
+Grammaticality rules for QL
+---------------------------
+
+In this section, we provide a formal definition for a *well-formed
+formula* (wff) and *sentence* of QL.
+
+### Expressions
+
+There are six kinds of symbols in QL:
+
+  ---------------------------- ----------------------------------------------
+           predicates                         $A,B,C,\ldots,Z$
+   with subscripts, as needed   $A_1, B_1, Z_1, A_2, A_{25}, J_{375},\ldots$
+           constants                          $a,b,c,\ldots,w$
+   with subscripts, as needed          $a_1, w_4, h_7, m_{32},\ldots$
+           variables                              $x,y,z$
+   with subscripts, as needed           $x_1, y_1, z_1, x_2,\ldots$
+     sentential connectives                       , , , ,
+          parentheses                              ( , )
+          quantifiers                        $\forall, \exists$
+  ---------------------------- ----------------------------------------------
+
+We define an as any string of symbols of QL. Take any of the symbols of
+QL and write them down, in any order, and you have an expression.
+
+### Well-formed formulae
+
+By definition, a is either a constant or a variable.
+
+An is an n-place predicate followed by $n$ terms. $n$ here can be any
+non-negative integer, including 0. (A 0-place predicate is an atomic
+formula of QL just on its own. It does not require the addition of a
+term for meaningfulness or a truth value. Note that SL atoms are 0-place
+QL predicates, and so count as QL atoms too.)
+
+Just as we did for SL, we will give a *recursive* definition for a wff
+of QL. In fact, most of the definition will look like the definition of
+a wff of SL: Every atomic formula is a wff, and you can build new wffs
+by applying the sentential connectives.
+
+We could just add a rule for each of the quantifiers and be done with
+it. For instance: If is a wff, then $\forall x\metaA{}$ and
+$\exists x\metaA{}$ are wffs. However, this would allow for some
+confusing sentences like $\forall x\exists x Dx$. What could these
+possibly mean? There are possible ways to give interpretations of such
+sentences, but instead we will write the definition of a wff so that
+such abominations do not even count as well-formed. QL will include the
+rule that in order for $\forall x\metaA{}$ or $\exists x\metaA{}$ to be
+a wff, must not already contain an x-quantifier. So
+$\forall x \exists x Dx$ will not count as a wff because $\exists x Dx$
+already contains an x-quantifier.
+
+1.  Every atomic formula is a wff.
+
+2.  If is a wff, then $\enot\metaA{}$ is a wff.
+
+3.  If and are wffs, then $(\metaA{}\eand\metaB{})$, is a wff.
+
+4.  If and are wffs, $(\metaA{}\eor\metaB{})$ is a wff.
+
+5.  If and are wffs, then $(\metaA{}\eif\metaB{})$ is a wff.
+
+6.  If and are wffs, then $(\metaA{}\eiff\metaB{})$ is a wff.
+
+7.  If is a wff, is a variable, and contains no -quantifiers, then
+    $\forall\script{x}\metaA{}$ is a wff.
+
+8.  If is a wff, is a variable, and contains no -quantifiers, then
+    $\exists\script{x}\metaA{}$ is a wff.
+
+9.  All and only wffs of QL can be generated by applications of these
+    rules.
+
+Notice that the '' that appears in the definition above is not the
+variable $x$. It is a *meta-variable* that stands in for any variable of
+QL. So $\forall xAx$ is a wff, but so are $\forall yAy$, $\forall zAz$,
+$\forall x_4Ax_4$, and $\forall z_9Az_9$.
+
+We can now give a formal definition for scope: The of a quantifier is
+the subformula for which the quantifier is the main logical operator.
+
+### Sentences
+
+A sentence is something that can be either true or false. In SL, every
+wff was a sentence. This will not be the case in QL. Consider the
+following symbolization key:
+
+people
+
+$x$ loves $y$
+
+Boris
+
+Consider the expression $Lzz$. It is an atomic formula: a two-place
+predicate followed by two terms. All atomic formula are wffs, so $Lzz$
+is a wff. Does it mean anything? You might think that it means that $z$
+loves himself, in the same way that $Lbb$ means that Boris loves
+himself. But $z$ is a variable; it does not name some person the way a
+constant would. The wff $Lzz$ does not tell us how to interpret $z$.
+Does it mean everyone? Anyone? Someone? Someone in particular? If we had
+a $z$-quantifier, it would tell us how to interpret $z$. For instance,
+$\exists zLzz$ would mean that someone loves themself.
+
+Some formal languages treat a wff like $Lzz$ as implicitly having a
+universal quantifier in front. We will not do this for QL. If you want
+to say that everyone loves themself, then you need to write the
+quantifier: $\forall zLzz$
+
+In order to make sense of a variable, we need a quantifier to tell us
+how to interpret that variable. The scope of an $x$-quantifier, for
+instance, is the part of the formula where the quantifier tells how to
+interpret $x$.
+
+In order to be precise about this, we define a to be an occurrence of a
+variable that is within the scope of an -quantifier. A is an occurrence
+of a variable that is not bound.
+
+For example, consider this wff:
+$$\forall x(Ex \eor Dy) \eif \exists z(Rzx \eif Lzx)$$
+
+The scope of the universal quantifier $\forall x$ is $(Ex \eor Dy)$, so
+the first $x$ is bound by the universal quantifier but the second and
+third $x$s are free. There is no $y$-quantifier, so the $y$ is free. The
+scope of the existential quantifier $\exists z$ is $(Rzx \eif Lzx)$, so
+both occurrences of $z$ are bound by it. Since this wff contains
+variables with no instructions for how to interpret them, we don't know
+how to evaluate it. It is not a sentence.
+
+We define a of QL as a wff of QL that contains no free variables.
+
+### Notational conventions
+
+We will adopt the same notational conventions that we did for SL (p. ).
+First, we may leave off the outermost parentheses of a formula. Second,
+we will sometimes use square brackets '\[' and '\]' in place of
+parentheses to increase the readability of formulae. Third, we give
+ourselves permission to leave out parentheses between each pair of
+conjuncts when writing long series of conjunctions. Fourth, we may
+similarly leave out parentheses between each pair of disjuncts when
+writing long series of disjunctions.
+
+Common student errors
+---------------------
+
+A sentence that says everything with one property also has another
+property should be translated as a universal governing a conditional.
+Using the obvious interpretation key:
+
+-   'Every student is working': $\forall x (Sx \eif Wx)$
+
+-   'Every student has a friend': $\forall x (Sx \eif \exists y Fxy)$
+
+-   'Only students with friends are working':
+    $\forall x [(Sx \eand Wx) \eif \exists y Fxy]$
+
+One common error is to translate sentences of this form with a different
+kind of shape --- for example, as a universal governing a conjunction,
+or as an existential governing a conditional. These are very inaccurate
+translations of these English sentences:
+
+-   $\forall x (Sx \eand Wx)$
+
+-   $\forall x (Sx \eand \exists y Fxy)$
+
+-   $\forall x [(Sx \eand Wx) \eand \exists y Fxy]$
+
+These say that *every* object in the UD is a student with the properties
+in question. Everyone is a student that is working; everyone is a
+student with a friend; everyone is a working student who has a friend.
+Any time you have a universal governing a conjunction, you are making a
+very strong claim --- you're not just talking about objects with a
+particular property, you're saying that multiple things are true about
+every single object in the domain. Be very careful if you find yourself
+offering a universal over a conjunction, and make sure you don't mean to
+use a conditional instead.
+
+It is also a serious mistake to use an existential instead of a
+universal for sentences like these:
+
+-   $\exists x (Sx \eif Wx)$
+
+-   $\exists x (Sx \eif \exists y Fxy)$
+
+-   $\exists x [(Sx \eand Wx) \eif \exists y Fxy]$
+
+These are very weak claims. They say that there is some object in the
+domain that satisfies a certain conditional. For example,
+$\exists x (Sx \eif Wx)$ says there is something in the domain such
+that, if it is a student, it is working. Given the truth conditions for
+the material conditional, this will be true if there is even one object
+in the domain that is not a student, regardless of who is and isn't
+working; it will also be true if there is even one object in the domain
+that is working, regardless of who is and isn't a student.
+
+If you find yourself offering, as a translation of some English
+sentence, an existential governing a conditional, you are almost
+certainly making a mistake. This is not a reasonable translation of any
+ordinary English sentence. You probably want either a universal over a
+conditional (everything with one property has another property) or an
+existential over a conjunction (there is something with the following
+properties).
+
+[\[pr.QLbojackall\]]{#pr.QLbojackall label="pr.QLbojackall"} Using the
+symbolization key given, translate each English-language sentence into
+QL. Hint: all of these sentences are well-translated as universals
+governing conditionals.
+
+all humans and animals in the world of *Bojack Horseman*
+
+$x$ is a dog.
+
+$x$ is a cat.
+
+$x$ is a horse.
+
+$x$ is a human being.
+
+$x$ is a movie star.
+
+$x$ lives with $y$.
+
+$x$ represents $y$ (as $y$'s agent).
+
+$x$ worked on a movie with $y$.
+
+Bojack
+
+Princess Caroline
+
+Dianne
+
+Mr. Peanutbutter
+
+Every movie star is a dog.
+
+Every movie star is a dog or a cat.
+
+All dog movie stars live with a human being.
+
+Everyone who lives with Dianne is a movie star.
+
+Princess Caroline represents every dog movie star.
+
+Anyone who worked on a movie with Bojack lives with a movie star.
+
+Only humans live with Mr. Peanutbutter.
+
+Everyone who has ever worked on a movie with Bojack is either a dog, a
+cat, or someone who lives with a movie star.
+
+[\[pr.QLbojacksome\]]{#pr.QLbojacksome label="pr.QLbojacksome"} Using
+the same symbolization key, translate each English-language sentence
+into QL. Hint: all of these sentences are well-translated as
+existentials governing conjunctions.
+
+Mr. Peanutbutter lives with a human.
+
+Dianne lives with a dog who worked on a movie with Bojack.
+
+Princess Caroline represents a horse who lives with a human being.
+
+Some human being who worked on a movie with Mr. Peanutbutter lives with
+a dog or a cat.
+
+Bojack worked on a movie with a human movie star.
+
+Bojack worked on a movie with a nonhuman movie star who lives with
+Dianne.
+
+[\[pr.QLbojackother\]]{#pr.QLbojackother label="pr.QLbojackother"} Using
+the same symbolization key, translate each English-language sentence
+into QL. Hint: these should have different forms than the cases above.
+
+If Mr. Peanutbutter is a movie star, then all dogs are movie stars.
+
+A dog lives with Dianne and Princess Caroline represents a horse.
+
+Princess Caroline represents a horse and a dog.
+
+Princess Caroline represents everyone.
+
+Dianne doesn't live with anyone.
+
+No movie star has ever worked with both Bojack and a cat on a movie.
+
+Princess Caroline is a cat, but she doesn't represent any cats.
+
+[\[pr.QLalligators\]]{#pr.QLalligators label="pr.QLalligators"} Using
+the symbolization key given, translate each English-language sentence
+into QL.
+
+all animals
+
+$x$ is an alligator.
+
+$x$ is a monkey.
+
+$x$ is a reptile.
+
+$x$ lives at the zoo.
+
+$x$ loves $y$.
+
+Amos
+
+Bouncer
+
+Cleo
+
+Amos, Bouncer, and Cleo all live at the zoo.
+
+Bouncer is a reptile, but not an alligator.
+
+If Cleo loves Bouncer, then Bouncer is a monkey.
+
+If both Bouncer and Cleo are alligators, then Amos loves them both.
+
+Some reptile lives at the zoo.
+
+Every alligator is a reptile.
+
+Any animal that lives at the zoo is either a monkey or an alligator.
+
+There are reptiles which are not alligators.
+
+Cleo loves a reptile.
+
+Bouncer loves all the monkeys that live at the zoo.
+
+All the monkeys that Amos loves love him back.
+
+If any animal is a reptile, then Amos is.
+
+If any animal is an alligator, then it is a reptile.
+
+Every monkey that Cleo loves is also loved by Amos.
+
+There is a monkey that loves Bouncer, but Bouncer does not reciprocate
+this love.
+
+[\[pr.BarbaraEtc\]]{#pr.BarbaraEtc label="pr.BarbaraEtc"} These are
+syllogistic figures identified by Aristotle and his successors, along
+with their medieval names. Translate each argument into QL.
+
+Barbara
+
+:   All $B$s are $C$s. All $A$s are $B$s.  All $A$s are $C$s.
+
+Baroco
+
+:   All $C$s are $B$s. Some $A$ is not $B$.  Some $A$ is not $C$.
+
+Bocardo
+
+:   Some $B$ is not $C$. All $A$s are $B$s.  Some $A$ is not $C$.
+
+Celantes
+
+:   No $B$s are $C$s. All $A$s are $B$s.  No $C$s are $A$s.
+
+Celarent
+
+:   No $B$s are $C$s. All $A$s are $B$s.  No $A$s are $C$s.
+
+Cemestres
+
+:   No $C$s are $B$s. No $A$s are $B$s.  No $A$s are $C$s.
+
+Cesare
+
+:   No $C$s are $B$s. All $A$s are $B$s.  No $A$s are $C$s.
+
+Dabitis
+
+:   All $B$s are $C$s. Some $A$ is $B$.  Some $C$ is $A$.
+
+Darii
+
+:   All $B$s are $C$s. Some $A$ is $B$.  Some $A$ is $C$.
+
+Datisi
+
+:   All $B$s are $C$s. Some $A$ is $B$.  Some $A$ is $C$.
+
+Disamis
+
+:   Some $B$ is $C$. All $A$s are $B$s.  Some $A$ is $C$.
+
+Ferison
+
+:   No $B$s are $C$s. Some $A$ is $B$.  Some $A$ is not $C$.
+
+Ferio
+
+:   No $B$s are $C$s. Some $A$ is $B$.  Some $A$ is not $C$.
+
+Festino
+
+:   No $C$s are $B$s. Some $A$ is $B$.  Some $A$ is not $C$.
+
+Baralipton
+
+:   All $B$s are $C$s. All $A$s are $B$s.  Some $C$ is $A$.
+
+Frisesomorum
+
+:   Some $B$ is $C$. No $A$s are $B$s.  Some $C$ is not $A$.
+
+Using the symbolization key given, translate each English-language
+sentence into QL. [\[pr.QLdogtrans\]]{#pr.QLdogtrans
+label="pr.QLdogtrans"}
+
+all animals
+
+$x$ is a dog.
+
+$x$ likes samurai movies.
+
+$x$ is larger than $y$.
+
+Bertie
+
+Emerson
+
+Fergis
+
+Bertie is a dog who likes samurai movies.
+
+Bertie, Emerson, and Fergis are all dogs.
+
+Emerson is larger than Bertie, and Fergis is larger than Emerson.
+
+All dogs like samurai movies.
+
+Only dogs like samurai movies.
+
+There is a dog that is larger than Emerson.
+
+If there is a dog larger than Fergis, then there is a dog larger than
+Emerson.
+
+No animal that likes samurai movies is larger than Emerson.
+
+No dog is larger than Fergis.
+
+Any animal that dislikes samurai movies is larger than Bertie.
+
+There is an animal that is between Bertie and Emerson in size.
+
+There is no dog that is between Bertie and Emerson in size.
+
+No dog is larger than itself.
+
+For every dog, there is some dog larger than it.
+
+There is an animal that is smaller than every dog.
+
+[\[pr.QLarguments\]]{#pr.QLarguments label="pr.QLarguments"} For each
+argument, write a symbolization key and translate the argument into QL.
+
+Nothing on my desk escapes my attention. There is a computer on my desk.
+As such, there is a computer that does not escape my attention.
+
+All my dreams are black and white. Old TV shows are in black and white.
+Therefore, some of my dreams are old TV shows.
+
+Neither Holmes nor Watson has been to Australia. A person could see a
+kangaroo only if they had been to Australia or to a zoo. Although Watson
+has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a
+zoo.
+
+No one expects the Spanish Inquisition. No one knows the troubles I've
+seen. Therefore, anyone who expects the Spanish Inquisition knows the
+troubles I've seen.
+
+An antelope is bigger than a bread box. I am thinking of something that
+is no bigger than a bread box, and it is either an antelope or a
+cantaloupe. As such, I am thinking of a cantaloupe.
+
+All babies are illogical. Nobody who is illogical can manage a
+crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a
+crocodile.
+
+[\[pr.QLcandies\]]{#pr.QLcandies label="pr.QLcandies"} Using the
+symbolization key given, translate each English-language sentence into
+QL.
+
+candies
+
+$x$ has chocolate in it.
+
+$x$ has marzipan in it.
+
+$x$ has sugar in it.
+
+Boris has tried $x$.
+
+$x$ is better than $y$.
+
+Boris has never tried any candy.
+
+Marzipan is always made with sugar.
+
+Some candy is sugar-free.
+
+The very best candy is chocolate.
+
+No candy is better than itself.
+
+Boris has never tried sugar-free chocolate.
+
+Boris has tried marzipan and chocolate, but never together.
+
+Any candy with chocolate is better than any candy without it.
+
+Any candy with chocolate and marzipan is better than any candy that
+lacks both.
+
+[\[pr.QLpotluck\]]{#pr.QLpotluck label="pr.QLpotluck"} Using the
+symbolization key given, translate each English-language sentence into
+QL.
+
+people and dishes at a potluck
+
+$x$ has run out.
+
+$x$ is on the table.
+
+$x$ is food.
+
+$x$ is a person.
+
+$x$ likes $y$.
+
+Eli
+
+Francesca
+
+the guacamole
+
+All the food is on the table.
+
+If the guacamole has not run out, then it is on the table.
+
+Everyone likes the guacamole.
+
+If anyone likes the guacamole, then Eli does.
+
+Francesca only likes the dishes that have run out.
+
+Francesca likes no one, and no one likes Francesca.
+
+Eli likes anyone who likes the guacamole.
+
+Eli likes everyone who likes anyone that he likes.
+
+If there is a person on the table already, then all of the food must
+have run out.
+
+[\[pr.QLballet\]]{#pr.QLballet label="pr.QLballet"} Using the
+symbolization key given, translate each English-language sentence into
+QL.
+
+people
+
+$x$ dances ballet.
+
+$x$ is female.
+
+$x$ is male.
+
+$x$ is a child of $y$.
+
+$x$ is a sibling of $y$.
+
+Elmer
+
+Jane
+
+Patrick
+
+All of Patrick's children are ballet dancers.
+
+Jane is Patrick's daughter.
+
+Patrick has a daughter.
+
+Jane is an only child.
+
+All of Patrick's daughters dance ballet.
+
+Patrick has no sons.
+
+Jane is Elmer's niece.
+
+Patrick is Elmer's brother.
+
+Patrick's brothers have no children.
+
+Jane is an aunt.
+
+Everyone who dances ballet has a sister who also dances ballet.
+
+Every man who dances ballet is the child of someone who dances ballet.
+
+[\[pr.freeQL\]]{#pr.freeQL label="pr.freeQL"} Identify which variables
+are bound and which are free.
+
+$\exists x Lxy \eand \forall y Lyx$
+
+$\forall x Ax \eand Bx$
+
+$\forall x (Ax \eand Bx) \eand \forall y(Cx \eand Dy)$
+
+$\forall x\exists y[Rxy \eif (Jz \eand Kx)] \eor Ryx$
+
+$\forall x_1(Mx_2 \eiff Lx_2x_1) \eand \exists x_2 Lx_3x_2$
+
+[\[pr.subinstanceQL\]]{#pr.subinstanceQL label="pr.subinstanceQL"}
+
+Identify which of the following are substitution instances of
+$\forall x Rcx$: $Rac$, $Rca$, $Raa$, $Rcb$, $Rbc$, $Rcc$, $Rcd$, $Rcx$
+
+Identify which of the following are substitution instances of
+$\exists x\forall y Lxy$: $\forall y Lby$, $\forall x Lbx$, $Lab$,
+$\exists x Lxa$
