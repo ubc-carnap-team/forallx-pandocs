@@ -1,6 +1,8 @@
 # forallx-pandocs
 
-*there is an error in the ch5 and ch10 latex that is preventing conversion, that is why they are not present currently*
+*chapters 5 and 10 have been converted*
+
+
 
 pandoc filters: https://pandoc.org/filters.html
 
