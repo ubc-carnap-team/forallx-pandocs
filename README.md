@@ -2,6 +2,8 @@
 
 *there is an error in the ch5 and ch10 latex that is preventing conversion, that is why they are not present currently*
 
+pandoc filters: https://pandoc.org/filters.html
+
 <table>
   <tr>
     <th>chapter</th><th>basic formatting</th><th>interactive</th>
