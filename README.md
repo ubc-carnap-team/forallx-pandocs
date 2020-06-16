@@ -61,7 +61,7 @@ pandoc filters: https://pandoc.org/filters.html
 
 **numbered lists**: depending on desired result, can use... <br/>
 
-ordered list (ol). Default behavior prevents last line from being 'therefore symbol', but that can probably be overridden:
+ordered list (ol). Default behavior prevents last line from being "therefore" symbol, but that can probably be overridden somehow:
 
     <ol>
     <li>line1</li>
