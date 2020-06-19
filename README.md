@@ -7,7 +7,7 @@
     <th>chapter</th><th>basic formatting</th><th>interactive</th>
   </tr>
   <tr>
-    <td>ch1</td><td>partial</td><td>no</td>
+    <td>ch1</td><td>yes</td><td>no</td>
   </tr>
   <tr>
     <td>ch2</td><td>no</td><td>no</td>
