@@ -88,9 +88,9 @@
 
 **tables**:
 
-'tr': table row <br/>
-'th': table header <br/>
-'td': table data
+tr: table row <br/>
+th: table header <br/>
+td: table data
 
     <table>
       <tr><th>symbol</th><th>what it is called</th><th>rought translation</th></tr>
