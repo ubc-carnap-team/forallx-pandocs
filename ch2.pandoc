@@ -7,10 +7,10 @@ represent entire sentences. (Recall from
 §1.2 that we're only considering propositional
 sentences.)
 
-**Sentence letters**
+**2.1 Sentence letters**
 ----------------
 
-In SL, capital Roman letters (**A**, **B**, **C**, etc.) are used to represent
+In SL, capital Roman letters (*A*, *B*, *C*, etc.) are used to represent
 basic sentences. Considered only as a symbol of SL, the letter $A$ could
 mean any sentence. So when translating from English into SL, it is
 important to provide a *symbolization key*. The key provides an English
@@ -35,9 +35,9 @@ would look like this:
 
 We could then symbolize the argument in this way:
 
-> | 1. <span class="premise">**A**</span>
-> | 2. <span class="premise">**B**</span>
-> | <span class="conclusion">**C**</span>
+> | 1. <span class="premise">*A*</span>
+> | 2. <span class="premise">*B*</span>
+> | <span class="conclusion">*C*</span>
 
 This is a possible way to symbolize this argument, but it's not a very
 interesting one. There is no necessary connection between some sentence
@@ -47,9 +47,9 @@ been lost in translation. The original argument was valid, but this
 translation of the argument does not reflect that validity. Given a
 different symbolization key, for example, the same argument form
 
-> | 1. <span class="premise">**A**</span>
-> | 2. <span class="premise">**B**</span>
-> | <span class="conclusion">**C**</span>
+> | 1. <span class="premise">*A*</span>
+> | 2. <span class="premise">*B*</span>
+> | <span class="conclusion">*C*</span>
 
 could equally well stand in for this invalid argument:
 
@@ -66,9 +66,9 @@ the argument only needs to include meanings for $A$ and $C$, and we can
 build the second premise from those pieces. So we symbolize the argument
 this way:
 
-> | 1. <span class="premise">**A**</span>
-> | 2. <span class="premise">If **A**, then **C**.</span>
-> | <span class="conclusion">**C**</span>
+> | 1. <span class="premise">*A*</span>
+> | 2. <span class="premise">If *A*, then *C*.</span>
+> | <span class="conclusion">*C*</span>
 
 This preserves the structure of the argument that makes it valid, but it
 still makes use of the English expression 'If$\ldots$ then$\ldots$.'
@@ -103,29 +103,25 @@ Keep in mind that each of these is a different atomic sentence. Although
 it is often convenient, for making it easier to remember what each
 letter stands for, to use letters corresponding to the sentences'
 subject matters, as in the example above, no such requirement is built
-into the rules of SL. There is no special relationship between $A_{1}$
-and $A_{2}$, as far as SL goes. It's just for our convenience that we
-might choose to make all the $A$ sentences about Aang.
+into the rules of SL. There is no special relationship between *A*<sub>1</sub>
+and *A*<sub>2</sub>, as far as SL goes. It's just for our convenience that we
+might choose to make all the *A* sentences about Aang.
 
-Connectives
------------
+**2.2 Connectives**
+-------------------
 
 Logical connectives are used to build complex sentences from atomic
 components. There are five logical connectives in SL. This table
 summarizes them. They are explained below.
 
 <table>
-  <tr><th>symbol</th><th>what it is called</th><th>rought translation</th></tr>
+  <tr><th>symbol</th><th>what it is called</th><th>rough translation</th></tr>
   <tr><td>[negation]</td><td>negation</td><td>'It is not the case that...'</td></tr>
+  <tr><td>[conjunction]</td><td>conjunction</td><td>'Both... and ...'</td></tr>
+  <tr><td>[disjunction]</td><td>disjunction</td><td>'Either... or ...'</td></tr>
+  <tr><td>[conditional]</td><td>conditional</td><td>'If ... then ...'</td></tr>
+  <tr><td>[biconditional]</td><td>biconditional</td><td>'... if and only if ...'</td></tr>
 </table>
-
-   symbol   what it is called           rough translation
-  -------- ------------------- ------------------------------------
-                negation        'It is not the case that$\ldots$'
-               conjunction         'Both$\ldots$ and $\ldots$'
-               disjunction         'Either$\ldots$ or $\ldots$'
-               conditional         'If $\ldots$ then $\ldots$'
-              biconditional     '$\ldots$ if and only if $\ldots$'
 
 Natural languages like English are vague and imprecise, and carry many
 complex subtleties of meaning. Our formal language, SL, has none of
@@ -133,307 +129,262 @@ these properties. It is defined by precise rigid rules. Consequently,
 the 'translation' provided in the table is only an approximate one.
 We'll see some of the differences below.
 
-Negation
---------
+**2.3 Negation**
+----------------
 
 Consider how we might symbolize these sentences:
 
-Logic is hard.
+> | 1. <span class="premise">Logic is hard.</span>
+> | 2. <span class="premise">It is false that logic is hard.</span>
+> | 3. <span class="premise">Logic isn't hard.</span>
 
-It is false that logic is hard.
-
-Logic isn't hard.
-
-In order to symbolize sentence [\[not1\]](#not1){reference-type="ref"
-reference="not1"}, we will need one sentence letter. We can provide a
+In order to symbolize sentence 1, we will need one sentence letter. We can provide a
 symbolization key:
 
-Logic is hard
+> **H:** Logic is hard
 
-Now, sentence [\[not1\]](#not1){reference-type="ref" reference="not1"}
-is simply $H$.
+Now, sentence 1 is simply *H*.
 
-Since sentence [\[not2\]](#not2){reference-type="ref" reference="not2"}
-is obviously related to sentence [\[not1\]](#not1){reference-type="ref"
-reference="not1"}, we do not want to introduce a different sentence
+Since sentence 2 is obviously related to sentence 1,
+we do not want to introduce a different sentence
 letter. To put it partly in English, the sentence means 'It is false
-that $H$.' In order to symbolize this, we need a symbol for logical
-negation. We will use '.' Now we can translate 'Not $H$' to $\enot H$.
-In general, '' means 'it is false that'.
+that *H*.' In order to symbolize this, we need a symbol for logical
+negation. We will use '[not]' Now we can translate 'Not *H*' to [not]*H*.
+In general, '[not]' means 'it is false that'.
 
-What of Sentence [\[not3\]](#not3){reference-type="ref"
-reference="not3"}? It looks like a more natural way of saying the same
-thing as sentence [\[not2\]](#not2){reference-type="ref"
-reference="not2"}. It's saying that logic isn't hard, which is just
-another way of denying that logic is hard. So sentences
-[\[not2\]](#not2){reference-type="ref" reference="not2"} and
-[\[not3\]](#not3){reference-type="ref" reference="not3"} have the same
+What of Sentence 3? It looks like a more natural way of saying the same
+thing as sentence 2. It's saying that logic isn't hard, which is just
+another way of denying that logic is hard. So sentences 2 and 3 have the same
 truth conditions. In the terminology of
-Ch. [\[ch.intro\]](#ch.intro){reference-type="ref"
-reference="ch.intro"}, they are logically equivalent. So we can
-translate both sentence [\[not2\]](#not2){reference-type="ref"
-reference="not2"} and sentence [\[not3\]](#not3){reference-type="ref"
-reference="not3"} as $\enot H$.
+Ch. 1[link to ch1], they are logically equivalent. So we can
+translate both sentence 2 and sentence 3 as [not]*H*.
 
 When translating from English into SL, the word 'not' is usually a
-pretty good clue that '' will be an appropriate symbol to use, but it's
+pretty good clue that '[not]' will be an appropriate symbol to use, but it's
 important to think about the actual meaning of the sentence, and not
 rely too much on which words appear in it.
 
-(For more on the '' notation, see the 'note about notation' on p. .)
+(For more on the '[not]' notation, see the 'note about notation' on [find reference])
 
 Consider these further examples:
 
-Rodrigo is mortal.
+> | 4. <span class="premise">Rodrigo is mortal.</span>
+> | 5. <span class="premise">Rodrigo is immortal.</span>
+> | 6. <span class="premise">Rodrigo is not immortal.</span>
 
-Rodrigo is immortal.
+If we let *R* mean 'Rodrigo is mortal', then sentence 4 can be
+translated as *R*.
 
-Rodrigo is not immortal.
+What about sentence 5? Being immortal is pretty much the same as not being
+mortal. So it makes sense to treat 5 as the negation
+of 4, symbolizing it as [not]*R*.
 
-If we let $R$ mean 'Rodrigo is mortal', then sentence
-[\[not4\]](#not4){reference-type="ref" reference="not4"} can be
-translated as $R$.
-
-What about sentence [\[not5\]](#not5){reference-type="ref"
-reference="not5"}? Being immortal is pretty much the same as not being
-mortal. So it makes sense to treat
-[\[not5\]](#not5){reference-type="ref" reference="not5"} as the negation
-of [\[not4\]](#not4){reference-type="ref" reference="not4"}, symbolizing
-it as $\enot{R}$.
-
-Sentence [\[not5b\]](#not5b){reference-type="ref" reference="not5b"} can
-be paraphrased as 'It is not the case that Rodrigo is immortal.' Using
-negation twice, we translate this as $\enot\enot R$. The two negations
+Sentence 6 can be paraphrased as 'It is not the case that Rodrigo is immortal.'
+Using negation twice, we translate this as [not][not]*R*. The two negations
 in a row each work as negations, so the sentence means 'It is not the
-case that$\ldots$ it is not the case that$\ldots$ $R$.' It is the
-negation of the negation of $R$. One can negate *any* sentence of SL by
-putting the symbol in front of it. It's not only for atomic sentences.
+case that... it is not the case that... *R*.' It is the
+negation of the negation of *R*. One can negate *any* sentence of SL by
+putting the [not] symbol in front of it. It's not only for atomic sentences.
 
 Here is an example that illustrates some of the complexities of
 translation.
 
-Elliott is happy.
+> | 7. <span class="premise">Elliott is happy.</span>
+> | 8. <span class="premise">Elliott is unhappy.</span>
 
-Elliott is unhappy.
+If we let *H* mean 'Elliot is happy', then we can symbolize sentence 7 as *H*.
 
-If we let $H$ mean 'Elliot is happy', then we can symbolize sentence
-[\[not6\]](#not6){reference-type="ref" reference="not6"} as $H$.
-
-We might be tempted to symbolize sentence
-[\[not7\]](#not7){reference-type="ref" reference="not7"} as $\enot{H}$.
+We might be tempted to symbolize sentence 8 as [not]*H*.
 But is being unhappy the same thing as not being happy? This is perhaps
 debatable. One might think that it is possible to be neither happy nor
 unhappy. Maybe Elliot is in this in-between zone. If so, then we
-shouldn't treat [\[not7\]](#not7){reference-type="ref" reference="not7"}
-as the negation of [\[not6\]](#not6){reference-type="ref"
-reference="not6"}. If we're allowing that 'unhappy' means something
-different from 'not happy', then we will need to use a different atomic
-sentence to translate [\[not7\]](#not7){reference-type="ref"
-reference="not7"}.
+shouldn't treat 8 as the negation of 7. If we're allowing that 'unhappy' means something
+different from 'not happy', then we will need to use a different atomic sentence to translate 8.
 
 What of the *truth conditions* for negated sentences?
 
-For any sentence : If is true, then is false. If is false, then is true.
+For any sentence [phi]: If [phi] is true, then [not][phi] is false. If [phi] is false, then [not][phi] is true.
 Using '1' for true and '0' for false, we can summarize this in a
 *characteristic truth table* for negation:
 
-  --- ---
-   1   0
-   0   1
-  --- ---
+<table>
+<tr><th>[phi]</th><th>[not][phi]</th></tr>
+<tr><td>1</td><td>0</td></tr>
+<tr><td>0</td><td>1</td></tr>
+</table>
 
 The left column shows the possible truth values for a given sentence;
 the right column shows the truth value of the negation of that sentence.
 
-We will discuss truth tables at greater length in Chapter
-[\[ch.TruthTables\]](#ch.TruthTables){reference-type="ref"
-reference="ch.TruthTables"}.
+We will discuss truth tables at greater length in Chapter 3.
 
-Conjunction
------------
+**2.4 Conjunction**
+-------------------
 
 Consider these sentences:
 
-Jessica is strong.
+> | 9. <span class="premise">Jessica is strong.</span>
+> | 10. <span class="premise">Luke is strong.</span>
+> | 11. <span class="premise">Jessica is strong, and Luke is also strong.</span>
 
-Luke is strong.
-
-Jessica is strong, and Luke is also strong.
-
-We will need separate sentence letters for
-[\[and1\]](#and1){reference-type="ref" reference="and1"} and
-[\[and2\]](#and2){reference-type="ref" reference="and2"}, so we define
+We will need separate sentence letters for 9 and
+10, so we define
 this symbolization key:
 
-Jessica is strong.
+> **J:** Jessica is strong. <br/>
+> **L:** Luke is strong.
 
-Luke is strong.
+Sentence 9 can be symbolized as *J*.
 
-Sentence [\[and1\]](#and1){reference-type="ref" reference="and1"} can be
-symbolized as $J$.
+Sentence 10 can be symbolized as *L*.
 
-Sentence [\[and2\]](#and2){reference-type="ref" reference="and2"} can be
-symbolized as $L$.
+Sentence 11 can be paraphrased as '*J* and *L*.' In order to fully symbolize this sentence,
+we need another symbol. We will use '[and]' We translate '*J* and *L*' as (*J*[and]*L*). The logical connective '[and]' is called **conjunction**, and *J* and *L* are
+each called **conjuncts**.
 
-Sentence [\[and3\]](#and3){reference-type="ref" reference="and3"} can be
-paraphrased as '$J$ and $L$.' In order to fully symbolize this sentence,
-we need another symbol. We will use '.' We translate '$J$ and $L$' as
-($J\eand L$). The logical connective '' is called , and $J$ and $L$ are
-each called .
-
-Notice that we make no attempt to symbolize 'also' in sentence
-[\[and3\]](#and3){reference-type="ref" reference="and3"}. Words like
-'both' and 'also' function to draw our attention to the fact that two
+Notice that we make no attempt to symbolize 'also' in sentence 11. Words like 'both' and 'also' function to draw our attention to the fact that two
 things are being conjoined. They are not doing any further logical work,
-so we do not need to represent them in SL. Note that Sentence
-[\[and3\]](#and3){reference-type="ref" reference="and3"} would have
-meant the same thing had it simply said 'Jessica is strong, and Luke is
-strong.'
+so we do not need to represent them in SL. Note that Sentence 11 would have meant the same thing had it simply said 'Jessica is strong, and Luke is strong.'
 
 Here are some more examples:
 
-Jessica is strong and grumpy.
+> | 12. <span class="premise">Jessica is strong and grumpy.</span>
+> | 13. <span class="premise">Jessica and Matt are both strong.</span>
+> | 14. <span class="premise">Although Luke is strong, he is not grumpy.</span>
+> | 15. <span class="premise">Matt is strong, but Jessica is stronger than Matt.</span>
 
-Jessica and Matt are both strong.
-
-Although Luke is strong, he is not grumpy.
-
-Matt is strong, but Jessica is stronger than Matt.
-
-Sentence [\[and4\]](#and4){reference-type="ref" reference="and4"} is
+Sentence 12 is
 obviously a conjunction. The sentence says two things about Jessica, so
 in English it is permissible to use her name only once. It might be
-tempting to try this when translating the argument: Since $J$ means
-'Jessica is strong', one might attempt to paraphrase sentence
-[\[and4\]](#and4){reference-type="ref" reference="and4"} as '$J$ and
+tempting to try this when translating the argument: Since *J* means
+'Jessica is strong', one might attempt to paraphrase sentence 12 as '*J* and
 grumpy.' But this would be a mistake. Once we translate part of a
-sentence as $J$, any further structure within the original sentence is
-lost. $J$ is an atomic sentence; SL doesn't keep track of the fact that
+sentence as *J*, any further structure within the original sentence is
+lost. *J* is an atomic sentence; SL doesn't keep track of the fact that
 it was intended to be about Jessica. Moreover, 'grumpy' is not a
 sentence; on its own it is neither true nor false. So instead, we
-paraphrase sentence [\[and4\]](#and4){reference-type="ref"
-reference="and4"} as '$J$ and Jessica is grumpy.' Now we need to add a
-sentence letter to the symbolization key. Let $G_{1}$ mean 'Jessica is
-grumpy.' Now the sentence can be translated as $J \eand G_{1}$.
+paraphrase sentence 12 as '*J* and Jessica is grumpy.' Now we need to add a
+sentence letter to the symbolization key. Let *G*<sub>1</sub> mean 'Jessica is
+grumpy.' Now the sentence can be translated as *J*[and]*G*<sub>1</sub>.
 
-Sentence [\[and5\]](#and5){reference-type="ref" reference="and5"} says
+Sentence 13 says
 one thing about two different subjects. It says of both Jessica and Matt
 that they are strong, and in English we use the word 'strong' only once.
 In translating to SL, we want to make sure each conjunct is a sentence
 on its own, so once again, we'll paraphrase it by repeating the
 elements: 'Jessica is strong, and Matt is strong.' Once we add a new
-atomic sentence $M$ for 'Matt is strong', this translates as $J\eand M$.
+atomic sentence *M* for 'Matt is strong', this translates as *J*[and]*M*.
 
-Sentence [\[and6\]](#and6){reference-type="ref" reference="and6"} is a
+Sentence 14 is a
 bit more complicated. The word 'although' tends to suggest a kind of
 contrast between the first part of the sentence and the second part.
 Nevertheless, the sentence is still telling us two things: Luke is
-strong, and he's not grumpy. So we can paraphrase sentence
-[\[and6\]](#and6){reference-type="ref" reference="and6"} as, '*Both*
+strong, and he's not grumpy. So we can paraphrase sentence 14 as, '*Both*
 Luke is strong, *and* Luke is not grumpy.' The second conjunct contains
 a negation, so we paraphrase further: '*Both* Luke is strong *and* *it
-is not the case that* Luke is grumpy.' Let's let $G_{2}$ stand for 'Luke
+is not the case that* Luke is grumpy.' Let's let *G*<sub>2</sub> stand for 'Luke
 is grumpy', and we can translate sentence
-[\[and6\]](#and6){reference-type="ref" reference="and6"} as
-$L\eand\enot G_{2}$.
+14 as *L*[and][not]*G*<sub>2</sub>.
 
-Once again, this is an imperfect translation of the English sentence
-[\[and6\]](#and6){reference-type="ref" reference="and6"}. That sentence
-implicated that there was a contrast between Luke's two properties. Our
-translation merely says that he has both of them. Still, it is a
+Once again, this is an imperfect translation of the English sentence 14.
+That sentence implicated that there was a contrast between Luke's two properties.
+Our translation merely says that he has both of them. Still, it is a
 translation that preserves some of the important features of the
 original. In particular, it says that Luke is strong, and it also says
 that he's not grumpy.
 
-Sentence [\[and7\]](#and7){reference-type="ref" reference="and7"}'s use
+Sentence 15's use
 of the word 'but' indicates a similar contrastive structure. It is
 irrelevant for the purpose of translating to SL, so we can paraphrase
 the sentence as '*Both* Matt is strong, *and* Jessica is stronger than
 Matt.' How should we translate the second conjunct? We already have the
-sentence letters $J$ and $M$, which each say that one of Jessica and
+sentence letters *J* and *M*, which each say that one of Jessica and
 Matt is strong, but neither of these says anything comparative. We need
-a new sentence letter. Let $S$ mean 'Jessica is stronger than Matt.' Now
-the sentence translates as ($M \eand S$).
+a new sentence letter. Let *S* mean 'Jessica is stronger than Matt.' Now
+the sentence translates as (*M*[and]*S*).
 
-It is important to keep in mind that the sentence letters $J$, $M$,
-$G_{1}$, $G_{2}$, and $S$ are atomic sentences. Considered as symbols of
-SL, they have no meaning beyond being true or false. We used $J$ and $M$
+[insert from pdf not in conversion]
+
+It is important to keep in mind that the sentence letters *J*, *M*,
+*G*<sub>1</sub>, *G*<sub>2</sub>, and *S* are atomic sentences. Considered as symbols of
+SL, they have no meaning beyond being true or false. We used *J* and *M*
 to symbolize different English language sentences that are about people
 being strong, but this similarity is completely lost when we translate
-to SL. Nor does SL recognize any particular similarity between $G_{1}$
-and $G_{2}$.
+to SL. Nor does SL recognize any particular similarity between *G*<sub>1</sub>
+and *G*<sub>2</sub>.
 
-For any sentences and , () is true if and only if both and are true. We
+For any sentences [phi] and [psi], ([phi][and][psi]) is true if and only if both [phi] and [psi] are true. We
 can summarize this in the characteristic truth table for conjunction:
 
-           ()
-  --- --- ----
-   1   1   1
-   1   0   0
-   0   1   0
-   0   0   0
+<table>
+<tr><th>[phi]</th><th>[psi]</th><th>[phi][and][psi]</th></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
 
 The two left columns indicate the truth values of the two conjuncts.
 Since there are four possible combinations of truth values, there are
 four rows. The conjunction is true when both conjuncts are true, and
 false in all other cases.
 
-### A Note About Notation {#notationnote}
+### **2.4.1 A Note About Notation**
 
-In speaking generally about connectives, we've used the '' and ''
+In speaking generally about connectives, we've used the '[phi]' and '[psi]'
 symbols as variables to stand in for sentences of SL. We saw, for
-instance, that for any sentence , is the negation of . This means:
+instance, that for any sentence [phi],[not][phi] is the negation of [phi]. This means:
 
--   $A$ is the negation of $A$
+-   [not]*A* is the negation of *A*
 
--   $B_1$ is the negation of $B_1$
+-   [not]*B*<sub>1</sub>is the negation of *B*<sub>1</sub>
 
--   $B_2$ is the negation of $B_2$
+-   [not]*B*<sub>1</sub> is the negation of *B*<sub>2</sub>
 
--   $C$ is the negation of $C$
+-   [not][not]*C* is the negation of [not]*C*
 
--   $(A \eand B)$ is the negation of $(A\eand B)$
+-   [not](*A* [and] *B*) is the negation of (*A* [and] *B*)
 
 -   etc.
 
-Note that and are *not* sentences of SL. They are symbols we use to talk
+Note that [phi] and [psi] are *not* sentences of SL. They are symbols we use to talk
 about SL sentences, but they're not themselves part of our formal
-language. (Compare the use of variables like $x$ in algebra. An '$x$'
-symbol is used to stand in for any number, but $x$ is not itself a
+language. (Compare the use of variables like *x* in algebra. An '*x*'
+symbol is used to stand in for any number, but *x* is not itself a
 number.) We'll return to this distinction in
-§[1.9](#sec:sentencesofSL){reference-type="ref"
-reference="sec:sentencesofSL"}, and again later on when we discuss
+§2.9, and again later on when we discuss
 proving generalities about SL.
 
-Disjunction
------------
+**2.5 Disjunction**
+-------------------
 
 Consider these sentences:
 
-Denison will golf with me or he will watch movies.
-
-Either Denison or Ellery will golf with me.
+> | 16. <span class="premise">Denison will golf with me or he will watch movies.</span>
+> | 17. <span class="premise">Either Denison or Ellery will golf with me.</span>
 
 For these sentences we can use this symbolization key:
 
-Denison will golf with me.
+<blockquote>
+**D:** Denison will golf with me. <br/>
+**E:**Ellery will golf with me. <br/>
+**M:**Denison will watch movies.
+</blockquote>
 
-Ellery will golf with me.
+Sentence 16 is
+'Either *D* or *M*.' To fully symbolize this, we introduce a new symbol.
+The sentence becomes (*D* [or] *M*)$. The '[or]' connective is called **disjunction**, and *D*
+and *M* are called **disjuncts**.
 
-Denison will watch movies.
-
-Sentence [\[or1\]](#or1){reference-type="ref" reference="or1"} is
-'Either $D$ or $M$.' To fully symbolize this, we introduce a new symbol.
-The sentence becomes $(D \eor M)$. The '' connective is called , and $D$
-and $M$ are called .
-
-Sentence [\[or2\]](#or2){reference-type="ref" reference="or2"} is only
+Sentence 17 is only
 slightly more complicated. There are two subjects, but the English
 sentence only gives the verb once. In translating, we can paraphrase it
 as 'Either Denison will play golf with me, or Ellery will play golf with
-me.' Now it obviously translates as $(D \eor E$).
+me.' Now it obviously translates as (*D* [or] *E*).
 
-What truth conditions should we offer for '' sentences? If I say,
+[insert portion from pdf]
+
+What truth conditions should we offer for '[or]' sentences? If I say,
 'Denison will golf with me or he will watch movies', under what
 circumstances will that sentence be true? When will it be false? Well,
 suppose he doesn't do either activity. Suppose he goes swimming, and
@@ -452,50 +403,48 @@ know that both elements were true. On the other hand, it doesn't exactly
 seem *false* that he'll golf with me or watch movies, if in fact he'll
 do both. In a study of the semantics of English, it would be appropriate
 to pursue this question much further. In this introduction to formal
-logic, we'll simply stipulate the features of our formal symbol. ''
+logic, we'll simply stipulate the features of our formal symbol. '[or]'
 stands for an *inclusive or*, which means it is true if and only if *at
 least one disjunct* is true.
 
-So $(D \eor E)$ is true if $D$ is true, if $E$ is true, or if both $D$
-and $E$ are true. It is false only if both $D$ and $E$ are false. We can
+So (*D* [or] *E*) is true if *D* is true, if *D* is true, or if both *D*
+and *E* are true. It is false only if both *D* and *E* are false. We can
 summarize this with the characteristic truth table for disjunction:
 
-           ()
-  --- --- ----
-   1   1   1
-   1   0   1
-   0   1   1
-   0   0   0
+<table>
+<tr><th>[phi]</th><th>[psi]</th><th>[phi][or][psi]</th></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
 
-Note that both conjunction and disjunction are symmetrical. () is
-logically equivalent to (), and () is logically equivalent to ().
+Note that both conjunction and disjunction are symmetrical. ([phi] [and] [psi]) is
+logically equivalent to ([psi] [and] [phi]), and ([phi] [or] [psi]) is logically equivalent to ([psi] [or] [phi]).
 
 These sentences are somewhat more complicated:
 
-Either you will not have soup, or you will not have salad.
-
-You will have neither soup nor salad.
-
-You get soup or salad, but not both.
+> | 18. <span class="premise">Either you will not have soup, or you will not have salad.</span>
+> | 19. <span class="premise">You will have neither soup nor salad.</span>
+> | 20. <span class="premise">You get soup or salad, but not both.</span>
 
 Here's a symbolization key:
 
-You will get soup.
+> **S**<sub>1</sub>You will get soup. <br/>
+> **S**<sub>2</sub>You will get salad.
 
-You will get salad.
-
-Sentence [\[or3\]](#or3){reference-type="ref" reference="or3"} can be
+Sentence 18 can be
 paraphrased in this way: 'Either *it is not the case that* you get soup,
 or *it is not the case that* you get salad.' Translating this requires
-both disjunction and negation. It becomes $(\enot S_1 \eor \enot S_2)$.
+both disjunction and negation. It becomes ([not] *S*<sub>1</sub> [or] [not] *S*<sub>2</sub>).
 
-Sentence [\[or4\]](#or4){reference-type="ref" reference="or4"} also
+Sentence 19 also
 requires negation. It can be paraphrased as, '*It is not the case that*
 either that you get soup or that you get salad.' We need some way of
 indicating that the negation does not just negate the right or left
 disjunct, but rather negates the entire disjunction. In order to do
 this, we put parentheses around the disjunction: 'It is not the case
-that $(S_1 \eor S_2)$.' This becomes simply $\enot (S_1 \eor S_2)$. (A
+that (*S*<sub>1</sub> [or] *S*<sub>2</sub>).' This becomes simply $\enot (S_1 \eor S_2)$. (A
 second, equivalent, way to translate this sentence is
 $(\enot S_1 \eand \enot S_2)$. We'll see why this is equivalent later
 on.)
