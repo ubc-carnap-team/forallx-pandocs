@@ -1,7 +1,5 @@
 # forallx-pandocs
 
-*chapters 5 and 10 have been converted*
-
 <table>
   <tr>
     <th>chapter</th><th>basic formatting</th><th>interactive</th>
