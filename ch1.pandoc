@@ -393,10 +393,8 @@ contradiction.
 We can also ask about the logical relations *between* two sentences. For
 example:
 
-<blockquote>
-Sunil went to the store after he washed the dishes. <br/>
-Sunil washed the dishes before he went to the store.
-</blockquote>
+> Sunil went to the store after he washed the dishes. <br/>
+> Sunil washed the dishes before he went to the store.
 
 These two sentences are both contingent. (Do you see why?) Yet they must
 have the same truth-value. If either of the sentences is true, then they
@@ -406,15 +404,11 @@ are **logically equivalent**.
 
 Notice that both of these arguments are valid:
 
-<blockquote>
-Sunil went to the store after he washed the dishes. <br/>
-[therefore] Sunil washed the dishes before he went to the store.
-</blockquote>
+> | 1. <span class="premise">Sunil went to the store after he washed the dishes.</span>
+> | <span class="conclusion">Sunil washed the dishes before he went to the store.</span>
 
-<blockquote>
-Sunil washed the dishes before he went to the store. <br/>
-[therefore] Sunil went to the store after he washed the dishes.
-</blockquote>
+> | 1. <span class="premise">Sunil washed the dishes before he went to the store.</span>
+> | <span class="conclusion">Sunil went to the store after he washed the dishes.</span>
 
 In general, if two sentences are equivalent, then an argument with
 either one as a premise, and the other as the conclusion, will be valid.
@@ -460,21 +454,17 @@ there are some general argumentative structures that transcend English
 or any other particular natural language. Consider, for example, the
 following simple argument:
 
-<blockquote>
-**1.** Vancouver is in Canada. <br/>
-**2.** Moscow is in Russia. <br/>
-[therefore] Vancouver is in Canada and Moscow is in Russia.
-</blockquote>
+> | 1. <span class="premise">Vancouver is in Canada.</span>
+> | 2. <span class="premise">Moscow is in Russia.</span>
+> | <span class="conclusion">Vancouver is in Canada and Moscow is in Russia.</span>
 
 Hopefully by now it is obvious to you that this argument is valid. (Not
 just that --- it is even sound.) That argument has something important
 in common with this one:
 
-<blockquote>
-**1.** Vancouver is on Mars. <br/>
-**2.** Moscow is on Venus. <br/>
-[therefore] Vancouver is on Mars and Moscow is on Venus.
-</blockquote>
+> | 1. <span class="premise">Vancouver is on Mars.</span>
+> | 2. <span class="premise">Moscow is on Venus.</span>
+> | <span class="conclusion">Vancouver is on Mars and Moscow is on Venus.</span>
 
 Although this one has false premises, and so can't be sound, it is also
 valid. It is impossible for the premises to be true if the conclusion is
@@ -593,8 +583,6 @@ following sets of sentences. Which are consistent? Which are inconsistent?
 
 **Part E** Is this argument valid? Why or why not? (Hint: here and elsewhere in logic, read the definitions of our formal terms literally.)
 
-<blockquote>
-**1.** PHIL 220 is a course with a final exam. <br/>
-**2.** No courses ever have final exams. <br/>
-[therefore] Everyone is going to get an A+ in PHIL 220.
-</blockquote>
+> | 1. <span class="premise">PHIL 220 is a course with a final exam.</span>
+> | 2. <span class="premise">No courses ever have final exams.</span>
+> | <span class="conclusion">Everyone is going to get an A+ in PHIL 220.
