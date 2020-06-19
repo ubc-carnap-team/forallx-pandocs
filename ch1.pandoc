@@ -10,18 +10,14 @@ in the logical sense aren't events that happen between people; a logical
 argument is structured to give someone a reason to believe some
 conclusion. Here are two examples of such arguments:
 
-<blockquote>
-**1.** It is raining heavily.<br/>
-**2.** When it rains, everyone outside without an umbrella gets wet.<br/>
-[therefore] You should take an umbrella.
-</blockquote>
+> | 1. <span class="premise">It is raining heavily.</span>
+> | 2. <span class="premise">When it rains, everyone outside without an umbrella gets wet.</span>
+> | <span class="conclusion">You should take an umbrella.</span>
 
-<blockquote>
-**1.** It is either raining or snowing.<br/>
-**2.** If it is colder than -10 degrees, it is not raining.<br/>
-**3.** It is -18 degrees.<br/>
-[therefore] It is snowing.
-</blockquote>
+> | 1. <span class="premise">It is either raining or snowing.</span>
+> | 2. <span class="premise">If it is colder than -10 degrees, it is not raining.</span>
+> | 3. <span class="premise">It is -18 degrees.</span>
+> | <span class="conclusion">It is snowing.</span>
 
 The three dots on the last line of each argument mean 'Therefore' and
 they indicate that the final sentence is the *conclusion* of the
@@ -62,11 +58,9 @@ series are premises. The final sentence in the series is the conclusion.
 
 Here is an example of an argument:
 
-<blockquote>
-**1.** People get wet whenever it rains.<br/>
-**2.** It often rains in Vancouver.<br/>
-[therefore] People often get wet in Vancouver.
-</blockquote>
+> | 1. <span class="premise">People get wet whenever it rains.</span>
+> | 2. <span class="premise">It often rains in Vancouver.</span>
+> | <span class="conclusion">People often get wet in Vancouver.</span>
 
 The idea of an argument is that the premises are supposed to give you
 reason to accept the conclusion. If I'm trying to convince you that
@@ -77,11 +71,9 @@ you there.
 Notice that our definition of an argument is quite general. Consider
 this example:
 
-<blockquote>
-**1.** Vancouver has more churches than any other Canadian city.<br/>
-**2.** Two oboes are fighting a duel under the fireworks.<br/>
-[therefore] J. Edgar Hoover was an honest man.
-</blockquote>
+> | 1. <span class="premise">Vancouver has more churches than any other Canadian city.</span>
+> | 2. <span class="premise">Two oboes are fighting a duel under the fireworks.</span>
+> | <span class="conclusion">J. Edgar Hoover was an honest man.</span>
 
 It may seem odd to call this an argument, but that is because it would
 be a terrible argument. The two premises have nothing at all to do with
@@ -177,11 +169,9 @@ We will call truth or falsity the **truth-value** of a sentence.
 
 Consider the argument that you should take an umbrella
 
-<blockquote>
-**1.** It is raining heavily. <br/>
-**2.** When it rains, everyone outside without an umbrella gets wet. <br/>
-[therefore] You should take an umbrella.
-</blockquote>
+> | 1. <span class="premise">It is raining heavily. </span>
+> | 2. <span class="premise">When it rains, everyone outside without an umbrella gets wet. </span>
+> | <span class="conclusion">You should take an umbrella.</span>
 
 If premise (1) is false --- if it is sunny outside --- then the argument
 fails. It does not establish that you should take an umbrella. Or
@@ -215,11 +205,9 @@ weak in both ways.
 Once again, we are working with a particular kind of idealization
 regarding arguments and what makes them good. Consider another example:
 
-<blockquote>
-**1.** You are reading this book. <br/>
-**2.** This is a logic book. <br/>
-[therefore] You are a logic student.
-</blockquote>
+> | 1. <span class="premise">You are reading this book. </span>
+> | 2. <span class="premise">This is a logic book. </span>
+> | <span class="conclusion">You are a logic student.</span>
 
 In a straightforward and ordinary sense, this is not a terrible
 argument. The premises are true. And they do offer some support for the
@@ -267,11 +255,9 @@ are inconsistent with the falsity of its conclusion.)
 Notice that validity does *not* require that the premises be true.
 Consider this example:
 
-<blockquote>
-**1.** Oranges are either fruits or musical instruments. <br/>
-**2.** Oranges are not fruits. <br/>
-[therefore] Oranges are musical instruments.
-</blockquote>
+> | 1. <span class="premise">Oranges are either fruits or musical instruments. </span>
+> | 2. <span class="premise">Oranges are not fruits. </span>
+> | <span class="conclusion">Oranges are musical instruments.</span>
 
 This is a valid argument. It is impossible for the premises to be true
 if the conclusion is false. Since it has a false premise --- premise (2)
@@ -285,11 +271,9 @@ in arguments. An argument is **sound** if and only if it is valid and all of its
 premises are true. For example, this variant argument on the above
 argument is sound:
 
-<blockquote>
-**1.** Oranges are either fruits or musical instruments. <br/>
-**2.** Oranges are not musical instruments. <br/>
-[therefore] Oranges are fruits.
-</blockquote>
+> | 1. <span class="premise">Oranges are either fruits or musical instruments. </span>
+> | 2. <span class="premise">Oranges are not musical instruments. </span>
+> | <span class="conclusion">Oranges are fruits.</span>
 
 For reasons that will emerge, logic tends to focus primarily on
 validity, rather than soundness.
@@ -299,11 +283,9 @@ a true conclusion. Conversely, having true premises and a true
 conclusion is also not enough to make an argument valid. Consider this
 example:
 
-<blockquote>
-**1.** Donald Trump is a U.S. citizen. <br/>
-**2.** Justin Trudeau is a Canadian citizen. <br/>
-[therefore] UBC is the largest employer in Vancouver.
-</blockquote>
+> | 1. <span class="premise">Donald Trump is a U.S. citizen. </span>
+> | 2. <span class="premise">Justin Trudeau is a Canadian citizen. </span>
+> | <span class="conclusion">UBC is the largest employer in Vancouver.</span>
 
 The premises and conclusion of this argument are, as a matter of fact,
 all true. Nevertheless, this is quite a poor argument. This is related
@@ -325,29 +307,23 @@ the falsity of the conclusion.
 
 Here are some more valid arguments. Can you see why each is valid?
 
-<blockquote>
-**1.** Socrates is a man. <br/>
-**2.** All men are carrots. <br/>
-[therefore] Socrates is a carrot.
-</blockquote>
+> | 1. <span class="premise">Socrates is a man.</span>
+> | 2. <span class="premise">All men are carrots.</span>
+> | <span class="conclusion">Socrates is a carrot.</span>
 
-<blockquote>
-**1.** Abe Lincoln was either born in Illinois or he was once president. <br/>
-**2.** Abe Lincoln was never president. <br/>
-[therefore] Abe Lincoln was born in Illinois.
-</blockquote>
+> | 1. <span class="premise">Abe Lincoln was either born in Illinois or he was once president.</span>
+> | 2. <span class="premise">Abe Lincoln was never president.</span>
+> | <span class="conclusion">Abe Lincoln was born in Illinois.</span>
 
-<blockquote>
-**1.** Justin Trudeau is either from France or from Luxemborg. <br/>
-**2.** Justin Trudeau is not from Luxemborg. <br/>
-[therefore] Justin Trudeau is from France.
-</blockquote>
+> | 1. <span class="premise">Justin Trudeau is either from France or from Luxemborg.</span>
+> | 2. <span class="premise">Justin Trudeau is not from Luxemborg.</span>
+> | <span class="conclusion">Justin Trudeau is from France.</span>
 
-<blockquote>
-**1.** If the world were to end today, then I would not need to get up tomorrow morning. <br/>
-**2.** I will need to get up tomorrow morning. <br/>
-[therefore] The world will not end today.
-</blockquote>
+
+> | 1. <span class="premise">If the world were to end today, then I would not need to get up tomorrow morning.</span>
+> | 2. <span class="premise">I will need to get up tomorrow morning.</span>
+> | <span class="conclusion">The world will not end today.</span>
+
 
 **1.5 Impossibility**
 ---------------------
@@ -391,11 +367,9 @@ true, just as a matter of logic.
 
 Compare these sentences:
 
-<blockquote>
-**1.** It is raining. <br/>
-**2.** Either it is hot outside, or it is not hot outside. <br/>
-**3.** There is an earthquake happening here right now and there are never earthquakes here.
-</blockquote>
+> | 1. <span class="premise">It is raining.</span>
+> | 2. <span class="premise">Either it is hot outside, or it is not hot outside.</span>
+> | 3. <span class="premise">There is an earthquake happening here right now and there are never earthquakes here.</span>
 
 Sentence 1 could be true or it could be false. (As I'm
 typing these words on a sunny Vancouver summer day, it is false.)
