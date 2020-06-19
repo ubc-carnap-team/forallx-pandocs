@@ -86,7 +86,16 @@
     **A<sup>1</sup>:** Aang is from the Air Nation. <br/>
     </blockquote>
 
-**...**
+**tables**:
+
+'tr': table row
+'th': table header
+'td': table data
+
+    <table>
+      <tr><th>symbol</th><th>what it is called</th><th>rought translation</th></tr>
+      <tr><td>[negation]</td><td>negation</td><td>'It is not the case that...'</td></tr>
+    </table>
 
 
 pandoc filters: https://pandoc.org/filters.html
