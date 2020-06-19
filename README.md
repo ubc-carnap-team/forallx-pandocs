@@ -2,16 +2,12 @@
 
 *chapters 5 and 10 have been converted*
 
-
-
-pandoc filters: https://pandoc.org/filters.html
-
 <table>
   <tr>
     <th>chapter</th><th>basic formatting</th><th>interactive</th>
   </tr>
   <tr>
-    <td>ch1</td><td>yes</td><td>no</td>
+    <td>ch1</td><td>partial</td><td>no</td>
   </tr>
   <tr>
     <td>ch2</td><td>no</td><td>no</td>
@@ -53,32 +49,32 @@ pandoc filters: https://pandoc.org/filters.html
 
 ## Rules
 
-**indented blocks**: use html blockquote in the markdown
+**italics**:
 
-    <blockquote>
-    line1 <br/>
-    line2 <br/>
-    line3
-    </blockquote>
+    *this is italicized*
 
-**numbered lists**: depending on desired result, can use... <br/>
+**bold**:
 
-ordered list (ol). Default behavior prevents last line from being "therefore" symbol, but that can probably be overridden somehow:
+    **this is bold**
 
-    <ol>
-    <li>line1</li>
-    <li>line2</li>
-    <li>line3</li>
-    </ol>
+**fully indented blocks**:
 
-blockquote with bolded numbers (works with therefore at end):
+    > My house is quite safe from earthquakes, since it is located 
+    > far from any major fault lines.
 
-    <blockquote>
-    **1.** line1 <br/>
-    **2.** line2 <br/>
-    [therefore] line3
-    </blockquote>
+**partially indented blocks**:
 
-there may also be a pandoc filter to do these. Update if this is found.
+    :   An argument is *formally valid* if it is deductively valid because of its
+    logical form. That is to say, every argument with the logical form of the
+    argument under consideration is deductively valid.
+
+**premise conclusion list**: 
+
+    > | 1. <span class="premise"> Cottonmouths are water moccasins.</span>
+    > | 2. <span class="premise"> Water moccasins can be found only in Southeast Kansas.</span>
+    > | <span class="conclusion"> There are no cottonmouths outside of Southeast Kansas.</span>
 
 **...**
+
+
+pandoc filters: https://pandoc.org/filters.html
