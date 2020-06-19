@@ -88,8 +88,8 @@
 
 **tables**:
 
-'tr': table row
-'th': table header
+'tr': table row <br/>
+'th': table header <br/>
 'td': table data
 
     <table>

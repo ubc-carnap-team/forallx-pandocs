@@ -10,7 +10,7 @@ sentences.)
 **Sentence letters**
 ----------------
 
-In SL, capital Roman letters ($A$, $B$, $C$, etc.) are used to represent
+In SL, capital Roman letters (**A**, **B**, **C**, etc.) are used to represent
 basic sentences. Considered only as a symbol of SL, the letter $A$ could
 mean any sentence. So when translating from English into SL, it is
 important to provide a *symbolization key*. The key provides an English
@@ -18,30 +18,26 @@ language sentence for each sentence letter used in the symbolization.
 
 For example, consider this argument:
 
-Today is New Year's Day.
-
-If today is New Year's Day, then people are swimming in English Bay.
-
-People are swimming in English Bay.
+> | 1. <span class="premise">Today is New Year's Day.</span>
+> | 2. <span class="premise">If today is New Year's Day, then people are swimming in English Bay.</span>
+> | <span class="conclusion">People are swimming in English Bay.</span>
 
 This is obviously a valid argument in English. In symbolizing it, we
 want to preserve the structure of the argument that makes it valid. What
 happens if we replace each sentence with a letter? Our symbolization key
 would look like this:
 
-Today is New Year's Day.
-
-If today is New Year's Day, then people are swimming in English Bay.
-
-People are swimming in English Bay.
+<blockquote>
+**A:** Today is New Year's Day. <br/>
+**B:** If today is New Year's Day, then people are swimming in English Bay. <br/>
+**C:** People are swimming in English Bay.
+</blockquote>
 
 We could then symbolize the argument in this way:
 
-$A$
-
-$B$
-
-$C$
+> | 1. <span class="premise">**A**</span>
+> | 2. <span class="premise">**B**</span>
+> | <span class="conclusion">**C**</span>
 
 This is a possible way to symbolize this argument, but it's not a very
 interesting one. There is no necessary connection between some sentence
@@ -51,19 +47,15 @@ been lost in translation. The original argument was valid, but this
 translation of the argument does not reflect that validity. Given a
 different symbolization key, for example, the same argument form
 
-$A$
-
-$B$
-
-$C$
+> | 1. <span class="premise">**A**</span>
+> | 2. <span class="premise">**B**</span>
+> | <span class="conclusion">**C**</span>
 
 could equally well stand in for this invalid argument:
 
-Today is Christmas Day.
-
-Tiny Tim has difficulty walking without crutches.
-
-We're all going to die tomorrow.
+> | 1. <span class="premise">Today is Christmas Day.</span>
+> | 2. <span class="premise">Tiny Tim has difficulty walking without crutches.</span>
+> | <span class="conclusion">We're all going to die tomorrow.</span>
 
 A more interesting translation of the valid New Year's argument will
 show how it is different from the invalid Christmas argument. The
@@ -74,11 +66,9 @@ the argument only needs to include meanings for $A$ and $C$, and we can
 build the second premise from those pieces. So we symbolize the argument
 this way:
 
-$A$
-
-If $A$, then $C$.
-
-$C$
+> | 1. <span class="premise">**A**</span>
+> | 2. <span class="premise">If **A**, then **C**.</span>
+> | <span class="conclusion">**C**</span>
 
 This preserves the structure of the argument that makes it valid, but it
 still makes use of the English expression 'If$\ldots$ then$\ldots$.'
@@ -100,17 +90,14 @@ this, we allow atomic sentences that have a capital letter with a
 numerical subscript. So we could have a symbolization key that looks
 like this:
 
-Aang is from the Air Nation.
-
-Aang is vegetarian.
-
-Aang can bend water.
-
-Toph is blind.
-
-Toph likes badgers.
-
-Toph invented metal bending.
+<blockquote>
+**A<sub>1</sub>:** Aang is from the Air Nation. <br/>
+**A<sub>2</sub>:** Aang is vegetarian. <br/>
+**A<sub>3</sub>:** Aang can bend water. <br/>
+**T<sub>1</sub>:** Toph is blind. <br/>
+**T<sub>2</sub>:** Toph likes badgers. <br/>
+**T<sub>3</sub>:** Toph invented metal bending.
+</blockquote>
 
 Keep in mind that each of these is a different atomic sentence. Although
 it is often convenient, for making it easier to remember what each
@@ -126,6 +113,11 @@ Connectives
 Logical connectives are used to build complex sentences from atomic
 components. There are five logical connectives in SL. This table
 summarizes them. They are explained below.
+
+<table>
+  <tr><th>symbol</th><th>what it is called</th><th>rought translation</th></tr>
+  <tr><td>[negation]</td><td>negation</td><td>'It is not the case that...'</td></tr>
+</table>
 
    symbol   what it is called           rough translation
   -------- ------------------- ------------------------------------
