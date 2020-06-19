@@ -72,6 +72,20 @@
     > | 2. <span class="premise"> Water moccasins can be found only in Southeast Kansas.</span>
     > | <span class="conclusion"> There are no cottonmouths outside of Southeast Kansas.</span>
 
+**subscript**: 
+
+    <blockquote>
+    **A<sub>1</sub>:** Aang is from the Air Nation. <br/>
+    **A<sub>2</sub>:** Aang is vegetarian. <br/>
+    **A<sub>3</sub>:** Aang can bend water.
+    </blockquote>
+
+**superscript**: 
+
+    <blockquote>
+    **A<sup>1</sup>:** Aang is from the Air Nation. <br/>
+    </blockquote>
+
 **...**
 
 
