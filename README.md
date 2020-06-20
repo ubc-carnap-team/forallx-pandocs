@@ -8,7 +8,7 @@
     <td>ch1</td><td>yes</td><td>no</td>
   </tr>
   <tr>
-    <td>ch2</td><td>partial</td><td>no</td>
+    <td>ch2</td><td>all except exercises</td><td>no</td>
   </tr>
   <tr>
     <td>ch3</td><td>no</td><td>no</td>
