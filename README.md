@@ -72,20 +72,6 @@
     > | 2. <span class="premise"> Water moccasins can be found only in Southeast Kansas.</span>
     > | <span class="conclusion"> There are no cottonmouths outside of Southeast Kansas.</span>
 
-**subscript**: 
-
-    <blockquote>
-    **A<sub>1</sub>:** Aang is from the Air Nation. <br/>
-    **A<sub>2</sub>:** Aang is vegetarian. <br/>
-    **A<sub>3</sub>:** Aang can bend water.
-    </blockquote>
-
-**superscript**: 
-
-    <blockquote>
-    **A<sup>1</sup>:** Aang is from the Air Nation. <br/>
-    </blockquote>
-
 **tables**:
 
 tr: table row <br/>
@@ -97,5 +83,14 @@ td: table data
       <tr><td>[negation]</td><td>negation</td><td>'It is not the case that...'</td></tr>
     </table>
 
+**logic symbols**:
 
-pandoc filters: https://pandoc.org/filters.html
+statements using logic symbols go between two $ like so:
+    $...$
+
+eg. 'and', 'or', 'cond', 'bicond', 'not':
+    $\land, \lor, \rightarrow, \leftrightarrow, /neg$
+
+subscript:
+    $A_2 /land A_3$
+
