@@ -94,5 +94,6 @@ eg. 'and', 'or', 'cond', 'bicond', 'not':
     $\land, \lor, \rightarrow, \leftrightarrow, /neg$
 
 subscript:
+
     $A_2 /land A_3$
 
