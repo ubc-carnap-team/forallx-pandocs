@@ -86,9 +86,11 @@ td: table data
 **logic symbols**:
 
 statements using logic symbols go between two $ like so:
+
     $...$
 
 eg. 'and', 'or', 'cond', 'bicond', 'not':
+
     $\land, \lor, \rightarrow, \leftrightarrow, /neg$
 
 subscript:
