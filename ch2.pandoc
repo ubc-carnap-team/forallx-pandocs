@@ -71,7 +71,7 @@ this way:
 > | <span class="conclusion">*C*</span>
 
 This preserves the structure of the argument that makes it valid, but it
-still makes use of the English expression 'If$\ldots$ then$\ldots$.'
+still makes use of the English expression 'If... then....'
 Although for our formal language we ultimately want to replace all of
 the English expressions with logical notation, this is a good start.
 
@@ -116,11 +116,11 @@ summarizes them. They are explained below.
 
 <table>
   <tr><th>symbol</th><th>what it is called</th><th>rough translation</th></tr>
-  <tr><td>[negation]</td><td>negation</td><td>'It is not the case that...'</td></tr>
-  <tr><td>[conjunction]</td><td>conjunction</td><td>'Both... and ...'</td></tr>
-  <tr><td>[disjunction]</td><td>disjunction</td><td>'Either... or ...'</td></tr>
-  <tr><td>[conditional]</td><td>conditional</td><td>'If ... then ...'</td></tr>
-  <tr><td>[biconditional]</td><td>biconditional</td><td>'... if and only if ...'</td></tr>
+  <tr><td>$\neg$</td><td>negation</td><td>'It is not the case that...'</td></tr>
+  <tr><td>$\land$</td><td>conjunction</td><td>'Both... and ...'</td></tr>
+  <tr><td>$\lor$</td><td>disjunction</td><td>'Either... or ...'</td></tr>
+  <tr><td>$\rightarrow$</td><td>conditional</td><td>'If ... then ...'</td></tr>
+  <tr><td>$\leftrightarrow$</td><td>biconditional</td><td>'... if and only if ...'</td></tr>
 </table>
 
 Natural languages like English are vague and imprecise, and carry many
@@ -149,22 +149,22 @@ Since sentence 2 is obviously related to sentence 1,
 we do not want to introduce a different sentence
 letter. To put it partly in English, the sentence means 'It is false
 that *H*.' In order to symbolize this, we need a symbol for logical
-negation. We will use '[not]' Now we can translate 'Not *H*' to [not]*H*.
-In general, '[not]' means 'it is false that'.
+negation. We will use '$\neg$' Now we can translate 'Not *H*' to $\neg$*H*.
+In general, '$\neg$' means 'it is false that'.
 
 What of Sentence 3? It looks like a more natural way of saying the same
 thing as sentence 2. It's saying that logic isn't hard, which is just
 another way of denying that logic is hard. So sentences 2 and 3 have the same
 truth conditions. In the terminology of
 Ch. 1[link to ch1], they are logically equivalent. So we can
-translate both sentence 2 and sentence 3 as [not]*H*.
+translate both sentence 2 and sentence 3 as $\neg$*H*.
 
 When translating from English into SL, the word 'not' is usually a
-pretty good clue that '[not]' will be an appropriate symbol to use, but it's
+pretty good clue that '$\neg$' will be an appropriate symbol to use, but it's
 important to think about the actual meaning of the sentence, and not
 rely too much on which words appear in it.
 
-(For more on the '[not]' notation, see the 'note about notation' on [find reference])
+(For more on the '$\neg$' notation, see the 'note about notation' on [find reference])
 
 Consider these further examples:
 
@@ -177,14 +177,14 @@ translated as *R*.
 
 What about sentence 5? Being immortal is pretty much the same as not being
 mortal. So it makes sense to treat 5 as the negation
-of 4, symbolizing it as [not]*R*.
+of 4, symbolizing it as $\neg$*R*.
 
 Sentence 6 can be paraphrased as 'It is not the case that Rodrigo is immortal.'
-Using negation twice, we translate this as [not][not]*R*. The two negations
+Using negation twice, we translate this as $\neg \neg$*R*. The two negations
 in a row each work as negations, so the sentence means 'It is not the
 case that... it is not the case that... *R*.' It is the
 negation of the negation of *R*. One can negate *any* sentence of SL by
-putting the [not] symbol in front of it. It's not only for atomic sentences.
+putting the $\neg$ symbol in front of it. It's not only for atomic sentences.
 
 Here is an example that illustrates some of the complexities of
 translation.
@@ -194,7 +194,7 @@ translation.
 
 If we let *H* mean 'Elliot is happy', then we can symbolize sentence 7 as *H*.
 
-We might be tempted to symbolize sentence 8 as [not]*H*.
+We might be tempted to symbolize sentence 8 as $\neg$*H*.
 But is being unhappy the same thing as not being happy? This is perhaps
 debatable. One might think that it is possible to be neither happy nor
 unhappy. Maybe Elliot is in this in-between zone. If so, then we
@@ -203,12 +203,12 @@ different from 'not happy', then we will need to use a different atomic sentence
 
 What of the *truth conditions* for negated sentences?
 
-For any sentence [phi]: If [phi] is true, then [not][phi] is false. If [phi] is false, then [not][phi] is true.
+For any sentence [phi]: If [phi] is true, then $\neg$[phi] is false. If [phi] is false, then $\neg$[phi] is true.
 Using '1' for true and '0' for false, we can summarize this in a
 *characteristic truth table* for negation:
 
 <table>
-<tr><th>[phi]</th><th>[not][phi]</th></tr>
+<tr><th>[phi]</th><th>$\neg$[phi]</th></tr>
 <tr><td>1</td><td>0</td></tr>
 <tr><td>0</td><td>1</td></tr>
 </table>
@@ -239,7 +239,7 @@ Sentence 9 can be symbolized as *J*.
 Sentence 10 can be symbolized as *L*.
 
 Sentence 11 can be paraphrased as '*J* and *L*.' In order to fully symbolize this sentence,
-we need another symbol. We will use '[and]' We translate '*J* and *L*' as (*J*[and]*L*). The logical connective '[and]' is called **conjunction**, and *J* and *L* are
+we need another symbol. We will use '$\land$' We translate '*J* and *L*' as (*J* $\land$ *L*). The logical connective '$\land$' is called **conjunction**, and *J* and *L* are
 each called **conjuncts**.
 
 Notice that we make no attempt to symbolize 'also' in sentence 11. Words like 'both' and 'also' function to draw our attention to the fact that two
@@ -265,7 +265,7 @@ it was intended to be about Jessica. Moreover, 'grumpy' is not a
 sentence; on its own it is neither true nor false. So instead, we
 paraphrase sentence 12 as '*J* and Jessica is grumpy.' Now we need to add a
 sentence letter to the symbolization key. Let *G*<sub>1</sub> mean 'Jessica is
-grumpy.' Now the sentence can be translated as *J*[and]*G*<sub>1</sub>.
+grumpy.' Now the sentence can be translated as *J* $\land$ *G*<sub>1</sub>.
 
 Sentence 13 says
 one thing about two different subjects. It says of both Jessica and Matt
@@ -273,7 +273,7 @@ that they are strong, and in English we use the word 'strong' only once.
 In translating to SL, we want to make sure each conjunct is a sentence
 on its own, so once again, we'll paraphrase it by repeating the
 elements: 'Jessica is strong, and Matt is strong.' Once we add a new
-atomic sentence *M* for 'Matt is strong', this translates as *J*[and]*M*.
+atomic sentence *M* for 'Matt is strong', this translates as *J* $\land$ *M*.
 
 Sentence 14 is a
 bit more complicated. The word 'although' tends to suggest a kind of
@@ -284,7 +284,7 @@ Luke is strong, *and* Luke is not grumpy.' The second conjunct contains
 a negation, so we paraphrase further: '*Both* Luke is strong *and* *it
 is not the case that* Luke is grumpy.' Let's let *G*<sub>2</sub> stand for 'Luke
 is grumpy', and we can translate sentence
-14 as *L*[and][not]*G*<sub>2</sub>.
+14 as *L* $\land$ $\neg$ *G*<sub>2</sub>.
 
 Once again, this is an imperfect translation of the English sentence 14.
 That sentence implicated that there was a contrast between Luke's two properties.
@@ -301,7 +301,7 @@ Matt.' How should we translate the second conjunct? We already have the
 sentence letters *J* and *M*, which each say that one of Jessica and
 Matt is strong, but neither of these says anything comparative. We need
 a new sentence letter. Let *S* mean 'Jessica is stronger than Matt.' Now
-the sentence translates as (*M*[and]*S*).
+the sentence translates as (*M* $\land$ *S*).
 
 [insert from pdf not in conversion]
 
@@ -313,11 +313,11 @@ being strong, but this similarity is completely lost when we translate
 to SL. Nor does SL recognize any particular similarity between *G*<sub>1</sub>
 and *G*<sub>2</sub>.
 
-For any sentences [phi] and [psi], ([phi][and][psi]) is true if and only if both [phi] and [psi] are true. We
+For any sentences [phi] and [psi], ([phi] $\land$ [psi]) is true if and only if both [phi] and [psi] are true. We
 can summarize this in the characteristic truth table for conjunction:
 
 <table>
-<tr><th>[phi]</th><th>[psi]</th><th>[phi][and][psi]</th></tr>
+<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\land$ [psi]</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>0</td></tr>
@@ -333,17 +333,17 @@ false in all other cases.
 
 In speaking generally about connectives, we've used the '[phi]' and '[psi]'
 symbols as variables to stand in for sentences of SL. We saw, for
-instance, that for any sentence [phi],[not][phi] is the negation of [phi]. This means:
+instance, that for any sentence [phi],$\neg$[phi] is the negation of [phi]. This means:
 
--   [not]*A* is the negation of *A*
+-   $\neg$ *A* is the negation of *A*
 
--   [not]*B*<sub>1</sub>is the negation of *B*<sub>1</sub>
+-   $\neg$ *B*<sub>1</sub>is the negation of *B*<sub>1</sub>
 
--   [not]*B*<sub>1</sub> is the negation of *B*<sub>2</sub>
+-   $\neg$ *B*<sub>1</sub> is the negation of *B*<sub>2</sub>
 
--   [not][not]*C* is the negation of [not]*C*
+-   $\neg$ $\neg$ *C* is the negation of [not]*C*
 
--   [not](*A* [and] *B*) is the negation of (*A* [and] *B*)
+-   $\neg$(*A* $\land$ *B*) is the negation of (*A* $\land$ *B*)
 
 -   etc.
 
@@ -373,18 +373,18 @@ For these sentences we can use this symbolization key:
 
 Sentence 16 is
 'Either *D* or *M*.' To fully symbolize this, we introduce a new symbol.
-The sentence becomes (*D* [or] *M*)$. The '[or]' connective is called **disjunction**, and *D*
+The sentence becomes (*D* $\lor$ *M*)$. The '$\lor$' connective is called **disjunction**, and *D*
 and *M* are called **disjuncts**.
 
 Sentence 17 is only
 slightly more complicated. There are two subjects, but the English
 sentence only gives the verb once. In translating, we can paraphrase it
 as 'Either Denison will play golf with me, or Ellery will play golf with
-me.' Now it obviously translates as (*D* [or] *E*).
+me.' Now it obviously translates as (*D* $\lor$ *E*).
 
 [insert portion from pdf]
 
-What truth conditions should we offer for '[or]' sentences? If I say,
+What truth conditions should we offer for '$\lor$' sentences? If I say,
 'Denison will golf with me or he will watch movies', under what
 circumstances will that sentence be true? When will it be false? Well,
 suppose he doesn't do either activity. Suppose he goes swimming, and
@@ -403,24 +403,24 @@ know that both elements were true. On the other hand, it doesn't exactly
 seem *false* that he'll golf with me or watch movies, if in fact he'll
 do both. In a study of the semantics of English, it would be appropriate
 to pursue this question much further. In this introduction to formal
-logic, we'll simply stipulate the features of our formal symbol. '[or]'
+logic, we'll simply stipulate the features of our formal symbol. '$\lor$'
 stands for an *inclusive or*, which means it is true if and only if *at
 least one disjunct* is true.
 
-So (*D* [or] *E*) is true if *D* is true, if *D* is true, or if both *D*
+So (*D* $\lor$ *E*) is true if *D* is true, if *D* is true, or if both *D*
 and *E* are true. It is false only if both *D* and *E* are false. We can
 summarize this with the characteristic truth table for disjunction:
 
 <table>
-<tr><th>[phi]</th><th>[psi]</th><th>[phi][or][psi]</th></tr>
+<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\lor$ [psi]</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>0</td><td>1</td><td>1</td></tr>
 <tr><td>0</td><td>0</td><td>0</td></tr>
 </table>
 
-Note that both conjunction and disjunction are symmetrical. ([phi] [and] [psi]) is
-logically equivalent to ([psi] [and] [phi]), and ([phi] [or] [psi]) is logically equivalent to ([psi] [or] [phi]).
+Note that both conjunction and disjunction are symmetrical. ([phi] $\land$ [psi]) is
+logically equivalent to ([psi] $\land$ [phi]), and ([phi] $\lor$ [psi]) is logically equivalent to ([psi] $\lor$ [phi]).
 
 These sentences are somewhat more complicated:
 
@@ -436,7 +436,7 @@ Here's a symbolization key:
 Sentence 18 can be
 paraphrased in this way: 'Either *it is not the case that* you get soup,
 or *it is not the case that* you get salad.' Translating this requires
-both disjunction and negation. It becomes ([not] *S*<sub>1</sub> [or] [not] *S*<sub>2</sub>).
+both disjunction and negation. It becomes ($\neg$ *S*<sub>1</sub> $\lor$ $\neg$ *S*<sub>2</sub>).
 
 Sentence 19 also
 requires negation. It can be paraphrased as, '*It is not the case that*
@@ -444,115 +444,114 @@ either that you get soup or that you get salad.' We need some way of
 indicating that the negation does not just negate the right or left
 disjunct, but rather negates the entire disjunction. In order to do
 this, we put parentheses around the disjunction: 'It is not the case
-that (*S*<sub>1</sub> [or] *S*<sub>2</sub>).' This becomes simply $\enot (S_1 \eor S_2)$. (A
+that (*S*<sub>1</sub> $\lor$ *S*<sub>2</sub>).' This becomes simply $\neg$(*S*<sub>1</sub> $\lor$ *S*<sub>2</sub>). (A
 second, equivalent, way to translate this sentence is
-$(\enot S_1 \eand \enot S_2)$. We'll see why this is equivalent later
-on.)
+($\neg$ *S*<sub>1</sub> $\land$ $\neg$ *S*<sub>2</sub>). We'll see why this is equivalent later on.)
 
 Notice that the parentheses are doing important work here. The sentence
-$(\enot S_1 \eor S_2)$ would mean 'Either you will not have soup, or you
+($\neg$ *S*<sub>1</sub> $\lor$ *S*<sub>2</sub>) would mean 'Either you will not have soup, or you
 will have salad,' which is very different.
 
-Sentence [\[or5\]](#or5){reference-type="ref" reference="or5"} has a
+Sentence 20 has a
 more complex structure. We can break it into two parts. The first part
 says that you get one or the other. We translate this as
-$(S_1 \eor S_2)$. The second part says that you do not get both. We can
+(*S*<sub>1</sub> $\lor$ *S*<sub>2</sub>). The second part says that you do not get both. We can
 paraphrase this as, 'It is not the case both that you get soup and that
 you get salad.' Using both negation and conjunction, we translate this
-as $\enot(S_1 \eand S_2)$. Now we just need to put the two parts
+as $\neg$(*S*<sub>1</sub> $\land$ *S*<sub>2</sub>). Now we just need to put the two parts
 together. As we saw above, 'but' can usually be translated as a
-conjunction. Sentence [\[or5\]](#or5){reference-type="ref"
-reference="or5"} can thus be translated as
-$((S_1 \eor S_2) \eand \enot(S_1 \eand S_2))$.
+conjunction. Sentence 20 can thus be translated as
+((*S*<sub>1</sub> $\lor$ *S*<sub>2</sub>)$\land \neg$(*S*<sub>1</sub> $\land$ *S*<sub>2</sub>)).
 
-Conditional
------------
+**2.6 Conditional**
+-------------------
 
 For the following sentences, use this symbolization key:
 
-You will cut the red wire.
+> **R:** You will cut the red wire.<br/>
+> **B:** The bomb will explode.
 
-The bomb will explode.
+> | 21. <span class="premise">If you cut the red wire, then the bomb will explode.</span>
+> | 22. <span class="premise">The bomb will explode only if you cut the red wire.</span>
 
-If you cut the red wire, then the bomb will explode.
-
-The bomb will explode only if you cut the red wire.
-
-Sentence [\[if1\]](#if1){reference-type="ref" reference="if1"} can be
-translated partially as 'If $R$, then $B$.' We will use the symbol '' to
+Sentence 21 can be
+translated partially as 'If **R**, then **B**.' We will use the symbol '$\rightarrow$' to
 represent this conditional relationship. The sentence becomes
-$(R\eif B)$. The connective is called a . The sentence on the left-hand
-side of the conditional ($R$ in this example) is called the . The
-sentence on the right-hand side ($B$) is called the .
+(*R* $\rightarrow$ *B*). The connective is called a **conditional**. The sentence on the left-hand
+side of the conditional (*R* in this example) is called the **antecedent**. The
+sentence on the right-hand side (*B*) is called the **consequent**.
 
-Sentence [\[if2\]](#if2){reference-type="ref" reference="if2"} is also a
+Sentence 22 is also a
 conditional. Since the word 'if' appears in the second half of the
 sentence, it might be tempting to symbolize this in the same way as
-sentence [\[if1\]](#if1){reference-type="ref" reference="if1"}. That
+sentence 21. That
 would be a mistake.
 
-The conditional $(R\eif B)$ says that *if* $R$ were true, *then* $B$
+The conditional (*R* $\rightarrow$ *B*) says that *if* *R* were true, *then* *B*
 would also be true. It does not say that your cutting the red wire is
 the *only* way that the bomb could explode. Someone else might cut the
-wire, or the bomb might be on a timer. The sentence $(R\eif B)$ does not
-say anything about what to expect if $R$ is false. Sentence
-[\[if2\]](#if2){reference-type="ref" reference="if2"} is different. It
-says that the only conditions under which the bomb will explode are ones
-where you cut the red wire; i.e., if the bomb explodes, then you must
-have cut the wire. As such, sentence
-[\[if2\]](#if2){reference-type="ref" reference="if2"} should be
-symbolized as $(B \eif R)$.
+wire, or the bomb might be on a timer. The sentence (*R* $\rightarrow$ *B*) does not
+say anything about what to expect if *R* is false. 
+Sentence 22 is different. It says that the only
+conditions under which the bomb will explode are 
+ones where you cut the red wire; i.e., if the bomb 
+explodes, then you must
+have cut the wire. As such, sentence 22 should be
+symbolized as (*B* $\rightarrow$ *R*).
 
-It is important to remember that the connective '' says only that, if
+It is important to remember that the connective 
+'$\rightarrow$' says only that, if
 the antecedent is true, then the consequent is true. It says nothing
 about the *causal* connection between the two events. Translating
-sentence [\[if2\]](#if2){reference-type="ref" reference="if2"} as
-$(B \eif R)$ does not mean that the bomb exploding would somehow have
+sentence 22 as
+(*B* $\rightarrow$ *R*) does not mean that the bomb exploding would somehow have
 caused your cutting the wire. Both sentence
-[\[if1\]](#if1){reference-type="ref" reference="if1"} and
-[\[if2\]](#if2){reference-type="ref" reference="if2"} suggest that, if
+21 and 22 suggest that, if
 you cut the red wire, your cutting the red wire would be the cause of
 the bomb exploding. They differ on the *logical* connection. If sentence
-[\[if2\]](#if2){reference-type="ref" reference="if2"} were true, then an
+22 were true, then an
 explosion would tell us --- those of us safely away from the bomb ---
 that you had cut the red wire. Without an explosion, sentence
-[\[if2\]](#if2){reference-type="ref" reference="if2"} tells us nothing.
+22 tells us nothing.
 
-'If then ' means that if is true then so is . So we know that if the
-antecedent is true but the consequent is false, then the conditional 'If
-then ' is false. What is the truth value of 'If then ' under other
-circumstances? Suppose, for instance, that the antecedent happened to be
-false. 'If then ' would then not tell us anything about the actual truth
-value of the consequent , and it is unclear what the truth value of 'If
-then ' would be.
+[insert from pdf]
+
+'If [phi] then [psi]' means that if [phi] is true then so is [psi]. So we know that if the
+antecedent [phi] is true but the consequent [psi] is false, then the conditional 'If [phi]
+then [psi]' is false. What is the truth value of 'If [phi] then [psi]' under other
+circumstances? Suppose, for instance, that the antecedent [phi] happened to be
+false. 'If [phi] then [psi]' would then not tell us anything about the actual truth
+value of the consequent [psi], and it is unclear what the truth value of 'If [phi]
+then [psi]' would be.
 
 In English, the truth of conditionals often depends on what *would* be
 the case if the antecedent *were true* --- even if, as a matter of fact,
 the antecedent is false. This poses a serious challenge for translating
-conditionals into SL. Considered as sentences of SL, $R$ and $B$ in the
+conditionals into SL. Considered as sentences of SL, *R* and *B* in the
 above examples have nothing intrinsic to do with each other. In order to
-consider what the world would be like if $R$ were true, we would need to
-analyze what $R$ says about the world. Since $R$ is an atomic symbol of
+consider what the world would be like if *R* were true, we would need to
+analyze what *R* says about the world. Since *R* is an atomic symbol of
 SL, however, there is no further structure to be analyzed. When we
 replace a sentence with a sentence letter, we consider it merely as some
 atomic sentence that might be true or false.
 
 In order to translate conditionals into SL, we will not try to capture
-all the subtleties of English's 'if$\ldots$ then$\ldots$.' construction.
-Instead, the symbol '' will signify a *material conditional*. This means
-that when is false, the conditional () is automatically true, regardless
-of the truth value of . If both and are true, then the conditional () is
-true.
+all the subtleties of English's 'if... then...' construction.
+Instead, the symbol '$\rightarrow$' will signify a *material conditional*. This means
+that when is [phi] false, the conditional ([phi] $\rightarrow$ [psi]) is automatically true, regardless
+of the truth value of [psi]. If both [phi] and 
+[psi] are true, then the conditional ([phi] $\rightarrow$ [psi]) is true.
 
-In short, () is false if and only if is true and is false. We can
+In short, ([phi] $\rightarrow$ [psi]) is false if and only if [phi] is true and [psi] is false. We can
 summarize this with a characteristic truth table for the conditional.
 
-  --- --- ---
-   1   1   1
-   1   0   0
-   0   1   1
-   0   0   1
-  --- --- ---
+<table>
+<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\rightarrow$ [psi]</th></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>1</td></tr>
+</table>
 
 More than any other connective, the SL translation of the conditional is
 a rough approximation. It has some very counterintuitive consequences
@@ -565,14 +564,10 @@ is an odd consequence. In English, some conditionals with true
 consequents and/or false antecedents seem clearly to be false. For
 example:
 
-If there are no philosophy courses at UBC, then PHIL 220 is a philosophy
-course at UBC.
+> | 23. <span class="premise">If there are no philosophy courses at UBC, then PHIL 220 is a philosophy course at UBC.</span>
+> | 24. <span class="premise">If this book has fewer than thirty pages, then it will win the 2018 Pulitzer prize for poetry.</span>
 
-If this book has fewer than thirty pages, then it will win the 2018
-Pulitzer prize for poetry.
-
-Both [\[pmc1\]](#pmc1){reference-type="ref" reference="pmc1"} and
-[\[pmc2\]](#pmc2){reference-type="ref" reference="pmc2"} seem clearly
+Both 23 and 24 seem clearly
 false. But each of them, translated into SL, would come out true. (If
 this isn't obvious, it's worth taking a moment to translate them and
 consider the truth table.) I told you before that English translations
@@ -584,118 +579,108 @@ this approach to conditionals, even though it will seem strange.
 
 Note that unlike conjunction and disjunction, the conditional is
 *asymmetrical*. You cannot swap the antecedent and consequent without
-changing the meaning of the sentence, because () and () are not
+changing the meaning of the sentence, because ([phi] $\rightarrow$ [psi]) and ([psi] $\rightarrow$ [phi]) are not
 logically equivalent.
 
-Biconditional
--------------
+**2.7 Biconditional**
+---------------------
 
 Consider these sentences:
 
-The figure on the board is a triangle only if it has exactly three
-sides.
+> | 25. <span class="premise">The figure on the board is a triangle only if it has exactly three sides.</span>
+> | 26. <span class="premise">The figure on the board is a triangle if it has exactly three sides.</span>
+> | 27. <span class="premise">The figure on the board is a triangle if and only if it has exactly three sides.</span>
 
-The figure on the board is a triangle if it has exactly three sides.
+> **T:** The figure is a triangle.<br/>
+>**S:**The figure has three sides.
 
-The figure on the board is a triangle if and only if it has exactly
-three sides.
+Sentence 25, for reasons discussed above, can be translated as (*T* $\rightarrow$ *S*).
 
-The figure is a triangle.
-
-The figure has three sides.
-
-Sentence [\[iff1\]](#iff1){reference-type="ref" reference="iff1"}, for
-reasons discussed above, can be translated as $(T\eif S)$.
-
-Sentence [\[iff2\]](#iff2){reference-type="ref" reference="iff2"} is
+Sentence 26 is
 importantly different. It can be paraphrased as, 'If the figure has
 three sides, then it is a triangle.' So it can be translated as
-$(S\eif T$).
+(*S* $\rightarrow$ *T*).
 
-Sentence [\[iff3\]](#iff3){reference-type="ref" reference="iff3"} says
-that $T$ is true *if and only if* $S$ is true; we can infer $S$ from
-$T$, and we can infer $T$ from $S$. This is called a , because it
-entails the two conditionals $S\eif T$ and $T \eif S$. We will use '' to
+Sentence 27 says
+that *T* is true *if and only if* *S* is true; we can infer *S* from
+*S*, and we can infer *T* from *S*. This is called a **biconditional**, because it
+entails the two conditionals *S* $\rightarrow$ *T* and *T* $\rightarrow$ *S*. We will use '$\leftrightarrow$' to
 represent the biconditional; sentence
-[\[iff3\]](#iff3){reference-type="ref" reference="iff3"} can be
-translated as $(S \eiff T)$.
+27 can be
+translated as (*S* $\leftrightarrow$ *T*).
 
 We could abide without a new symbol for the biconditional. Since
-sentence [\[iff3\]](#iff3){reference-type="ref" reference="iff3"} means
-'$(T \eif S)$ and $(S\eif T)$,' we could translate it as a conjunction
-of those two conditionals --- as $((T \eif S)\eand(S\eif T))$. Notice
+sentence 27 means
+'(*T* $\rightarrow$ *S*) and (*S* $\rightarrow$ *T*),' we could translate it as a conjunction
+of those two conditionals --- as ((*T* $\rightarrow$ *S*) $\land$ (*S* $\rightarrow$ *T*)). Notice
 how the parentheses work: we need to add a new set of parentheses for
 the conjunction, in addition to the ones that were already there for the
 conditionals.
 
 Because we could always write
-$((\metaA{}\eif\metaB{})\eand(\metaB{}\eif\metaA{}))$ instead of
-$(\metaA{}\eiff\metaB{})$, we do not strictly speaking *need* to
+(([phi] $\rightarrow$ [psi]) $\land$ ([psi] $\rightarrow$ [phi])) instead of
+([phi] $\leftrightarrow$ [psi]), we do not strictly speaking *need* to
 introduce a new symbol for the biconditional. Nevertheless, logical
 languages usually have such a symbol. SL will have one, which makes it
 easier to translate phrases like 'if and only if.'
 
-$(\metaA{}\eiff\metaB{})$ is true if and only if and have the same truth
+([phi] $\leftrightarrow$ [psi]) is true if and only if [phi] and [psi] have the same truth
 value: they're either both true, or they're both false. This is the
 characteristic truth table for the biconditional:
 
-  --- --- ---
-   1   1   1
-   1   0   0
-   0   1   0
-   0   0   1
-  --- --- ---
+<table>
+<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\leftrightarrow$ [psi]</th></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>1</td></tr>
+</table>
 
-Other symbolization
--------------------
+**2.8 Other symbolization**
+---------------------------
 
 We have now introduced all of the connectives of SL. We can use them
 together to translate many kinds of sentences. Consider these examples
 of sentences that use the English-language connective 'unless', with an
 associated symbolization key:
 
-Unless you wear a jacket, you will catch a cold.
+> | 28. <span class="premise">Unless you wear a jacket, you will catch a cold.</span>
+> | 29. <span class="premise">You will catch a cold unless you wear a jacket.</span>
 
-You will catch a cold unless you wear a jacket.
+> **J:** You will wear a jacket. <br/>
+> **D:** You will catch a cold.
 
-You will wear a jacket.
-
-You will catch a cold.
-
-We can paraphrase sentence [\[unless1\]](#unless1){reference-type="ref"
-reference="unless1"} as 'Unless $J$, $D$.' This means that if you do not
+We can paraphrase sentence 28 as 'Unless *J*, *D*.' This means that if you do not
 wear a jacket, then you will catch a cold; with this in mind, we might
-translate it as $\enot J \eif D$. It also means that if you do not catch
+translate it as $\neg$ *J* $\rightarrow$ *D*. It also means that if you do not catch
 a cold, then you must have worn a jacket; with this in mind, we might
-translate it as $\enot D \eif J$.
+translate it as $\neg$ *D* $\rightarrow$ *J*.
 
-Which of these is the correct translation of sentence
-[\[unless1\]](#unless1){reference-type="ref" reference="unless1"}? Both
+Which of these is the correct translation of sentence 28? Both
 translations are correct, because the two translations are logically
 equivalent in SL.
 
-Sentence [\[unless2\]](#unless2){reference-type="ref"
-reference="unless2"}, in English, is logically equivalent to sentence
-[\[unless1\]](#unless1){reference-type="ref" reference="unless1"}. It
-can be translated as either $\enot J \eif D$ or $\enot D \eif J$.
+Sentence 29, in English, is logically equivalent to sentence 28. It
+can be translated as either $\neg$ *J* $\rightarrow$ *D* or $\neg$ *D* $\rightarrow$ *J*.
 
 When symbolizing sentences like sentence
-[\[unless1\]](#unless1){reference-type="ref" reference="unless1"} and
-sentence [\[unless2\]](#unless2){reference-type="ref"
-reference="unless2"}, it is easy to get turned around. Since the
+28 and
+sentence 29, it is easy to get turned around. Since the
 conditional is not symmetric, it would be wrong to translate either
-sentence as $J \eif \enot D$. Fortunately, there are other logically
+sentence as *J* $\rightarrow$ $\neg$ *D*. Fortunately, there are other logically
 equivalent expressions. Both sentences mean that you will wear a jacket
 or --- if you do not wear a jacket --- then you will catch a cold. So we
-can translate them as $J \eor D$.
+can translate them as *J* $\lor$ *D*.
 
-Symbolization of standard sentence types is summarized on p. .
+[insert from pdf]
 
-Sentences of SL {#sec:sentencesofSL}
----------------
+Symbolization of standard sentence types is summarized on [insert link].
+
+**2.9 Sentences of SL**
+-----------------------
 
 The sentence 'Apples are red, or berries are blue' is a sentence of
-English, and the sentence '$(A\eor B)$' is a sentence of SL. Although we
+English, and the sentence '(*A* $\lor$ *B*)' is a sentence of SL. Although we
 can identify sentences of English when we encounter them, we do not have
 a formal definition of 'sentence of English'. In SL, it is possible to
 formally define what counts as a sentence. This is one respect in which
@@ -705,14 +690,13 @@ English.
 It is important to distinguish between the logical language SL, which we
 are developing, and the language that we use to talk about SL. When we
 talk about a language, the language that we are talking about is called
-the . The language that we use to talk about the object language is
-called the . [\[def.metalanguage\]]{#def.metalanguage
-label="def.metalanguage"}
+the **object language**. The language that we use to talk about the object language is
+called the **metalanguage**.
 
 The object language in this chapter is SL. The metalanguage is English
 --- not conversational English, but English supplemented with some
-logical and mathematical vocabulary (including the '' and '' symbols).
-The sentence '$(A\eor B)$' is a sentence in the object language, because
+logical and mathematical vocabulary (including the '[phi]' and '[psi]' symbols).
+The sentence '(*A* $\lor$ *B*)' is a sentence in the object language, because
 it uses only symbols of SL. The word 'sentence' is not itself part of
 SL, however, so the sentence 'This expression is a sentence of SL' is
 not a sentence of SL. It is a sentence in the metalanguage, a sentence
@@ -722,62 +706,76 @@ In this section, we will give a formal definition for 'sentence of SL.'
 The definition itself will be given in mathematical English, the
 metalanguage.
 
-### Expressions
+### **2.9.1 Expressions**
 
 There are three kinds of symbols in SL:
 
-  ---------------------------- ------------------------------------------
-        sentence letters                    $A,B,C,\ldots,Z$
-   with subscripts, as needed   $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$
-          connectives                             ,,,,
-          parentheses                            ( , )
-  ---------------------------- ------------------------------------------
+<table>
+<tr>
+<td>sentence letters <br/> 
+with subscripts, as needed
+</td>
+<td>
+  *A*, *B*, *C*,..., *Z* <br/>
+  *A*<sub>1</sub>, *B*<sub>1</sub>, *Z*<sub>1</sub>
+  *A*<sub>2</sub>, *A*<sub>25</sub>, *J*<sub>375</sub>,...
+</td>
+</tr>
+<tr>
+<td>connectives</td><td>$\neg$, $\land$, $\lor$, $\rightarrow$, $\leftrightarrow$</td>
+</tr>
+<tr>
+<td>parentheses</td><td>(,)</td>
+</tr>
+</table>
 
-We define an as any string of symbols of SL. Take any of the symbols of
+We define an **expression of SL** as any string of symbols of SL. Take any of the symbols of
 SL and write them down, in any order, and you have an expression.
 
-### Well-formed formulae
+### **2.9.2 Well-formed formulae**
 
 Since any sequence of symbols is an expression, many expressions of SL
 will be gobbledegook. For example, these expressions don't mean
 anything:
 
-))
+<blockquote>
+$\neg \neg \neg \neg$ <br/>
+))$\leftrightarrow$ <br/>
+*A*<sub>4</sub> $\lor$
+</blockquote>
 
-$A_4$
-
-None of these are sentences in SL. A meaningful expression is called a .
+None of these are sentences in SL. A meaningful expression is called a **well formed formula**.
 It is common to use the acronym *wff*; the plural is wffs.
 
-Individual sentence letters like $A$ and $G_{13}$ are certainly wffs. We
+Individual sentence letters like $A$ and $G_3$ are certainly wffs. We
 can form further wffs out of these by using the various connectives.
-Using negation, we can get $\enot A$ and $\enot G_{13}$. Using
-conjunction, we can get $(A \eand G_{13})$, $(G_{13} \eand A)$,
-$(A \eand A)$, and $(G_{13} \eand G_{13})$. We could also apply negation
-repeatedly to get wffs like $\enot \enot A$ or apply negation along with
-conjunction to get wffs like $\enot(A \eand G_{13})$ and
-$\enot(G_{13} \eand \enot G_{13})$. The possible combinations are
+Using negation, we can get $\neg A$ and $\neg G_3$. Using
+conjunction, we can get $(A \land G_3)$, $(G_3 \land A)$,
+$(A \land A)$, and $(G_3 \land G_3)$. We could also apply negation
+repeatedly to get wffs like $\neg \neg A$ or apply negation along with
+conjunction to get wffs like $\neg(A \land G_3)$ and
+$\neg(G_3 \land \neg G_3)$. The possible combinations are
 endless, even starting with just these two sentence letters, and there
 are infinitely many sentence letters. So there is no point in trying to
 list all the wffs.
 
 Instead, we will describe the rules that govern how wffs can be
-constructed. Consider negation: Given any wff of SL, $\enot\metaA{}$ is
-a wff of SL. Remember, is not itself a sentence letter; it is a variable
+constructed. Consider negation: Given any wff of SL, $\neg$ [phi] is
+a wff of SL. Remember, [phi] is not itself a sentence letter; it is a variable
 that stands in for any wff at all (atomic or not). Since the variable is
-not a symbol of SL, $\enot\metaA{}$ is not an expression of SL. Instead,
+not a symbol of SL, $\neg$ [phi] is not an expression of SL. Instead,
 it is an expression of the metalanguage that allows us to talk about
 infinitely many expressions of SL: all of the expressions that start
 with the negation symbol. Because is part of the metalanguage, it is
 called a *metavariable*.
 
-Another way of saying that given any wff of SL, $\enot\metaA{}$ is a wff
+Another way of saying that given any wff of SL, $\neg$ [phi] is a wff
 of SL is to say that any time you have a wff of SL, you can make a new
-wff by adding a '' symbol to the front of it.
+wff by adding a '$/neg$' symbol to the front of it.
 
 We can say similar things for each of the other connectives. For
-instance, if and are wffs of SL, then $(\metaA{}\eand\metaB{})$ is a wff
-of SL. (That is to say, given any two wffs in SL, you can put a ''
+instance, if [phi] and [psi] are wffs of SL, then ([phi] $\land$ [psi]) is a wff
+of SL. (That is to say, given any two wffs in SL, you can put a '$/land$'
 symbol between them, a '(' in front of the first, and a ')' after the
 second, and the whole thing will add up to a new wff.) Providing clauses
 like this for all of the connectives, we arrive at the following formal
@@ -785,57 +783,55 @@ definition for a well-formed formula of SL:
 
 1.  Every atomic sentence is a wff.
 
-2.  For all expressions and ,
+2.  For all expressions [phi] and [psi],
 
-    1.  If is a wff, then $\enot\metaA{}$ is a wff.
+    1.  If [phi] is a wff, then $/neg$ [phi] is a wff.
 
-    2.  If and are wffs, then $(\metaA{}\eand\metaB{})$ is a wff.
+    2.  If [phi] and [psi] are wffs, then ([phi] $\land$ [psi]) is a wff.
 
-    3.  If and are wffs, then $(\metaA{}\eor\metaB{})$ is a wff.
+    3.  If [phi] and [psi] are wffs, then ([phi] $\lor$ [psi]) is a wff.
 
-    4.  If and are wffs, then $(\metaA{}\eif\metaB{})$ is a wff.
+    4.  If [phi] and [psi] are wffs, then ([phi] $\rightarrow$ [psi]) is a wff.
 
-    5.  If and are wffs, then $(\metaA{}\eiff\metaB{})$ is a wff.
+    5.  If [phi] and [psi] are wffs, then ([phi] $\leftrightarrow$ [psi]) is a wff.
 
 3.  Nothing else is a wff.
 
 This is a *recursive* definition of a wff, illustrating how one can,
 starting with the simplest cases (atomic sentences), build up more
-complicated sentences of SL. If you have a wff, you can stick a '' in
+complicated sentences of SL. If you have a wff, you can stick a '$/neg$' in
 front of it to make a new wff. If you have two wffs, you can put a '('
-in front of the first one, followed by a '', followed by the second one,
+in front of the first one, followed by a '$/land$', followed by the second one,
 then finally a ')', and end up with a new wff. Etc.
 
 Note that these are purely *syntactic* rules. They tell you how to
 construct an admissible ('grammatical') sentence in SL. They do not tell
 you what the sentence will *mean*. (We've touched on that already, in
 introducing characteristic truth tables. We'll return to this topic in
-much more detail in Ch.
-[\[ch.TruthTables\]](#ch.TruthTables){reference-type="ref"
-reference="ch.TruthTables"}.)
+much more detail in Ch. 3.)
 
-Suppose we want to know whether or not $\enot \enot \enot D$ is a wff of
+Suppose we want to know whether or not $\neg \neg \neg D$ is a wff of
 SL. Looking at the second clause of the definition, we know that
-$\enot \enot \enot D$ is a wff *if* $\enot \enot D$ is a wff. So now we
-need to ask whether or not $\enot \enot D$ is a wff. Again looking at
-the second clause of the definition, $\enot \enot D$ is a wff *if*
-$\enot D$ is. Again, $\enot D$ is a wff *if* $D$ is a wff. Now $D$ is a
+$\neg \neg \neg D$ is a wff *if* $\neg \neg D$ is a wff. So now we
+need to ask whether or not $\neg \neg D$ is a wff. Again looking at
+the second clause of the definition, $\neg \neg D$ is a wff *if*
+$\neg D$ is. Again, $\neg D$ is a wff *if* $D$ is a wff. Now $D$ is a
 sentence letter, an atomic sentence of SL, so we know that $D$ is a wff
 by the first clause of the definition. So for a compound formula like
-$\enot \enot \enot D$, we must apply the definition repeatedly.
+$\neg \neg \neg D$, we must apply the definition repeatedly.
 Eventually we arrive at the atomic sentences from which the wff is built
 up.
 
 The connective that you look to first in decomposing a sentence is
-called the (or *main logical operator*) of that sentence. For example:
-The main connective of $\enot (E \eor (F \eif G))$ is negation, . The
-main connective of $(\enot E \eor (F \eif G))$ is disjunction, .
+called the **main connective** (or *main logical operator*) of that sentence. For example:
+The main connective of $\neg (E \lor (F \rightarrow G))$ is negation, $/neg$. The
+main connective of $(E \lor (F \rightarrow G))$ is disjunction, $/lor$.
 Conversely, if you're building up a wff from simpler sentences, the
 connective introduced by the last rule you apply is the main connective.
 It is the connective that governs the interpretation of the entire
 sentence.
 
-### Sentences
+### **2.9.3 Sentences**
 
 Recall that a sentence is a meaningful expression that can be true or
 false. Since the meaningful expressions of SL are the wffs and since
@@ -846,80 +842,81 @@ later in the book, there are wffs which are not sentences.
 
 The recursive structure of sentences in SL will be important when we
 consider the circumstances under which a particular sentence would be
-true or false. The sentence $\enot \enot \enot D$ is true if and only if
-the sentence $\enot \enot D$ is false, and so on through the structure
+true or false. The sentence $\neg \neg \neg D$ is true if and only if
+the sentence $\neg \neg D$ is false, and so on through the structure
 of the sentence until we arrive at the atomic components:
-$\enot \enot \enot D$ is true if and only if the atomic sentence $D$ is
-false. We will return to this point in much more detail in Chapters
-[\[ch.TruthTables\]](#ch.TruthTables){reference-type="ref"
-reference="ch.TruthTables"} and
-[\[ch.SLmodels\]](#ch.SLmodels){reference-type="ref"
-reference="ch.SLmodels"}.
+$\neg \neg \neg D$ is true if and only if the atomic sentence $D$ is
+false. We will return to this point in much more detail in Chapters 3 and 4.
 
-### Notational conventions {#SLconventions}
+### **2.9.4 Notational conventions**
 
-A wff like $(Q \eand R)$ must be surrounded by parentheses, because we
+A wff like $(Q \land R)$ must be surrounded by parentheses, because we
 might apply the definition again to use this as part of a more
-complicated sentence. If we negate $(Q \eand R)$, we get
-$\enot(Q \eand R)$. If we just had $Q \eand R$ without the parentheses
-and put a negation in front of it, we would have $\enot Q \eand R$. It
+complicated sentence. If we negate $(Q \land R)$, we get
+$\neg(Q \land R)$. If we just had $Q \land R$ without the parentheses
+and put a negation in front of it, we would have $\neg Q \land R$. It
 is most natural to read this as meaning the same thing as
-$(\enot Q \eand R)$, something very different than $\enot(Q\eand R)$.
-The sentence $\enot(Q \eand R)$ means that it is not the case that both
+$(\neg Q \land R)$, something very different than $\neg (Q \land R)$.
+The sentence $\neg (Q \land R)$ means that it is not the case that both
 $Q$ and $R$ are true; $Q$ might be false or $R$ might be false, but the
-sentence does not tell us which. The sentence $(\enot Q \eand R)$ means
+sentence does not tell us which. The sentence $(\neg Q \land R)$ means
 specifically that $Q$ is false and that $R$ is true. So parentheses are
 crucial to the meaning of the sentence.
 
-Consequently, strictly speaking, $Q \eand R$ without parentheses is
+Consequently, strictly speaking, $Q \land R$ without parentheses is
 *not* a sentence of SL. When using SL, however, we will sometimes be
 able to relax the precise definition so as to make things easier for
 ourselves. We will do this in several ways.
 
-First, we understand that $Q \eand R$ means the same thing as
-$(Q \eand R)$. As a matter of convention, we can leave off parentheses
+First, we understand that $Q \land R$ means the same thing as
+$(Q \land R)$. As a matter of convention, we can leave off parentheses
 that occur *around the entire sentence*. Think of this as a kind of
 shorthand; we don't always write out the parentheses that we know are
 really there.
 
 Second, it can sometimes be confusing to look at long sentences with
 nested sets of parentheses. We adopt the convention of using square
-brackets '\[' and '\]' in place of parenthesis. There is no logical
-difference between $(P\eor Q)$ and $[P\eor Q]$, for example. The
-unwieldy sentence $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
+brackets '[' and ']' in place of parenthesis. There is no logical
+difference between $(P \lor Q)$ and $[P \lor Q]$, for example. The
+unwieldy sentence 
+
+> $(((H \rightarrow I) \lor (I \rightarrow H)) \land (J \lor K))$
+
 could be written in this way, omitting the outer parentheses and using
 square brackets to make the inner structure easier to see:
-$$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$ Third, we
-will sometimes want to translate the conjunction of three or more
+
+> $[(H \rightarrow I) \lor (I \rightarrow H)] \land (J \lor K)$
+
+Third, we will sometimes want to translate the conjunction of three or more
 sentences. For the sentence 'Alice, Bob, and Candice all went to the
 party', suppose we let $A$ mean 'Alice went', $B$ mean 'Bob went', and
 $C$ mean 'Candice went.' The definition only allows us to form a
 conjunction out of two sentences, so we can translate it as
-$(A \eand B) \eand C$ or as $A \eand (B \eand C)$. There is no reason to
+$(A \land B) \land C$ or as $A \land (B \land C)$. There is no reason to
 distinguish between these, since the two translations are logically
 equivalent. There is no logical difference between the first, in which
-$(A \eand B)$ is conjoined with $C$, and the second, in which $A$ is
-conjoined with $(B \eand C)$. So we might as well just write
-$A \eand B \eand C$. As a matter of convention, we can leave out
+$(A \land B)$ is conjoined with $C$, and the second, in which $A$ is
+conjoined with $(B \land C)$. So we might as well just write
+$A \land B \land C$. As a matter of convention, we can leave out
 parentheses when we conjoin three or more sentences.
 
 Fourth, a similar situation arises with multiple disjunctions. 'Either
 Alice, Bob, or Candice went to the party' can be translated as
-$(A \eor B) \eor C$ or as $A \eor (B \eor C)$. Since these two
-translations are logically equivalent, we may write $A \eor B \eor C$.
+$(A \lor B) \lor C$ or as $A \lor (B \lor C)$. Since these two
+translations are logically equivalent, we may write $A \lor B \lor C$.
 
 These latter two conventions only apply to multiple conjunctions or
 multiple disjunctions. If a series of connectives includes both
 disjunctions and conjunctions, then the parentheses are essential; as
-with $(A \eand B) \eor C$ and $A \eand (B \eor C)$. The parentheses are
+with $(A \land B) \lor C$ and $A \land (B \lor C)$. The parentheses are
 also required if there is a series of conditionals or biconditionals; as
-with $(A \eif B) \eif C$ and $A \eiff (B \eiff C)$.
+with $(A \rightarrow B) \rightarrow C$ and $A \leftrightarrow (B \leftrightarrow C)$.
 
 We have adopted these four rules as *notational conventions*, not as
 changes to the definition of a sentence. Strictly speaking,
-$A \eor B \eor C$ is still not a sentence. Instead, it is a kind of
+$A \lor B \lor C$ is still not a sentence. Instead, it is a kind of
 shorthand. We write it for the sake of convenience, but we really mean
-the sentence $(A \eor (B \eor C))$.
+the sentence $(A \lor (B \lor C))$.
 
 Unless and until you are very confident about wffs and the use of
 parentheses, it is probably good advice to stick to the formal rules.
@@ -928,8 +925,8 @@ down; if you're unsure about whether it's OK to take the shortcut, the
 safest thing is to go by the formal definition.
 
 If we had given a different definition for a wff, then these could count
-as wffs. We might have written rule 3 in this way: "If , , $\ldots$ are
-wffs, then $(\metaA{}\eand\metaB{}\eand\ldots\eand\script{Z})$, is a
+as wffs. We might have written rule 3 in this way: "If [phi], [psi], ... [zeta] are
+wffs, then ([phi] $\land$ [psi] $\land$ ... $\land$ [zeta]), is a
 wff." This would make it easier to translate some English sentences, but
 would have the cost of making our formal language more complicated. We
 would have to keep the complex definition in mind when we develop truth
@@ -940,9 +937,10 @@ is important if we want to be able to prove things *about* our
 language.) Adopting notational conventions is a compromise between these
 two desires.
 
-Using the symbolization key given, translate each English-language
-sentence into SL. [\[pr.monkeysuits\]]{#pr.monkeysuits
-label="pr.monkeysuits"}
+**Practice Exercises**
+----------------------
+
+[star] **Part A** Using the symbolization key given, translate each English-language sentence into SL.
 
 Those creatures are men in suits.
 
@@ -964,7 +962,7 @@ men in suits.
 Unless those creatures are men in suits, they are either chimpanzees or
 they are gorillas.
 
-Using the symbolization key given, translate each English-language
+**Part B** Using the symbolization key given, translate each English-language
 sentence into SL.
 
 Mister Ace was murdered.
@@ -1005,8 +1003,8 @@ Since the cook did it, the butler did not.
 
 Of course the Duchess is lying!
 
-Using the symbolization key given, translate each English-language
-sentence into SL. [\[pr.avacareer\]]{#pr.avacareer label="pr.avacareer"}
+[star] **Part C** Using the symbolization key given, translate each English-language
+sentence into SL.
 
 Ava is an electrician.
 
@@ -1049,7 +1047,7 @@ It cannot be that Harrison is both an electrician and a firefighter.
 Harrison and Ava are both firefighters if and only if neither of them is
 an electrician.
 
-[\[pr.spies\]]{#pr.spies label="pr.spies"} Give a symbolization key and
+[star] **Part D** Give a symbolization key and
 symbolize the following sentences in SL.
 
 Alice and Bob are both spies.
@@ -1066,8 +1064,7 @@ will be in an uproar regardless.
 
 Either Alice or Bob is a spy, but not both.
 
-Give a symbolization key and symbolize the following sentences in SL.
-[\[pr.gregorbaseball\]]{#pr.gregorbaseball label="pr.gregorbaseball"}
+[star] **Part E** Give a symbolization key and symbolize the following sentences in SL.
 
 If Gregor plays first base, then the team will lose.
 
@@ -1080,7 +1077,7 @@ Gregor's mom will bake cookies if and only if Gregor plays first base.
 
 If there is a miracle, then Gregor's mom will not bake cookies.
 
-[\[pr.choresSL\]]{#pr.choresSL label="pr.choresSL"} For each argument,
+**Part F** For each argument,
 write a symbolization key and translate the argument as well as possible
 into SL.
 
@@ -1096,7 +1093,7 @@ If Zoog remembered to do his chores, then things are clean but not neat.
 If he forgot, then things are neat but not clean. Therefore, things are
 either neat or clean --- but not both.
 
-[\[pr.wiffSL\]]{#pr.wiffSL label="pr.wiffSL"} For each of the following:
+[star] **Part G** For each of the following:
 (a) Is it, by the strictest formal standards, a sentence of SL? (b) Is
 it an acceptable way to write down a sentence of SL, allowing for our
 notational conventions?
@@ -1118,6 +1115,8 @@ $(A \eif (A \eand \enot F)) \eor (D \eiff E)$
 $[(Z \eiff S) \eif W] \eand [J \eor X]$
 
 $(F \eiff \enot D \eif J) \eor (C \eand D)$
+
+**Part H**
 
 Are there any wffs of SL that contain no sentence letters? Why or why
 not?
