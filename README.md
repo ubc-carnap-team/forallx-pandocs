@@ -11,7 +11,7 @@
     <td>ch2</td><td>all except exercises</td><td>no</td>
   </tr>
   <tr>
-    <td>ch3</td><td>no</td><td>no</td>
+    <td>ch3</td><td>started</td><td>no</td>
   </tr>
   <tr>
     <td>ch4</td><td>no</td><td>no</td>
@@ -89,11 +89,19 @@ statements using logic symbols go between two $ like so:
 
     $...$
 
-eg. 'and', 'or', 'cond', 'bicond', 'not':
+eg. 'and', 'or', 'conditional', 'biconditional', 'not' (Carnap Book symbols):
 
     $\land, \lor, \rightarrow, \leftrightarrow, \neg$
+
+eg. 'conditional', 'biconditional' (forall x UBC symbols):
+
+    $\supset, \equiv$
 
 subscript:
 
     $A_2 \land A_3$
+
+phi, psi, zeta (capital letters)
+
+    $\Phi, \Psi, \Zeta$
 
