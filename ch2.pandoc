@@ -785,7 +785,7 @@ definition for a well-formed formula of SL:
 
 2.  For all expressions $\Phi$ and $\Psi$,
 
-    1.  If $\Phi$ is a wff, then $/neg$ $\Phi$ is a wff.
+    1.  If $\Phi$ is a wff, then $\neg \Phi$ is a wff.
 
     2.  If $\Phi$ and $\Psi$ are wffs, then ($\Phi$ $\land$ $\Psi$) is a wff.
 
