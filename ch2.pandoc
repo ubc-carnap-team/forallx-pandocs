@@ -373,7 +373,7 @@ For these sentences we can use this symbolization key:
 
 Sentence 16 is
 'Either *D* or *M*.' To fully symbolize this, we introduce a new symbol.
-The sentence becomes (*D* $\lor$ *M*)$. The '$\lor$' connective is called **disjunction**, and *D*
+The sentence becomes $(D \lor M)$. The '$\lor$' connective is called **disjunction**, and *D*
 and *M* are called **disjuncts**.
 
 Sentence 17 is only
