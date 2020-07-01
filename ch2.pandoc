@@ -771,7 +771,7 @@ called a *metavariable*.
 
 Another way of saying that given any wff of SL, $\neg$ $\Phi$ is a wff
 of SL is to say that any time you have a wff of SL, you can make a new
-wff by adding a '$/neg$' symbol to the front of it.
+wff by adding a '$\neg$' symbol to the front of it.
 
 We can say similar things for each of the other connectives. For
 instance, if $\Phi$ and $\Psi$ are wffs of SL, then ($\Phi$ $\land$ $\Psi$) is a wff
@@ -799,7 +799,7 @@ definition for a well-formed formula of SL:
 
 This is a *recursive* definition of a wff, illustrating how one can,
 starting with the simplest cases (atomic sentences), build up more
-complicated sentences of SL. If you have a wff, you can stick a '$/neg$' in
+complicated sentences of SL. If you have a wff, you can stick a '$\neg$' in
 front of it to make a new wff. If you have two wffs, you can put a '('
 in front of the first one, followed by a '$/land$', followed by the second one,
 then finally a ')', and end up with a new wff. Etc.
@@ -824,8 +824,8 @@ up.
 
 The connective that you look to first in decomposing a sentence is
 called the **main connective** (or *main logical operator*) of that sentence. For example:
-The main connective of $\neg (E \lor (F \supset G))$ is negation, $/neg$. The
-main connective of $(E \lor (F \supset G))$ is disjunction, $/lor$.
+The main connective of $\neg (E \lor (F \supset G))$ is negation, $\neg$. The
+main connective of $(E \lor (F \supset G))$ is disjunction, $\lor$.
 Conversely, if you're building up a wff from simpler sentences, the
 connective introduced by the last rule you apply is the main connective.
 It is the connective that governs the interpretation of the entire
