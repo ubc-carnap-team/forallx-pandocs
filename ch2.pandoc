@@ -592,7 +592,7 @@ Consider these sentences:
 > | 27. <span class="premise">The figure on the board is a triangle if and only if it has exactly three sides.</span>
 
 > **T:** The figure is a triangle.<br/>
->**S:**The figure has three sides.
+> **S:** The figure has three sides.
 
 Sentence 25, for reasons discussed above, can be translated as (*T* $\supset$ *S*).
 
