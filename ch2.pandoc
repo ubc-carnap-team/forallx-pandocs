@@ -119,8 +119,8 @@ summarizes them. They are explained below.
   <tr><td>$\neg$</td><td>negation</td><td>'It is not the case that...'</td></tr>
   <tr><td>$\land$</td><td>conjunction</td><td>'Both... and ...'</td></tr>
   <tr><td>$\lor$</td><td>disjunction</td><td>'Either... or ...'</td></tr>
-  <tr><td>$\rightarrow$</td><td>conditional</td><td>'If ... then ...'</td></tr>
-  <tr><td>$\leftrightarrow$</td><td>biconditional</td><td>'... if and only if ...'</td></tr>
+  <tr><td>$\supset$</td><td>conditional</td><td>'If ... then ...'</td></tr>
+  <tr><td>$\equiv$</td><td>biconditional</td><td>'... if and only if ...'</td></tr>
 </table>
 
 Natural languages like English are vague and imprecise, and carry many
@@ -203,12 +203,12 @@ different from 'not happy', then we will need to use a different atomic sentence
 
 What of the *truth conditions* for negated sentences?
 
-For any sentence [phi]: If [phi] is true, then $\neg$[phi] is false. If [phi] is false, then $\neg$[phi] is true.
+For any sentence $\Phi$: If $\Phi$ is true, then $\neg \Phi$ is false. If $\Phi$ is false, then $\neg \Phi$ is true.
 Using '1' for true and '0' for false, we can summarize this in a
 *characteristic truth table* for negation:
 
 <table>
-<tr><th>[phi]</th><th>$\neg$[phi]</th></tr>
+<tr><th>$\Phi$</th><th>$\neg \Phi$</th></tr>
 <tr><td>1</td><td>0</td></tr>
 <tr><td>0</td><td>1</td></tr>
 </table>
@@ -313,11 +313,11 @@ being strong, but this similarity is completely lost when we translate
 to SL. Nor does SL recognize any particular similarity between *G*<sub>1</sub>
 and *G*<sub>2</sub>.
 
-For any sentences [phi] and [psi], ([phi] $\land$ [psi]) is true if and only if both [phi] and [psi] are true. We
+For any sentences $\Phi$ and $\Psi$, ($\Phi$ $\land$ $\Psi$) is true if and only if both $\Phi$ and $\Psi$ are true. We
 can summarize this in the characteristic truth table for conjunction:
 
 <table>
-<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\land$ [psi]</th></tr>
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \land \Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>0</td></tr>
@@ -331,9 +331,9 @@ false in all other cases.
 
 ### **2.4.1 A Note About Notation**
 
-In speaking generally about connectives, we've used the '[phi]' and '[psi]'
+In speaking generally about connectives, we've used the '$\Phi$' and '$\Psi$'
 symbols as variables to stand in for sentences of SL. We saw, for
-instance, that for any sentence [phi],$\neg$[phi] is the negation of [phi]. This means:
+instance, that for any sentence $\Phi$,$\neg \Phi$ is the negation of $\Phi$. This means:
 
 -   $\neg$ *A* is the negation of *A*
 
@@ -341,13 +341,13 @@ instance, that for any sentence [phi],$\neg$[phi] is the negation of [phi]. This
 
 -   $\neg$ *B*<sub>1</sub> is the negation of *B*<sub>2</sub>
 
--   $\neg$ $\neg$ *C* is the negation of [not]*C*
+-   $\neg$ $\neg$ *C* is the negation of $\neg C$
 
 -   $\neg$(*A* $\land$ *B*) is the negation of (*A* $\land$ *B*)
 
 -   etc.
 
-Note that [phi] and [psi] are *not* sentences of SL. They are symbols we use to talk
+Note that $\Phi$ and $\Psi$ are *not* sentences of SL. They are symbols we use to talk
 about SL sentences, but they're not themselves part of our formal
 language. (Compare the use of variables like *x* in algebra. An '*x*'
 symbol is used to stand in for any number, but *x* is not itself a
@@ -412,15 +412,15 @@ and *E* are true. It is false only if both *D* and *E* are false. We can
 summarize this with the characteristic truth table for disjunction:
 
 <table>
-<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\lor$ [psi]</th></tr>
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \lor \Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>0</td><td>1</td><td>1</td></tr>
 <tr><td>0</td><td>0</td><td>0</td></tr>
 </table>
 
-Note that both conjunction and disjunction are symmetrical. ([phi] $\land$ [psi]) is
-logically equivalent to ([psi] $\land$ [phi]), and ([phi] $\lor$ [psi]) is logically equivalent to ([psi] $\lor$ [phi]).
+Note that both conjunction and disjunction are symmetrical. ($\Phi$ $\land$ $\Psi$) is
+logically equivalent to ($\Psi$ $\land$ $\Phi$), and ($\Phi$ $\lor$ $\Psi$) is logically equivalent to ($\Psi$ $\lor$ $\Phi$).
 
 These sentences are somewhat more complicated:
 
@@ -475,9 +475,9 @@ For the following sentences, use this symbolization key:
 > | 22. <span class="premise">The bomb will explode only if you cut the red wire.</span>
 
 Sentence 21 can be
-translated partially as 'If **R**, then **B**.' We will use the symbol '$\rightarrow$' to
+translated partially as 'If **R**, then **B**.' We will use the symbol '$\supset$' to
 represent this conditional relationship. The sentence becomes
-(*R* $\rightarrow$ *B*). The connective is called a **conditional**. The sentence on the left-hand
+(*R* $\supset$ *B*). The connective is called a **conditional**. The sentence on the left-hand
 side of the conditional (*R* in this example) is called the **antecedent**. The
 sentence on the right-hand side (*B*) is called the **consequent**.
 
@@ -487,24 +487,24 @@ sentence, it might be tempting to symbolize this in the same way as
 sentence 21. That
 would be a mistake.
 
-The conditional (*R* $\rightarrow$ *B*) says that *if* *R* were true, *then* *B*
+The conditional (*R* $\supset$ *B*) says that *if* *R* were true, *then* *B*
 would also be true. It does not say that your cutting the red wire is
 the *only* way that the bomb could explode. Someone else might cut the
-wire, or the bomb might be on a timer. The sentence (*R* $\rightarrow$ *B*) does not
+wire, or the bomb might be on a timer. The sentence (*R* $\supset$ *B*) does not
 say anything about what to expect if *R* is false. 
 Sentence 22 is different. It says that the only
 conditions under which the bomb will explode are 
 ones where you cut the red wire; i.e., if the bomb 
 explodes, then you must
 have cut the wire. As such, sentence 22 should be
-symbolized as (*B* $\rightarrow$ *R*).
+symbolized as (*B* $\supset$ *R*).
 
 It is important to remember that the connective 
-'$\rightarrow$' says only that, if
+'$\supset$' says only that, if
 the antecedent is true, then the consequent is true. It says nothing
 about the *causal* connection between the two events. Translating
 sentence 22 as
-(*B* $\rightarrow$ *R*) does not mean that the bomb exploding would somehow have
+(*B* $\supset$ *R*) does not mean that the bomb exploding would somehow have
 caused your cutting the wire. Both sentence
 21 and 22 suggest that, if
 you cut the red wire, your cutting the red wire would be the cause of
@@ -516,13 +516,13 @@ that you had cut the red wire. Without an explosion, sentence
 
 [insert from pdf]
 
-'If [phi] then [psi]' means that if [phi] is true then so is [psi]. So we know that if the
-antecedent [phi] is true but the consequent [psi] is false, then the conditional 'If [phi]
-then [psi]' is false. What is the truth value of 'If [phi] then [psi]' under other
-circumstances? Suppose, for instance, that the antecedent [phi] happened to be
-false. 'If [phi] then [psi]' would then not tell us anything about the actual truth
-value of the consequent [psi], and it is unclear what the truth value of 'If [phi]
-then [psi]' would be.
+'If $\Phi$ then $\Psi$' means that if $\Phi$ is true then so is $\Psi$. So we know that if the
+antecedent $\Phi$ is true but the consequent $\Psi$ is false, then the conditional 'If $\Phi$
+then $\Psi$' is false. What is the truth value of 'If $\Phi$ then $\Psi$' under other
+circumstances? Suppose, for instance, that the antecedent $\Phi$ happened to be
+false. 'If $\Phi$ then $\Psi$' would then not tell us anything about the actual truth
+value of the consequent $\Psi$, and it is unclear what the truth value of 'If $\Phi$
+then $\Psi$' would be.
 
 In English, the truth of conditionals often depends on what *would* be
 the case if the antecedent *were true* --- even if, as a matter of fact,
@@ -537,16 +537,16 @@ atomic sentence that might be true or false.
 
 In order to translate conditionals into SL, we will not try to capture
 all the subtleties of English's 'if... then...' construction.
-Instead, the symbol '$\rightarrow$' will signify a *material conditional*. This means
-that when is [phi] false, the conditional ([phi] $\rightarrow$ [psi]) is automatically true, regardless
-of the truth value of [psi]. If both [phi] and 
-[psi] are true, then the conditional ([phi] $\rightarrow$ [psi]) is true.
+Instead, the symbol '$\supset$' will signify a *material conditional*. This means
+that when is $\Phi$ false, the conditional ($\Phi$ $\supset$ $\Psi$) is automatically true, regardless
+of the truth value of $\Psi$. If both $\Phi$ and 
+$\Psi$ are true, then the conditional ($\Phi$ $\supset$ $\Psi$) is true.
 
-In short, ([phi] $\rightarrow$ [psi]) is false if and only if [phi] is true and [psi] is false. We can
+In short, ($\Phi$ $\supset$ $\Psi$) is false if and only if $\Phi$ is true and $\Psi$ is false. We can
 summarize this with a characteristic truth table for the conditional.
 
 <table>
-<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\rightarrow$ [psi]</th></tr>
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \supset$ $\Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>1</td></tr>
@@ -579,7 +579,7 @@ this approach to conditionals, even though it will seem strange.
 
 Note that unlike conjunction and disjunction, the conditional is
 *asymmetrical*. You cannot swap the antecedent and consequent without
-changing the meaning of the sentence, because ([phi] $\rightarrow$ [psi]) and ([psi] $\rightarrow$ [phi]) are not
+changing the meaning of the sentence, because ($\Phi$ $\supset$ $\Psi$) and ($\Psi$ $\supset$ $\Phi$) are not
 logically equivalent.
 
 **2.7 Biconditional**
@@ -594,42 +594,42 @@ Consider these sentences:
 > **T:** The figure is a triangle.<br/>
 >**S:**The figure has three sides.
 
-Sentence 25, for reasons discussed above, can be translated as (*T* $\rightarrow$ *S*).
+Sentence 25, for reasons discussed above, can be translated as (*T* $\supset$ *S*).
 
 Sentence 26 is
 importantly different. It can be paraphrased as, 'If the figure has
 three sides, then it is a triangle.' So it can be translated as
-(*S* $\rightarrow$ *T*).
+(*S* $\supset$ *T*).
 
 Sentence 27 says
 that *T* is true *if and only if* *S* is true; we can infer *S* from
 *S*, and we can infer *T* from *S*. This is called a **biconditional**, because it
-entails the two conditionals *S* $\rightarrow$ *T* and *T* $\rightarrow$ *S*. We will use '$\leftrightarrow$' to
+entails the two conditionals *S* $\supset$ *T* and *T* $\supset$ *S*. We will use '$\equiv$' to
 represent the biconditional; sentence
 27 can be
-translated as (*S* $\leftrightarrow$ *T*).
+translated as (*S* $\equiv$ *T*).
 
 We could abide without a new symbol for the biconditional. Since
 sentence 27 means
-'(*T* $\rightarrow$ *S*) and (*S* $\rightarrow$ *T*),' we could translate it as a conjunction
-of those two conditionals --- as ((*T* $\rightarrow$ *S*) $\land$ (*S* $\rightarrow$ *T*)). Notice
+'(*T* $\supset$ *S*) and (*S* $\supset$ *T*),' we could translate it as a conjunction
+of those two conditionals --- as ((*T* $\supset$ *S*) $\land$ (*S* $\supset$ *T*)). Notice
 how the parentheses work: we need to add a new set of parentheses for
 the conjunction, in addition to the ones that were already there for the
 conditionals.
 
 Because we could always write
-(([phi] $\rightarrow$ [psi]) $\land$ ([psi] $\rightarrow$ [phi])) instead of
-([phi] $\leftrightarrow$ [psi]), we do not strictly speaking *need* to
+(($\Phi \supset$ $\Psi$) $\land$ ($\Psi$ $\supset$ $\Phi$)) instead of
+($\Phi \equiv$ $\Psi$), we do not strictly speaking *need* to
 introduce a new symbol for the biconditional. Nevertheless, logical
 languages usually have such a symbol. SL will have one, which makes it
 easier to translate phrases like 'if and only if.'
 
-([phi] $\leftrightarrow$ [psi]) is true if and only if [phi] and [psi] have the same truth
+($\Phi \equiv$ $\Psi$) is true if and only if $\Phi$ and $\Psi$ have the same truth
 value: they're either both true, or they're both false. This is the
 characteristic truth table for the biconditional:
 
 <table>
-<tr><th>[phi]</th><th>[psi]</th><th>[phi] $\leftrightarrow$ [psi]</th></tr>
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \equiv$ $\Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>0</td></tr>
@@ -652,22 +652,22 @@ associated symbolization key:
 
 We can paraphrase sentence 28 as 'Unless *J*, *D*.' This means that if you do not
 wear a jacket, then you will catch a cold; with this in mind, we might
-translate it as $\neg$ *J* $\rightarrow$ *D*. It also means that if you do not catch
+translate it as $\neg$ *J* $\supset$ *D*. It also means that if you do not catch
 a cold, then you must have worn a jacket; with this in mind, we might
-translate it as $\neg$ *D* $\rightarrow$ *J*.
+translate it as $\neg$ *D* $\supset$ *J*.
 
 Which of these is the correct translation of sentence 28? Both
 translations are correct, because the two translations are logically
 equivalent in SL.
 
 Sentence 29, in English, is logically equivalent to sentence 28. It
-can be translated as either $\neg$ *J* $\rightarrow$ *D* or $\neg$ *D* $\rightarrow$ *J*.
+can be translated as either $\neg$ *J* $\supset$ *D* or $\neg$ *D* $\supset$ *J*.
 
 When symbolizing sentences like sentence
 28 and
 sentence 29, it is easy to get turned around. Since the
 conditional is not symmetric, it would be wrong to translate either
-sentence as *J* $\rightarrow$ $\neg$ *D*. Fortunately, there are other logically
+sentence as *J* $\supset$ $\neg$ *D*. Fortunately, there are other logically
 equivalent expressions. Both sentences mean that you will wear a jacket
 or --- if you do not wear a jacket --- then you will catch a cold. So we
 can translate them as *J* $\lor$ *D*.
@@ -695,7 +695,7 @@ called the **metalanguage**.
 
 The object language in this chapter is SL. The metalanguage is English
 --- not conversational English, but English supplemented with some
-logical and mathematical vocabulary (including the '[phi]' and '[psi]' symbols).
+logical and mathematical vocabulary (including the '$\Phi$' and '$\Psi$' symbols).
 The sentence '(*A* $\lor$ *B*)' is a sentence in the object language, because
 it uses only symbols of SL. The word 'sentence' is not itself part of
 SL, however, so the sentence 'This expression is a sentence of SL' is
@@ -722,7 +722,7 @@ with subscripts, as needed
 </td>
 </tr>
 <tr>
-<td>connectives</td><td>$\neg$, $\land$, $\lor$, $\rightarrow$, $\leftrightarrow$</td>
+<td>connectives</td><td>$\neg$, $\land$, $\lor$, $\supset$, $\equiv$</td>
 </tr>
 <tr>
 <td>parentheses</td><td>(,)</td>
@@ -740,7 +740,7 @@ anything:
 
 <blockquote>
 $\neg \neg \neg \neg$ <br/>
-))$\leftrightarrow$ <br/>
+))$\equiv$ <br/>
 *A*<sub>4</sub> $\lor$
 </blockquote>
 
@@ -760,21 +760,21 @@ are infinitely many sentence letters. So there is no point in trying to
 list all the wffs.
 
 Instead, we will describe the rules that govern how wffs can be
-constructed. Consider negation: Given any wff of SL, $\neg$ [phi] is
-a wff of SL. Remember, [phi] is not itself a sentence letter; it is a variable
+constructed. Consider negation: Given any wff of SL, $\neg$ $\Phi$ is
+a wff of SL. Remember, $\Phi$ is not itself a sentence letter; it is a variable
 that stands in for any wff at all (atomic or not). Since the variable is
-not a symbol of SL, $\neg$ [phi] is not an expression of SL. Instead,
+not a symbol of SL, $\neg$ $\Phi$ is not an expression of SL. Instead,
 it is an expression of the metalanguage that allows us to talk about
 infinitely many expressions of SL: all of the expressions that start
 with the negation symbol. Because is part of the metalanguage, it is
 called a *metavariable*.
 
-Another way of saying that given any wff of SL, $\neg$ [phi] is a wff
+Another way of saying that given any wff of SL, $\neg$ $\Phi$ is a wff
 of SL is to say that any time you have a wff of SL, you can make a new
 wff by adding a '$/neg$' symbol to the front of it.
 
 We can say similar things for each of the other connectives. For
-instance, if [phi] and [psi] are wffs of SL, then ([phi] $\land$ [psi]) is a wff
+instance, if $\Phi$ and $\Psi$ are wffs of SL, then ($\Phi$ $\land$ $\Psi$) is a wff
 of SL. (That is to say, given any two wffs in SL, you can put a '$/land$'
 symbol between them, a '(' in front of the first, and a ')' after the
 second, and the whole thing will add up to a new wff.) Providing clauses
@@ -783,17 +783,17 @@ definition for a well-formed formula of SL:
 
 1.  Every atomic sentence is a wff.
 
-2.  For all expressions [phi] and [psi],
+2.  For all expressions $\Phi$ and $\Psi$,
 
-    1.  If [phi] is a wff, then $/neg$ [phi] is a wff.
+    1.  If $\Phi$ is a wff, then $/neg$ $\Phi$ is a wff.
 
-    2.  If [phi] and [psi] are wffs, then ([phi] $\land$ [psi]) is a wff.
+    2.  If $\Phi$ and $\Psi$ are wffs, then ($\Phi$ $\land$ $\Psi$) is a wff.
 
-    3.  If [phi] and [psi] are wffs, then ([phi] $\lor$ [psi]) is a wff.
+    3.  If $\Phi$ and $\Psi$ are wffs, then ($\Phi$ $\lor$ $\Psi$) is a wff.
 
-    4.  If [phi] and [psi] are wffs, then ([phi] $\rightarrow$ [psi]) is a wff.
+    4.  If $\Phi$ and $\Psi$ are wffs, then ($\Phi$ $\supset$ $\Psi$) is a wff.
 
-    5.  If [phi] and [psi] are wffs, then ([phi] $\leftrightarrow$ [psi]) is a wff.
+    5.  If $\Phi$ and $\Psi$ are wffs, then ($\Phi$ $\equiv$ $\Psi$) is a wff.
 
 3.  Nothing else is a wff.
 
@@ -824,8 +824,8 @@ up.
 
 The connective that you look to first in decomposing a sentence is
 called the **main connective** (or *main logical operator*) of that sentence. For example:
-The main connective of $\neg (E \lor (F \rightarrow G))$ is negation, $/neg$. The
-main connective of $(E \lor (F \rightarrow G))$ is disjunction, $/lor$.
+The main connective of $\neg (E \lor (F \supset G))$ is negation, $/neg$. The
+main connective of $(E \lor (F \supset G))$ is disjunction, $/lor$.
 Conversely, if you're building up a wff from simpler sentences, the
 connective introduced by the last rule you apply is the main connective.
 It is the connective that governs the interpretation of the entire
@@ -880,12 +880,12 @@ brackets '[' and ']' in place of parenthesis. There is no logical
 difference between $(P \lor Q)$ and $[P \lor Q]$, for example. The
 unwieldy sentence 
 
-> $(((H \rightarrow I) \lor (I \rightarrow H)) \land (J \lor K))$
+> $(((H \supset I) \lor (I \supset H)) \land (J \lor K))$
 
 could be written in this way, omitting the outer parentheses and using
 square brackets to make the inner structure easier to see:
 
-> $[(H \rightarrow I) \lor (I \rightarrow H)] \land (J \lor K)$
+> $[(H \supset I) \lor (I \supset H)] \land (J \lor K)$
 
 Third, we will sometimes want to translate the conjunction of three or more
 sentences. For the sentence 'Alice, Bob, and Candice all went to the
@@ -910,7 +910,7 @@ multiple disjunctions. If a series of connectives includes both
 disjunctions and conjunctions, then the parentheses are essential; as
 with $(A \land B) \lor C$ and $A \land (B \lor C)$. The parentheses are
 also required if there is a series of conditionals or biconditionals; as
-with $(A \rightarrow B) \rightarrow C$ and $A \leftrightarrow (B \leftrightarrow C)$.
+with $(A \supset B) \supset C$ and $A \equiv (B \equiv C)$.
 
 We have adopted these four rules as *notational conventions*, not as
 changes to the definition of a sentence. Strictly speaking,
@@ -925,8 +925,8 @@ down; if you're unsure about whether it's OK to take the shortcut, the
 safest thing is to go by the formal definition.
 
 If we had given a different definition for a wff, then these could count
-as wffs. We might have written rule 3 in this way: "If [phi], [psi], ... [zeta] are
-wffs, then ([phi] $\land$ [psi] $\land$ ... $\land$ [zeta]), is a
+as wffs. We might have written rule 3 in this way: "If $\Phi$, $\Psi$, ... [zeta] are
+wffs, then ($\Phi$ $\land$ $\Psi$ $\land$ ... $\land$ [zeta]), is a
 wff." This would make it easier to translate some English sentences, but
 would have the cost of making our formal language more complicated. We
 would have to keep the complex definition in mind when we develop truth
