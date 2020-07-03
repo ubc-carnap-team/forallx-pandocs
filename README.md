@@ -23,7 +23,7 @@
     <td>ch6</td><td>no</td><td>no</td>
   </tr>
   <tr>
-    <td>ch7</td><td>no</td><td>no</td>
+    <td>ch7</td><td>started</td><td>no</td>
   </tr>
   <tr>
     <td>ch8</td><td>no</td><td>no</td>
