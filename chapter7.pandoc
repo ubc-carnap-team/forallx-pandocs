@@ -121,9 +121,18 @@ proof, the reiteration rule allows you to repeat it on a new line. For
 instance:
 
 <div class="tri-proof">
-<div><div>1</div><div>2</div></div>
-<div><div>$\Phi$</div><div>$\Phi$</div></div>
-<div><div>&nbsp;</div><div>R 1</div></div>
+  <div>
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <div>
+    <div>$\Phi$</div>
+    <div>$\Phi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>R 1</div>
+  </div>
 </div>
 
 The numbers on the left indicate line numbers; they are used for
@@ -154,9 +163,21 @@ $[(V \supset L) \equiv (F \vee N)]$, then you have effectively proven
 So this will be our conjunction introduction rule, which we abbreviate '&I':
 
 <div class="tri-proof">
-<div><div>m</div><div>n</div><div>&nbsp;</div></div>
-<div><div>$\Phi$</div><div>$\Psi$</div><div>$\Phi$ & $\Psi$</div></div>
-<div><div>&nbsp;</div><div>&nbsp;</div><div>&I m,n</div></div>
+  <div>
+    <div>m</div>
+    <div>n</div>
+    <div>&nbsp;</div>
+  </div>
+  <div>
+    <div>$\Phi$</div>
+    <div>$\Psi$</div>
+    <div>$\Phi$ & $\Psi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&I m,n</div>
+  </div>
 </div>
 
 As always, the $\Phi$ and $\Psi$ stand in for any arbitrary sentence in SL; the $m$ and $n$ here stand in for arbitrary line numbers. In an actual proof,
@@ -179,9 +200,21 @@ true. Similarly, you are entitled to conclude $F$. This will be our
 conjunction elimination rule, which we abbreviate '&E':
 
 <div class="tri-proof">
-<div><div>m</div><div>&nbsp;</div><div>&nbsp;</div></div>
-<div><div>$\Phi$ & $\Psi$</div><div>$\Phi$</div><div>$\Psi$</div></div>
-<div><div>&nbsp;</div><div>&E m</div><div>&E m</div></div>
+  <div>
+    <div>m</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+  </div>
+  <div>
+    <div>$\Phi$ & $\Psi$</div>
+    <div>$\Phi$</div>
+    <div>$\Psi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&E m</div>
+    <div>&E m</div>
+  </div>
 </div>
 
 When you have a conjunction on some line of a proof, you can use E to
@@ -193,8 +226,10 @@ as the justification for applying it.
 Even with just these two rules, we can provide some proofs. Consider
 this argument.
 
-> | <span class="premise">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</span>
-> | <span class="conclusion">$[(E \vee F) \supset (G \vee H)]$ & $[(A \vee B)\supset (C\vee D)]$</span>
+```{.PrettyProof}
+[(A \vee B) \supset (C \vee D)] & [(E \vee F) \supset (G\vee H)]
+[(E \vee F) \supset (G \vee H)] & [(A \vee B)\supset (C\vee D)]
+```
 
 The main logical operator in both the premise and conclusion is
 conjunction. Since conjunction is symmetric, the argument is obviously
@@ -203,7 +238,18 @@ premise. After the premises, we draw a horizontal line --- everything
 below this line must be justified by a rule of proof. So the beginning
 of the proof looks like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div>
+    <div class="underline">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
+    <div>$[(A \vee B) \supset (C \vee D)]$</div>
+    <div>$[(E \vee F) \supset (G\vee H)]$</div>
+  </div>
+</div>
 
 From the premise, we can get each of the conjuncts by &E. The proof now
 looks like this:
