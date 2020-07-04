@@ -89,18 +89,18 @@ given in table 3.1.
 :::
 
 The characteristic truth table for conjunction, for example, gives the
-truth conditions for any sentence of the form $(\Phi \land \Psi)$.
+truth conditions for any sentence of the form $(\Phi \& \Psi)$.
 Even if the conjuncts $Phi$ and $Psi$ are long, complicated sentences, the
 conjunction is true if and only if both $Phi$ and $Psi$ are true.
 
 Let's construct a truth table for a more complicated sentence. Consider
-the sentence $(H \land I) \supset H$. We consider all the possible
+the sentence $(H \& I) \supset H$. We consider all the possible
 combinations of true and false for $H$ and $I$, which gives us four
 rows. We then copy the truth-values for the sentence letters and write
 them underneath the letters in the sentence.
 
 <table>
-<tr><th>H</th><th>I</th><th>$(H \land I) \supset H$</th></tr>
+<tr><th>H</th><th>I</th><th>$(H \& I) \supset H$</th></tr>
 <tr><td>1</td><td>1</td><td>1   1   1</td></tr>
 <tr><td>1</td><td>0</td><td>1   0   1</td></tr>
 <tr><td>0</td><td>1</td><td>0   1   0</td></tr>
@@ -111,11 +111,11 @@ So far all we've done is duplicate the first two columns. We've written
 the 'H' column twice --- once under each 'H', and the 'I' column once,
 under the 'I'.
 
-Now consider the subsentence $H \land I$. This is a conjunction $\Phi \land \Psi$ with $H$
+Now consider the subsentence $H \& I$. This is a conjunction $\Phi \& \Psi$ with $H$
 as $\Phi$ and with $I$ as $\Psi$. $H$ and $I$ are both true on the first row. Since a
 conjunction is true when both conjuncts are true, we write a 1
 underneath the conjunction symbol. In the other three rows, at least one
-of the conjuncts is false, so the conjunction $(H \land I)$ is false. So
+of the conjuncts is false, so the conjunction $(H \& I)$ is false. So
 we write 0s under the conjunction symbol on those rows:
 
    $H$   $I$   $(H$      $I)$      $H$
@@ -126,8 +126,8 @@ we write 0s under the conjunction symbol on those rows:
     0     1     0         1         0
     0     0     0         0         0
 
-The entire sentence is a conditional $\Phi \supset \Psi$ with $(H \land I)$ as $\Phi$ and with $H$
-as $\Psi$. On the second row, for example, $(H \land I)$ is false and $H$ is
+The entire sentence is a conditional $\Phi \supset \Psi$ with $(H \& I)$ as $\Phi$ and with $H$
+as $\Psi$. On the second row, for example, $(H \& I)$ is false and $H$ is
 true. Since a conditional is true when the antecedent is false, we write
 a 1 in the second row underneath the conditional symbol. We continue for
 the other three rows and get this:
@@ -141,7 +141,7 @@ the other three rows and get this:
     0     0           0              0
 
 The column of 1s underneath the conditional tells us that the sentence
-$(H \land I) \supset H$ is true regardless of the truth-values of $H$ and
+$(H \& I) \supset H$ is true regardless of the truth-values of $H$ and
 $I$. They can be true or false in any combination, and the compound
 sentence still comes out true. It is crucial that we have considered all
 of the possible combinations. If we only had a two-line truth table, we
@@ -176,7 +176,7 @@ number of different sentence letters in the table. A sentence that
 contains only one sentence letter requires only two rows, as in the
 characteristic truth table for negation. This is true even if the same
 letter is repeated many times, as in the sentence
-$[(C \equiv C) \supset C] \land \neg (C \supset C)$. The complete truth table
+$[(C \equiv C) \supset C] \& \neg (C \supset C)$. The complete truth table
 requires only two lines because there are only two possibilities: $C$
 can be true or it can be false. A single sentence letter can never be
 marked both 1 and 0 on the same row. The truth table for this sentence
@@ -194,7 +194,7 @@ regardless of whether $C$ is true or false. So it is a contradiction.
 
 A sentence that contains two sentence letters requires four lines for a
 complete truth table, as in the other characteristic truth tables and
-the table for $(H \land I) \supset I$ above.
+the table for $(H \& I) \supset I$ above.
 
 A sentence that contains three sentence letters requires eight lines.
 For example:
@@ -210,7 +210,7 @@ For example:
     0     0     1     0        0     1    1
     0     0     0     0        0     0    0
 
-From this table, we know that the sentence $M \land (N \lor P)$ might be
+From this table, we know that the sentence $M \& (N \lor P)$ might be
 true or false, depending on the truth-values of $M$, $N$, and $P$.
 
 A complete truth table for a sentence that contains four different
@@ -248,9 +248,9 @@ A sentence is **contingent in SL** if it is neither a tautology nor a contradict
 it is 1 on at least one row and 0 on at least one row.
 
 From the truth tables in the previous section, we know that
-$(H \land I) \supset H$ is a tautology, that
-$[(C \equiv C) \supset C] \land \neg (C \supset C)$ is a contradiction, and that
-$M \land (N \lor P)$ is contingent.
+$(H \& I) \supset H$ is a tautology, that
+$[(C \equiv C) \supset C] \& \neg (C \supset C)$ is a contradiction, and that
+$M \& (N \lor P)$ is contingent.
 
 ### **3.3.2 Logical equivalence**
 
@@ -259,7 +259,7 @@ truth value as a matter of logic. Once again, truth tables allow us to
 define an analogous concept for SL: Two sentences are **logically equivalent in SL** if they have the
 same truth-value on every row of a complete truth table.
 
-Consider the sentences $\neg (A \lor B)$ and $\neg A \land \neg B$.
+Consider the sentences $\neg (A \lor B)$ and $\neg A \& \neg B$.
 Are they logically equivalent? To find out, we construct a truth table.
 
    $A$   $B$      $(A$       $B)$       $A$          $B$
@@ -282,10 +282,10 @@ least one line of a complete truth table on which all of the sentences
 are true. It is otherwise.
 
 Look again at the truth table above. We can see that $\neg(A \lor B)$
-and $\neg A \land \neg B$ are consistent, because there is at least
+and $\neg A \& \neg B$ are consistent, because there is at least
 one row, namely the last one, where both are assigned true.
 
-Are $A$, $B$, and $\neg A \land \neg B$ logically consistent? No. If
+Are $A$, $B$, and $\neg A \& \neg B$ logically consistent? No. If
 they were, there would have to be a row where all three sentences are
 assigned true. But examination of the truth table reveals that there is
 no such row.
@@ -323,16 +323,16 @@ conclusion is also 1. So the argument form is valid in SL.
 
 Here is another example. Is this argument valid?
 
-$P \eif Q$
+$P \supset Q$
 
-$\enot P$
+$\neg P$
 
-$\enot Q$
+$\neg Q$
 
 To evaluate it, construct a truth table and see whether there is a row
 that assigns 1 to the premises and 0 to the conclusion:
 
-   $P$   $Q$      $P$   $\eif$   $Q$      $\enot$   $P$   $\enot$   $Q$
+   $P$   $Q$      $P$   $\supset$   $Q$      $\neg$   $P$   $\neg$   $Q$
   ----- ----- -- ----- -------- ----- -- --------- ----- --------- -----
     1     1        1              1                  1               1
     1     0        1              0                  1               0
@@ -353,7 +353,7 @@ something is not a tautology, it is enough to provide a one-line
 *partial truth table* --- regardless of how many sentence letters the
 sentence might have in it.
 
-Consider, for example, the sentence $(U \eand T) \eif (S \eand W)$. We
+Consider, for example, the sentence $(U \& T) \supset (S \& W)$. We
 want to show that it is *not* a tautology by providing a partial truth
 table. We fill in 0 for the entire sentence. The main connective of the
 sentence is a conditional. In order for the conditional to be false, the
@@ -364,7 +364,7 @@ fill these in on the table:
   ----- ----- ----- ----- ------ --- ------ -- ------ --- ------
                                   1                    0  
 
-In order for the $(U\eand T)$ to be true, both $U$ and $T$ must be true.
+In order for the $(U\& T)$ to be true, both $U$ and $T$ must be true.
 So we put a 1 under those letters:
 
    $S$   $T$   $U$   $W$   $(U$       $T)$      $(S$       $W)$
@@ -376,7 +376,7 @@ the same truth value in a given row of a truth table. You can't assign 1
 to one instance of $U$ and 0 to another instance of $U$ in the same row.
 So here we put a 1 under *each* instance of $U$ and $T$.
 
-Now we just need to make $(S\eand W)$ false. To do this, we need to make
+Now we just need to make $(S\& W)$ false. To do this, we need to make
 at least one of $S$ and $W$ false. We can make both $S$ and $W$ false if
 we want. All that matters is that the whole sentence turns out false on
 this line. Making an arbitrary decision, we finish the table in this
@@ -491,7 +491,7 @@ The gardener is who he says he is.
 
 With this key, the argument, rendered in SL, looks like this:
 
-$(B\eor\enot G)$
+$(B\lor\neg G)$
 
 $G$
 
@@ -528,7 +528,7 @@ talking about valid SL forms provides a nice way to explain what various
 valid English arguments have in common with one another. The validity of
 the argument form
 
-$(B\eor\enot G)$
+$(B\lor\neg G)$
 
 $G$
 
@@ -604,15 +604,15 @@ material to students.
 ### Validity is not relative to particular interpretations
 
 Truth in SL is relative to an interpretation. A given wff is true on
-some interpretations, and false on others. For example, $P \eiff Q$ is
+some interpretations, and false on others. For example, $P \equiv Q$ is
 true when {$P=1$, $Q=1$}, and false when {$P=1$, $Q=0$}. But validity,
 unlike truth, is a claim about *all* interpretations.
 
-Let's use a truth table to evaluate whether $P\eor Q$, $\enot P$
- $P \eiff Q$ is a valid argument form. To do this, we can draw the
+Let's use a truth table to evaluate whether $P\lor Q$, $\neg P$
+ $P \equiv Q$ is a valid argument form. To do this, we can draw the
 complete truth table for those three wffs:
 
-   $P$   $Q$      $P$   $\eor$   $Q$      $\enot$   $P$      $P$   $\eiff$   $Q$  
+   $P$   $Q$      $P$   $\lor$   $Q$      $\neg$   $P$      $P$   $\equiv$   $Q$  
   ----- ----- -- ----- -------- ----- -- --------- ----- -- ----- --------- ----- --
     1     1        1              1                  1        1               1   
     1     0        1              0                  1        1               0   
@@ -648,9 +648,9 @@ it either simply is, or it simply is not, a tautology.
 ### Valid arguments with invalid forms
 
 Here is a question students sometimes get wrong: *Provide (in English) a
-valid argument of the form $P$  $P \eand Q$, or explain why it is
+valid argument of the form $P$  $P \& Q$, or explain why it is
 impossible to do so.* Students often think this is impossible, because
-$P$  $P \eand Q$ is an invalid argument form. That certainly is an
+$P$  $P \& Q$ is an invalid argument form. That certainly is an
 invalid argument form. The premise is true, and the conclusion false,
 when $P=1$, $Q=0$. But that doesn't mean there can be no valid argument
 with this form.
@@ -694,122 +694,122 @@ each sentence is a tautology, a contradiction, or a contingent sentence.
 Justify your answer with a complete or partial truth table where
 appropriate.
 
-$A \eif A$
+$A \supset A$
 
-$\enot B \eand B$
+$\neg B \& B$
 
-$C \eif\enot C$
+$C \supset\neg C$
 
-$\enot D \eor D$
+$\neg D \lor D$
 
-$(A \eiff B) \eiff \enot(A\eiff \enot B)$
+$(A \equiv B) \equiv \neg(A\equiv \neg B)$
 
-$(A\eand B) \eor (B\eand A)$
+$(A\& B) \lor (B\& A)$
 
-$(A \eif B) \eor (B \eif A)$
+$(A \supset B) \lor (B \supset A)$
 
-$\enot[A \eif (B \eif A)]$
+$\neg[A \supset (B \supset A)]$
 
-$(A \eand B) \eif (B \eor A)$
+$(A \& B) \supset (B \lor A)$
 
-$A \eiff [A \eif (B \eand \enot B)]$
+$A \equiv [A \supset (B \& \neg B)]$
 
-$\enot(A \eor B) \eiff (\enot A \eand \enot B)$
+$\neg(A \lor B) \equiv (\neg A \& \neg B)$
 
-$\enot(A\eand B) \eiff A$
+$\neg(A\& B) \equiv A$
 
-$\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$
+$\bigl[(A\& B) \&\neg(A\& B)\bigr] \& C$
 
-$A\eif(B\eor C)$
+$A\supset(B\lor C)$
 
-$[(A \eand B) \eand C] \eif B$
+$[(A \& B) \& C] \supset B$
 
-$(A \eand\enot A) \eif (B \eor C)$
+$(A \&\neg A) \supset (B \lor C)$
 
-$\enot\bigl[(C\eor A) \eor B\bigr]$
+$\neg\bigl[(C\lor A) \lor B\bigr]$
 
-$(B\eand D) \eiff [A \eiff(A \eor C)]$
+$(B\& D) \equiv [A \equiv(A \lor C)]$
 
 [\[pr.TT.equiv\]]{#pr.TT.equiv label="pr.TT.equiv"} Determine whether
 each pair of sentences is logically equivalent. Justify your answer with
 a complete or partial truth table where appropriate.
 
-$A$, $\enot A$
+$A$, $\neg A$
 
-$A$, $A \eor A$
+$A$, $A \lor A$
 
-$A\eif A$, $A \eiff A$
+$A\supset A$, $A \equiv A$
 
-$A \eor \enot B$, $A\eif B$
+$A \lor \neg B$, $A\supset B$
 
-$A \eand \enot A$, $\enot B \eiff B$
+$A \& \neg A$, $\neg B \equiv B$
 
-$\enot(A \eand B)$, $\enot A \eor \enot B$
+$\neg(A \& B)$, $\neg A \lor \neg B$
 
-$\enot(A \eif B)$, $\enot A \eif \enot B$
+$\neg(A \supset B)$, $\neg A \supset \neg B$
 
-$(A \eif B)$, $(\enot B \eif \enot A)$
+$(A \supset B)$, $(\neg B \supset \neg A)$
 
-$[(A \eor B) \eor C]$, $[A \eor (B \eor C)]$
+$[(A \lor B) \lor C]$, $[A \lor (B \lor C)]$
 
-$[(A \eor B) \eand C]$, $[A \eor (B \eand C)]$
+$[(A \lor B) \& C]$, $[A \lor (B \& C)]$
 
 [\[pr.TT.consistent\]]{#pr.TT.consistent label="pr.TT.consistent"}
 Determine whether each set of sentences is consistent or inconsistent.
 Justify your answer with a complete or partial truth table where
 appropriate.
 
-$A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$
+$A\supset A$, $\neg A \supset \neg A$, $A\& A$, $A\lor A$
 
-$A \eand B$, $C\eif \enot B$, $C$
+$A \& B$, $C\supset \neg B$, $C$
 
-$A\eor B$, $A\eif C$, $B\eif C$
+$A\lor B$, $A\supset C$, $B\supset C$
 
-$A\eif B$, $B\eif C$, $A$, $\enot C$
+$A\supset B$, $B\supset C$, $A$, $\neg C$
 
-$B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$
+$B\&(C\lor A)$, $A\supset B$, $\neg(B\lor C)$
 
-$A \eor B$, $B\eor C$, $C\eif \enot A$
+$A \lor B$, $B\lor C$, $C\supset \neg A$
 
-$A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$
+$A\equiv(B\lor C)$, $C\supset \neg A$, $A\supset \neg B$
 
-$A$, $B$, $C$, $\enot D$, $\enot E$, $F$
+$A$, $B$, $C$, $\neg D$, $\neg E$, $F$
 
 [\[pr.TT.valid\]]{#pr.TT.valid label="pr.TT.valid"} Determine whether
 each argument is valid or invalid. Justify your answer with a complete
 or partial truth table where appropriate.
 
-$A\eif A$  $A$
+$A\supset A$  $A$
 
-$A\eor\bigl[A\eif(A\eiff A)\bigr]$  A
+$A\lor\bigl[A\supset(A\equiv A)\bigr]$  A
 
-$A\eif(A\eand\enot A)$  $\enot A$
+$A\supset(A\&\neg A)$  $\neg A$
 
-$A\eiff\enot(B\eiff A)$  $A$
+$A\equiv\neg(B\equiv A)$  $A$
 
-$A\eor(B\eif A)$  $\enot A \eif \enot B$
+$A\lor(B\supset A)$  $\neg A \supset \neg B$
 
-$A\eif B$, $B$  $A$
+$A\supset B$, $B$  $A$
 
-$A\eor B$, $B\eor C$, $\enot A$  $B \eand C$
+$A\lor B$, $B\lor C$, $\neg A$  $B \& C$
 
-$A\eor B$, $B\eor C$, $\enot B$  $A \eand C$
+$A\lor B$, $B\lor C$, $\neg B$  $A \& C$
 
-$(B\eand A)\eif C$, $(C\eand A)\eif B$  $(C\eand B)\eif A$
+$(B\& A)\supset C$, $(C\& A)\supset B$  $(C\& B)\supset A$
 
-$A\eiff B$, $B\eiff C$  $A\eiff C$
+$A\equiv B$, $B\equiv C$  $A\equiv C$
 
 [\[pr.TT.concepts\]]{#pr.TT.concepts label="pr.TT.concepts"} Answer each
 of the questions below and justify your answer.
 
 Suppose that and are logically equivalent. What can you say about
-$\metaA{}\eiff\metaB{}$?
+$\metaA{}\equiv\metaB{}$?
 
-Suppose that $(\metaA{}\eand\metaB{})\eif\metaC{}$ is contingent. What
+Suppose that $(\metaA{}\&\metaB{})\supset\metaC{}$ is contingent. What
 can you say about the argument ", , "?
 
 Suppose that $\{\metaA{},\metaB{}, \metaC{}\}$ is inconsistent. What can
-you say about $(\metaA{}\eand\metaB{}\eand\metaC{})$?
+you say about $(\metaA{}\&\metaB{}\&\metaC{})$?
 
 Suppose that is a contradiction. What can you say about the argument ",
 , "?
@@ -817,17 +817,17 @@ Suppose that is a contradiction. What can you say about the argument ",
 Suppose that is a tautology. What can you say about the argument ", , "?
 
 Suppose that and are logically equivalent. What can you say about
-$(\metaA{}\eor\metaB{})$?
+$(\metaA{}\lor\metaB{})$?
 
 Suppose that and are *not* logically equivalent. What can you say about
-$(\metaA{}\eor\metaB{})$?
+$(\metaA{}\lor\metaB{})$?
 
 [\[pr.altConnectives\]]{#pr.altConnectives label="pr.altConnectives"} We
 could leave the biconditional () out of the language. If we did that, we
-could still write '$A\eiff B$' so as to make sentences easier to read,
-but that would be shorthand for $(A\eif B) \eand (B\eif A)$. The
-resulting language would be formally equivalent to SL, since $A\eiff B$
-and $(A\eif B) \eand (B\eif A)$ are logically equivalent in SL. If we
+could still write '$A\equiv B$' so as to make sentences easier to read,
+but that would be shorthand for $(A\supset B) \& (B\supset A)$. The
+resulting language would be formally equivalent to SL, since $A\equiv B$
+and $(A\supset B) \& (B\supset A)$ are logically equivalent in SL. If we
 valued formal simplicity over expressive richness, we could replace more
 of the connectives with notational conventions and still have a language
 equivalent to SL.
@@ -838,22 +838,22 @@ this by writing sentences that are logically equivalent to each of the
 following using only parentheses, sentence letters, negation (), and the
 material conditional ().
 
- $A\eor B$
+ $A\lor B$
 
- $A\eand B$
+ $A\& B$
 
- $A\eiff B$
+ $A\equiv B$
 
 We could have a language that is equivalent to SL with only negation and
 disjunction as connectives. Show this: Using only parentheses, sentence
 letters, negation (), and disjunction (), write sentences that are
 logically equivalent to each of the following.
 
-$A \eand B$
+$A \& B$
 
-$A \eif B$
+$A \supset B$
 
-$A \eiff B$
+$A \equiv B$
 
 The *Sheffer stroke* is a logical connective with the following
 characteristic truthtable:
@@ -873,12 +873,12 @@ logically equivalent sentence using one or more Sheffer strokes. Using
 no connectives other than the Sheffer stroke, write sentences that are
 equivalent to each of the following.
 
-$\enot A$
+$\neg A$
 
-$(A\eand B)$
+$(A\& B)$
 
-$(A\eor B)$
+$(A\lor B)$
 
-$(A\eif B)$
+$(A\supset B)$
 
-$(A\eiff B)$
+$(A\equiv B)$
