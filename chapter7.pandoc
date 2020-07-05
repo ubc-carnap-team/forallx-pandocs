@@ -1,7 +1,3 @@
----
-css: static/css/proofs.css
----
-
 Natural Deduction Proofs in SL
 ==============================
 
@@ -241,6 +237,18 @@ of the proof looks like this:
 <div class="tri-proof">
   <div>
     <div>1</div>
+  </div>
+  <div>
+    <div class="underline">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
+  </div>
+</div>
+
+From the premise, we can get each of the conjuncts by &E. The proof now
+looks like this:
+
+<div class="tri-proof">
+  <div>
+    <div>1</div>
     <div>2</div>
     <div>3</div>
   </div>
@@ -249,19 +257,38 @@ of the proof looks like this:
     <div>$[(A \vee B) \supset (C \vee D)]$</div>
     <div>$[(E \vee F) \supset (G\vee H)]$</div>
   </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&E 1</div>
+    <div>&E 1</div>
+  </div>
 </div>
 
-From the premise, we can get each of the conjuncts by &E. The proof now
-looks like this:
-
-TODO
-
-The rule I requires that we have each of the conjuncts available
+The rule &I requires that we have each of the conjuncts available
 somewhere in the proof. They can be separated from one another, and they
-can appear in any order. So by applying the I rule to lines 3 and 2, we
+can appear in any order. So by applying the &I rule to lines 3 and 2, we
 arrive at the desired conclusion. The finished proof looks like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div>
+    <div class="underline">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
+    <div>$[(A \vee B) \supset (C \vee D)]$</div>
+    <div>$[(E \vee F) \supset (G\vee H)]$</div>
+    <div>$[(E \vee F) \supset (G\vee H)]$ & $[(A \vee B) \supset (C \vee D)]$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&E 1</div>
+    <div>&E 1</div>
+    <div>&I 2,3</div>
+  </div>
+</div>
 
 This proof is not terribly interesting, but it shows how we can use
 rules of proof together to demonstrate the validity of an argument form.
@@ -278,12 +305,41 @@ If $M$ is true, then $M \vee N$ must also be true. In general, the
 disjunction introduction rule $(\vee I)$ allows us to derive a disjunction if
 we have one of the two disjuncts:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>m</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+  </div>
+  <div>
+    <div>$\Phi$</div>
+    <div>$\Phi \vee \Psi$</div>
+    <div>$\Psi \vee \Phi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>$\vee$I m</div>
+    <div>$\vee$I m</div>
+  </div>
+</div>
 
 Notice that $\Psi$ can be *any* sentence whatsoever. So the following is a
 legitimate proof:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <div>
+    <div class="underline">M</div>
+    <div>$M \vee ([(A \equiv B) \supset (C$ & $D)] \equiv [E$ & $F])$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>$\vee$I 1</div>
+  </div>
+</div>
 
 It may seem odd that just by knowing $M$ we can derive a conclusion that
 includes sentences like $A$, $B$, and the rest --- sentences that have
@@ -305,7 +361,42 @@ will be our official disjunction elimination rule $(\vee E)$. If you have a
 disjunction and also the negation of one of its disjuncts, you may
 conclude the other disjunct.
 
-TODO
+<div class="side-by-side">
+  <div class="tri-proof">
+    <div>
+      <div>m</div>
+      <div>n</div>
+      <div>&nbsp;</div>
+    </div>
+    <div>
+      <div>$\Phi \vee \Psi$</div>
+      <div>$\neg \Psi$</div>
+      <div>$\Phi$</div>
+    </div>
+    <div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>$\vee$E m,n</div>
+    </div>
+  </div>
+  <div class="tri-proof">
+    <div>
+      <div>m</div>
+      <div>n</div>
+      <div>&nbsp;</div>
+    </div>
+    <div>
+      <div>$\Phi \vee \Psi$</div>
+      <div>$\neg \Phi$</div>
+      <div>$\Psi$</div>
+    </div>
+    <div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>$\vee$E m,n</div>
+    </div>
+  </div>
+</div>
 
 We represent two different inference patterns here, because the rule
 allows you to conclude *either* disjunct from the negation of the other.
@@ -320,8 +411,10 @@ similarity that happen to have the same name.)
 
 Consider this argument:
 
-> | $R \vee F$
-> | $\therefore \neg R \supset F$
+```{.PrettyProof}
+R \vee F
+\neg R \supset F
+```
 
 The argument seems like it should be valid. (You can confirm this by
 examining the truth tables.) What should the conditional introduction
@@ -330,7 +423,14 @@ rule be, such that we can draw this conclusion?
 We begin the proof by writing down the premise of the argument and
 drawing a horizontal line, like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+  </div>
+  <div>
+    <div class="underline">$R \vee F$</div>
+  </div>
+</div>
 
 If we had $\neg R$ as a further premise, we could derive $F$ by the $\vee E$
 rule. We do not have $\neg R$ as a premise of this argument, nor can we
@@ -341,7 +441,23 @@ to indicate that we are no longer in the main proof. Then we write in an
 assumption for the subproof. This can be anything we want. Here, it will
 be helpful to assume $\neg R$. Our proof now looks like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <div>
+    <div class="underline">$R \vee F$</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\neg R$</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 It is important to notice that we are not claiming to have proven
 $\neg R$. We do not need to write in any justification for the
@@ -350,7 +466,31 @@ assumption line of a subproof. The vertical line indicates that an
 question: What could we show *if* $\neg R$ were true? For one thing, we
 can derive $F$. So we do:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div>
+    <div class="underline">$R \vee F$</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\neg R$</div>
+        <div>F</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>$\vee$E 1,2</div>
+  </div>
+</div>
 
 This has shown that *if* we had $\neg R$ as a premise, *then* we could
 prove $F$. In effect, we have proven $\neg R \supset F$. So the
@@ -358,7 +498,34 @@ conditional introduction rule ($\supset$I) will allow us to close the subproof
 and derive $\neg R \supset F$ in the main proof. Our final proof looks
 like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div>
+    <div class="underline">$R \vee F$</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\neg R$</div>
+        <div>F</div>
+      </div>
+    </div>
+    <div>$\neg R \supset F$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>$\vee$E 1,2</div>
+    <div>$\supset$I 2-3</div>
+  </div>
+</div>
 
 The $\supset$I lets us **DISCHARGE** the assumption we'd been making, ending that vertical
 line. During lines (2) and (3), we were *assuming* that $R$; by the time
@@ -373,7 +540,31 @@ It may seem as if the ability to assume anything at all in a subproof
 would lead to chaos: Does it allow you to prove any conclusion from any
 premises? The answer is no, it does not. Consider this proof:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div>
+    <div class="underline">$\Phi$</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\Psi$</div>
+        <div>$\Psi$</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>R 2</div>
+  </div>
+</div>
 
 Does this show that one can prove any arbitrary sentence $\Psi$ from any
 arbitrary premise $\Phi$? After all, we've written $\Psi$ on a line of a proof that
@@ -398,7 +589,34 @@ argument.
 
 Of course, it is legitimate to do this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div>
+    <div class="underline">$\Phi$</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\Psi$</div>
+        <div>$\Psi$</div>
+      </div>
+    </div>
+    <div>$\Psi \supset \Psi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>R 2</div>
+    <div>$\supset$I 2-3</div>
+  </div>
+</div>
 
 This should not seem so strange, though. Since $\Psi \supset \Psi$ is a tautology, no
 particular premises should be required to validly derive it. (Indeed, as
@@ -406,7 +624,31 @@ we will see, a tautology follows from any premises.)
 
 Put in its general form, the $\supset$I rule looks like this:
 
-TODO
+<div class="tri-proof">
+ <div>
+   <div>m</div>
+   <div>n</div>
+   <div>&nbsp;</div>
+ </div>
+ <div>
+   <div class="tri-proof">
+     <div>
+       <div>&nbsp;</div>
+       <div>&nbsp;</div>
+     </div>
+     <div>
+       <div class="underline">$\Phi$</div>
+       <div>$\Psi$</div>
+     </div>
+   </div>
+   <div>$\Phi \supset \Psi$</div>
+ </div>
+ <div>
+   <div>(want $\Psi$)</div>
+   <div>&nbsp;</div>
+   <div>$\supset$I m-n</div>
+ </div>
+</div>
 
 When we introduce a subproof, we typically write what we want to derive
 off to the right. This is just so that we do not forget why we started
@@ -432,11 +674,27 @@ $M \supset N$ alone, but if we have both $M \supset N$ and $M$, then we can
 conclude $N$. This rule, modus ponens, will be the conditional
 elimination rule ($\supset$E).
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>m</div>
+    <div>n</div>
+    <div>&nbsp;</div>
+  </div>
+  <div>
+    <div>$\Phi \supset \Psi$</div>
+    <div>$\Phi$</div>
+    <div>$\Psi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>$\supset$E m,n</div>
+  </div>
+</div>
 
 Now that we have rules for the conditional, consider this argument:
 
-```{.Proof}
+```{.PrettyProof}
 P \supset Q
 Q \supset R
 P \supset R
@@ -447,7 +705,25 @@ main logical operator in the conclusion is a conditional, we can expect
 to use the $\supset$I rule. For that, we need a subproof --- so we write in the
 antecedent of the conditional as assumption of a subproof:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div>
+    <div>P $\supset$ Q</div>
+    <div class="underline">Q $\supset$ R</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">P</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 We made $P$ available by assuming it in a subproof, allowing us to use $\supset$E
 on the first premise. This gives us $Q$, which allows us to use $\supset$E on the
@@ -455,7 +731,41 @@ second premise. Having derived $R$, we close the subproof. By assuming
 $P$ we were able to prove $R$, so we apply the $\supset$I rule and finish the
 proof.
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <div>
+    <div>P $\supset$ Q</div>
+    <div class="underline">Q $\supset$ R</div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">P</div>
+        <div>Q</div>
+        <div>R</div>
+      </div>
+    </div>
+    <div>P $\supset$ R</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>(want R)</div>
+    <div>$\supset$E 1,3</div>
+    <div>$\supset$E 2,4</div>
+    <div>$\supset$I 3-5</div>
+  </div>
+</div>
 
 ### Biconditional
 
@@ -466,7 +776,23 @@ both $W \supset X$ *and* $X \supset W$. Those conditionals may occur in either
 order; they need not be on consecutive lines. (Compare the shape of the
 &I rule.) Schematically, the rule works like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>m</div>
+    <div>n</div>
+    <div>&nbsp;</div>
+  </div>
+  <div>
+    <div>$\Phi \supset \Psi$</div>
+    <div>$\Psi \supset \Phi$</div>
+    <div>$\Phi \equiv \Psi$</div>
+  </div>
+  <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>$\equiv$I m,n</div>
+  </div>
+</div>
 
 The biconditional elimination rule ($\equiv$ E) is a generalized version of
 *modus ponens* ($\supset$ E). If you have the left-hand subsentence of the
@@ -474,7 +800,42 @@ biconditional, you can derive the right-hand subsentence. If you have
 the right-hand subsentence, you can derive the left-hand subsentence.
 This is the rule:
 
-TODO
+<div class="side-by-side">
+  <div class="tri-proof">
+    <div>
+      <div>m</div>
+      <div>n</div>
+      <div>&nbsp;</div>
+    </div>
+    <div>
+      <div>$\Phi \equiv \Psi$</div>
+      <div>$\Phi$</div>
+      <div>$\Psi$</div>
+    </div>
+    <div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>$\equiv$E m,n</div>
+    </div>
+  </div>
+  <div class="tri-proof">
+     <div>
+      <div>m</div>
+      <div>n</div>
+      <div>&nbsp;</div>
+    </div>
+    <div>
+      <div>$\Phi \equiv \Psi$</div>
+      <div>$\Psi$</div>
+      <div>$\Phi$</div>
+    </div>
+    <div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>$\equiv$E m,n</div>
+    </div> 
+  </div>
+</div>
 
 ### Negation
 
@@ -500,7 +861,35 @@ assume something and show that it leads to contradictory sentences, then
 we have proven the negation of the assumption. This is the negation
 introduction ($\neg$ I) rule:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>m</div>
+    <div>n</div>
+    <div>o</div>
+    <div>p</div>
+  </div>
+  <div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\Phi$</div>
+        <div>$\Psi$</div>
+        <div>$\neg \Psi$</div>
+      </div>
+    </div>
+    <div>$\neg \Phi$</div>
+  </div>
+  <div>
+    <div>(for reductio)</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>$\neg$I m-n, m-o</div>
+  </div>
+</div>
 
 The $\neg$I rule discharges the assumption for reductio, concluding its
 negation, when it's shown that some sentence and its negation each
@@ -517,13 +906,69 @@ without any premises by immediately starting a subproof. We want to
 apply $\neg$I to the subproof, so we assume $(G$ & $\neg G)$. We then get
 an explicit contradiction by &E. The proof looks like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">G & $\neg$G</div>
+        <div>G</div>
+        <div>$\neg$G</div>
+      </div>
+    </div>
+    <div>$\neg$(G & $\neg$G)</div>
+  </div>
+  <div>
+    <div>for reductio</div>
+    <div>&E 1</div>
+    <div>&E 1</div>
+    <div>$\neg$I 1-2, 1-3</div>
+  </div>
+</div>
 
 The $\neg$E rule will work in much the same way. If we assume $\neg \Phi$ and show that it
 leads to a sentence and its negation, we have effectively proven $\Phi$. So
 the rule looks like this:
 
-TODO
+<div class="tri-proof">
+  <div>
+    <div>m</div>
+    <div>n</div>
+    <div>o</div>
+    <div>p</div>
+  </div>
+  <div>
+    <div class="tri-proof">
+      <div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <div class="underline">$\neg \Phi$</div>
+        <div>$\Psi$</div>
+        <div>$\neg \Psi$</div>
+      </div>
+    </div>
+    <div>$\Phi$</div>
+  </div>
+  <div>
+    <div>for reductio</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>$\neg$E m-n, m-o</div>
+  </div>
+</div>
 
 Derived rules
 -------------
