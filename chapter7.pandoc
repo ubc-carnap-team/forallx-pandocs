@@ -117,15 +117,15 @@ proof, the reiteration rule allows you to repeat it on a new line. For
 instance:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
   </div>
-  <div>
+  <div class="proof">
     <div>$\Phi$</div>
     <div>$\Phi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>R 1</div>
   </div>
@@ -159,17 +159,17 @@ $[(V \supset L) \equiv (F \vee N)]$, then you have effectively proven
 So this will be our conjunction introduction rule, which we abbreviate '&I':
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>n</div>
     <div>&nbsp;</div>
   </div>
-  <div>
+  <div class="proof">
     <div>$\Phi$</div>
     <div>$\Psi$</div>
     <div>$\Phi$ & $\Psi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>&I m,n</div>
@@ -196,17 +196,17 @@ true. Similarly, you are entitled to conclude $F$. This will be our
 conjunction elimination rule, which we abbreviate '&E':
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
   </div>
-  <div>
+  <div class="proof">
     <div>$\Phi$ & $\Psi$</div>
     <div>$\Phi$</div>
     <div>$\Psi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&E m</div>
     <div>&E m</div>
@@ -235,11 +235,11 @@ below this line must be justified by a rule of proof. So the beginning
 of the proof looks like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
   </div>
-  <div>
-    <div class="underline">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
+  <div class="proof">
+    <div class="last-premise">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
   </div>
 </div>
 
@@ -247,17 +247,17 @@ From the premise, we can get each of the conjuncts by &E. The proof now
 looks like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
   </div>
-  <div>
-    <div class="underline">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
+  <div class="proof">
+    <div class="last-premise">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
     <div>$[(A \vee B) \supset (C \vee D)]$</div>
     <div>$[(E \vee F) \supset (G\vee H)]$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&E 1</div>
     <div>&E 1</div>
@@ -270,19 +270,19 @@ can appear in any order. So by applying the &I rule to lines 3 and 2, we
 arrive at the desired conclusion. The finished proof looks like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
     <div>4</div>
   </div>
-  <div>
-    <div class="underline">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
+  <div class="proof">
+    <div class="last-premise">$[(A \vee B) \supset (C \vee D)]$ & $[(E \vee F) \supset (G\vee H)]$</div>
     <div>$[(A \vee B) \supset (C \vee D)]$</div>
     <div>$[(E \vee F) \supset (G\vee H)]$</div>
     <div>$[(E \vee F) \supset (G\vee H)]$ & $[(A \vee B) \supset (C \vee D)]$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&E 1</div>
     <div>&E 1</div>
@@ -306,17 +306,17 @@ disjunction introduction rule $(\vee I)$ allows us to derive a disjunction if
 we have one of the two disjuncts:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
   </div>
-  <div>
+  <div class="proof">
     <div>$\Phi$</div>
     <div>$\Phi \vee \Psi$</div>
     <div>$\Psi \vee \Phi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>$\vee$I m</div>
     <div>$\vee$I m</div>
@@ -327,15 +327,15 @@ Notice that $\Psi$ can be *any* sentence whatsoever. So the following is a
 legitimate proof:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
   </div>
-  <div>
-    <div class="underline">M</div>
+  <div class="proof">
+    <div class="last-premise">M</div>
     <div>$M \vee ([(A \equiv B) \supset (C$ & $D)] \equiv [E$ & $F])$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>$\vee$I 1</div>
   </div>
@@ -363,34 +363,34 @@ conclude the other disjunct.
 
 <div class="side-by-side">
   <div class="tri-proof">
-    <div>
+    <div class="num">
       <div>m</div>
       <div>n</div>
       <div>&nbsp;</div>
     </div>
-    <div>
+    <div class="proof">
       <div>$\Phi \vee \Psi$</div>
       <div>$\neg \Psi$</div>
       <div>$\Phi$</div>
     </div>
-    <div>
+    <div class="justification">
       <div>&nbsp;</div>
       <div>&nbsp;</div>
       <div>$\vee$E m,n</div>
     </div>
   </div>
   <div class="tri-proof">
-    <div>
+    <div class="num">
       <div>m</div>
       <div>n</div>
       <div>&nbsp;</div>
     </div>
-    <div>
+    <div class="proof">
       <div>$\Phi \vee \Psi$</div>
       <div>$\neg \Phi$</div>
       <div>$\Psi$</div>
     </div>
-    <div>
+    <div class="justification">
       <div>&nbsp;</div>
       <div>&nbsp;</div>
       <div>$\vee$E m,n</div>
@@ -424,11 +424,11 @@ We begin the proof by writing down the premise of the argument and
 drawing a horizontal line, like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
   </div>
-  <div>
-    <div class="underline">$R \vee F$</div>
+  <div class="proof">
+    <div class="last-premise">$R \vee F$</div>
   </div>
 </div>
 
@@ -442,18 +442,18 @@ assumption for the subproof. This can be anything we want. Here, it will
 be helpful to assume $\neg R$. Our proof now looks like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
   </div>
-  <div>
-    <div class="underline">$R \vee F$</div>
+  <div class="proof">
+    <div class="last-premise">$R \vee F$</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\neg R$</div>
+      <div class="proof">
+        <div class="last-premise">$\neg R$</div>
       </div>
     </div>
   </div>
@@ -467,25 +467,25 @@ question: What could we show *if* $\neg R$ were true? For one thing, we
 can derive $F$. So we do:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
   </div>
-  <div>
-    <div class="underline">$R \vee F$</div>
+  <div class="proof">
+    <div class="last-premise">$R \vee F$</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\neg R$</div>
+      <div class="proof">
+        <div class="last-premise">$\neg R$</div>
         <div>F</div>
       </div>
     </div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>$\vee$E 1,2</div>
@@ -499,27 +499,27 @@ and derive $\neg R \supset F$ in the main proof. Our final proof looks
 like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
     <div>4</div>
   </div>
-  <div>
-    <div class="underline">$R \vee F$</div>
+  <div class="proof">
+    <div class="last-premise">$R \vee F$</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\neg R$</div>
+      <div class="proof">
+        <div class="last-premise">$\neg R$</div>
         <div>F</div>
       </div>
     </div>
     <div>$\neg R \supset F$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>$\vee$E 1,2</div>
@@ -541,25 +541,25 @@ would lead to chaos: Does it allow you to prove any conclusion from any
 premises? The answer is no, it does not. Consider this proof:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
   </div>
-  <div>
-    <div class="underline">$\Phi$</div>
+  <div class="proof">
+    <div class="last-premise">$\Phi$</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\Psi$</div>
+      <div class="proof">
+        <div class="last-premise">$\Psi$</div>
         <div>$\Psi$</div>
       </div>
     </div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>R 2</div>
@@ -590,27 +590,27 @@ argument.
 Of course, it is legitimate to do this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
     <div>4</div>
   </div>
-  <div>
-    <div class="underline">$\Phi$</div>
+  <div class="proof">
+    <div class="last-premise">$\Phi$</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\Psi$</div>
+      <div class="proof">
+        <div class="last-premise">$\Psi$</div>
         <div>$\Psi$</div>
       </div>
     </div>
     <div>$\Psi \supset \Psi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>R 2</div>
@@ -625,25 +625,25 @@ we will see, a tautology follows from any premises.)
 Put in its general form, the $\supset$I rule looks like this:
 
 <div class="tri-proof">
- <div>
+ <div class="num">
    <div>m</div>
    <div>n</div>
    <div>&nbsp;</div>
  </div>
- <div>
+ <div class="proof">
    <div class="tri-proof">
-     <div>
+     <div class="num">
        <div>&nbsp;</div>
        <div>&nbsp;</div>
      </div>
-     <div>
-       <div class="underline">$\Phi$</div>
+     <div class="proof">
+       <div class="last-premise">$\Phi$</div>
        <div>$\Psi$</div>
      </div>
    </div>
    <div>$\Phi \supset \Psi$</div>
  </div>
- <div>
+ <div class="justification">
    <div>(want $\Psi$)</div>
    <div>&nbsp;</div>
    <div>$\supset$I m-n</div>
@@ -675,17 +675,17 @@ conclude $N$. This rule, modus ponens, will be the conditional
 elimination rule ($\supset$E).
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>n</div>
     <div>&nbsp;</div>
   </div>
-  <div>
+  <div class="proof">
     <div>$\Phi \supset \Psi$</div>
     <div>$\Phi$</div>
     <div>$\Psi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>$\supset$E m,n</div>
@@ -706,20 +706,20 @@ to use the $\supset$I rule. For that, we need a subproof --- so we write in the
 antecedent of the conditional as assumption of a subproof:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
   </div>
-  <div>
+  <div class="proof">
     <div>P $\supset$ Q</div>
-    <div class="underline">Q $\supset$ R</div>
+    <div class="last-premise">Q $\supset$ R</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">P</div>
+      <div class="proof">
+        <div class="last-premise">P</div>
       </div>
     </div>
   </div>
@@ -732,7 +732,7 @@ $P$ we were able to prove $R$, so we apply the $\supset$I rule and finish the
 proof.
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -740,24 +740,24 @@ proof.
     <div>5</div>
     <div>6</div>
   </div>
-  <div>
+  <div class="proof">
     <div>P $\supset$ Q</div>
-    <div class="underline">Q $\supset$ R</div>
+    <div class="last-premise">Q $\supset$ R</div>
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">P</div>
+      <div class="proof">
+        <div class="last-premise">P</div>
         <div>Q</div>
         <div>R</div>
       </div>
     </div>
     <div>P $\supset$ R</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>(want R)</div>
@@ -777,17 +777,17 @@ order; they need not be on consecutive lines. (Compare the shape of the
 &I rule.) Schematically, the rule works like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>n</div>
     <div>&nbsp;</div>
   </div>
-  <div>
+  <div class="proof">
     <div>$\Phi \supset \Psi$</div>
     <div>$\Psi \supset \Phi$</div>
     <div>$\Phi \equiv \Psi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>$\equiv$I m,n</div>
@@ -802,34 +802,34 @@ This is the rule:
 
 <div class="side-by-side">
   <div class="tri-proof">
-    <div>
+    <div class="num">
       <div>m</div>
       <div>n</div>
       <div>&nbsp;</div>
     </div>
-    <div>
+    <div class="proof">
       <div>$\Phi \equiv \Psi$</div>
       <div>$\Phi$</div>
       <div>$\Psi$</div>
     </div>
-    <div>
+    <div class="justification">
       <div>&nbsp;</div>
       <div>&nbsp;</div>
       <div>$\equiv$E m,n</div>
     </div>
   </div>
   <div class="tri-proof">
-     <div>
+     <div class="num">
       <div>m</div>
       <div>n</div>
       <div>&nbsp;</div>
     </div>
-    <div>
+    <div class="proof">
       <div>$\Phi \equiv \Psi$</div>
       <div>$\Psi$</div>
       <div>$\Phi$</div>
     </div>
-    <div>
+    <div class="justification">
       <div>&nbsp;</div>
       <div>&nbsp;</div>
       <div>$\equiv$E m,n</div>
@@ -862,28 +862,28 @@ we have proven the negation of the assumption. This is the negation
 introduction ($\neg$ I) rule:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>n</div>
     <div>o</div>
     <div>p</div>
   </div>
-  <div>
+  <div class="proof">
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\Phi$</div>
+      <div class="proof">
+        <div class="last-premise">$\Phi$</div>
         <div>$\Psi$</div>
         <div>$\neg \Psi$</div>
       </div>
     </div>
     <div>$\neg \Phi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>(for reductio)</div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
@@ -907,28 +907,28 @@ apply $\neg$I to the subproof, so we assume $(G$ & $\neg G)$. We then get
 an explicit contradiction by &E. The proof looks like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>1</div>
     <div>2</div>
     <div>3</div>
     <div>4</div>
   </div>
-  <div>
+  <div class="proof">
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">G & $\neg$G</div>
+      <div class="proof">
+        <div class="last-premise">G & $\neg$G</div>
         <div>G</div>
         <div>$\neg$G</div>
       </div>
     </div>
     <div>$\neg$(G & $\neg$G)</div>
   </div>
-  <div>
+  <div class="justification">
     <div>for reductio</div>
     <div>&E 1</div>
     <div>&E 1</div>
@@ -941,28 +941,28 @@ leads to a sentence and its negation, we have effectively proven $\Phi$. So
 the rule looks like this:
 
 <div class="tri-proof">
-  <div>
+  <div class="num">
     <div>m</div>
     <div>n</div>
     <div>o</div>
     <div>p</div>
   </div>
-  <div>
+  <div class="proof">
     <div class="tri-proof">
-      <div>
+      <div class="num">
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
       </div>
-      <div>
-        <div class="underline">$\neg \Phi$</div>
+      <div class="proof">
+        <div class="last-premise">$\neg \Phi$</div>
         <div>$\Psi$</div>
         <div>$\neg \Psi$</div>
       </div>
     </div>
     <div>$\Phi$</div>
   </div>
-  <div>
+  <div class="justification">
     <div>for reductio</div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
@@ -979,7 +979,26 @@ operator, but why these basic rules rather than some others? Some
 natural deduction systems have a disjunction elimination rule that works
 like this:
 
-TODO
+<div class="tri-proof">
+  <div class="num">
+    <div>m</div>
+    <div>n</div>
+    <div>o</div>
+    <div>&nbsp;</div>
+  </div>
+  <div class="proof">
+    <div>$\Phi \vee \Psi$</div>
+    <div>$\Phi \supset \Omega$</div>
+    <div>$\Psi \supset \Omega$</div>
+    <div>$\Omega$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>DIL m, n, o</div>
+  </div>
+</div>
 
 Let's call this rule Dilemma (DIL). It might seem as if there will be
 some proofs that we cannot do with our proof system, because we do not
@@ -987,7 +1006,90 @@ have this as a basic rule. Yet this is not the case. Any proof that you
 can do using the Dilemma rule can be done with basic rules of our
 natural deduction system. Consider a proof of this form:
 
-TODO
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+  </div>
+  <div class="proof">
+    <div>$\Phi \vee \Psi$</div>
+    <div>$\Phi \supset \Omega$</div>
+    <div class="last-premise">$\Psi \supset \Omega$</div>
+    <div class="tri-proof">
+      <div class="num">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div class="proof">
+        <div class="last-premise">$\neg \Omega$</div>
+        <div class="tri-proof">
+          <div class="num">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="proof">
+            <div class="last-premise">$\Phi$</div>
+            <div>$\Omega$</div>
+            <div>$\neg \Omega$</div>
+          </div>
+        </div>
+        <div>$\neg \Phi$</div>
+        <div class="tri-proof">
+          <div class="num">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="proof">
+            <div class="last-premise">$\Psi$</div>
+            <div>$\Omega$</div>
+            <div>$\neg \Omega$</div>
+          </div>
+        </div>
+        <div>$\Psi$</div>
+        <div>$\neg \Psi$</div>
+      </div>
+    </div>
+    <div>$\Omega$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>want $\Omega$</div>
+    <div>for reductio</div>
+    <div>for reductio</div>
+    <div>$\supset$E 2, 5</div>
+    <div>R 4</div>
+    <div>$\neg$I 5-6, 5-7</div>
+    <div>for reductio</div>
+    <div>$\supset$E 3, 9</div>
+    <div>R 4</div>
+    <div>$\vee$E 1, 8</div>
+    <div>$\neg$I 9-10, 9-11</div>
+    <div>$\neg$E 4-12, 4-13</div>
+  </div>
+</div>
 
 Remember once again that $\Phi$, $\Psi$, and $\Omega$ are meta-variables. They are not
 symbols of SL, but stand-ins for arbitrary sentences of SL. So this is
@@ -1477,3 +1579,74 @@ $(\metaA{}\eand\metaC{})\vdash\metaB{}$? Explain your answer.
 
 If you know that $\metaA{}\vdash\metaB{}$, what can you say about
 $(\metaA{}\vee\metaC{})\vdash\metaB{}$? Explain your answer.
+
+<script>
+  // Get top level div.tri-proof
+  let triProofs = [...document.querySelectorAll('article > .tri-proof')];
+
+  triProofs.forEach((triProof) => {
+    let lastPremiseRowNums = getLastPremiseRowNumbers(triProof);
+    let subProofRowNums = getSubProofRowNumbers(triProof.querySelector('.proof'));
+    let nums = triProof.querySelector('.num');
+    let justifications = triProof.querySelector('.justification');
+    lastPremiseRowNums.forEach((lastPremiseRowNum) => {
+      nums && nums.children[lastPremiseRowNum].classList.add('m-lp');
+      justifications && justifications.children[lastPremiseRowNum].classList.add('m-lp');
+    });
+    subProofRowNums.forEach((subProofRowNum) => {
+      nums && nums.children[subProofRowNum].classList.add('m-sp');
+      justifications && justifications.children[subProofRowNum].classList.add('m-sp');
+    });
+  });
+
+  function getLastPremiseRowNumbers(root) {
+    let q = [];
+    q.push(root);
+    let rowNumber = -1, rowNumbers = [];
+    while (q.length !== 0) {
+      let node = q.shift();
+      if (node.classList.contains('tri-proof')) {
+        q.unshift(node.querySelector('.proof'));
+        continue;
+      }
+      if (node.classList.contains('proof')) {
+        q.unshift(...node.children);
+        continue;
+      }
+      rowNumber++;
+      if (node.classList.contains('last-premise')) {
+        rowNumbers.push(rowNumber);
+      }
+    }
+    return rowNumbers;
+  }
+
+  function getSubProofRowNumbers(root) {
+    let q = [];
+    q.push(root);
+    let rowNumber = 0, rowNumbers = [];
+    while (q.length !== 0) {
+      let node = q.shift();
+      if (node.classList.contains('proof')) {
+        q.unshift(...node.children)
+        if (node.endProof && q.length > 0) {
+          q[0].endProof = true;
+        }
+        continue;
+      }
+      if (node.classList.contains('tri-proof')) {
+        if (q.length > 0) {
+          q[0].endProof = true;
+        }
+        q.unshift(node.querySelector('.proof'));
+        rowNumbers.push(rowNumber);
+        continue;
+      }
+      if (node.endProof) {
+        rowNumbers.push(rowNumber);
+      }
+      rowNumber++;
+    }
+    return rowNumbers;
+  }
+</script>
