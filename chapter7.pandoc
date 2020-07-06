@@ -1114,7 +1114,23 @@ thing without it.
 For the sake of convenience, we will add several other derived rules.
 One is *modus tollens* (MT).
 
-TODO
+<div class="tri-proof">
+  <div class="num">
+    <div>m</div>
+    <div>n</div>
+    <div>&nbsp;</div>
+  </div>
+  <div class="proof">
+    <div>$\Phi \supset \Psi$</div>
+    <div>$\neg \Psi$</div>
+    <div>$\neg \Phi$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>MT m, n</div>
+  </div>
+</div>
 
 We leave the proof of this rule as an exercise. Note that if we had
 already proven the MT rule, then the proof of the DIL rule could have
@@ -1123,23 +1139,72 @@ been done in only five lines.
 We also add hypothetical syllogism (HS) as a derived rule. We have
 already given a proof of it on p. 117.
 
-TODO
+<div class="tri-proof">
+  <div class="num">
+    <div>m</div>
+    <div>n</div>
+    <div>&nbsp;</div>
+  </div>
+  <div class="proof">
+    <div>$\Phi \supset \Psi$</div>
+    <div>$\Psi \supset \Omega$</div>
+    <div>$\Phi \supset \Omega$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>HS m, n</div>
+  </div>
+</div>
 
 Rules of replacement
 --------------------
 
 Consider how you would prove this argument valid:
 
-> | $F\supset(G$ & $H)$
-> | $\therefore F\supset G$
+```{.PrettyProof}
+F\supset(G & H)
+F\supset G
+```
 
-Perhaps it is tempting to write down the premise and apply the E rule to
+Perhaps it is tempting to write down the premise and apply the &E rule to
 the conjunction ($G$ & $H$). This is impermissible, however, because
 the basic rules of proof can only be applied to whole sentences. In
 order to use E, we need to get the conjunction ($G$ & $H$) on a line
 by itself. Here is a proof:
 
-TODO
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  <div class="proof">
+    <div class="last-premise">$F \supset (G$ & $H)$</div>
+    <div class="tri-proof">
+      <div class="num">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div class="proof">
+        <div class="last-premise">$\neg F$</div>
+        <div>$G$ & $H$</div>
+        <div>$G$</div>
+      </div>
+    </div>
+    <div>$F \supset G$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>want G</div>
+    <div>$\supset$E 1, 2</div>
+    <div>&E 3</div>
+    <div>$\supset$I 2-4</div>
+  </div>
+</div>
 
 The rules we have seen so far must apply to wffs that are on a proof
 line by themselves. We will now introduce some derived rules that may be
@@ -1159,8 +1224,11 @@ arrow and replace it with the subformula on the other side. The arrow is
 double-headed because rules of replacement work in both directions.
 
 Consider this argument:
-> | $(M \vee P) \supset (P$ & $M)$,
-> | $\therefore (P \vee M) \supset (M$ & $P)$
+
+```{.PrettyProof}
+(M \vee P) \supset (P & M)
+(P \vee M) \supset (M & P)
+```
 
 It is possible to give a proof of this using only the basic rules, but
 it will be long and inconvenient. With the Comm rule, we can provide a
