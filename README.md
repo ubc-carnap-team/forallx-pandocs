@@ -11,10 +11,10 @@
     <td>ch2</td><td>all except exercises</td><td>no</td>
   </tr>
   <tr>
-    <td>ch3</td><td>started</td><td>no</td>
+    <td>ch3</td><td>logic + some</td><td>no</td>
   </tr>
   <tr>
-    <td>ch4</td><td>no</td><td>no</td>
+    <td>ch4</td><td>just logic</td><td>no</td>
   </tr>
   <tr>
     <td>ch5</td><td>no</td><td>no</td>
