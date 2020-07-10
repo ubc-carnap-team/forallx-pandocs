@@ -93,9 +93,9 @@ eg. 'and', 'or', 'conditional', 'biconditional', 'not' (Carnap Book symbols):
 
     $\land, \lor, \rightarrow, \leftrightarrow, \neg$
 
-eg. 'conditional', 'biconditional' (forall x UBC symbols):
+eg. 'and', 'conditional', 'biconditional' (forall x UBC symbols):
 
-    $\supset, \equiv$
+    $\&, \supset, \equiv$
 
 subscript:
 
