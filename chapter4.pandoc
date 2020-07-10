@@ -54,15 +54,15 @@ from their metalinguistic meaning of 'true' and 'false'. We interpret
 characteristic truth tables for the various connectives. The symbols in
 a truth table have a formal meaning that we can specify entirely in
 terms of how the connectives operate. For example, if $A$ is value 1,
-then $\enot A$ is value 0.
+then $\neg A$ is value 0.
 
 To formally define truth in SL, then, we want a function that assigns,
 for each model, a 1 or 0 to each of the sentences of SL. We can
 interpret this function as a definition of truth for SL if it assigns 1
 to all of the true sentences of SL and 0 to all of the false sentences
 of SL. Call this function '$v$' (for 'valuation'). We want $v$ to be a
-function such that for any sentence , $v(\metaA{})=1$ if is true and
-$v(\metaA{})=0$ if is false.
+function such that for any sentence , $v(\Phi{})=1$ if is true and
+$v(\Phi{})=0$ if is false.
 
 Recall that the recursive definition of a wff for SL had two stages: The
 first step said that atomic sentences (solitary sentence letters) are
@@ -136,18 +136,18 @@ sentences are true and which are false.
 We now define the truth function, $v$, using the same recursive
 structure that we used to define a wff of SL.
 
-1.  If is a sentence letter, then $v(\metaA{})=a(\metaA{})$.
+1.  If is a sentence letter, then $v(\Phi{})=a(\Phi{})$.
 
-2.  If is ${\enot}\metaB{}$ for some sentence , then $$v(\metaA{}) =
+2.  If is ${\neg}\Psi{}$ for some sentence , then $$v(\Phi{}) =
         \left\{\begin{array}{ll}
-        1 & \mbox{if $v(\metaB{}) = 0$},\\
+        1 & \mbox{if $v(\Psi{}) = 0$},\\
         0 & \mbox{otherwise.}
         \end{array}\right.$$
 
-3.  If is $(\metaB{}\eand\metaC{})$ for some sentences , , then
-    $$v(\metaA{}) =
+3.  If is $(\Psi{}\&\metaC{})$ for some sentences , , then
+    $$v(\Phi{}) =
         \left\{\begin{array}{ll}
-        1 & \mbox{if $v(\metaB{}) = 1$ and $v(\metaC{}) = 1$,}\\
+        1 & \mbox{if $v(\Psi{}) = 1$ and $v(\metaC{}) = 1$,}\\
         0 & \mbox{otherwise.}
         \end{array}\right.$$
 
@@ -160,24 +160,24 @@ a definition of truth for sentences of SL containing the logical symbol
 '' using the metalanguage word 'and.' There is nothing circular about
 that.
 
-1.  If is $(\metaB{}\eor\metaC{})$ for some sentences , , then
-    $$v(\metaA{}) =
+1.  If is $(\Psi{}\lor\metaC{})$ for some sentences , , then
+    $$v(\Phi{}) =
         \left\{\begin{array}{ll}
-        0 & \mbox{if $v(\metaB{}) = 0$ and $v(\metaC{}) = 0$,}\\
+        0 & \mbox{if $v(\Psi{}) = 0$ and $v(\metaC{}) = 0$,}\\
         1 & \mbox{otherwise.}
         \end{array}\right.$$
 
-2.  If is $(\metaB{}\eif\metaC{})$ for some sentences , , then
-    $$v(\metaA{}) =
+2.  If is $(\Psi{}\supset\metaC{})$ for some sentences , , then
+    $$v(\Phi{}) =
         \left\{\begin{array}{ll}
-        0 & \mbox{if $v(\metaB{}) = 1$ and $v(\metaC{}) = 0$,}\\
+        0 & \mbox{if $v(\Psi{}) = 1$ and $v(\metaC{}) = 0$,}\\
         1 & \mbox{otherwise.}
         \end{array}\right.$$
 
-3.  If is $(\metaB{}\eiff\metaC{})$ for some sentences , , then
-    $$v(\metaA{}) =
+3.  If is $(\Psi{}\equiv\metaC{})$ for some sentences , , then
+    $$v(\Phi{}) =
         \left\{\begin{array}{ll}
-        1 & \mbox{if $v(\metaB{}) = v(\metaC{})$},\\
+        1 & \mbox{if $v(\Psi{}) = v(\metaC{})$},\\
         0 & \mbox{otherwise.}
         \end{array}\right.$$
 
@@ -209,7 +209,7 @@ assignment of truth values to atomic sentences that makes true also
 makes true.
 
 We abbreviate entailment with a symbol called the *double turnstile*:
-$\metaA{}\models\metaB{}$ means ' semantically entails .'
+$\Phi{}\models\Psi{}$ means ' semantically entails .'
 
 The double turnstile, like '', etc., is part of the *metalanguage* we
 use to discuss SL; it is not part of SL itself.
@@ -224,18 +224,18 @@ precisely, rather than relying on your sense of whether the argument is
 a good one. The notions can come apart in some surprising ways.
 
 Let's start with a straightforward example. Consider whether this
-entailment claim is true: $$(P\eand Q) \models (P\eor Q)$$ This is true
-if and only if every interpretation that satisfies $(P\eand Q)$, also
-satisfies $(P\eor Q)$. Hopefully it is obvious to you why this is. Only
+entailment claim is true: $$(P\& Q) \models (P\lor Q)$$ This is true
+if and only if every interpretation that satisfies $(P\& Q)$, also
+satisfies $(P\lor Q)$. Hopefully it is obvious to you why this is. Only
 an interpretation that assigns 1 to both $P$ and $Q$ will satisfy the
 left, and any such interpretation will certainly satisfy the right as
 well. (You could draw the truth table to verify this if you want the
 practice.) So, as one might naturally expect,
-$(P\eand Q) \models (P\eor Q)$.
+$(P\& Q) \models (P\lor Q)$.
 
 Here is a less intuitive example. What should we make of this claim?
 
-> $(P\eand Q) \models (A\eiff\enot\enot A)$
+> $(P\& Q) \models (A\equiv\neg\neg A)$
 
 Notice that the sentence letters on the left-hand-side here are
 completely different letters from those on the right-hand-side. So there
@@ -243,9 +243,9 @@ is a straightforward sense in which the two sides of the turnstile have
 *nothing to do with one another*. Nevertheless, this *is* a true
 entailment claim. This is because it satisfies the definition: every
 interpretation that satisfies the left (i.e., every interpretation that
-assigns '1' to both $P$ and $Q$), also satisfies $(A\eiff\enot\enot A)$.
+assigns '1' to both $P$ and $Q$), also satisfies $(A\equiv\neg\neg A)$.
 This for the simple reason that every interpretation *whatsoever*
-satisfies $(A\eiff\enot\enot A)$; it is a tautology.
+satisfies $(A\equiv\neg\neg A)$; it is a tautology.
 
 From this example we can see that a tautology will be entailed by
 anything whatsoever. If the right-hand-side of the entailment claim is a
@@ -254,11 +254,11 @@ to be true.
 
 So these are all true:
 
-$P \models (P \eor \enot P)$
+$P \models (P \lor \neg P)$
 
-$Q \models (P \eor \enot P)$
+$Q \models (P \lor \neg P)$
 
-$(P \eand \enot P) \models (P \eor \enot P)$
+$(P \& \neg P) \models (P \lor \neg P)$
 
 Tautologies are entailed by the empty set
 -----------------------------------------
@@ -266,16 +266,16 @@ Tautologies are entailed by the empty set
 In the examples so far, we've been talking about one sentence entailing
 another. But we can also describe a set of several sentences as jointly
 entailing an SL sentence:
-$$\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\models\metaB{}$$ means that
+$$\Phi{}_1,\Phi{}_2,\Phi{}_3,\cdots\models\Psi{}$$ means that
 there is no truth value assignment for which all of the sentences in the
-set $\{\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\}$ are true and is false.
+set $\{\Phi{}_1,\Phi{}_2,\Phi{}_3,\cdots\}$ are true and is false.
 It will sometimes be convenient to use a variable that can stand in for
 any set of sentences; just as '' can stand for any sentence of SL, we
 can let '' stand in for any set of sentences in SL. (In the case of
-'$\metaA{}\models\metaB{}$' above, '' is the singleton set containing
+'$\Phi{}\models\Psi{}$' above, '' is the singleton set containing
 just .)
 
-In general, we may say that $$\metaSetX{}\models\metaB{}$$ means that
+In general, we may say that $$\metaSetX{}\models\Psi{}$$ means that
 there's no interpretation satisfying every member of set without also
 satisfying sentence .
 
@@ -283,34 +283,34 @@ We saw in the previous section that a tautology --- an SL sentence that
 is true in every interpretation --- is entailed by any sentence. The
 reasoning applies more generally: a tautology will be entailed by any
 set of sentences. This includes the *empty set*, which can be written
-'$\emptyset$'. In general '$\metaSetX{} \models \metaA{}$' says that
+'$\emptyset$'. In general '$\metaSetX{} \models \Phi{}$' says that
 every interpretation that satisfies everything in , satisfies ; in the
 special case where is $\emptyset$, every interpretation trivially
-satisfies everything in . So '$\emptyset \models \metaA{}$' says that
+satisfies everything in . So '$\emptyset \models \Phi{}$' says that
 absolutely every interpretation satisfies . That is, it says that is a
 tautology.
 
 By convention, we can leave the left side of an entailment claim blank,
-instead of writing in $\emptyset$. In other words, $$\models \metaA{}$$
-is shorthand for $$\emptyset \models \metaA{}.$$
+instead of writing in $\emptyset$. In other words, $$\models \Phi{}$$
+is shorthand for $$\emptyset \models \Phi{}.$$
 
 So these entailment claims are true, because in each case the sentence
 on the right is a tautology:
 
-$\models (P \eor \enot P)$
+$\models (P \lor \neg P)$
 
-$\models (P \eiff P)$
+$\models (P \equiv P)$
 
-$\models ((P \eand\enot P)\eif (A \eor B))$
+$\models ((P \&\neg P)\supset (A \lor B))$
 
 And these entailment claims are not true, because each sentence on the
 right is not a tautology:
 
 $\models P$
 
-$\models (P \eand \enot P)$
+$\models (P \& \neg P)$
 
-$\models \enot(P \eif \enot P)$
+$\models \neg(P \supset \neg P)$
 
 (If you need help seeing why a given sentence is or is not a tautology,
 draw out the truth table and check to see whether it has a 1 on every
@@ -321,23 +321,23 @@ reference="sec.usingtruthtables"}.)
 Inconsistent sentences entail absurdities
 -----------------------------------------
 
-Consider this entailment claim: $$(P \eand \enot P) \models Q$$This
+Consider this entailment claim: $$(P \& \neg P) \models Q$$This
 statement is true. It says that every interpretation satisfying
-$(P \eand \enot P)$ also satisfies $Q$. But $(P \eand \enot P)$ is a
+$(P \& \neg P)$ also satisfies $Q$. But $(P \& \neg P)$ is a
 contradiction --- no interpretations satisfy it. So trivially, 'every'
 interpretation that satisfies it satisfies $Q$.
 
 This explanation had nothing to do with the specifics of the sentence
 $Q$. Exactly the same considerations would demonstrate that, for any
-sentence , $(P \eand \enot P) \models \metaB{}$. And the same goes for
+sentence , $(P \& \neg P) \models \Psi{}$. And the same goes for
 any other contradictory sentence, or any set of sentences that are
 mutually inconsistent. These are all true:
 
-$(P \eand \enot P) \models (\enot Q \eif R)$
+$(P \& \neg P) \models (\neg Q \supset R)$
 
-$P, (\enot Q \eand \enot P) \models (Q \eiff P)$
+$P, (\neg Q \& \neg P) \models (Q \equiv P)$
 
-$(P \eand\enot P) \models ((A_1 \eor A_2) \eif \enot (A_3 \eiff (A_4 \eand \enot A_2)))$
+$(P \&\neg P) \models ((A_1 \lor A_2) \supset \neg (A_3 \equiv (A_4 \& \neg A_2)))$
 
 You can think of evaluating an entailment claim as like checking to see
 whether a rule is being violated or not. If there's a rule that says
@@ -373,20 +373,20 @@ hate honour are the Klingons who aren't Klingons at all.')
 So these entailment claims are true, because the set of sentences on the
 left is not satisfiable:
 
-$(P \eand \enot P) \models \bot$
+$(P \& \neg P) \models \bot$
 
-$P, (\enot Q \eand \enot P) \models\bot$
+$P, (\neg Q \& \neg P) \models\bot$
 
-$(P \eiff\enot P) \models\bot$
+$(P \equiv\neg P) \models\bot$
 
 And these entailment claims are not true, because the sentences on the
 left *can* be satisfied:
 
-$(P \eor \enot P) \models\bot$
+$(P \lor \neg P) \models\bot$
 
-$P, \enot Q, (R \eor Q) \models\bot$
+$P, \neg Q, (R \lor Q) \models\bot$
 
-$\enot P, \enot Q, (P \eif \enot\enot Q) \models\bot$
+$\neg P, \neg Q, (P \supset \neg\neg Q) \models\bot$
 
 (If you need help seeing why a given set of sentences can be satisfied,
 draw out the truth table and check to see if any row assigns a 1 to each
@@ -400,18 +400,18 @@ Defining concepts in terms of entailment
 The double turnstile symbol allows us to give concise definitions for
 various concepts in SL:
 
-> A is a sentence such that $\emptyset\models\metaA{}$.
+> A is a sentence such that $\emptyset\models\Phi{}$.
 >
-> A is a sentence such that $\metaA{}\models\bot$.
+> A is a sentence such that $\Phi{}\models\bot$.
 >
 > A sentence is if and only if it is neither a tautology nor a
 > contradiction.
 >
 > An argument with premises and conclusion is if and only if
-> $\metaSetX{}\models\metaA{}$.
+> $\metaSetX{}\models\Phi{}$.
 >
-> Two sentences and are if and only if both $\metaA{}\models\metaB{}$
-> and $\metaB{}\models\metaA{}$.
+> Two sentences and are if and only if both $\Phi{}\models\Psi{}$
+> and $\Psi{}\models\Phi{}$.
 >
 > A set of sentences $\metaSetX{}$ is if and only if
 > $\metaSetX{}\models \bot$. Otherwise $\metaSetX{}$ is
@@ -422,20 +422,20 @@ truth table to test it if you like, but these examples are simple enough
 so that you may be able to just think it through and get the right
 answer.
 
-$Q \models (P \eor Q)$
+$Q \models (P \lor Q)$
 
-$P, Q \models (P \eor P)$
+$P, Q \models (P \lor P)$
 
-$S \models (Q \eif Q)$
+$S \models (Q \supset Q)$
 
-$(P \eand \enot P) \models (Q \eand \enot Q)$
+$(P \& \neg P) \models (Q \& \neg Q)$
 
-$(P \eor \enot P) \models$
+$(P \lor \neg P) \models$
 
-$\models (P \eor \enot P)$
+$\models (P \lor \neg P)$
 
-$\models (P \eand \enot P)$
+$\models (P \& \neg P)$
 
-$(A \eor B) \eif \enot P \models (P \eor \enot P)$
+$(A \lor B) \supset \neg P \models (P \lor \neg P)$
 
-$(P \eiff Q) \models ((P \eand Q) \eor \enot (P \eor Q))$
+$(P \equiv Q) \models ((P \& Q) \lor \neg (P \lor Q))$
