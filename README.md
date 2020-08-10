@@ -11,10 +11,10 @@
     <td>ch2</td><td>all except exercises</td><td>no</td>
   </tr>
   <tr>
-    <td>ch3</td><td>logic + some</td><td>no</td>
+    <td>ch3</td><td>all except truth tables / exercises</td><td>no</td>
   </tr>
   <tr>
-    <td>ch4</td><td>just logic</td><td>no</td>
+    <td>ch4</td><td>no</td><td>no</td>
   </tr>
   <tr>
     <td>ch5</td><td>no</td><td>no</td>
@@ -101,7 +101,11 @@ subscript:
 
     $A_2 \land A_3$
 
-phi, psi, zeta (capital letters)
+phi, psi, zeta (capital letters):
 
     $\Phi, \Psi, \Zeta$
+
+therefore:
+
+    $\therefore$
 

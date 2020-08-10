@@ -8,7 +8,7 @@ translatability between SL and natural languages, this also amounts to a
 formal way of evaluating some natural language arguments.
 
 **3.1 Truth-functional connectives**
-------------------------------------
+----------------------------
 
 Any non-atomic sentence of SL is composed of atomic sentences with
 sentential connectives. In Ch. 2, we offered *characteristic truth tables* for each
@@ -22,6 +22,15 @@ have to know what $\Phi$ means, or where it came from, or what evidence there
 is for it and what that evidence might depend on. The truth-value of $\neg \Phi$ is
 a *function* of the truth-value of $\Phi$. And so likewise for the other
 connectives.
+
+We are using the same notion of a **function** that you have probably encountered in
+mathematics. A function from one set to another associates each member
+of the first set with exactly one member of the second set. Once the
+first element is fixed, the function uniquely selects an element of the
+second set. Any given numerical value of $x$ will unambiguously
+determine the value of $x^2$, for instance, so $f(x)=x^2$ is a
+function. In the same way, any given truth value of $\Phi$ will unambiguously
+determine the value of $\neg \Phi$, which is why negation, too, is a function.
 
 This is a very interesting feature of SL. It is not inevitable. The
 syntax of English, for example, permits one to make a new, more complex
@@ -39,17 +48,15 @@ connectives of SL are.
 For this reason, we can construct truth tables to determine the logical
 features of SL sentences.
 
-[insert from pdf Table 3.1]
-
 **3.2 Complete truth tables**
------------------------------
+----------------------------
 
 The truth-value of sentences which contain only one connective are given
 by the characteristic truth table for that connective. Truth tables list
 out all the possible combinations of truth values for the atomic wffs at
-play; each row corresponds to an **interpretation** --- a possible way of assigning truth
-values to atomic sentences. ({$P=1$, $Q=0$} is an example of an
-interpretation.)
+play; each row corresponds to a possible way of assigning truth values
+to atomic sentences. ({$P=1$, $Q=1$} is one way truth values could be
+assigned; {$P=1$, $Q=1$} is another.)
 
 In the previous chapter, we wrote the characteristic truth tables with
 '1' for true and '0' for false. It is important to note, however, that
@@ -90,8 +97,8 @@ given in table 3.1.
 
 The characteristic truth table for conjunction, for example, gives the
 truth conditions for any sentence of the form $(\Phi \& \Psi)$.
-Even if the conjuncts $Phi$ and $Psi$ are long, complicated sentences, the
-conjunction is true if and only if both $Phi$ and $Psi$ are true.
+Even if the conjuncts and are long, complicated sentences, the
+conjunction is true if and only if both $\Phi$ and $\Psi$ are true.
 
 Let's construct a truth table for a more complicated sentence. Consider
 the sentence $(H \& I) \supset H$. We consider all the possible
@@ -99,19 +106,18 @@ combinations of true and false for $H$ and $I$, which gives us four
 rows. We then copy the truth-values for the sentence letters and write
 them underneath the letters in the sentence.
 
-<table>
-<tr><th>H</th><th>I</th><th>$(H \& I) \supset H$</th></tr>
-<tr><td>1</td><td>1</td><td>1   1   1</td></tr>
-<tr><td>1</td><td>0</td><td>1   0   1</td></tr>
-<tr><td>0</td><td>1</td><td>0   1   0</td></tr>
-<tr><td>0</td><td>0</td><td>0   0   0</td></tr>
-</table>
+   $H$   $I$   $(H$      $I)$      $H$
+  ----- ----- ------ -- ------ -- -----
+    1     1                       
+    1     0                       
+    0     1                       
+    0     0                       
 
 So far all we've done is duplicate the first two columns. We've written
 the 'H' column twice --- once under each 'H', and the 'I' column once,
 under the 'I'.
 
-Now consider the subsentence $H \& I$. This is a conjunction $\Phi \& \Psi$ with $H$
+Now consider the subsentence $H \& I$. This is a conjunction with $H$
 as $\Phi$ and with $I$ as $\Psi$. $H$ and $I$ are both true on the first row. Since a
 conjunction is true when both conjuncts are true, we write a 1
 underneath the conjunction symbol. In the other three rows, at least one
@@ -190,7 +196,7 @@ looks like this:
 Looking at the column underneath the main connective, we see that the
 sentence is false on both rows of the table; i.e., it is false
 regardless of whether $C$ is true or false. So it is a contradiction.
-(See §1.6.1 [add link].)
+(See §1.6.1.)
 
 A sentence that contains two sentence letters requires four lines for a
 complete truth table, as in the other characteristic truth tables and
@@ -210,7 +216,7 @@ For example:
     0     0     1     0        0     1    1
     0     0     0     0        0     0    0
 
-From this table, we know that the sentence $M \& (N \lor P)$ might be
+From this table, we know that the sentence $M\&(N\lor P)$ might be
 true or false, depending on the truth-values of $M$, $N$, and $P$.
 
 A complete truth table for a sentence that contains four different
@@ -227,7 +233,7 @@ eight 0s. For a 32 line table, the next column would have 16 1s followed
 by 16 0s. And so on.
 
 **3.3 Using truth tables**
---------------------------
+------------------
 
 ### **3.3.1 Tautologies, contradictions, and contingent sentences**
 
@@ -238,13 +244,13 @@ consider all of the ways that the world might be. If the sentence is
 true on every line of a complete truth table, then it is true as a
 matter of logic, regardless of what the world is like.
 
-So a sentence is a **tautology in SL** if the column under its main connective is 1 on every
+So a sentence is a **tautology** if the column under its main connective is 1 on every
 row of a complete truth table.
 
-Conversely, a sentence is a **contradiction in SL** if the column under its main connective is 0
+Conversely, a sentence is a **contradiction** if the column under its main connective is 0
 on every row of a complete truth table.
 
-A sentence is **contingent in SL** if it is neither a tautology nor a contradiction; i.e. if
+A sentence is **contingent** if it is neither a tautology nor a contradiction; i.e. if
 it is 1 on at least one row and 0 on at least one row.
 
 From the truth tables in the previous section, we know that
@@ -256,7 +262,7 @@ $M \& (N \lor P)$ is contingent.
 
 Two sentences are logically equivalent in English if they have the same
 truth value as a matter of logic. Once again, truth tables allow us to
-define an analogous concept for SL: Two sentences are **logically equivalent in SL** if they have the
+define an analogous concept for SL: Two sentences are **logically equivalent** if they have the
 same truth-value on every row of a complete truth table.
 
 Consider the sentences $\neg (A \lor B)$ and $\neg A \& \neg B$.
@@ -274,14 +280,14 @@ sentence, conjunction for the second. On the first three rows, both are
 0. On the final row, both are 1. Since they match on every row, the two
 sentences are logically equivalent.
 
-### Consistency
+### **3.3.3 Consistency**
 
 A set of sentences in English is consistent if it is logically possible
-for them all to be true at once. A set of sentences is if there is at
+for them all to be true at once. A set of sentences is **logically consistent** if there is at
 least one line of a complete truth table on which all of the sentences
-are true. It is otherwise.
+are true. It is **inconsistent** otherwise.
 
-Look again at the truth table above. We can see that $\neg(A \lor B)$
+Look again at the truth table above. We can see that $\neg (A \lor B)$
 and $\neg A \& \neg B$ are consistent, because there is at least
 one row, namely the last one, where both are assigned true.
 
@@ -290,21 +296,19 @@ they were, there would have to be a row where all three sentences are
 assigned true. But examination of the truth table reveals that there is
 no such row.
 
-### Validity
+### **3.3.4 Validity**
 
 An argument in English is valid if it is logically impossible for the
 premises to be true and for the conclusion to be false at the same time.
-An argument is if there is no row of a complete truth table on which the
-premises are all 1 and the conclusion is 0; an argument is if there is
+An argument is **valid in SL** if there is no row of a complete truth table on which the
+premises are all 1 and the conclusion is 0; an argument is **invalid in SL** if there is
 such a row.
 
 Consider this argument:
 
-$\neg L \supset (J \lor L)$
-
-$\neg L$
-
-$J$
+> | <span class="premise">$\neg L \supset (J \lor L)$</span>
+> | <span class="premise">$\neg L$</span>
+> | <span class="conclusion">$J$</span>
 
 Is it valid? To find out, we construct a truth table.
 
@@ -323,11 +327,9 @@ conclusion is also 1. So the argument form is valid in SL.
 
 Here is another example. Is this argument valid?
 
-$P \supset Q$
-
-$\neg P$
-
-$\neg Q$
+> | <span class="premise">$P \supset Q$</span>
+> | <span class="premise">$\neg P$</span>
+> | <span class="conclusion">$\neg Q$</span>
 
 To evaluate it, construct a truth table and see whether there is a row
 that assigns 1 to the premises and 0 to the conclusion:
@@ -342,7 +344,7 @@ that assigns 1 to the premises and 0 to the conclusion:
 There is. On the third row, the premises are true and the conclusion is
 false. So the argument is invalid.
 
-Partial truth tables
+**3.4 Partial truth tables**
 --------------------
 
 In order to show that a sentence is a tautology, we need to show that it
@@ -364,7 +366,7 @@ fill these in on the table:
   ----- ----- ----- ----- ------ --- ------ -- ------ --- ------
                                   1                    0  
 
-In order for the $(U\& T)$ to be true, both $U$ and $T$ must be true.
+In order for the $(U \& T)$ to be true, both $U$ and $T$ must be true.
 So we put a 1 under those letters:
 
    $S$   $T$   $U$   $W$   $(U$       $T)$      $(S$       $W)$
@@ -376,7 +378,7 @@ the same truth value in a given row of a truth table. You can't assign 1
 to one instance of $U$ and 0 to another instance of $U$ in the same row.
 So here we put a 1 under *each* instance of $U$ and $T$.
 
-Now we just need to make $(S\& W)$ false. To do this, we need to make
+Now we just need to make $(S \& W)$ false. To do this, we need to make
 at least one of $S$ and $W$ false. We can make both $S$ and $W$ false if
 we want. All that matters is that the whole sentence turns out false on
 this line. Making an arbitrary decision, we finish the table in this
@@ -449,53 +451,46 @@ true and the conclusion is false, then the argument is invalid.
                                                   
   ---------------- ------------------------------ ------------------------------
 
-  : Do you need a complete truth table or a partial truth table? It
+  Table 3.2: Do you need a complete truth table or a partial truth table? It
   depends on what you are trying to show.
 :::
 
-Table [1.3](#table.CompleteVsPartial){reference-type="ref"
-reference="table.CompleteVsPartial"} summarizes when a complete truth
+Table 3.2 summarizes when a complete truth
 table is required and when a partial truth table will do. If you are
 trying to remember whether you need a complete truth table or not, the
 general rule is, if you're looking to establish a claim about *every*
 interpretation, you need a complete table.
 
-Evaluating English arguments via SL {#sec:forms}
+**3.5 Evaluating English arguments via SL**
 -----------------------------------
 
-Recall from §[\[sec:validity\]](#sec:validity){reference-type="ref"
-reference="sec:validity"} that a natural language argument is valid if
+Recall from §1.4 that a natural language argument is valid if
 and only if it is impossible for the premises to be true while the
 conclusion is false. This notion is rather closely related to validity
 in SL, which obtains if and only if there is no assignment of truth
 values to atomic sentences on which the premises are assigned '1' and
-the conclusion is assigned '0'. This is of course by design. In many
-cases, validity in SL is a good indication of validity in English.
-Consider for example this English argument:
+the conclusion is assigned '0'. This is of course by design. Validity of
+an SL argument form guarantees that an English argument that is
+well-translated into that form is valid. Consider for example this
+English argument:
 
-Either the butler is the murderer or the gardener isn't who he says he
-is.
-
-The gardener is who he says he is.
-
-The butler is the murderer.
+> | 1. <span class="premise">Either the butler is the murderer or the gardener isn't who he says he is.</span>
+> | 2. <span class="premise">The gardener is who he says he is.</span>
+> | <span class="conclusion">The butler is the murderer.</span>
 
 This argument is valid. There's no way for the conclusion to be false if
 both premises are true. Let's translate this argument into SL, and
 evaluate the resulting formal argument for validity with a truth table.
 We begin with a symbolization key:
 
-The butler is the murderer.
-
-The gardener is who he says he is.
+> **B:** The butler is the murderer.
+> **G:** The gardener is who he says he is.
 
 With this key, the argument, rendered in SL, looks like this:
 
-$(B\lor\neg G)$
-
-$G$
-
-$B$
+> | 1. <span class="premise">$(B \lor \neg G)$</span>
+> | 2. <span class="premise">$G$</span>
+> | <span class="conclusion">$B$</span>
 
 We can evaluate this formal argument for validity using a truth table.
 We'll set up a table with two atomic sentences, and check to see whether
@@ -522,50 +517,41 @@ require any particular rational insight or intuition. It is often
 relatively easy to tell whether the informal definition of validity is
 met --- most of us have a good sense of what is and isn't possible. But
 it is an advantage to have an operationalized set of rules that a simple
-computer could apply. A second advantage, alluded to in Chapter
-[\[ch.SL\]](#ch.SL){reference-type="ref" reference="ch.SL"}, is that
+computer could apply. A second advantage, alluded to in Chapter 2, is that
 talking about valid SL forms provides a nice way to explain what various
 valid English arguments have in common with one another. The validity of
 the argument form
 
-$(B\lor\neg G)$
-
-$G$
-
-$B$
+> | 1. <span class="premise">$(B \lor \neg G)$</span>
+> | 2. <span class="premise">$G$</span>
+> | <span class="conclusion">$B$</span>
 
 helps explain why the butler argument is valid, but the explanation does
 not depend on any of the specifics of what the individual letters stand
 for. It would be a perfectly good explanation for why *any* argument of
 this form would have to be valid. For example, consider this argument:
 
-Either Barney is a purple dinosaur or I don't have a really
-weird-looking cat.
-
-I do have a really weird-looking cat.
-
-Barney is a purple dinosaur.
+> | 1. <span class="premise">Either Barney is a purple dinosaur or I don't have a really weird-looking cat.</span>
+> | 2. <span class="premise">I do have a really weird-looking cat.</span>
+> | <span class="conclusion">Barney is a purple dinosaur.</span>
 
 That argument can be translated into the same SL argument just
 evaluated, using this symbolization key:
 
-Barney is a purple dinosaur.
-
-I have a really weird-looking cat.
+> **B:** Barney is a purple dinosaur.
+> **G:** I have a really weird-looking cat.
 
 Since it too has a valid form in SL, it too must be a valid argument.
 *Any* argument with this form will be a valid argument.
 
+[insert with bounder - If you have an argument form that is valid in SL, then *any* English argument that is properly translatable into that argument form will be valid.]
+
 Note that this is even true for arguments that have a more complex
 internal structure, like this strange argument:
 
-Either Canada is a democracy if and only if Poland is neither part of
-the European Union nor majority Catholic, or my dog is not not lazy.
-
-My dog is not lazy.
-
-Canada is a democracy if and only if Poland is neither part of the
-European Union nor majority Catholic.
+> | 1. <span class="premise">Either Canada is a democracy if and only if Poland is neither part of the European Union nor majority Catholic, or my dog is not not lazy.</span>
+> | 2. <span class="premise">My dog is not lazy.</span>
+> | <span class="conclusion">Canada is a democracy if and only if Poland is neither part of the European Union nor majority Catholic.</span>
 
 One could translate this argument in to a relatively complex argument in
 SL. (If you did, the first premise would probably be a disjunction with
@@ -576,10 +562,8 @@ however, that extra structure isn't needed to explain the validity of
 the argument. For this argument too has the same valid form as the
 previous ones, as can be seen via this symbolization key:
 
-Canada is a democracy if and only if Poland is neither part of the
-European Union nor majority Catholic.
-
-My dog is not lazy.
+> **B:** Canada is a democracy if and only if Poland is neither part of the European Union nor majority Catholic.
+> **G:** My dog is not lazy.
 
 For many purposes, this would be a poor choice of symbolization keys. It
 ignores the internal structure of two central sentences. But if, as
@@ -587,29 +571,33 @@ here, that structure is irrelevant, you can save yourself some work by
 engaging at a higher level of abstraction.
 
 Note also that it's an implication of what we've just illustrated that
-there's not just one SL argument that is *the* argument form for a given
-argument in English. One can formalize arguments in various ways. If an
-argument has a valid argument form in SL, that's a guarantee that the
-argument is valid. But it is important not to invert this relationship
---- it does *not* follow from the fact that an argument has an *invalid*
-form, that the argument is invalid. One reason this is so is that it is
-possible for some arguments to have valid forms *and* invalid forms.
+there's not just one SL argument form that is *the* argument form for a
+given argument in English. One can formalize arguments in various ways.
+If an argument has a valid argument form in SL, that's a guarantee that
+the argument is valid. But it is important not to invert this
+relationship --- it does *not* follow from the fact that an argument has
+an *invalid* form, that the argument is invalid. One reason this is so
+is that it is possible for arguments to have valid forms *and* invalid
+forms.
 
-Common student mistakes
+**3.6 Common student mistakes**
 -----------------------
 
 Here are a couple of issues that often come up when I teach this
 material to students.
 
-### Validity is not relative to particular interpretations
+### **3.6.1 Validity is not relative to particular valuations of atoms**
 
-Truth in SL is relative to an interpretation. A given wff is true on
-some interpretations, and false on others. For example, $P \equiv Q$ is
-true when {$P=1$, $Q=1$}, and false when {$P=1$, $Q=0$}. But validity,
-unlike truth, is a claim about *all* interpretations.
+A sentence in SL is true on some interpretations, and false on others.
+(For current purposes, you can think of an **interpretation** as something that fixes a row
+of the truth table; it determines the truth values of the atomic
+sentences in use.) For example, $P \equiv Q$ is true on an interpretation
+where {$P=1$, $Q=1$}, and false when {$P=1$, $Q=0$}. So truth in SL is
+relative to an interpretation.
 
-Let's use a truth table to evaluate whether $P\lor Q$, $\neg P$
- $P \equiv Q$ is a valid argument form. To do this, we can draw the
+But validity, unlike truth, is a claim about *all* interpretations.
+
+Let's use a truth table to evaluate whether $P \lor Q$, $\neg P \therefore P \equiv Q$ is a valid argument form. To do this, we can draw the
 complete truth table for those three wffs:
 
    $P$   $Q$      $P$   $\lor$   $Q$      $\neg$   $P$      $P$   $\equiv$   $Q$  
@@ -626,7 +614,7 @@ $Q=1$}, is such a row, so the argument is invalid.
 Here is a common mistake. Students sometimes draw the truth table
 accurately, and correctly note that line three is inconsistent with the
 argument's validity, but misdescribe the situation, saying something
-like this: *'The argument is invalid when $P=0$, $Q=1$.'* This is a
+like this: '*The argument is invalid when* $P=0$, $Q=1$.' This is a
 mistake because the argument isn't only invalid *in that row* --- the
 argument in invalid, *period*. That interpretation *explains why* the
 argument is invalid, but validity and invalidity are claims about *all*
@@ -637,59 +625,81 @@ $P=0$, $Q=1$.
 This sounds like a small and fussy point about speaking precisely about
 logic. It is. But careful language here can help lead to careful
 thought. It is important, to thinking clearly about validity, to
-remember that validity, unlike truth, is a feature that arguments have
-or lack intrinsically. It is not something that an argument has in some
-interpretations and lacks in others.
+remember that validity, unlike truth, is a feature that SL argument
+forms have or lack *intrinsically*. Validty is not something an argument
+form has in some interpretations and lacks in others.
 
 The same goes for tautologies, contradictions, and contingent sentences.
 A sentence isn't a tautology on some interpretations and not on others;
 it either simply is, or it simply is not, a tautology.
 
-### Valid arguments with invalid forms
+### **3.6.2 Valid arguments with invalid forms**
 
-Here is a question students sometimes get wrong: *Provide (in English) a
-valid argument of the form $P$  $P \& Q$, or explain why it is
-impossible to do so.* Students often think this is impossible, because
-$P$  $P \& Q$ is an invalid argument form. That certainly is an
-invalid argument form. The premise is true, and the conclusion false,
-when $P=1$, $Q=0$. But that doesn't mean there can be no valid argument
-with this form.
+Here is a question students sometimes get wrong: *Provide (in English) a valid argument of the form $P \therefore P \& Q$, or explain why it is impossible to do so.* Students often think this is impossible, because
+$P$  $P \& Q$ is an invalid argument form.
+
+Well, $P \therefore P \& Q$ certainly is an invalid argument form. The
+premise is true, and the conclusion false, on an interpretation where
+$P=1$, $Q=0$. But that doesn't mean there can be no valid argument with
+this form.
 
 A valid argument form is a form that guarantees that any argument of
 that form is valid. Since this form is invalid, it is going to be
 possible to find invalid arguments of that form. For example, we could
 interpret $P$ and $Q$ thus:
 
-Captain Hook is angry.
+> **P:** Captain Hook is angry.
+> **Q:** Captain Hook has at least two daughters.
 
-Captain Hook has at least two daughters.
-
-And of course the English argument, *Captain Hook is angry, therefore
-Captain Hook is angry and he has at least two daughters* is obviously
+And of course the English argument, *Captain Hook is angry, therefore Captain Hook is angry and he has at least two daughters* is obviously
 invalid. But that doesn't mean there couldn't be *other* arguments of
 this form that *are* valid. The form doesn't guarantee that they'll be
 valid, but they may be valid nevertheless. Consider this symbolization
 key:
 
-Captain Hook has three daughters.
+> **P:** Captain Hook has three daughters.
+> **Q:** Captain Hook has at least two daughters.
 
-Captain Hook has at least two daughters.
-
-The resulting argument is valid: *Captain Hook has three daughters.
-Therefore, Captain Hook has three daughters and he has at least two
-daughters.* It is impossible for the premise to be true without the
+The resulting argument is valid: *Captain Hook has three daughters. Therefore, Captain Hook has three daughters and he has at least two daughters.*
+It is impossible for the premise to be true without the
 conclusion also being true, so it satisfies the definition of validity
-given in Chapter [\[ch.intro\]](#ch.intro){reference-type="ref"
-reference="ch.intro"}. This argument is valid, even though it has an SL
+given in Chapter 1. This argument is valid, even though it has an SL
 argument form that is invalid. We will be particularly interested in
 arguments whose validity can be explained by their forms, but the
 definition of validity in English is more general.
+
+**Practice Exercises**
+----------------------
 
 If you want additional practice, you can construct truth tables for any
 of the sentences and arguments in the exercises for the previous
 chapter.
 
-[\[pr.TT.TTorC\]]{#pr.TT.TTorC label="pr.TT.TTorC"} Determine whether
+**Part A** Provide the truth table for the
+complex formula:
+$((P \supset (( P \supset Q) \equiv (P \& \neg R))) \lor R)$ Indicate
+whether the formula is tautological, contradictory, or contingent. If it
+is contingent, provide a model that satisfies it and one that falsifies
+it.
+
+   $P$   $Q$   $R$      (   $P$   $\supset$   (   (   $P$   $\supset$   $Q$   )   $\equiv$   (   $P$   $\&$   $\neg$   $R$   )   )   )   $\lor$   $R$  
+  ----- ----- ----- -- --- ----- -------- --- --- ----- -------- ----- --- --------- --- ----- ------ --------- ----- --- --- --- -------- ----- --
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+
+**Part B** Provide the complete truth table for
+this SL sentence: $((P \lor Q) \& (\neg P \lor \neg Q)) \equiv R$
+Indicate whether it is tautological, contradictory, or contingent. If it
+is contingent, provide an assignment of truth values that satisfies it
+and one that falsifies it.
+
+[star] **Part C** Determine whether
 each sentence is a tautology, a contradiction, or a contingent sentence.
 Justify your answer with a complete or partial truth table where
 appropriate.
@@ -730,7 +740,7 @@ $\neg\bigl[(C\lor A) \lor B\bigr]$
 
 $(B\& D) \equiv [A \equiv(A \lor C)]$
 
-[\[pr.TT.equiv\]]{#pr.TT.equiv label="pr.TT.equiv"} Determine whether
+[star] **Part D** Determine whether
 each pair of sentences is logically equivalent. Justify your answer with
 a complete or partial truth table where appropriate.
 
@@ -754,8 +764,7 @@ $[(A \lor B) \lor C]$, $[A \lor (B \lor C)]$
 
 $[(A \lor B) \& C]$, $[A \lor (B \& C)]$
 
-[\[pr.TT.consistent\]]{#pr.TT.consistent label="pr.TT.consistent"}
-Determine whether each set of sentences is consistent or inconsistent.
+[star] **Part E** Determine whether each set of sentences is consistent or inconsistent.
 Justify your answer with a complete or partial truth table where
 appropriate.
 
@@ -775,9 +784,22 @@ $A\equiv(B\lor C)$, $C\supset \neg A$, $A\supset \neg B$
 
 $A$, $B$, $C$, $\neg D$, $\neg E$, $F$
 
-[\[pr.TT.valid\]]{#pr.TT.valid label="pr.TT.valid"} Determine whether
-each argument is valid or invalid. Justify your answer with a complete
-or partial truth table where appropriate.
+**Part F**
+
+Use a complete truth table to evaluate this argument form for validity:
+
+$(P \supset Q) \lor (Q \supset P)$
+
+$P$
+
+$P\equiv Q$
+
+Indicate whether it valid or invalid. If it is invalid, provide an
+interpretation that satisfies the premises and falsifies the conclusion.
+
+[star] **Part G** Determine whether
+each argument form is valid or invalid. Justify your answer with a
+complete or partial truth table where appropriate.
 
 $A\supset A$  $A$
 
@@ -799,17 +821,17 @@ $(B\& A)\supset C$, $(C\& A)\supset B$  $(C\& B)\supset A$
 
 $A\equiv B$, $B\equiv C$  $A\equiv C$
 
-[\[pr.TT.concepts\]]{#pr.TT.concepts label="pr.TT.concepts"} Answer each
+[star] **Part H** Answer each
 of the questions below and justify your answer.
 
 Suppose that and are logically equivalent. What can you say about
-$\metaA{}\equiv\metaB{}$?
+$\Phi\equiv\Psi$?
 
-Suppose that $(\metaA{}\&\metaB{})\supset\metaC{}$ is contingent. What
+Suppose that $(\Phi\&\Psi)\supset\metaC{}$ is contingent. What
 can you say about the argument ", , "?
 
-Suppose that $\{\metaA{},\metaB{}, \metaC{}\}$ is inconsistent. What can
-you say about $(\metaA{}\&\metaB{}\&\metaC{})$?
+Suppose that $\{\Phi,\Psi, \metaC{}\}$ is inconsistent. What can
+you say about $(\Phi\&\Psi\&\metaC{})$?
 
 Suppose that is a contradiction. What can you say about the argument ",
 , "?
@@ -817,17 +839,17 @@ Suppose that is a contradiction. What can you say about the argument ",
 Suppose that is a tautology. What can you say about the argument ", , "?
 
 Suppose that and are logically equivalent. What can you say about
-$(\metaA{}\lor\metaB{})$?
+$(\Phi\lor\Psi)$?
 
 Suppose that and are *not* logically equivalent. What can you say about
-$(\metaA{}\lor\metaB{})$?
+$(\Phi\lor\Psi)$?
 
-[\[pr.altConnectives\]]{#pr.altConnectives label="pr.altConnectives"} We
+**Part I** We
 could leave the biconditional () out of the language. If we did that, we
-could still write '$A\equiv B$' so as to make sentences easier to read,
-but that would be shorthand for $(A\supset B) \& (B\supset A)$. The
-resulting language would be formally equivalent to SL, since $A\equiv B$
-and $(A\supset B) \& (B\supset A)$ are logically equivalent in SL. If we
+could still write '$A \equiv B$' so as to make sentences easier to read,
+but that would be shorthand for $(A \supset B) \& (B \supset A)$. The
+resulting language would be formally equivalent to SL, since $A \equiv B$
+and $(A \supset B) \& (B \supset A)$ are logically equivalent in SL. If we
 valued formal simplicity over expressive richness, we could replace more
 of the connectives with notational conventions and still have a language
 equivalent to SL.
@@ -835,8 +857,8 @@ equivalent to SL.
 There are a number of equivalent languages with only two connectives. It
 would be enough to have only negation and the material conditional. Show
 this by writing sentences that are logically equivalent to each of the
-following using only parentheses, sentence letters, negation (), and the
-material conditional ().
+following using only parentheses, sentence letters, negation ($\neg$), and the
+material conditional ($\supset$).
 
  $A\lor B$
 
@@ -846,7 +868,7 @@ material conditional ().
 
 We could have a language that is equivalent to SL with only negation and
 disjunction as connectives. Show this: Using only parentheses, sentence
-letters, negation (), and disjunction (), write sentences that are
+letters, negation ($\neg$), and disjunction ($\lor$), write sentences that are
 logically equivalent to each of the following.
 
 $A \& B$
@@ -865,8 +887,7 @@ characteristic truthtable:
    0   1    1
    0   0    1
 
-Write a sentence using the connectives of SL that is logically
-equivalent to $(A|B)$.
+> 7. Write a sentence using the connectives of SL that is logically equivalent to $(A|B)$.
 
 Every sentence written using a connective of SL can be rewritten as a
 logically equivalent sentence using one or more Sheffer strokes. Using
@@ -882,3 +903,30 @@ $(A\lor B)$
 $(A\supset B)$
 
 $(A\equiv B)$
+
+**Part J**
+
+The connective '$\lor$' indicates *inclusive disjunction*; it is true if
+either *or both* of the disjuncts is true. One might be interested in
+*exclusive disjunction*, which requires that exactly one of the
+disjuncts be true. Let us temporarily extend SL to include a connective
+for exclusive disjunction, allowing sentences of the form
+$(\Phi \oplus \Psi)$, where $\Phi$ and $\Psi$ are sentences, meaning that
+exactly one of $\Phi$ and $\Psi$ are true.
+
+Provide the truth table for $(\Phi \oplus \Psi)$.
+
+   $\Phi$   $\Psi$      $\Phi$   $\oplus$   $\Psi$  
+  ------------ ------------ -- ------------ ---------- ------------ --
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+
+$\oplus$ is *definable* in terms of , , and . This means that there is a
+formula using only these latter connectives that is equivalent to ---
+true in all the same models as --- $(P \oplus Q)$. Provide such a
+formula.
+
+Using truth tables, prove that the formula provided in the last question
+is equivalent to $(P \oplus Q)$.
