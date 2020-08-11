@@ -71,7 +71,7 @@ this way:
 > | <span class="conclusion"> $C$</span>
 
 This preserves the structure of the argument that makes it valid, but it
-still makes use of the English expression 'If... then...'. For
+still makes use of the English expression 'If$\ldots$ then$\ldots$'. For
 our formal language, we ultimately want to replace all of the English
 expressions with logical notation, but this is a good start.
 
@@ -116,11 +116,11 @@ summarizes them. They are explained below.
 
 <table>
   <tr><th>symbol</th><th>what it is called</th><th>rough translation</th></tr>
-  <tr><td>$\neg$</td><td>negation</td><td>'It is not the case that...'</td></tr>
-  <tr><td>$\&$</td><td>conjunction</td><td>'Both... and ...'</td></tr>
-  <tr><td>$\lor$</td><td>disjunction</td><td>'Either... or ...'</td></tr>
-  <tr><td>$\supset$</td><td>conditional</td><td>'If ... then ...'</td></tr>
-  <tr><td>$\equiv$</td><td>biconditional</td><td>'... if and only if ...'</td></tr>
+  <tr><td>$\neg$</td><td>negation</td><td>'It is not the case that$\ldots$'</td></tr>
+  <tr><td>$\&$</td><td>conjunction</td><td>'Both$\ldots$ and $\ldots$'</td></tr>
+  <tr><td>$\lor$</td><td>disjunction</td><td>'Either$\ldots$ or $\ldots$'</td></tr>
+  <tr><td>$\supset$</td><td>conditional</td><td>'If $\ldots$ then $\ldots$'</td></tr>
+  <tr><td>$\equiv$</td><td>biconditional</td><td>'$\ldots$ if and only if $\ldots$'</td></tr>
 </table>
 
 Natural languages like English are vague and imprecise, and carry many
@@ -189,7 +189,7 @@ Sentence 6 can
 be paraphrased as 'It is not the case that Rodrigo is immortal.' Using
 negation twice, we translate this as $\neg \neg R$. The two negations
 in a row each work as negations, so the sentence means 'It is not the
-case that... it is not the case that... $R$.' It is the
+case that$\ldots$ it is not the case that$\ldots$ $R$.' It is the
 negation of the negation of $R$. One can negate *any* sentence of SL ---
 even a negation --- by putting the symbol in front of it. It's not only
 for atomic sentences. In the case of $\neg \neg R$, this is a negation
@@ -557,7 +557,7 @@ replace a sentence with a sentence letter, we consider it merely as some
 atomic sentence that might be true or false.
 
 In order to translate conditionals into SL, we will not try to capture
-all the subtleties of English's 'if... then...' construction.
+all the subtleties of English's 'if$\ldots$ then$\ldots$' construction.
 Instead, the symbol '$\supset$' will signify a *material conditional*. This means
 that when is $\Phi$ false, the conditional ($\Phi$ $\supset$ $\Psi$) is automatically true, regardless
 of the truth value of $\Psi$. If both $\Phi$ and 
@@ -738,8 +738,8 @@ There are three kinds of symbols in SL:
 with subscripts, as needed
 </td>
 <td>
-  $A, B, C,..., Z$ <br/>
-  $A_1, B_1, Z_1, A_2, A_25, J_375,...$
+  $A, B, C,$\ldots$, Z$ <br/>
+  $A_1, B_1, Z_1, A_2, A_25, J_375,$\ldots$$
 </td>
 </tr>
 <tr>
@@ -947,8 +947,8 @@ down; if you're unsure about whether it's OK to take the shortcut, the
 safest thing is to go by the formal definition.
 
 If we had given a different definition for a wff, then these could count
-as wffs. We might have written rule 3 in this way: "If $\Phi$, $\Psi$, ... $\Zeta$ are
-wffs, then $(\Phi \& \Psi \&... \& \Zeta)$, is a
+as wffs. We might have written rule 3 in this way: "If $\Phi$, $\Psi$, $\ldots$ $\Zeta$ are
+wffs, then $(\Phi \& \Psi \&$\ldots$ \& \Zeta)$, is a
 wff." This would make it easier to translate some English sentences, but
 would have the cost of making our formal language more complicated. We
 would have to keep the complex definition in mind when we develop truth

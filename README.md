@@ -14,7 +14,7 @@
     <td>ch3</td><td>all except truth tables / exercises</td><td>no</td>
   </tr>
   <tr>
-    <td>ch4</td><td>no</td><td>no</td>
+    <td>ch4</td><td>all except exercises</td><td>no</td>
   </tr>
   <tr>
     <td>ch5</td><td>no</td><td>no</td>
@@ -93,9 +93,9 @@ eg. 'and', 'or', 'conditional', 'biconditional', 'not' (Carnap Book symbols):
 
     $\land, \lor, \rightarrow, \leftrightarrow, \neg$
 
-eg. 'and', 'conditional', 'biconditional' (forall x UBC symbols):
+eg. 'and', 'conditional', 'biconditional', 'double turnstile' (forall x UBC symbols):
 
-    $\&, \supset, \equiv$
+    $\&, \supset, \equiv, \models$
 
 subscript:
 
@@ -108,4 +108,18 @@ phi, psi, zeta (capital letters):
 therefore:
 
     $\therefore$
+
+script letters:
+
+    $\mathcal{P}, \mathcal{X}$,
+
+empty set: 
+
+    $\emptyset$
+
+bot symbol (used to represent an absurdity):
+
+    $\bot$
+
+
 
