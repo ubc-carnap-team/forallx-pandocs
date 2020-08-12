@@ -281,7 +281,8 @@ it was intended to be about Jessica. Moreover, 'grumpy' is not a
 sentence; on its own it is neither true nor false. So instead, we
 paraphrase sentence 12 as '$J$ and Jessica is grumpy.' Now we need to add a
 sentence letter to the symbolization key. Let $G_1$ mean 'Jessica is
-grumpy.' Now the sentence can be translated as $J \& G_1}$.
+grumpy.' Now the sentence can be translated as 
+$J \& G_1$.
 
 [insert with bounder - A sentence can be symbolized as ($\Phi \& \Psi$) if it can be paraphrased in English as ‘Both $\Phi$, and $\Psi$.’ Each of the conjuncts must be a sentence.]
 
@@ -334,11 +335,11 @@ being strong, but this similarity is completely lost when we translate
 to SL. Nor does SL recognize any particular similarity between $G_1$
 and $G_2$.
 
-For any sentences $\Phi$ and $\Psi$, ($\Phi$ $\land$ $\Psi$) is true if and only if both $\Phi$ and $\Psi$ are true. We
+For any sentences $\Phi$ and $\Psi$, ($\Phi$ $\&$ $\Psi$) is true if and only if both $\Phi$ and $\Psi$ are true. We
 can summarize this in the characteristic truth table for conjunction:
 
 <table>
-<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \land \Psi$</th></tr>
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \& \Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>0</td></tr>
@@ -364,7 +365,7 @@ instance, that for any sentence $\Phi$,$\neg \Phi$ is the negation of $\Phi$. Th
 
 -   $\neg$ $\neg$ *C* is the negation of $\neg C$
 
--   $\neg$(*A* $\land$ *B*) is the negation of (*A* $\land$ *B*)
+-   $\neg$(*A* $\&$ *B*) is the negation of (*A* $\&$ *B*)
 
 -   etc.
 
@@ -438,8 +439,8 @@ summarize this with the characteristic truth table for disjunction:
 <tr><td>0</td><td>0</td><td>0</td></tr>
 </table>
 
-Note that both conjunction and disjunction are symmetrical. ($\Phi$ $\land$ $\Psi$) is
-logically equivalent to ($\Psi$ $\land$ $\Phi$), and ($\Phi$ $\lor$ $\Psi$) is logically equivalent to ($\Psi$ $\lor$ $\Phi$).
+Note that both conjunction and disjunction are symmetrical. ($\Phi$ $\&$ $\Psi$) is
+logically equivalent to ($\Psi$ $\&$ $\Phi$), and ($\Phi$ $\lor$ $\Psi$) is logically equivalent to ($\Psi$ $\lor$ $\Phi$).
 
 These sentences are somewhat more complicated:
 
@@ -449,8 +450,8 @@ These sentences are somewhat more complicated:
 
 Here's a symbolization key:
 
-> **$\S_1$:** You will get soup. <br/>
-> **$\S_2$:**<sub>2</sub>You will get salad.
+> **S<sub>1</sub>:** You will get soup. <br/>
+> **S<sub>2</sub>:** You will get salad.
 
 Sentence 18 can be
 paraphrased in this way: 'Either *it is not the case that* you get soup,
@@ -738,12 +739,12 @@ There are three kinds of symbols in SL:
 with subscripts, as needed
 </td>
 <td>
-  $A, B, C,$\ldots$, Z$ <br/>
-  $A_1, B_1, Z_1, A_2, A_25, J_375,$\ldots$$
+  $A, B, C,\ldots, Z$ <br/>
+  $A_1, B_1, Z_1, A_2, A_25, J_375,\ldots$
 </td>
 </tr>
 <tr>
-<td>connectives</td><td>$\neg$, $\land$, $\lor$, $\supset$, $\equiv$</td>
+<td>connectives</td><td>$\neg$, $\&$, $\lor$, $\supset$, $\equiv$</td>
 </tr>
 <tr>
 <td>parentheses</td><td>(,)</td>
@@ -771,11 +772,11 @@ It is common to use the acronym *wff*; the plural is wffs.
 Individual sentence letters like $A$ and $G_3$ are certainly wffs. We
 can form further wffs out of these by using the various connectives.
 Using negation, we can get $\neg A$ and $\neg G_3$. Using
-conjunction, we can get $(A \land G_3)$, $(G_3 \land A)$,
-$(A \land A)$, and $(G_3 \land G_3)$. We could also apply negation
+conjunction, we can get $(A \& G_3)$, $(G_3 \& A)$,
+$(A \& A)$, and $(G_3 \& G_3)$. We could also apply negation
 repeatedly to get wffs like $\neg \neg A$ or apply negation along with
-conjunction to get wffs like $\neg(A \land G_3)$ and
-$\neg(G_3 \land \neg G_3)$. The possible combinations are
+conjunction to get wffs like $\neg(A \& G_3)$ and
+$\neg(G_3 \& \neg G_3)$. The possible combinations are
 endless, even starting with just these two sentence letters, and there
 are infinitely many sentence letters. So there is no point in trying to
 list all the wffs.
@@ -947,8 +948,8 @@ down; if you're unsure about whether it's OK to take the shortcut, the
 safest thing is to go by the formal definition.
 
 If we had given a different definition for a wff, then these could count
-as wffs. We might have written rule 3 in this way: "If $\Phi$, $\Psi$, $\ldots$ $\Zeta$ are
-wffs, then $(\Phi \& \Psi \&$\ldots$ \& \Zeta)$, is a
+as wffs. We might have written rule 3 in this way: "If $\Phi, \Psi, \ldots Z$ are
+wffs, then $(\Phi \& \Psi \& \ldots \& Z)$, is a
 wff." This would make it easier to translate some English sentences, but
 would have the cost of making our formal language more complicated. We
 would have to keep the complex definition in mind when we develop truth

@@ -93,9 +93,9 @@ eg. 'and', 'or', 'conditional', 'biconditional', 'not' (Carnap Book symbols):
 
     $\land, \lor, \rightarrow, \leftrightarrow, \neg$
 
-eg. 'and', 'conditional', 'biconditional', 'double turnstile' (forall x UBC symbols):
+eg. 'and', 'conditional', 'biconditional', 'turnstile', 'double turnstile', 'negative double turnstile' (forall x UBC symbols):
 
-    $\&, \supset, \equiv, \models$
+    $\&, \supset, \equiv, \vdash, \models, \not\models$
 
 subscript:
 
@@ -103,7 +103,7 @@ subscript:
 
 phi, psi, zeta (capital letters):
 
-    $\Phi, \Psi, \Zeta$
+    $\Phi, \Psi, Z$
 
 therefore:
 
