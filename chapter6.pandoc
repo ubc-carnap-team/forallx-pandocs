@@ -306,7 +306,7 @@ unsatisfiable one.
 
 The conditional rule is:
 
-not line numbering, single branches \[ \[\] \[\] \]
+[insert tree]
 
 As before, assume that the material above the branch is satisfiable; so
 some interpretation $\mathcal{I}$ satisfies it. Any interpretation that
@@ -318,45 +318,42 @@ tree. So, given that it satisfies the conditional, $\mathcal{I}$ is
 guaranteed to satisfy at least one branch of the tree as developed by
 the conditional rule.
 
-### Negated Conditional
+### **6.4.7 Negated Conditional**
 
 The rule given in Chapter
-[\[ch.sl.trees\]](#ch.sl.trees){reference-type="ref"
-reference="ch.sl.trees"} for negated conditionals was this:
+5 for negated conditionals was this:
 
-not line numbering, single branches \[() \[ \[, grouped \] \] \]
+[insert tree]
 
 I hope the procedure is feeling a bit tedious by now. As before, we
 assume that the negated conditional is satisfiable, and prove that the
 tree as developed by this rule will remain satisfiable. Since we're
-assuming that () is satisfiable, it follows that some interpretation
+assuming that $\neg (\Phi \supset \Psi)$ is satisfiable, it follows that some interpretation
 $\mathcal{I}$ satisfies it. But
 $\mathcal{I}(\neg(\Phi\supset\Psi))$ only if
 $\mathcal{I}(\Phi)=1$ and $\mathcal{I}(\Psi)=0$. So
-$\mathcal{I}$ will satisfy and . That is to say, it will satisfy the
+$\mathcal{I}$ will satisfy $\Phi$ and $\Psi$. That is to say, it will satisfy the
 continuation of the branch given this rule. The negated conditional rule
 can never take one from a satisfiable root to an unsatisfiable tree.
 
 We have three more rules to consider.
 
-### Biconditional
+### **6.4.8 Biconditional**
 
 Here is the biconditional rule:
 
-not line numbering, single branches \[ \[ \[, grouped\] \] \[ \[,
-grouped\] \] \]
+[insert tree]
 
-Assuming that $\mathcal{I}$ satisfies , it must either assign 1 to both
-and , or it must assign 0 to both and . If the former, $\mathcal{I}$
+Assuming that $\mathcal{I}$ satisfies $\Phi \equiv \Psi$, it must either assign 1 to both $\Phi$
+and $\Psi$, or it must assign 0 to both $\Phi$ and $\Psi$. If the former, $\mathcal{I}$
 will satisfy the left branch of the new development from this rule. If
 the latter, it will satisfy the right branch, since any interpretation
 that assigns 0 to a sentence must assign 1 to its negation. So this rule
 too can never take one from a satisfiable root to an unsatisfiable tree.
 
-### Negated biconditional
+### **6.4.9 Negated biconditional**
 
-not line numbering, single branches \[() \[ \[, grouped\] \] \[ \[,
-grouped\] \] \]
+[insert tree]
 
 The reasoning is much as before. If our interpretation satisfies the
 negated biconditional, then it must assign opposite values to each side;
@@ -366,24 +363,22 @@ $\mathcal{I}$ satisfies the left branch; if the latter, $\mathcal{I}$
 satisfies the right branch. So if the negated biconditional is
 satisfiable, this rule will never result in an unsatisfiable tree.
 
-### Double negation
+### **6.4.10 Double negation**
 
 Here is our final tree resolution rule:
 
-not line numbering, single branches \[ \[\] \]
+[insert tree]
 
 One last time, we assume that we begin with something satisfiable; so we
-allow that some interpretation $\mathcal{I}$ assigns 1 to . If it
-assigns 1 to this negation, then it must assign 0 to its negand, . That
-is to say, $\mathcal{I}(\neg\Phi)=0$. And since it assigns 0 to
+allow that some interpretation $\mathcal{I}$ assigns 1 to $\neg\neg\Phi$. If it
+assigns 1 to this negation, then it must assign 0 to its negand, $\neg\Phi$. 
+That is to say, $\mathcal{I}(\neg\Phi)=0$. And since it assigns 0 to
 *this* negation, it must assign 1 to *its* negand:
 $\mathcal{I}(\Phi)=1$. But this just is the new branch development.
 So if we began with something satisfiable, this rule will result in
 something satisfiable.
-[\[sec.sl.soundnessproof.end\]]{#sec.sl.soundnessproof.end
-label="sec.sl.soundnessproof.end"}
 
-### Taking stock
+### **6.4.11 Taking stock**
 
 We've shown, for the nine resolution rules in our tree system, that they
 each have the following important feature: if you begin with a
@@ -402,12 +397,18 @@ tree method will never erroneously "prove\" that a root is
 unsatisfiable. Equivalently, tree closure guarantees unsatisfiability of
 the root. The tree method is sound.
 
-Completeness
+[insert with border - If a tree closes, that guarantees that its root is unsatisfiable. In other words:
+
+> $\mathcal{X} \vdash \bot \rightarrow mathcal{X} \models \bot$
+
+]
+
+**6.5 Completeness**
 ------------
 
 Soundness is the first of two important metalogical theorems considered
-in this chapter. The second is . One can think of soundness as a
-guarantee against a system proving *too much*; in proving soundness, we
+in this chapter. The second is **completeness**. One can think of soundness 
+as a guarantee against a system proving *too much*; in proving soundness, we
 were assuring ourselves that a tree would close *only if* the root was
 unsatisfiable. Completeness, as the name suggests, concerns whether our
 system proves *enough*. We want our system to be sure to close, if the
@@ -415,13 +416,16 @@ root is unsatisfiable. Remember, we take open branches in completed
 trees as an indication that the root is satisfiable. Completeness is
 about ensuring that this is a warranted conclusion.
 
-[\[definecomplete\]]{#definecomplete label="definecomplete"}
+[insert with border - If a root is unsatisfiable, that guarantees that the tree will close. In other words:
+
+> $\mathcal{X} \models \bot \rightarrow \mathcal{X} \vdash \bot$
+
+]
 
 Consider the unsatisfiable set of sentences, $\{\neg Q, P \& Q\}$.
 Given our conjunction rule, a tree with this root will close:
 
-\[Q, name=q \[P Q, checked, grouped \[P, just=: !u \[Q, grouped,
-close=:q, !c \] \] \] \]
+[insert tree]
 
 In proving completeness, we wish to demonstrate that this will always be
 the case: *whenever* we begin with an unsatisfiable root, the entire
@@ -429,13 +433,12 @@ tree will eventually close. Notice that if we had a different
 conjunction rule that called for a branching development instead of a
 linear one, completeness would fail. Suppose we had this rule:
 
-not line numbering, single branches \[ \[\] \[\] \]
+[insert tree]
 
 Using this rule, the tree with root $\{\neg Q, P \& Q\}$ would
 remain open:
 
-\[Q, name=q \[P Q, checked, grouped \[P, just=alt. : !u, open \] \[Q,
-close=:q, !c \] \] \]
+[insert tree]
 
 The right branch closes, but this tree has a left branch that remains
 open, even though the root is unsatisfiable. So if we modified our proof
@@ -443,7 +446,7 @@ system by using this rule instead of the linear rule for conjunction, we
 would have a system that fails completeness. We wish to prove that,
 given the actual rules, our system is complete.
 
-Proving completeness {#sec.completenessproof}
+**6.6 Proving completeness**
 --------------------
 
 Completeness is the claim that any time a set of sentences is
@@ -463,9 +466,9 @@ proof *about* our formal system.
 
 Here is the broad shape of the proof. Suppose that a completed tree has
 at least one open branch. Then we can construct an interpretation,
-$\mathcal{I}$, based on that branch, as follows: if any atomic sentence
+$\mathcal{I}$, based on that branch, as follows: if any atomic sentence $\Phi$
 is in the branch, then $\mathcal{I}(\Phi)=1$. If any negated atomic
-sentence is in the branch, then $\mathcal{I}(\Psi)=0$. Let these
+sentence $\neg\Psi$ is in the branch, then $\mathcal{I}(\Psi)=0$. Let these
 assignments exhaust $\mathcal{I}$. We can guarantee that there will be a
 coherent interpretation like this. This recipe for constructing
 interpretations will fail only if some atomic sentence *and* its
@@ -486,30 +489,30 @@ branch, then it satisfies that sentence too.
 
 We begin with conjunction.
 
-### Conjunction {#conjunctionsound}
+### **6.6.1 Conjunction**
 
-Suppose our completed, open branch contains a conjunction of the form .
+Suppose our completed, open branch contains a conjunction of the form $\Phi \& \Psi$.
 Since it is a *completed* branch, this means that the conjunction
 resolution rule must have been applied to this conjunction. (Remember, a
 branch isn't completed until every complex formula has a check mark next
 to it.) So, given the conjunction rule,
 
-not line numbering \[ \[ \[, grouped \] \] \]
+[insert tree]
 
-we know that the branch must also contain and . If we assume that
+we know that the branch must also contain $\Phi$ and $\Psi$. If we assume that
 $\mathcal{I}$ satisfies both these sentences, then we know from the
 definition of the truth of a conjunction in SL that $\mathcal{I}$
-satisfies () too. In other words, there's no way to satisfy the simpler
-sentences that come after this resolution rule, without also satisfying
-the conjunction.
+satisfies $(\Phi \& \Psi)$ too. In other words, there's no way to satisfy the 
+simpler sentences that come after this resolution rule, without also 
+satisfying the conjunction.
 
-### Negated conjunction
+### **6.6.2 Negated conjunction**
 
 Suppose a negated conjunction appears in the open branch. Since the
 branch is complete, you know that the negated conjunction rule has been
 applied:
 
-not line numbering, single branches \[() \[\] \[\] \]
+[insert tree]
 
 We are assuming that the negated conjunction is in an open branch. This
 is consistent with either one of the branches below closing, but they
@@ -523,15 +526,15 @@ considering is assigned 1. So once again, if the material in at least
 one branch below the resolution rule is satisfied, then the negated
 conjunction is satisfied too.
 
-### Disjunction
+### **6.6.3 Disjunction**
 
 Disjunctions are very similar to negated conjunctions. Since the tree is
 complete, any disjunction $\Phi\lor\Psi$ has a branch below it
-containing , and one containing . Whichever of these disjuncts is in the
+containing $\Phi$, and one containing $\Psi$. Whichever of these disjuncts is in the
 open branch, $\mathcal{I}$ satisfies that disjunct, and so satisfies the
 disjunction too.
 
-### Negated disjunction
+### **6.6.4 Negated disjunction**
 
 Negated disjunctions are similar to conjunctions. If a negated
 disjunction is in an open branch, then the negation of each disjunct is
@@ -540,12 +543,12 @@ disjunct. Then it also assigns 0 to their disjunction. So once again, if
 the material below the negated disjunction is satisfied, then so is the
 negated disjunction itself.
 
-### Conditional
+### 6.6.5 Conditional
 
 If a conditional is in a completed open branch, then it has been
 resolved by this branching rule:
 
-not line numbering, single branches \[ \[\] \[\] \]
+[insert tree]
 
 If the left development is the open branch, then we suppose that
 $\mathcal{I}(\Phi)=0$, which means that
@@ -555,51 +558,53 @@ open branch, then we suppose that $\mathcal{I}(\Psi)=1$, which
 material below in at least one branch is satisfied, then the conditional
 is satisfied too.
 
-### Negated conditional
+### **6.6.6 Negated conditional**
 
-If a negated conditional () is in the open branch, then so too are and .
+If a negated conditional $\neg(\Phi \supset \Psi)$ is in the open branch, then so too are $\Phi$ and $\neg\Psi$.
 So $\mathcal{I}(\Phi)=1$ and $\mathcal{I}(\Psi)=0$. So
 $\mathcal{I}$ falsifies the conditional, satisfying the negated
 conditional.
 
 There are three more kinds of sentences that exist in SL.
 
-### Biconditional
+### **6.6.7 Biconditional**
 
 Suppose a biconditional is in an open branch. If the branch is
 completed, then this rule has been performed:
 
-not line numbering, single branches \[ \[ \[, grouped\] \] \[ \[,
-grouped\] \] \]
+[insert tree]
 
 One of these developments is the open branch. If it's the left branch,
-then, supposing that $\mathcal{I}$ assigns 1 to both and , $\mathcal{I}$
+then, supposing that $\mathcal{I}$ assigns 1 to both $\Phi$ and 
+$\Psi$, $\mathcal{I}$
 must also assign 1 to the biconditional $\Phi\equiv\Psi$. If it's
-the right branch, then, supposing that $\mathcal{I}$ assigns 0 to both
-and , this also means that $\mathcal{I}$ must also assign 1 to the
+the right branch, then, supposing that $\mathcal{I}$ assigns 0 to 
+both $\Phi$ and  $\Psi$, this also means that $\mathcal{I}$ must 
+also assign 1 to the
 biconditional $\Phi\equiv\Psi$. So whichever branch is satisfied
 by $\mathcal{I}$, the biconditional is also satisfied.
 
-### Negated biconditional
+### **6.6.8 Negated biconditional**
 
-Exactly the same reasoning as above applies to negated biconditionals,
-except this time, the branches each assign *opposite* truth values to
-and . So for our interpretation to satisfy either branch, it must
-falsify the biconditional, thus satisfying the negated biconditional.
+Exactly the same reasoning as above applies to negated 
+biconditionals, except this time, the branches each assign 
+*opposite* truth values to $\Phi$ and $\Psi$. So for our 
+interpretation to satisfy either branch, it must falsify the 
+biconditional, thus satisfying the negated biconditional.
 
-### Double negation
+### **6.6.9 Double negation**
 
 Finally, suppose there is a double-negated sentence in our completed
 open branch. Then this rule has been performed:
 
-not line numbering, single branches \[ \[\] \]
+[insert tree]
 
-If $\mathcal{I}(\Phi)=1$, then, given the definition of truth in SL,
-$\mathcal{I}(\neg\Phi)=0$, and $\mathcal{I}(\neg\neg\Phi)=1$.
-So once again, if our interpretation satisfies what comes below, then it
-satisfies the double-negation above.
+If $\mathcal{I}(\Phi)=1$, then, given the definition of truth in 
+SL, $\mathcal{I}(\neg\Phi)=0$, and $\mathcal{I}(\neg\neg\Phi)=1$.
+So once again, if our interpretation satisfies what comes below, 
+then it satisfies the double-negation above.
 
-### Summarizing the completeness proof
+### **6.6.10 Summarizing the completeness proof**
 
 What we've just shown is that, for any sentence of SL, if it has one of
 the nine structures just canvassed --- if it's a conjunction, a negated
@@ -617,25 +622,26 @@ remains open, this guarantees that the root is satisfiable.
 Equivalently, if the root is unsatisfiable, a completed tree is
 guaranteed to close. Completeness is proven.
 
-Testing alternate rules
+**6.7 Testing alternate rules**
 -----------------------
 
-We can use the reasoning involved in the soundness and completeness
-proofs above to consider various alternative tree rules. We saw one
-example of this on p.  above, when we observed that an alternate, linear
-rule for disjunctions would result in an unsound tree system. Here again
-was the rule we considered:
+We can use the reasoning involved in the soundness and 
+completeness proofs above to consider various alternative tree 
+rules. We saw one example of this here [insert link], when we 
+observed that an alternate, linear rule for disjunctions would 
+result in an unsound tree system. Here again was the rule we 
+considered:
 
-not line numbering, single branches \[ \[ \[, grouped\]\] \]
+[insert tree]
 
 Note, however, that if we think through the *completeness* reasoning,
 we'll find that the completeness proof would still hold. If we assume
-that some interpretation $\mathcal{I}$ satisfies both and , we can be
+that some interpretation $\mathcal{I}$ satisfies both $\Phi$ and $\Psi$, we can be
 assured that it also satisfies the disjunction $\Phi\lor\Psi$.
 So changing the disjunction rule to this linear one would *not*
 interfere with the completeness of our tree system. Our trees would
 still close any time they began with unsatisfiable roots. But as we saw
-on p. , the soundness proof would fail, which is why a system with this
+on [insert link], the soundness proof would fail, which is why a system with this
 rule could start in a satisfiable root, and result in a closed tree.
 
 When either the soundness or the completeness proof fails, you know you
@@ -651,18 +657,17 @@ a single branch below, and we want it to close, despite having a
 satisfiable root. So adding the negation of just one of the disjuncts to
 the root will close the tree, without making the root unsatisfiable:
 
-not line numbering, single branches \[A B, checked \[A, grouped \[A \[B,
-grouped, close\]\] \] \]
+[insert tree]
 
 This tree is a counterexample to soundness, using the hypothetical rule
 mentioned above. Note that a counterexample is a tree that uses SL
-sentences, not the Greek letters and that we use in the statements of
+sentences, not the Greek letters $\Phi$ and $\Psi$ that we use in the statements of
 the rules.
 
 Let's work through one more example. Suppose we changed the conjunction
 rule to this one:
 
-not line numbering \[ \[ \[, grouped \] \] \[\] \]
+[insert tree]
 
 Would our system still be sound? To answer this, we assume that the
 conjunction $\Phi\&\Psi$ is satisfiable, and ask whether this
@@ -673,14 +678,15 @@ will still be sound.
 Would the system still be complete? To answer this, we ask whether each
 branch is such that, if we assume that an interpretation satisfies the
 developments below, it is guaranteed to satisfy the conjunction above.
-Begin with the left branch. If some interpretation satisfies both and ,
+Begin with the left branch. If some interpretation satisfies both 
+$\Phi$ and $\Psi$,
 then it will certainly satisfy the conjunction $\Phi\&\Psi$.
 So that branch looks fine. (Indeed, that branch is exactly the same as
 the linear development of our actual conjunction rule, so this reasoning
-is the same as that on p. .)
+is the same as that on [insert link].)
 
-But what of the right branch? Assume that some interpretation satisfies
-; does that guarantee that it satisfies $\Phi\&\Psi$?
+But what of the right branch? Assume that some interpretation satisfies $\Psi$; 
+does that guarantee that it satisfies $\Phi\&\Psi$?
 Certainly not. So if the right branch is our open branch, a completed
 tree using this rule may remain open, even if its root is unsatisfiable.
 Completeness will be violated. Let's construct a counterexample of that
@@ -688,16 +694,14 @@ form. We want a tree that includes a conjunction, whose root is
 unsatisfiable, but whose right branch remains open. Notice that the
 right branch 'ignores' the first conjunct; this is a clue that a good
 way to construct a counterexample will be to locate the unsatisfiability
-within that first conjunct. Suppose, for example, that we let itself
-stand for a contradiction. If so, any conjunction with as a conjunct
-will be unsatisfiable. But if is not a contradiction, then a tree with
+within that first conjunct. Suppose, for example, that we let $\Phi$ itself
+stand for a contradiction. If so, any conjunction with $\Phi$ as a conjunct
+will be unsatisfiable. But if $\Psi$ is not a contradiction, then a tree with
 root $\Phi\&\Psi$ will remain open. Let's develop a tree with
 this root: $(P \equiv \neg P) \& Q$. Note that this sentence has a
 contradictory first conjunct, and a contingent, atomic second conjunct.
 
-not line numbering \[(P P) Q, checked \[(P P), checked \[Q, grouped \[P
-\[P, grouped, close \] \] \[P \[P, grouped, close \] \] \] \] \[Q,
-open\] \]
+[insert tree]
 
 The left branch closes after we perform the unchanged biconditional rule
 on the contradictory first conjunct, but the right branch remains open.
@@ -706,7 +710,7 @@ root, it is a counterexample to completeness.
 
 Remember that we are considering a modification to the tree system that
 uses a different conjunction rule. In this example I used
-$P \equiv \neg P$ as my , which let me use the unchanged biconditional
+$P \equiv \neg P$ as my $\Phi$, which let me use the unchanged biconditional
 rule. But if I had used a contradiction that used a conjunction, like
 $P \& \neg P$, I would have had to have used the revised rule within
 the left branch too.
@@ -718,21 +722,22 @@ unsatisfiable, but leaves the right branch open. Suppose for instance we
 put both $P \& Q$ and $\neg P$ in the root. Then we'd have an
 unsatisfiable root, but the right branch would remain open:
 
-not line numbering \[PQ, checked \[P, grouped \[P \[Q, grouped, close \]
-\] \[Q, open\] \] \]
+[insert tree]
 
 This too is a counterexample to completeness, given the rule in
 question. So we see here two different kinds of strategies for
 generating counterexamples to completeness.
 
-[\[pr.SL.soundness-resolutions\]]{#pr.SL.soundness-resolutions
-label="pr.SL.soundness-resolutions"} Following are possible
-modifications to our SL tree system. For each, imagine a system that is
-like the system laid out in this chapter, except for the indicated
-change. Would the modified tree system be sound? If so, explain how the
-proof given in this chapter would extend to a system with this rule; if
-not, give a tree that is a counterexample to the soundness of the
-modified system.
+**Practice Exercises**
+----------------------
+
+[star] **Part A** Following are possible
+modifications to our SL tree system. For each, imagine a system 
+that is like the system laid out in this chapter, except for the 
+indicated change. Would the modified tree system be sound? If so, 
+explain how the proof given in this chapter would extend to a 
+system with this rule; if not, give a tree that is a 
+counterexample to the soundness of the modified system.
 
 Change the rule for conjunctions to this rule:
 
@@ -752,11 +757,8 @@ Change the rule for biconditionals to this rule:
 
 Change the rule for disjunctions to this rule:
 
-[\[pr.SL.completenessresolutions\]]{#pr.SL.completenessresolutions
-label="pr.SL.completenessresolutions"} For each of the rule
-modifications given in Part
-[\[pr.SL.soundness-resolutions\]](#pr.SL.soundness-resolutions){reference-type="ref"
-reference="pr.SL.soundness-resolutions"}, would the modified tree system
-be complete? If so, explain how the proof given in this chapter would
-extend to a system with this rule; if not, give a tree that is a
-counterexample to the completeness of the modified system.
+**Part A** For each of the rule modifications given in Part A, 
+would the modified tree system be complete? If so, explain how 
+the proof given in this chapter would extend to a system with 
+this rule; if not, give a tree that is a counterexample to the 
+completeness of the modified system.
