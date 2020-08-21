@@ -121,5 +121,9 @@ bot symbol (used to represent an absurdity):
 
     $\bot$
 
+blank underline:
+
+    $\rule{1cm}{0.15mm}$
+
 
 
