@@ -114,7 +114,8 @@ Logical connectives are used to build complex sentences from atomic
 components. There are five logical connectives in SL. This table
 summarizes them. They are explained below.
 
-<table>
+
+<table class="box-table">
   <tr><th>symbol</th><th>what it is called</th><th>rough translation</th></tr>
   <tr><td>$\neg$</td><td>negation</td><td>'It is not the case that$\ldots$'</td></tr>
   <tr><td>$\&$</td><td>conjunction</td><td>'Both$\ldots$ and $\ldots$'</td></tr>
@@ -168,9 +169,13 @@ pretty good clue that '$\neg$' will be an appropriate symbol to use. But it's
 important to think about the actual meaning of the sentence, and not
 rely too much on which words appear in it.
 
-[insert from pdf - For any sentence $\Phi$, a sentence can be symbolized as $\neg \Phi$ if it can be paraphrased in English as ‘It is not the case that $\Phi$.’]
+<div class="boxed-statement">
+  <div>
+    For any sentence $\Phi$, a sentence can be symbolized as $\neg \Phi$ if it can be paraphrased in English as ‘It is not the case that $\Phi$.’
+  </div>
+</div>
 
-(For more on the '$\Phi$' notation, see the 'note about notation' on [insert link])
+(For more on the '$\Phi$' notation, see the 'note about notation' [here](#a-note-about-notation).)
 
 Consider these further examples:
 
@@ -219,11 +224,13 @@ For any sentence $\Phi$: If $\Phi$ is true, then $\neg \Phi$ is false. If $\Phi$
 Using '1' for true and '0' for false, we can summarize this in a
 *characteristic truth table* for negation:
  
-<table>
+<div class="truth-table-container">
+<table class="truth-table">
 <tr><th>$\Phi$</th><th>$\neg \Phi$</th></tr>
 <tr><td>1</td><td>0</td></tr>
 <tr><td>0</td><td>1</td></tr>
 </table>
+</div>
 
 The left column shows the possible truth values for the negand; the
 right column shows the truth value of the negation.
@@ -284,7 +291,11 @@ sentence letter to the symbolization key. Let $G_1$ mean 'Jessica is
 grumpy.' Now the sentence can be translated as 
 $J \& G_1$.
 
-[insert with bounder - A sentence can be symbolized as ($\Phi \& \Psi$) if it can be paraphrased in English as ‘Both $\Phi$, and $\Psi$.’ Each of the conjuncts must be a sentence.]
+<div class="boxed-statement">
+  <div>
+    A sentence can be symbolized as ($\Phi \& \Psi$) if it can be paraphrased in English as ‘Both $\Phi$, and $\Psi$.’ Each of the conjuncts must be a sentence.
+  </div>
+</div>
 
 Sentence 13 says
 one thing about two different subjects. It says of both Jessica and Matt
@@ -324,8 +335,11 @@ Matt is strong, but neither of these says anything comparative. We need
 a new sentence letter. Let $S$ mean 'Jessica is stronger than Matt.' Now
 the sentence translates as ($M \& S$).
 
-[insert with border - Sentences that can be paraphrased ‘$\Phi$, but $\Psi$’ or ‘Although $\Phi$, $\Psi$’ are best symbolized using conjunction: ($\Phi
- \& \Psi$).]
+<div class="boxed-statement">
+  <div>
+    Sentences that can be paraphrased ‘$\Phi$, but $\Psi$’ or ‘Although $\Phi$, $\Psi$’ are best symbolized using conjunction: ($\Phi \& \Psi$).
+  </div>
+</div>
 
 It is important to keep in mind that the sentence letters $J$, $M$,
 $G_1$, $G_2$, and $S$ are atomic sentences. Considered as symbols of
@@ -338,13 +352,15 @@ and $G_2$.
 For any sentences $\Phi$ and $\Psi$, ($\Phi$ $\&$ $\Psi$) is true if and only if both $\Phi$ and $\Psi$ are true. We
 can summarize this in the characteristic truth table for conjunction:
 
-<table>
-<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \& \Psi$</th></tr>
+<div class="truth-table-container">
+<table class="truth-table">
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi$ $\&$ $\Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>0</td><td>0</td><td>0</td></tr>
 </table>
+</div>
 
 The two left columns indicate the truth values of the conjuncts. Since
 there are four possible combinations of truth values, there are four
@@ -402,7 +418,11 @@ sentence only gives the verb once. In translating, we can paraphrase it
 as 'Either Denison will golf with me, or Ellery will golf with me.' Now
 it obviously translates as $(D \lor E)$.
 
-[insert from pdf - A sentence can be symbolized as $(\Phi \lor \Psi)$ if it can be paraphrased in English as ‘Either $\Phi$, or $\Psi$.’ Each of the disjuncts must be a sentence.]
+<div class="boxed-statement">
+  <div>
+    A sentence can be symbolized as $(\Phi \lor \Psi)$ if it can be paraphrased in English as ‘Either $\Phi$, or $\Psi$.’ Each of the disjuncts must be a sentence.
+  </div>
+</div>
 
 What truth conditions should we offer for '$\lor$' sentences? If I say,
 'Denison will golf with me or he will watch movies', under what
@@ -431,13 +451,15 @@ So $(D \lor E)$ is true if $D$ is true, if $E$ is true, or if both $D$
 and $E$ are true. It is false only if both $D$ and $E$ are false. We can
 summarize this with the characteristic truth table for disjunction:
 
-<table>
+<div class="truth-table-container">
+<table class="truth-table">
 <tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \lor \Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>0</td><td>1</td><td>1</td></tr>
 <tr><td>0</td><td>0</td><td>0</td></tr>
 </table>
+</div>
 
 Note that both conjunction and disjunction are symmetrical. ($\Phi$ $\&$ $\Psi$) is
 logically equivalent to ($\Psi$ $\&$ $\Phi$), and ($\Phi$ $\lor$ $\Psi$) is logically equivalent to ($\Psi$ $\lor$ $\Phi$).
@@ -536,7 +558,11 @@ that you had cut the red wire. Without an explosion, sentence
 22 tells us nothing
 about what you did with the wire.
 
-[insert bordered - The paraphrased sentence ‘$\Phi$ only if $\Psi$’ is logically equivalent to ‘If $\Phi$, then $\Psi$.’]
+<div class="boxed-statement">
+  <div>
+    The paraphrased sentence ‘$\Phi$ only if $\Psi$’ is logically equivalent to ‘If $\Phi$, then $\Psi$.’
+  </div>
+</div>
 
 'If $\Phi$ then $\Psi$' means that if $\Phi$ is true then so is $\Psi$. So we know that if the
 antecedent $\Phi$ is true but the consequent $\Psi$ is false, then the conditional 'If $\Phi$
@@ -567,13 +593,15 @@ $\Psi$ are true, then the conditional ($\Phi$ $\supset$ $\Psi$) is true.
 In short, ($\Phi$ $\supset$ $\Psi$) is false if and only if $\Phi$ is true and $\Psi$ is false. We can
 summarize this with a characteristic truth table for the conditional.
 
-<table>
-<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \supset$ $\Psi$</th></tr>
+<div class="truth-table-container">
+<table class="truth-table">
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi$ $\supset$ $\Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>1</td></tr>
 <tr><td>0</td><td>0</td><td>1</td></tr>
 </table>
+</div>
 
 More than any other connective, the SL translation of the conditional is
 a rough approximation. It has some very counterintuitive consequences
@@ -651,13 +679,15 @@ $(\Phi \equiv \Psi)$ is true if and only if $\Phi$ and $\Psi$ have the same trut
 value: they're either both true, or they're both false. This is the
 characteristic truth table for the biconditional:
 
-<table>
-<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \equiv$ $\Psi$</th></tr>
+<div class="truth-table-container">
+<table class="truth-table">
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi$ $\equiv$ $\Psi$</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>1</td><td>0</td><td>0</td></tr>
 <tr><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>0</td><td>0</td><td>1</td></tr>
 </table>
+</div>
 
 **2.8 Other symbolization**
 ---------------------------
@@ -695,9 +725,13 @@ equivalent expressions. Both sentences mean that you will wear a jacket
 or --- if you do not wear a jacket --- then you will catch a cold. So we
 can translate them as $J \lor D$.
 
-[insert bordered - If a sentence can be paraphrased as ‘Unless $\Phi$, Ψ,’ then it can be symbolized as $(\neg \Phi \supset \Psi)$, $(\neg \Phi \supset \Psi)$, or $(\Phi \lor \Psi)$.]
+<div class="boxed-statement">
+  <div>
+    If a sentence can be paraphrased as ‘Unless $\Phi$, Ψ,’ then it can be symbolized as $(\neg \Phi \supset \Psi)$, $(\neg \Phi \supset \Psi)$, or $(\Phi \lor \Psi)$.
+  </div>
+</div>
 
-Symbolization of standard sentence types is summarized here [insert link to summary]
+Symbolization of standard sentence types is summarized [here](/rules) **TODO: Get link to point to correct appendix.**
 
 **2.9 Sentences of SL**
 ---------------
@@ -733,7 +767,7 @@ metalanguage.
 
 There are three kinds of symbols in SL:
 
-<table>
+<table class="box-table">
 <tr>
 <td>sentence letters <br/> 
 with subscripts, as needed
@@ -743,7 +777,7 @@ with subscripts, as needed
   $A_1, B_1, Z_1, A_2, A_25, J_375,\ldots$
 </td>
 </tr>
-<tr>
+<tr style="border-bottom: 1px solid black;">
 <td>connectives</td><td>$\neg$, $\&$, $\lor$, $\supset$, $\equiv$</td>
 </tr>
 <tr>
