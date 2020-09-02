@@ -997,200 +997,135 @@ two desires.
 **Practice Exercises**
 ----------------------
 
-[star] **Part A** Using the symbolization key given, translate each English-language sentence into SL.
+\* **Part A** Using the symbolization key given, translate each English-language sentence into SL.
 
-Those creatures are men in suits.
+> **M**: Those creatures are men in suits.  
+> **C**: Those creatures are chimpanzees.  
+> **G**: Those creatures are gorillas.  
 
-Those creatures are chimpanzees.
-
-Those creatures are gorillas.
-
-Those creatures are not men in suits.
-
-Those creatures are men in suits, or they are not.
-
-Those creatures are either gorillas or chimpanzees.
-
-Those creatures are neither gorillas nor chimpanzees.
-
-If those creatures are chimpanzees, then they are neither gorillas nor
+1. Those creatures are not men in suits.
+2. Those creatures are men in suits, or they are not.
+3. Those creatures are either gorillas or chimpanzees.
+4. Those creatures are neither gorillas nor chimpanzees.
+5. If those creatures are chimpanzees, then they are neither gorillas nor
 men in suits.
-
-Unless those creatures are men in suits, they are either chimpanzees or
+6. Unless those creatures are men in suits, they are either chimpanzees or
 they are gorillas.
 
-**Part B** Using the symbolization key given, translate each English-language
+\* **Part B** Using the symbolization key given, translate each English-language
 sentence into SL.
 
-Mister Ace was murdered.
+> **A:** Mister Ace was murdered.  
+> **B:** The butler did it.  
+> **C:** The cook did it.  
+> **D:** The Duchess is lying.  
+> **E:** Mister Edge was murdered.  
+> **F:** The murder weapon was a frying pan.  
 
-The butler did it.
+1. Either Mister Ace or Mister Edge was murdered.  
+2. If Mister Ace was murdered, then the cook did it.  
+3. If Mister Edge was murdered, then the cook did not do it.  
+4. Either the butler did it, or the Duchess is lying.  
+5. The cook did it only if the Duchess is lying.  
+6. If the murder weapon was a frying pan, then the culprit must have been
+the cook.  
+7. If the murder weapon was not a frying pan, then the culprit was either
+the cook or the butler.  
+8. Mister Ace was murdered if and only if Mister Edge was not murdered.  
+9. The Duchess is lying, unless it was Mister Edge who was murdered.  
+10. If Mister Ace was murdered, he was done in with a frying pan.  
+11. Since the cook did it, the butler did not.  
+12. Of course the Duchess is lying!  
 
-The cook did it.
-
-The Duchess is lying.
-
-Mister Edge was murdered.
-
-The murder weapon was a frying pan.
-
-Either Mister Ace or Mister Edge was murdered.
-
-If Mister Ace was murdered, then the cook did it.
-
-If Mister Edge was murdered, then the cook did not do it.
-
-Either the butler did it, or the Duchess is lying.
-
-The cook did it only if the Duchess is lying.
-
-If the murder weapon was a frying pan, then the culprit must have been
-the cook.
-
-If the murder weapon was not a frying pan, then the culprit was either
-the cook or the butler.
-
-Mister Ace was murdered if and only if Mister Edge was not murdered.
-
-The Duchess is lying, unless it was Mister Edge who was murdered.
-
-If Mister Ace was murdered, he was done in with a frying pan.
-
-Since the cook did it, the butler did not.
-
-Of course the Duchess is lying!
-
-[star] **Part C** Using the symbolization key given, translate each ]
+\* **Part C** Using the symbolization key given, translate each ]
 English-language sentence into SL.
 
-Ava is an electrician.
+> **$E_1:$** Ava is an electrician.  
+> **$E_2:$** Harrison is an electrician.  
+> **$F_1:$** Ava is a firefighter.  
+> **$F_2:$** Harrison is a firefighter.  
+> **$S_1:$** Ava is satisfied with her career.  
+> **$S_2:$** Harrison is satisfied with his career.  
 
-Harrison is an electrician.
-
-Ava is a firefighter.
-
-Harrison is a firefighter.
-
-Ava is satisfied with her career.
-
-Harrison is satisfied with his career.
-
-Ava and Harrison are both electricians.
-
-If Ava is a firefighter, then she is satisfied with her career.
-
-Ava is a firefighter, unless she is an electrician.
-
-Harrison is an unsatisfied electrician.
-
-Neither Ava nor Harrison is an electrician.
-
-Both Ava and Harrison are electricians, but neither of them find it
+1. Ava and Harrison are both electricians.  
+2. If Ava is a firefighter, then she is satisfied with her career.  
+3. Ava is a firefighter, unless she is an electrician.  
+4. Harrison is an unsatisfied electrician.
+5. Neither Ava nor Harrison is an electrician.
+6. Both Ava and Harrison are electricians, but neither of them find it
 satisfying.
-
-Harrison is satisfied only if he is a firefighter.
-
-If Ava is not an electrician, then neither is Harrison, but if she is,
+7. Harrison is satisfied only if he is a firefighter.
+8. If Ava is not an electrician, then neither is Harrison, but if she is,
 then he is too.
-
-Ava is satisfied with her career if and only if Harrison is not
+9. Ava is satisfied with her career if and only if Harrison is not
 satisfied with his.
-
-If Harrison is both an electrician and a firefighter, then he must be
+10. If Harrison is both an electrician and a firefighter, then he must be
 satisfied with his work.
-
-It cannot be that Harrison is both an electrician and a firefighter.
-
-Harrison and Ava are both firefighters if and only if neither of them is
+11. It cannot be that Harrison is both an electrician and a firefighter.
+12. Harrison and Ava are both firefighters if and only if neither of them is
 an electrician.
 
-[star] **Part D** Give a symbolization key and
+\* **Part D** Give a symbolization key and
 symbolize the following sentences in SL.
 
-Alice and Bob are both spies.
-
-If either Alice or Bob is a spy, then the code has been broken.
-
-If neither Alice nor Bob is a spy, then the code remains unbroken.
-
-The German embassy will be in an uproar, unless someone has broken the
+1. Alice and Bob are both spies.
+2. If either Alice or Bob is a spy, then the code has been broken.
+3. If neither Alice nor Bob is a spy, then the code remains unbroken.
+4. The German embassy will be in an uproar, unless someone has broken the
 code.
-
-Either the code has been broken or it has not, but the German embassy
+5. Either the code has been broken or it has not, but the German embassy
 will be in an uproar regardless.
+6. Either Alice or Bob is a spy, but not both.
 
-Either Alice or Bob is a spy, but not both.
+\* **Part E** Give a symbolization key and symbolize the following sentences in SL.
 
-[star] **Part E** Give a symbolization key and symbolize the following sentences in SL.
-
-If Gregor plays first base, then the team will lose.
-
-The team will lose unless there is a miracle.
-
-The team will either lose or it won't, but Gregor will play first base
+1. If Gregor plays first base, then the team will lose.
+2. The team will lose unless there is a miracle.
+3. The team will either lose or it won't, but Gregor will play first base
 regardless.
-
-Gregor's mom will bake cookies if and only if Gregor plays first base.
-
-If there is a miracle, then Gregor's mom will not bake cookies.
+4. Gregor's mom will bake cookies if and only if Gregor plays first base.
+5. If there is a miracle, then Gregor's mom will not bake cookies.
 
 **Part F** For each argument,
 write a symbolization key and translate the argument as well as possible
 into SL.
 
-If Dorothy plays the piano in the morning, then Roger wakes up cranky.
+1. If Dorothy plays the piano in the morning, then Roger wakes up cranky.
 Dorothy plays piano in the morning unless she is distracted. So if Roger
 does not wake up cranky, then Dorothy must be distracted.
-
-It will either rain or snow on Tuesday. If it rains, Neville will be
+2. It will either rain or snow on Tuesday. If it rains, Neville will be
 sad. If it snows, Neville will be cold. Therefore, Neville will either
 be sad or cold on Tuesday.
-
-If Zoog remembered to do his chores, then things are clean but not neat.
+3. If Zoog remembered to do his chores, then things are clean but not neat.
 If he forgot, then things are neat but not clean. Therefore, things are
 either neat or clean --- but not both.
 
 **Part G** For each, indicate (yes/no) whether it
 is a sentence of SL.
 
-$P_{2}$
+1. $P_{2}$
+2. if $P$, then $Q$
+3. $(P \lor Q \& R)$
+4. $((P \& (P \& P)) \supset P)$
+5. $(p \supset q)$
+6. $(P \lor Q) \lor R)$
+7. $\neg \neg \neg \neg P$
+8. $(\Sigma \& \Phi)$
 
-if $P$, then $Q$
-
-$(P \lor Q \& R)$
-
-$((P \& (P \& P)) \supset P)$
-
-$(p \supset q)$
-
-$(P \lor Q) \lor R)$
-
-$\neg \neg \neg \neg P$
-
-$(\Sigma \& \Phi)$
-
-[star] **Part H** For each of the following:
+\* **Part H** For each of the following:
 (a) Is it, by the strictest formal standards, a sentence of SL? (b) Is
 it an acceptable way to write down a sentence of SL, allowing for our
 notational conventions?
 
-$(A)$
-
-$J_{374} \lor \neg J_{374}$
-
-$\neg \neg \neg \neg F$
-
-$\neg \& S$
-
-$(G \& \neg G)$
-
-$\Phi \supset \Phi$
-
-$(A \supset (A \& \neg F)) \lor (D \equiv E)$
-
-$[(Z \equiv S) \supset W] \& [J \lor X]$
-
-$(F \equiv \neg D \supset J) \lor (C \& D)$
+1. $(A)$
+2. $J_{374} \lor \neg J_{374}$
+3. $\neg \neg \neg \neg F$
+4. $\neg \& S$
+5. $(G \& \neg G)$
+6. $\Phi \supset \Phi$
+7. $(A \supset (A \& \neg F)) \lor (D \equiv E)$
+8. $[(Z \equiv S) \supset W] \& [J \lor X]$
+9. $(F \equiv \neg D \supset J) \lor (C \& D)$
 
 **Part I**
 
@@ -1208,55 +1143,39 @@ need to identify components of the components. (For example, if one of
 the conjuncts is itself a conjunction, you don't need to identify the
 conjuncts of that conjunct.)
 
-If your computer crashes and you don't have a backup, then you'll have
+1. If your computer crashes and you don't have a backup, then you'll have
 to work all night or ask for an extension.
-
-If the blue team scores, the crowd will not cheer.
-
-I'm very hungry and if I have to wait any longer, I'm going to start
+2. If the blue team scores, the crowd will not cheer.
+3. I'm very hungry and if I have to wait any longer, I'm going to start
 getting angry.
-
-I did not tell Mother or Father.
+4. I did not tell Mother or Father.
 
 **Part K** Translate these English sentences into
 SL, using this symbolization key:
 
-John will get a good grade
+> **P**: John will get a good grade  
+> **Q**: John will get a good job  
+> **R**: John's mother learns John's grade  
+> **S**: John will be in trouble  
 
-John will get a good job
-
-John's mother learns John's grade
-
-John will be in trouble
-
-If John doesn't get a good grade, he won't get a good job/
-
-If John doesn't get a good grade, then if his mother learns his grade,
+1. If John doesn't get a good grade, he won't get a good job/
+2. If John doesn't get a good grade, then if his mother learns his grade,
 he'll be in trouble.
-
-John will be in trouble, but he will get a good grade.
-
-If his grade isn't good, John won't be in trouble unless his mother
+3. John will be in trouble, but he will get a good grade.
+4. If his grade isn't good, John won't be in trouble unless his mother
 learns his grade.
 
 **Part L**
 
 Translate these SL sentences into English, using this symbolization key:
 
-logic is awesome
+> **P:** logic is awesome  
+> **Q:** opera is sexy  
+> **R:** the moon is made of cheese  
+> **S:** every PHIL 220 student will get an A  
 
-opera is sexy
-
-the moon is made of cheese
-
-every PHIL 220 student will get an A
-
-$(P \supset \neg Q)$
-
-$(S \supset (P \lor R))$
-
-$(Q \& \neg S)$
-
-$\neg \neg Q$
-
-$(Q \equiv R)$
+1. $(P \supset \neg Q)$
+2. $(S \supset (P \lor R))$
+3. $(Q \& \neg S)$
+4. $\neg \neg Q$
+5. $(Q \equiv R)$
