@@ -73,27 +73,28 @@ just the two possible values that a sentence of SL can have. The truth
 tables for the connectives of SL, written in terms of 1s and 0s, are
 given in table 3.1.
 
-::: {#table.CharacteristicTTs}
-  --- ---
-   1   0
-   0   1
-  --- ---
+*TODO: Make the two tables side-by-side*
+*TODO: Make the subtitle more like a subtitle*
+<div class="truth-table-container" style="margin-bottom:1rem;">
+  <table class="truth-table">
+    <tr><th>$\Phi$</th><th>$\neg \Phi$</th></tr>
+    <tr><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td></tr>
+  </table>
+</div>
 
-  : The characteristic truth tables for the connectives of SL.
-:::
 
-    
+<div class="truth=table-container">
+  <table class="truth-table">
+    <tr><th>$\Phi$</th> <th>$\Psi$</th> <th>$\Phi$ & $\Psi$</th> <th>$\Phi \lor \Psi$</th> <th>$\Phi \supset \Psi$</th> <th>$\Phi \equiv \Psi$</th></tr>
+    <tr><td>1</td>   <td>1</td>   <td>1</td>   <td>1</td>   <td>1</td>   <td>1</td></tr>
+    <tr><td>1</td>   <td>0</td>   <td>0</td>   <td>1</td>   <td>0</td>   <td>0</td></tr>
+    <tr><td>0</td>   <td>1</td>   <td>0</td>   <td>1</td>   <td>1</td>   <td>0</td></tr>
+    <tr><td>0</td>   <td>0</td>   <td>0</td>   <td>0</td>   <td>1</td>   <td>1</td></tr>
+   </table>
+ </div>
 
-::: {#table.CharacteristicTTs}
-  --- --- --- --- --- ---
-   1   1   1   1   1   1
-   1   0   0   1   0   0
-   0   1   0   1   1   0
-   0   0   0   0   1   1
-  --- --- --- --- --- ---
-
-  : The characteristic truth tables for the connectives of SL.
-:::
+ Table 3.1: The characteristic truth tables for the connectives of SL.
 
 The characteristic truth table for conjunction, for example, gives the
 truth conditions for any sentence of the form $(\Phi \& \Psi)$.
@@ -106,12 +107,16 @@ combinations of true and false for $H$ and $I$, which gives us four
 rows. We then copy the truth-values for the sentence letters and write
 them underneath the letters in the sentence.
 
-   $H$   $I$   $(H$      $I)$      $H$
-  ----- ----- ------ -- ------ -- -----
-    1     1                       
-    1     0                       
-    0     1                       
-    0     0                       
+**TODO: Get rid of bolded line**
+<div class="truth-table-container">
+  <table class="truth-table">
+    <tr><th>H</th> <th>I</th> <th style="border:none;">(H &</th> <th>I)</th> <th>$\supset$ H</th></tr>
+    <tr><td>1</td> <td>1</td> <td>1</td> <td style="border:none;">1</td> <td>0</td></tr>
+    <tr><td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td></tr>
+    <tr><td>0</td> <td>1</td> <td>0</td> <td>1</td> <td>0</td></tr>
+    <tr><td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td></tr>
+  </table>
+</div>
 
 So far all we've done is duplicate the first two columns. We've written
 the 'H' column twice --- once under each 'H', and the 'I' column once,
