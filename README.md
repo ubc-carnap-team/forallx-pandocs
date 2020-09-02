@@ -2,25 +2,25 @@
 
 <table>
   <tr>
-    <th>chapter</th><th>basic formatting</th><th>interactive</th>
+    <th>chapter</th><th>basic formatting</th><th>completed</th>
   </tr>
   <tr>
     <td>ch1</td><td>yes</td><td>no</td>
   </tr>
   <tr>
-    <td>ch2</td><td>all except exercises</td><td>no</td>
+    <td>ch2</td><td>all except one link to appendix page (marked as TODO)</td><td>no</td>
   </tr>
   <tr>
-    <td>ch3</td><td>started</td><td>no</td>
+    <td>ch3</td><td>all except truth tables</td><td>no</td>
   </tr>
   <tr>
-    <td>ch4</td><td>no</td><td>no</td>
+    <td>ch4</td><td>yes</td><td>no</td>
   </tr>
   <tr>
     <td>ch5</td><td>no</td><td>no</td>
   </tr>
   <tr>
-    <td>ch6</td><td>no</td><td>no</td>
+    <td>ch6</td><td>yes</td><td>no</td>
   </tr>
   <tr>
     <td>ch7</td><td>started</td><td>no</td>
@@ -93,15 +93,37 @@ eg. 'and', 'or', 'conditional', 'biconditional', 'not' (Carnap Book symbols):
 
     $\land, \lor, \rightarrow, \leftrightarrow, \neg$
 
-eg. 'conditional', 'biconditional' (forall x UBC symbols):
+eg. 'and', 'conditional', 'biconditional', 'turnstile', 'double turnstile', 'negative double turnstile' (forall x UBC symbols):
 
-    $\supset, \equiv$
+    $\&, \supset, \equiv, \vdash, \models, \not\models$
 
 subscript:
 
     $A_2 \land A_3$
 
-phi, psi, zeta (capital letters)
+phi, psi, zeta (capital letters):
 
-    $\Phi, \Psi, \Zeta$
+    $\Phi, \Psi, Z$
+
+therefore:
+
+    $\therefore$
+
+script letters:
+
+    $\mathcal{P}, \mathcal{X}$,
+
+empty set: 
+
+    $\emptyset$
+
+bot symbol (used to represent an absurdity):
+
+    $\bot$
+
+blank underline:
+
+    $\rule{1cm}{0.15mm}$
+
+
 

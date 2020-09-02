@@ -10,14 +10,16 @@ in the logical sense aren't events that happen between people; a logical
 argument is structured to give someone a reason to believe some
 conclusion. Here are two examples of such arguments:
 
-> | 1. <span class="premise">It is raining heavily.</span>
-> | 2. <span class="premise">When it rains, everyone outside without an umbrella gets wet.</span>
-> | <span class="conclusion">You should take an umbrella.</span>
+> | 1. <span class="premise"> It is raining heavily.</span>
+> | 2. <span class="premise"> When it rains, everyone outside without an umbrella gets wet.</span>
+> | <span class="conclusion"> You should take an umbrella.</span>
 
-> | 1. <span class="premise">It is either raining or snowing.</span>
-> | 2. <span class="premise">If it is colder than -10 degrees, it is not raining.</span>
-> | 3. <span class="premise">It is -18 degrees.</span>
-> | <span class="conclusion">It is snowing.</span>
+
+> | 1. <span class="premise"> It is either raining or snowing.</span>
+> | 2. <span class="premise"> If it is colder than -10 degrees, it is not raining.</span>
+> | 3. <span class="premise"> It is -18 degrees.</span>
+> | <span class="conclusion"> It is snowing.</span>
+
 
 The three dots on the last line of each argument mean 'Therefore' and
 they indicate that the final sentence is the *conclusion* of the
@@ -58,9 +60,9 @@ series are premises. The final sentence in the series is the conclusion.
 
 Here is an example of an argument:
 
-> | 1. <span class="premise">People get wet whenever it rains.</span>
-> | 2. <span class="premise">It often rains in Vancouver.</span>
-> | <span class="conclusion">People often get wet in Vancouver.</span>
+> | 1. <span class="premise"> People get wet whenever it rains.</span>
+> | 2. <span class="premise"> It often rains in Vancouver.</span>
+> | <span class="conclusion"> People often get wet in Vancouver.</span>
 
 The idea of an argument is that the premises are supposed to give you
 reason to accept the conclusion. If I'm trying to convince you that
@@ -71,9 +73,9 @@ you there.
 Notice that our definition of an argument is quite general. Consider
 this example:
 
-> | 1. <span class="premise">Vancouver has more churches than any other Canadian city.</span>
-> | 2. <span class="premise">Two oboes are fighting a duel under the fireworks.</span>
-> | <span class="conclusion">J. Edgar Hoover was an honest man.</span>
+> | 1. <span class="premise"> Vancouver has more churches than any other Canadian city.</span>
+> | 2. <span class="premise"> Two oboes are fighting a duel under the fireworks.</span>
+> | <span class="conclusion"> J. Edgar Hoover was an honest man.</span>
 
 It may seem odd to call this an argument, but that is because it would
 be a terrible argument. The two premises have nothing at all to do with
@@ -83,7 +85,7 @@ one. One of our central aims in formal logic is to provide rigorous,
 formal tests for evaluating arguments.
 
 **1.2 Sentences and propositions**
-----------------------------------
+--------------------------
 
 The premises and conclusions of arguments are sentences. But not just
 any English sentence is suitable for figuring into an argument. For
@@ -123,7 +125,7 @@ question. So it counts as a propositional sentence.
 What are some examples of grammatical English sentences that do not
 express propositions? We've discussed one category already:
 
-### **Questions**
+##### Questions
 
 In a grammar class, 'Are you sleepy yet?' would count as an
 interrogative sentence. Although you might be sleepy or you might be
@@ -136,7 +138,7 @@ false, and so it *is* a sentence in the logical sense. Generally,
 'What is this course about?' is not a sentence. 'No one knows what this
 course is about' is a sentence.
 
-### **Imperatives**
+##### Imperatives
 
 Commands are often phrased as imperatives like 'Wake up!', 'Sit up
 straight', and so on. In a grammar class, these would count as
@@ -146,7 +148,7 @@ however, that commands are not always phrased as imperatives. 'You will
 respect my authority' *is* either true or false --- either you will or
 you will not --- and so it counts as a sentence in the logical sense.
 
-### **Exclamations**
+##### Exclamations
 
 Expressions like 'Ouch!' or 'Boo, Yankees!' are sometimes described as
 exclamatory sentences, but they are neither true nor false. We will
@@ -165,13 +167,13 @@ that sit up straight'.
 We will call truth or falsity the **truth-value** of a sentence.
 
 **1.3 Two ways that arguments can go wrong**
---------------------------------------------
+------------------------------------
 
-Consider the argument that you should take an umbrella
+Consider the argument that you should take an umbrella (above).
 
-> | 1. <span class="premise">It is raining heavily. </span>
-> | 2. <span class="premise">When it rains, everyone outside without an umbrella gets wet. </span>
-> | <span class="conclusion">You should take an umbrella.</span>
+> | 1. <span class="premise"> It is raining heavily.</span>
+> | 2. <span class="premise"> When it rains, everyone outside without an umbrella gets wet.</span>
+> | <span class="conclusion"> You should take an umbrella.</span>
 
 If premise (1) is false --- if it is sunny outside --- then the argument
 fails. It does not establish that you should take an umbrella. Or
@@ -205,9 +207,9 @@ weak in both ways.
 Once again, we are working with a particular kind of idealization
 regarding arguments and what makes them good. Consider another example:
 
-> | 1. <span class="premise">You are reading this book. </span>
-> | 2. <span class="premise">This is a logic book. </span>
-> | <span class="conclusion">You are a logic student.</span>
+> | 1. <span class="premise"> You are reading this book.</span>
+> | 2. <span class="premise"> This is a logic book.</span>
+> | <span class="conclusion"> You are a logic student.</span>
 
 In a straightforward and ordinary sense, this is not a terrible
 argument. The premises are true. And they do offer some support for the
@@ -230,12 +232,12 @@ they are 'invalid.' One important task of logic is to sort valid
 arguments from invalid arguments.
 
 **1.4 Validity**
-----------------
+--------
 
-An argument is deductively **Valid** if and only if it is impossible for all the
+An argument is deductively if and only if it is impossible for all the
 premises to be true while the conclusion is false. (We'll say a bit more
 about just what we mean by 'impossible' in
-§1.5 [link to sec 1.5]
+§1.5
 below.)
 
 That's our official *definition* of validity. Once again (get used to
@@ -255,9 +257,9 @@ are inconsistent with the falsity of its conclusion.)
 Notice that validity does *not* require that the premises be true.
 Consider this example:
 
-> | 1. <span class="premise">Oranges are either fruits or musical instruments. </span>
-> | 2. <span class="premise">Oranges are not fruits. </span>
-> | <span class="conclusion">Oranges are musical instruments.</span>
+> | 1. <span class="premise"> Oranges are either fruits or musical instruments.</span>
+> | 2. <span class="premise"> Oranges are not fruits.</span>
+> | <span class="conclusion"> Oranges are musical instruments.</span>
 
 This is a valid argument. It is impossible for the premises to be true
 if the conclusion is false. Since it has a false premise --- premise (2)
@@ -267,13 +269,13 @@ conclusion would necessarily be true.
 
 Since this is a valid argument that is, in some important sense, a bad
 argument, this shows that validity isn't the only feature we care about
-in arguments. An argument is **sound** if and only if it is valid and all of its
+in arguments. An argument is if and only if it is valid and all of its
 premises are true. For example, this variant argument on the above
 argument is sound:
 
-> | 1. <span class="premise">Oranges are either fruits or musical instruments. </span>
-> | 2. <span class="premise">Oranges are not musical instruments. </span>
-> | <span class="conclusion">Oranges are fruits.</span>
+> | 1. <span class="premise"> Oranges are either fruits or musical instruments.</span>
+> | 2. <span class="premise"> Oranges are not musical instruments.</span>
+> | <span class="conclusion"> Oranges are fruits.</span>
 
 For reasons that will emerge, logic tends to focus primarily on
 validity, rather than soundness.
@@ -283,9 +285,9 @@ a true conclusion. Conversely, having true premises and a true
 conclusion is also not enough to make an argument valid. Consider this
 example:
 
-> | 1. <span class="premise">Donald Trump is a U.S. citizen. </span>
-> | 2. <span class="premise">Justin Trudeau is a Canadian citizen. </span>
-> | <span class="conclusion">UBC is the largest employer in Vancouver.</span>
+> | 1. <span class="premise"> Donald Trump is a U.S. citizen.</span>
+> | 2. <span class="premise"> Justin Trudeau is a Canadian citizen.</span>
+> | <span class="conclusion"> UBC is the largest employer in Vancouver.</span>
 
 The premises and conclusion of this argument are, as a matter of fact,
 all true. Nevertheless, this is quite a poor argument. This is related
@@ -307,22 +309,24 @@ the falsity of the conclusion.
 
 Here are some more valid arguments. Can you see why each is valid?
 
-> | 1. <span class="premise">Socrates is a man.</span>
-> | 2. <span class="premise">All men are carrots.</span>
-> | <span class="conclusion">Socrates is a carrot.</span>
-
-> | 1. <span class="premise">Abe Lincoln was either born in Illinois or he was once president.</span>
-> | 2. <span class="premise">Abe Lincoln was never president.</span>
-> | <span class="conclusion">Abe Lincoln was born in Illinois.</span>
-
-> | 1. <span class="premise">Justin Trudeau is either from France or from Luxemborg.</span>
-> | 2. <span class="premise">Justin Trudeau is not from Luxemborg.</span>
-> | <span class="conclusion">Justin Trudeau is from France.</span>
+> | 1. <span class="premise"> Socrates is a man.</span>
+> | 2. <span class="premise"> All men are carrots.</span>
+> | <span class="conclusion"> Socrates is a carrot.</span>
 
 
-> | 1. <span class="premise">If the world were to end today, then I would not need to get up tomorrow morning.</span>
-> | 2. <span class="premise">I will need to get up tomorrow morning.</span>
-> | <span class="conclusion">The world will not end today.</span>
+> | 1. <span class="premise"> Abe Lincoln was either born in Illinois or he was once president.</span>
+> | 2. <span class="premise"> Abe Lincoln was never president.</span>
+> | <span class="conclusion"> Abe Lincoln was born in Illinois.</span>
+
+
+> | 1. <span class="premise"> Justin Trudeau is either from France or from Luxemborg.</span>
+> | 2. <span class="premise"> Justin Trudeau is not from Luxemborg.</span>
+> | <span class="conclusion"> Justin Trudeau is from France.</span>
+
+
+> | 1. <span class="premise"> If the world were to end today, then I would not need to get up tomorrow morning.</span>
+> | 2. <span class="premise"> I will need to get up tomorrow morning.</span>
+> | <span class="conclusion"> The world will not end today.</span>
 
 
 **1.5 Impossibility**
@@ -367,9 +371,10 @@ true, just as a matter of logic.
 
 Compare these sentences:
 
-> | 1. <span class="premise">It is raining.</span>
-> | 2. <span class="premise">Either it is hot outside, or it is not hot outside.</span>
-> | 3. <span class="premise">There is an earthquake happening here right now and there are never earthquakes here.</span>
+> | 1. <span class="premise"> It is raining.</span>
+> | 2. <span class="premise"> Either it is hot outside, or it is not hot outside.</span>
+> | 3. <span class="premise"> There is an earthquake happening here right now and there are never earthquakes here.</span>
+
 
 Sentence 1 could be true or it could be false. (As I'm
 typing these words on a sunny Vancouver summer day, it is false.)
@@ -378,37 +383,47 @@ sentences.
 
 Sentence 2 is different. Even though I don't know what the
 weather is like as you're reading this book, I still know that it's
-true. Sentence 2 *must* be true. This sentence is *logically
-true*; no matter how the weather or anything else happens to be, this sentence has to be true. We call a sentence like this a **logical truth** or a **tautology**.
+true. Sentence 2 *must* be true. This sentence is *logically true*; 
+no matter how the weather or anything else happens to be, this
+sentence has to be true. We call a sentence like this a **logical truth** or a **tautology**.
 
-You do not need to check the weather to know about sentence 3, either. It must be false, simply as a matter of logic. There could be an earthquake now, but if so, it
-couldn't be the case that there are never earthquakes here. Or there might never be any earthquakes, but if so, there couldn't be one now. The third sentence is **logically false**; it is false regardless of what the world is
+You do not need to check the weather to know about sentence
+3, either. It must be false, simply as a
+matter of logic. There could be an earthquake now, but if so, it
+couldn't be the case that there are never earthquakes here. Or there
+might never be any earthquakes, but if so, there couldn't be one now.
+The third sentence is **logically false**; it is false regardless of what the world is
 like. A logically false sentence is called a **contradiction**.
 
-I said above that a contingent sentence could be true and it also could be false. We can also define contingency in terms of tautologies and contradictions thus: a **contingent sentence** is a sentence that is neither a tautology nor a
-contradiction.
+I said above that a contingent sentence could be true and it also could
+be false. We can also define contingency in terms of tautologies and
+contradictions thus: a **contingent sentence** is a sentence that is 
+neither a tautology nor a contradiction.
 
 ### **1.6.2 Logical equivalence**
 
 We can also ask about the logical relations *between* two sentences. For
 example:
 
-> Sunil went to the store after he washed the dishes. <br/>
-> Sunil washed the dishes before he went to the store.
+<blockquote>
+Sunil went to the store after he washed the dishes. <br/>
+Sunil washed the dishes before he went to the store.
+</blockquote>
 
 These two sentences are both contingent. (Do you see why?) Yet they must
 have the same truth-value. If either of the sentences is true, then they
 both are; if either of the sentences is false, then they both are. When
 two sentences necessarily have the same truth value, we say that they
-are **logically equivalent**.
+are .
 
 Notice that both of these arguments are valid:
 
-> | 1. <span class="premise">Sunil went to the store after he washed the dishes.</span>
-> | <span class="conclusion">Sunil washed the dishes before he went to the store.</span>
+> |  <span class="premise"> Sunil went to the store after he washed the dishes.</span>
+> | <span class="conclusion"> Sunil washed the dishes before he went to the store.</span>
 
-> | 1. <span class="premise">Sunil washed the dishes before he went to the store.</span>
-> | <span class="conclusion">Sunil went to the store after he washed the dishes.</span>
+> |  <span class="premise"> Sunil washed the dishes before he went to the store.</span>
+> | <span class="conclusion"> Sunil went to the store after he washed the dishes.</span>
+
 
 In general, if two sentences are equivalent, then an argument with
 either one as a premise, and the other as the conclusion, will be valid.
@@ -423,14 +438,15 @@ Consider these two sentences:
 </blockquote>
 
 Logic alone cannot tell us which, if either, of these sentences is true.
-Yet we can say that *if* the first sentence (**B1**) is true, *then* the
-second sentence (**B2**) must be false. And if **B2** is true, then **B1** must be
+Yet we can say that *if* the first sentence (B1) is true, *then* the
+second sentence (B2) must be false. And if B2 is true, then B1 must be
 false. It cannot be the case that both of these sentences are true.
 
 If a set of sentences could not all be true at the same time, like
-**B1**--**B2**, they are said to be **inconsistent**. Otherwise, they are **consistent**.
+B1--B2, they are said to be **inconsistent**. Otherwise, they are **consistent**.
 
-We can ask about the consistency of any number of sentences. For example, consider the following list of sentences:
+We can ask about the consistency of any number of sentences. For
+example, consider the following list of sentences:
 
 <blockquote>
 **G1** There are at least four giraffes at the wild animal park. <br/>
@@ -439,15 +455,15 @@ We can ask about the consistency of any number of sentences. For example, consid
 **G4** Every giraffe at the wild animal park is a Martian.
 </blockquote>
 
-**G1** and **G4** together imply that there are at least four Martian giraffes
-at the park. This conflicts with **G3**, which implies that there are no
-more than two Martian giraffes there. So the set of sentences **G1**--**G4** is
+G1 and G4 together imply that there are at least four Martian giraffes
+at the park. This conflicts with G3, which implies that there are no
+more than two Martian giraffes there. So the set of sentences G1--G4 is
 inconsistent. (Notice that in this example the inconsistency has nothing
-at all to do with **G2**. **G2** just happens to be part of an inconsistent
+at all to do with G2. G2 just happens to be part of an inconsistent
 set.)
 
 **1.7 Formal languages**
-------------------------
+----------------
 
 So far, we have been working with arguments expressed in English. But
 there are some general argumentative structures that transcend English
@@ -472,8 +488,8 @@ false. Not only that --- it seems that the argument is valid in, in a
 sense to be articulated, *exactly the same way*. The validity of the
 first argument is very similar to that of the second. Even though they
 are expressed by different strings of English sentences, it is useful to
-develop a language in which they are, in an important sense, the same
-kind of argument. Over the course of this textbook, we'll be developing
+develop a language that emphasizes the interesting respects in which
+they are the same. Over the course of this textbook, we'll be developing
 and working with such a language. We'll begin with a simple version of
 our logical language, called SL, for *sentential logic*. Later on, we'll
 develop a more complicated logical language, QL, for *quantified logic*.
@@ -500,8 +516,8 @@ that are both true *and* false. Our logical system, which is often
 called *classical logic*, will give every sentence exactly one truth
 value: either true or false.
 
-**Summary of logical notions**
-------------------------------
+Summary of logical notions
+--------------------------
 
 -   An **argument** is a structured set of sentences, with *premises* intended to offer support for a *conclusion*.
 
@@ -527,7 +543,8 @@ that review and explore the material covered in the chapter. There is no
 substitute for actually working through some problems, because logic is
 more about a way of thinking than it is about memorizing facts. The
 answers to some of the problems are provided at the end of the book in
-appendix B; the problems that are solved in the appendix are marked with a [star].
+appendix B; the problems that are solved in the appendix
+are marked with a [star].
 
 [star] **Part A** Which of the following are 'sentences' in the logical sense?
 
@@ -544,7 +561,19 @@ appendix B; the problems that are solved in the appendix are marked with a [star
 **10.** This is the last question.
 </blockquote>
 
-**Part B** For each of the following: Is it a
+**Part B** Which of the following are 'sentences'
+in the logical sense?
+
+<blockquote>
+**1.** I would like a double cheeseburger with no onions. <br/>
+**2.** Thank you very much for that gracious reception. <br/>
+**3.** If you strike me down, I shall become more powerful than you could possibly imagine. <br/>
+**4.** There are more trees at UBC than there are flowers in my office and my Uncle Jack really seems to like drinking apple juice, or if that's not apple juice, then he really seems to like whatever it is that he's drinking, but anyway, what I'm really trying to say is, I'm hungry and I could really go for a burger or a bag of scorpions right about now. <br/>
+**5.** I did it <br/>
+**6.** No invalid arguments have impossible premises.
+</blockquote>
+
+**Part C** For each of the following: Is it a
 tautology, a contradiction, or a contingent sentence?
 
 <blockquote>
@@ -556,7 +585,7 @@ tautology, a contradiction, or a contingent sentence?
 **6.** If anyone has ever crossed the Rubicon, it was Caesar.
 </blockquote>
 
-[star] **Part C** Look back at the sentences G1--G4 on p. 19, and consider each of the
+[star] **Part D** Look back at the sentences G1--G4 on p. 19, and consider each of the
 following sets of sentences. Which are consistent? Which are inconsistent?
 
 <blockquote>
@@ -566,7 +595,7 @@ following sets of sentences. Which are consistent? Which are inconsistent?
 **4.** G1, G2, and G3
 </blockquote>
 
-[star] **Part D** Which of the following is possible? If it is possible, give an example. If it is not possible, explain why.
+[star] **Part E** Which of the following is possible? If it is possible, give an example. If it is not possible, explain why.
 
 <blockquote>
 **1.** A valid argument that has one false premise and one true premise <br/>
@@ -581,8 +610,34 @@ following sets of sentences. Which are consistent? Which are inconsistent?
 **10.** An inconsistent set of sentences that contains a tautology
 </blockquote>
 
-**Part E** Is this argument valid? Why or why not? (Hint: here and elsewhere in logic, read the definitions of our formal terms literally.)
+**Part F** For each, give an argument with the
+indicated features, or explain why it is impossible to do so:
+
+<blockquote>
+**1.** Valid, but not sound. <br/>
+**2.** Valid, with an impossible conclusion. <br/>
+**3.** Sound, with an impossible premise. <br/>
+**4.** Sound, and an instance of this form: <br/>
+
+> | 1. <span class="premise">if $P$ then Q</span>
+> | 2. <span class="premise">R</span>
+> | <span class="conclusion">$Q$</span>
+
+</blockquote>
+
+**Part G** Is this argument valid? Why or why not? (Hint: here and elsewhere in logic, read the definitions of our formal terms literally.)
 
 > | 1. <span class="premise">PHIL 220 is a course with a final exam.</span>
 > | 2. <span class="premise">No courses ever have final exams.</span>
-> | <span class="conclusion">Everyone is going to get an A+ in PHIL 220.
+> | <span class="conclusion">Everyone is going to get an A+ in PHIL 220 </span>
+
+**Part H** For each, indicate whether it is true or false.
+
+<blockquote>
+**1.** All arguments with true premises and true conclusions are sound.
+**2.** Only valid arguments are sound.
+**3.** If an argument to the conclusion $A$ is sound, then an argument to the conclusion not $A$ is not sound.
+**4.** All arguments with at least one impossible premise are valid.
+**5.** All invalid arguments are instances of invalid argument forms.
+**6.** No invalid arguments have impossible premises.
+</blockquote>
