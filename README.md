@@ -8,7 +8,7 @@
     <td>ch1</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch2</td><td>all except one link to appendix page (marked as TODO)</td><td>no</td>
+    <td>ch2</td><td>all except one link to appendix page (marked as TODO)</td><td>yes</td>
   </tr>
   <tr>
     <td>ch3</td><td>all except truth tables</td><td>no</td>

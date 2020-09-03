@@ -154,7 +154,7 @@ negation. We will use '$\neg$' Now we can translate 'Not *H*' to $\neg$*H*.
 In general, '$\neg$' means 'it is false that'.
 
 A sentence of this type --- one that begins with a '$\neg$' symbol, is called
-a **negation**. The sentence it negates --- in this case, $H$, is called the 
+a **negation**. The sentence it negates --- in this case, $H$, is called the
 **negand**. A negation says that its negand is false.
 
 What of Sentence 3? It looks like a more natural way of saying the same
@@ -187,7 +187,7 @@ If we let $R$ mean 'Rodrigo is mortal', then sentence
 4 can be translated as $R$.
 
 What about sentence 5? Being immortal is pretty much the same as not being
-mortal. So it makes sense to treat 5 as the negation of 4, 
+mortal. So it makes sense to treat 5 as the negation of 4,
 symbolizing it as $\neg R$.
 
 Sentence 6 can
@@ -214,8 +214,8 @@ We might be tempted to symbolize sentence 8 as $\neg{H}$.
 But is being unhappy the same thing as not being happy? This is perhaps
 debatable. One might think that it is possible to be neither happy nor
 unhappy. Maybe Elliot is in this in-between zone. If so, then we
-shouldn't treat 8 as the negation of 7. If we're allowing that 'unhappy' 
-means something different from 'not happy', then we will need to use a 
+shouldn't treat 8 as the negation of 7. If we're allowing that 'unhappy'
+means something different from 'not happy', then we will need to use a
 different atomic sentence to translate 8.
 
 What of the *truth conditions* for negated sentences?
@@ -223,7 +223,7 @@ What of the *truth conditions* for negated sentences?
 For any sentence $\Phi$: If $\Phi$ is true, then $\neg \Phi$ is false. If $\Phi$ is false, then $\neg \Phi$ is true.
 Using '1' for true and '0' for false, we can summarize this in a
 *characteristic truth table* for negation:
- 
+
 <div class="truth-table-container">
 <table class="truth-table">
 <tr><th>$\Phi$</th><th>$\neg \Phi$</th></tr>
@@ -276,8 +276,8 @@ Here are some more examples:
 > | 14. <span class="premise">Although Luke is strong, he is not grumpy.</span>
 > | 15. <span class="premise">Matt is strong, but Jessica is stronger than Matt.</span>
 
-Sentence 12 is obviously a conjunction. The sentence says two things about 
-Jessica, so in English it is permissible to use her name only once. It might 
+Sentence 12 is obviously a conjunction. The sentence says two things about
+Jessica, so in English it is permissible to use her name only once. It might
 be tempting to try this when translating the argument: Since $J$ means
 'Jessica is strong', one might attempt to paraphrase sentence
 12 as '$J$ and
@@ -288,7 +288,7 @@ it was intended to be about Jessica. Moreover, 'grumpy' is not a
 sentence; on its own it is neither true nor false. So instead, we
 paraphrase sentence 12 as '$J$ and Jessica is grumpy.' Now we need to add a
 sentence letter to the symbolization key. Let $G_1$ mean 'Jessica is
-grumpy.' Now the sentence can be translated as 
+grumpy.' Now the sentence can be translated as
 $J \& G_1$.
 
 <div class="boxed-statement">
@@ -317,9 +317,9 @@ is not the case that* Luke is grumpy.' Let's let $G_2$ stand for 'Luke
 is grumpy', and we can translate sentence
 14 as $L \& \neg G_2$.
 
-Once again, this is an imperfect translation of the English sentence 14. 
-That sentence implicated that there was a contrast between Luke's two 
-properties. Our translation merely says that he has both of them. 
+Once again, this is an imperfect translation of the English sentence 14.
+That sentence implicated that there was a contrast between Luke's two
+properties. Our translation merely says that he has both of them.
 Still, it is a
 translation that preserves some of the important features of the
 original. In particular, it says that Luke is strong, and it also says
@@ -587,7 +587,7 @@ In order to translate conditionals into SL, we will not try to capture
 all the subtleties of English's 'if$\ldots$ then$\ldots$' construction.
 Instead, the symbol '$\supset$' will signify a *material conditional*. This means
 that when is $\Phi$ false, the conditional ($\Phi$ $\supset$ $\Psi$) is automatically true, regardless
-of the truth value of $\Psi$. If both $\Phi$ and 
+of the truth value of $\Psi$. If both $\Phi$ and
 $\Psi$ are true, then the conditional ($\Phi$ $\supset$ $\Psi$) is true.
 
 In short, ($\Phi$ $\supset$ $\Psi$) is false if and only if $\Phi$ is true and $\Psi$ is false. We can
@@ -769,7 +769,7 @@ There are three kinds of symbols in SL:
 
 <table class="box-table">
 <tr>
-<td>sentence letters <br/> 
+<td>sentence letters <br/>
 with subscripts, as needed
 </td>
 <td>
@@ -909,7 +909,7 @@ false. We will return to this point in much more detail in Chapters
 
 A wff like $(Q \& R)$ must be surrounded by parentheses, because we
 might apply the definition again to use this as part of a more
-complicated sentence. If we negate $(Q \& R)$, we get 
+complicated sentence. If we negate $(Q \& R)$, we get
 $\neg (Q \& R)$. If we just had $Q \& R$ without the parentheses
 and put a negation in front of it, we would have $\neg Q \& R$. It
 is most natural to read this as meaning the same thing as
@@ -935,7 +935,7 @@ Second, it can sometimes be confusing to look at long sentences with
 nested sets of parentheses. We adopt the convention of using square
 brackets '[' and ']' in place of parenthesis. There is no logical
 difference between $(P \lor Q)$ and $[P \lor Q]$, for example. The
-unwieldy sentence 
+unwieldy sentence
 
 > $(((H \supset I) \lor (I \supset H)) \& (J \lor K))$
 
@@ -997,94 +997,243 @@ two desires.
 **Practice Exercises**
 ----------------------
 
-\* **Part A** Using the symbolization key given, translate each English-language sentence into SL.
+**Part A** Using the symbolization key given, translate each English-language sentence into SL.
 
-> **M**: Those creatures are men in suits.  
-> **C**: Those creatures are chimpanzees.  
-> **G**: Those creatures are gorillas.  
+> **M**: Those creatures are men in suits.
+>
+> **C**: Those creatures are chimpanzees.
+>
+> **G**: Those creatures are gorillas.
 
-1. Those creatures are not men in suits.
-2. Those creatures are men in suits, or they are not.
-3. Those creatures are either gorillas or chimpanzees.
-4. Those creatures are neither gorillas nor chimpanzees.
-5. If those creatures are chimpanzees, then they are neither gorillas nor
-men in suits.
-6. Unless those creatures are men in suits, they are either chimpanzees or
-they are gorillas.
+To enter your solutions for automatic checking, use the following keyboard shortcuts:
 
-\* **Part B** Using the symbolization key given, translate each English-language
+<div class="table">
+
+Connective Keyboard
+---------- ----------
+$\supset$          `->`, `=>`, `>`
+$\&$          `/\`, `&`, `and`
+∨          `\/`, `|`, `or`
+$\equiv$          `<->`, `<=>`
+¬          `-`, `~`, `not`
+⊥          `!?`, `_|_`
+$E_3$          `E_3`
+---------- ----------
+
+</div>
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+A.1 ~M : Those creatures are not men in suits.
+| Type answer here. (Press "return" to check.)
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+A.2 M\/~M : Those creatures are men in suits, or they are not.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+A.3 G\/C : Those creatures are either gorillas or chimpanzees.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+A.4 ~C/\~G : Those creatures are neither gorillas nor chimpanzees.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+A.5 C->(-G&-M) : If those creatures are chimpanzees, then they are neither gorillas nor men in suits.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+A.6 M\/(C\/G) : Unless those creatures are men in suits, they are either chimpanzees or they are gorillas.
+|
+~~~
+
+**Part B** Using the symbolization key given, translate each English-language
 sentence into SL.
 
-> **A:** Mister Ace was murdered.  
-> **B:** The butler did it.  
-> **C:** The cook did it.  
-> **D:** The Duchess is lying.  
-> **E:** Mister Edge was murdered.  
-> **F:** The murder weapon was a frying pan.  
+> **A:** Mister Ace was murdered.
+>
+> **B:** The butler did it.
+>
+> **C:** The cook did it.
+>
+> **D:** The Duchess is lying.
+>
+> **E:** Mister Edge was murdered.
+>
+> **F:** The murder weapon was a frying pan.
 
-1. Either Mister Ace or Mister Edge was murdered.  
-2. If Mister Ace was murdered, then the cook did it.  
-3. If Mister Edge was murdered, then the cook did not do it.  
-4. Either the butler did it, or the Duchess is lying.  
-5. The cook did it only if the Duchess is lying.  
+1. Either Mister Ace or Mister Edge was murdered.
+2. If Mister Ace was murdered, then the cook did it.
+3. If Mister Edge was murdered, then the cook did not do it.
+4. Either the butler did it, or the Duchess is lying.
+5. The cook did it only if the Duchess is lying.
 6. If the murder weapon was a frying pan, then the culprit must have been
-the cook.  
+the cook.
 7. If the murder weapon was not a frying pan, then the culprit was either
-the cook or the butler.  
-8. Mister Ace was murdered if and only if Mister Edge was not murdered.  
-9. The Duchess is lying, unless it was Mister Edge who was murdered.  
-10. If Mister Ace was murdered, he was done in with a frying pan.  
-11. Since the cook did it, the butler did not.  
-12. Of course the Duchess is lying!  
+the cook or the butler.
+8. Mister Ace was murdered if and only if Mister Edge was not murdered.
+9. The Duchess is lying, unless it was Mister Edge who was murdered.
+10. If Mister Ace was murdered, he was done in with a frying pan.
+11. Since the cook did it, the butler did not.
+12. Of course the Duchess is lying!
 
-\* **Part C** Using the symbolization key given, translate each ]
+\* **Part C** Using the symbolization key given, translate each
 English-language sentence into SL.
 
-> **$E_1:$** Ava is an electrician.  
-> **$E_2:$** Harrison is an electrician.  
-> **$F_1:$** Ava is a firefighter.  
-> **$F_2:$** Harrison is a firefighter.  
-> **$S_1:$** Ava is satisfied with her career.  
-> **$S_2:$** Harrison is satisfied with his career.  
+> **$E_1:$** Ava is an electrician.
+>
+> **$E_2:$** Harrison is an electrician.
+>
+> **$F_1:$** Ava is a firefighter.
+>
+> **$F_2:$** Harrison is a firefighter.
+>
+> **$S_1:$** Ava is satisfied with her career.
+>
+> **$S_2:$** Harrison is satisfied with his career.
 
-1. Ava and Harrison are both electricians.  
-2. If Ava is a firefighter, then she is satisfied with her career.  
-3. Ava is a firefighter, unless she is an electrician.  
-4. Harrison is an unsatisfied electrician.
-5. Neither Ava nor Harrison is an electrician.
-6. Both Ava and Harrison are electricians, but neither of them find it
-satisfying.
-7. Harrison is satisfied only if he is a firefighter.
-8. If Ava is not an electrician, then neither is Harrison, but if she is,
-then he is too.
-9. Ava is satisfied with her career if and only if Harrison is not
-satisfied with his.
-10. If Harrison is both an electrician and a firefighter, then he must be
-satisfied with his work.
-11. It cannot be that Harrison is both an electrician and a firefighter.
-12. Harrison and Ava are both firefighters if and only if neither of them is
-an electrician.
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.1 E_1 & E_2 : Ava and Harrison are both electricians.
+| Type answer here. (Press "return" to check.)
+~~~
 
-\* **Part D** Give a symbolization key and
-symbolize the following sentences in SL.
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.2 F_1 -> S_1 : If Ava is a firefighter, then she is satisfied with her career.
+|
+~~~
 
-1. Alice and Bob are both spies.
-2. If either Alice or Bob is a spy, then the code has been broken.
-3. If neither Alice nor Bob is a spy, then the code remains unbroken.
-4. The German embassy will be in an uproar, unless someone has broken the
-code.
-5. Either the code has been broken or it has not, but the German embassy
-will be in an uproar regardless.
-6. Either Alice or Bob is a spy, but not both.
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.3 F_1 or E_1 : Ava is a firefighter, unless she is an electrician.
+|
+~~~
 
-\* **Part E** Give a symbolization key and symbolize the following sentences in SL.
 
-1. If Gregor plays first base, then the team will lose.
-2. The team will lose unless there is a miracle.
-3. The team will either lose or it won't, but Gregor will play first base
-regardless.
-4. Gregor's mom will bake cookies if and only if Gregor plays first base.
-5. If there is a miracle, then Gregor's mom will not bake cookies.
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.4 E_2 and -S_2 : Harrison is an unsatisfied electrician.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.5 -E_1 and -E_2 : Neither Ava nor Harrison is an electrician.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.6 E_1 and E_2 and -(S_1 or S_2): Both Ava and Harrison are electricians, but neither of them find it satisfying.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.7 S_2->F_2: Harrison is satisfied only if he is a firefighter.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.8 (-E_1->-E_2) and (E_1->E_2): If Ava is not an electrician, then neither is Harrison, but if she is, then he is too.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.9 S_1 <->-S_2: Ava is satisfied with her career if and only if Harrison is not satisfied with his.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.10 (E_2 and F_2) -> S_2: If Harrison is both an electrician and a firefighter, then he must be satisfied with his work.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.11 -(E_2 and F_2): It cannot be that Harrison is both an electrician and a firefighter.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+C.12 (F_1 and F_2)<->(-E_1 and -E_2): Harrison and Ava are both firefighters if and only if neither of them is an electrician.
+|
+~~~
+
+**Part D** Using the symbolization key given, translate each
+English-language sentence into SL.
+
+> **A:** Alice is a spy.
+>
+> **B:** Bob is a spy.
+>
+> **C:** The code has been broken.
+>
+> **G:** The German embassy will be in an uproar.
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+D.1 A and B : Alice and Bob are both spies.
+| Type answer here. (Press "return" to check.)
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+D.2 (A or B) ->C : If either Alice or Bob is a spy, then the code has been broken.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+D.3 -(A or B)->-C : If neither Alice nor Bob is a spy, then the code remains unbroken.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+D.4 G or C : The German embassy will be in an uproar, unless someone has broken the code.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+D.5 (C or -C) and G : Either the code has been broken or it has not, but the German embassy will be in an uproar regardless.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+D.6 (A or B) and -(A and B)  : Either Alice or Bob is a spy, but not both.
+|
+~~~
+
+**Part E** Using the symbolization key given, translate each
+English-language sentence into SL.
+
+> **G:** Gregor plays first base.
+>
+> **L:** The team will lose.
+>
+> **M:** There is a miracle.
+>
+> **C:** Gregor's mom will bake cookies.
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+E.1 G -> L : If Gregor plays first base, then the team will lose.
+| Type answer here. (Press "return" to check.)
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+E.2 -M -> L : The team will lose unless there is a miracle.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+E.3 (L or -L) and G : The team will either lose or it won't, but Gregor will play first base regardless.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+E.4 C<->G : Gregor's mom will bake cookies if and only if Gregor plays first base.
+|
+~~~
+
+~~~{.Translate .Prop system="ichikawaJenkinsSL" options="check"  submission="none"}
+E.5 M->-C : If there is a miracle, then Gregor's mom will not bake cookies.
+|
+~~~
 
 **Part F** For each argument,
 write a symbolization key and translate the argument as well as possible
@@ -1112,21 +1261,137 @@ is a sentence of SL.
 7. $\neg \neg \neg \neg P$
 8. $(\Sigma \& \Phi)$
 
-\* **Part H** For each of the following:
+**Part H** For each of the following:
 (a) Is it, by the strictest formal standards, a sentence of SL? (b) Is
 it an acceptable way to write down a sentence of SL, allowing for our
 notational conventions?
 
 1. $(A)$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.1.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.1.b It is acceptable, allowing for notational conventions.
+    |  True.
+    | * False.
+    ```
+
 2. $J_{374} \lor \neg J_{374}$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.2.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.2.b It is acceptable, allowing for notational conventions.
+    | * True.
+    | False.
+    ```
+
 3. $\neg \neg \neg \neg F$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.3.a By the strictest formal standards, it is a sentence.
+    | * True.
+    | False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.3.b It is acceptable, allowing for notational conventions.
+    | * True.
+    | False.
+    ```
+
 4. $\neg \& S$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.4.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.4.b It is acceptable, allowing for notational conventions.
+    | True.
+    | * False.
+    ```
+
 5. $(G \& \neg G)$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.5.a By the strictest formal standards, it is a sentence.
+    | * True.
+    | False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.5.b It is acceptable, allowing for notational conventions.
+    | * True.
+    | False.
+    ```
+
 6. $\Phi \supset \Phi$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.6.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.6.b It is acceptable, allowing for notational conventions.
+    | True.
+    | * False.
+    ```
+
 7. $(A \supset (A \& \neg F)) \lor (D \equiv E)$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.7.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.7.b It is acceptable, allowing for notational conventions.
+    | * True.
+    | False.
+    ```
+
 8. $[(Z \equiv S) \supset W] \& [J \lor X]$
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.8.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.8.b It is acceptable, allowing for notational conventions.
+    | * True.
+    | False.
+    ```
+
 9. $(F \equiv \neg D \supset J) \lor (C \& D)$
 
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.9.a By the strictest formal standards, it is a sentence.
+    | True.
+    | * False.
+    ```
+
+    ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+    H.9.b It is acceptable, allowing for notational conventions.
+    | True.
+    | * False.
+    ```
+    
 **Part I**
 
 1. Are there any wffs of SL that contain no sentence letters? Why or why
@@ -1153,10 +1418,10 @@ getting angry.
 **Part K** Translate these English sentences into
 SL, using this symbolization key:
 
-> **P**: John will get a good grade  
-> **Q**: John will get a good job  
-> **R**: John's mother learns John's grade  
-> **S**: John will be in trouble  
+> **P**: John will get a good grade
+> **Q**: John will get a good job
+> **R**: John's mother learns John's grade
+> **S**: John will be in trouble
 
 1. If John doesn't get a good grade, he won't get a good job/
 2. If John doesn't get a good grade, then if his mother learns his grade,
@@ -1169,10 +1434,10 @@ learns his grade.
 
 Translate these SL sentences into English, using this symbolization key:
 
-> **P:** logic is awesome  
-> **Q:** opera is sexy  
-> **R:** the moon is made of cheese  
-> **S:** every PHIL 220 student will get an A  
+> **P:** logic is awesome
+> **Q:** opera is sexy
+> **R:** the moon is made of cheese
+> **S:** every PHIL 220 student will get an A
 
 1. $(P \supset \neg Q)$
 2. $(S \supset (P \lor R))$
