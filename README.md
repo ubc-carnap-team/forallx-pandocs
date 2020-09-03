@@ -5,7 +5,7 @@
     <th>chapter</th><th>basic formatting</th><th>completed</th>
   </tr>
   <tr>
-    <td>ch1</td><td>yes</td><td>no</td>
+    <td>ch1</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
     <td>ch2</td><td>all except one link to appendix page (marked as TODO)</td><td>no</td>

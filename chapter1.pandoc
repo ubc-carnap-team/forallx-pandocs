@@ -383,7 +383,7 @@ sentences.
 
 Sentence 2 is different. Even though I don't know what the
 weather is like as you're reading this book, I still know that it's
-true. Sentence 2 *must* be true. This sentence is *logically true*; 
+true. Sentence 2 *must* be true. This sentence is *logically true*;
 no matter how the weather or anything else happens to be, this
 sentence has to be true. We call a sentence like this a **logical truth** or a **tautology**.
 
@@ -397,7 +397,7 @@ like. A logically false sentence is called a **contradiction**.
 
 I said above that a contingent sentence could be true and it also could
 be false. We can also define contingency in terms of tautologies and
-contradictions thus: a **contingent sentence** is a sentence that is 
+contradictions thus: a **contingent sentence** is a sentence that is
 neither a tautology nor a contradiction.
 
 ### **1.6.2 Logical equivalence**
@@ -541,25 +541,71 @@ Summary of logical notions
 At the end of each chapter, you will find a series of practice problems
 that review and explore the material covered in the chapter. There is no
 substitute for actually working through some problems, because logic is
-more about a way of thinking than it is about memorizing facts. The
-answers to some of the problems are provided at the end of the book in
-appendix B; the problems that are solved in the appendix
-are marked with a [star].
+more about a way of thinking than it is about memorizing facts. Some of the
+problems are interactive and will allow you to immediately check your work.
 
-[star] **Part A** Which of the following are 'sentences' in the logical sense?
+**Part A** Which of the following are 'sentences' in the logical sense?
 
-<blockquote>
-**1.** England is smaller than China. <br/>
-**2.** Greenland is south of Jerusalem. <br/>
-**3.** Is New Jersey east of Wisconsin? <br/>
-**4.** The atomic number of helium is 2. <br/>
-**5.** The atomic number of helium is [pi]. <br/>
-**6.** I hate overcooked noodles. <br/>
-**7.** Blech! Overcooked noodles! <br/>
-**8.** Overcooked noodles are disgusting. <br/>
-**9.** Take your time. <br/>
-**10.** This is the last question.
-</blockquote>
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.1 England is smaller than China.
+| * Sentence.
+| Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.2 Greenland is south of Jerusalem.
+| * Sentence.
+| Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.3 Is New Jersey east of Wisconsin?
+| Sentence.
+| * Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.4 The atomic number of helium is 2.
+| * Sentence.
+| Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.5 The atomic number of helium is &#960.
+| * Sentence.
+| Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.6 I hate overcooked noodles.
+| * Sentence.
+| Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.7 Blech! Overcooked noodles!
+| Sentence.
+| * Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.8 Overcooked noodles are disgusting.
+| * Sentence.
+| Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.9 Take your time.
+| Sentence.
+| * Not a sentence.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.10 This is the last question.
+| * Sentence.
+| Not a sentence.
+```
+
 
 **Part B** Which of the following are 'sentences'
 in the logical sense?
@@ -585,30 +631,94 @@ tautology, a contradiction, or a contingent sentence?
 **6.** If anyone has ever crossed the Rubicon, it was Caesar.
 </blockquote>
 
-[star] **Part D** Look back at the sentences G1--G4 on p. 19, and consider each of the
+**Part D** Look back at the sentences G1--G4 on p. 19, and consider each of the
 following sets of sentences. Which are consistent? Which are inconsistent?
 
-<blockquote>
-**1.** G2, G3, and G4 <br/>
-**2.** G1, G3, and G4 <br/>
-**3.** G1, G2, and G4 <br/>
-**4.** G1, G2, and G3
-</blockquote>
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+D.1 G2, G3, and G4
+| * Consistent.
+| Inconsistent.
+```
 
-[star] **Part E** Which of the following is possible? If it is possible, give an example. If it is not possible, explain why.
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+D.2 G1, G3, and G4
+| Consistent.
+| * Inconsistent.
+```
 
-<blockquote>
-**1.** A valid argument that has one false premise and one true premise <br/>
-**2.** A valid argument that has a false conclusion <br/>
-**3.** A valid argument, the conclusion of which is a contradiction <br/>
-**4.** An invalid argument, the conclusion of which is a tautology <br/>
-**5.** A tautology that is contingent <br/>
-**6.** Two logically equivalent sentences, both of which are tautologies <br/>
-**7.** Two logically equivalent sentences, one of which is a tautology and one of which is contingent <br/>
-**8.** Two logically equivalent sentences that together are an inconsistent set <br/>
-**9.** A consistent set of sentences that contains a contradiction <br/>
-**10.** An inconsistent set of sentences that contains a tautology
-</blockquote>
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+D.3 G1, G2, and G4
+| * Consistent.
+| Inconsistent.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+D.4 G1, G2, and G3
+| * Consistent.
+| Inconsistent.
+```
+
+**Part E** Which of the following is possible? (If it is possible, give an example. If it is not possible, explain why.)
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.1 A valid argument that has one false premise and one true premise.
+| * Possible.
+| Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.2 A valid argument that has a false conclusion.
+| * Possible.
+| Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.3 A valid argument, the conclusion of which is a contradiction.
+| * Possible.
+| Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.4 An invalid argument, the conclusion of which is a tautology.
+| Possible.
+| * Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.5 A tautology that is contingent.
+| Possible.
+| * Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.6 Two logically equivalent sentences, both of which are tautologies.
+| * Possible.
+| Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.7 Two logically equivalent sentences, one of which is a tautology and one of which is contingent.
+| Possible.
+| * Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.8 Two logically equivalent sentences that together are an inconsistent set.
+| * Possible.
+| Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.9 A consistent set of sentences that contains a contradiction.
+| Possible.
+| * Impossible.
+```
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+E.10 An inconsistent set of sentences that contains a tautology.
+| * Possible.
+| Impossible.
+```
 
 **Part F** For each, give an argument with the
 indicated features, or explain why it is impossible to do so:
