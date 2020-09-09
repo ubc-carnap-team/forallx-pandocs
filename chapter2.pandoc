@@ -1009,7 +1009,7 @@ To enter your solutions for automatic checking, use the following keyboard short
 
 <div class="table">
 
-Connective Keyboard
+Symbol     Keyboard
 ---------- ----------
 $\supset$          `->`, `=>`, `>`
 $\&$          `/\`, `&`, `and`
@@ -1391,7 +1391,7 @@ notational conventions?
     | True.
     | * False.
     ```
-    
+
 **Part I**
 
 1. Are there any wffs of SL that contain no sentence letters? Why or why
