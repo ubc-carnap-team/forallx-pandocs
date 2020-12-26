@@ -11,7 +11,7 @@
     <td>ch2</td><td>all except one link to appendix page (marked as TODO)</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch3</td><td>all except truth tables</td><td>no</td>
+    <td>ch3</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
     <td>ch4</td><td>yes</td><td>no</td>
@@ -57,7 +57,7 @@
 
 **fully indented blocks**:
 
-    > My house is quite safe from earthquakes, since it is located 
+    > My house is quite safe from earthquakes, since it is located
     > far from any major fault lines.
 
 **partially indented blocks**:
@@ -66,7 +66,7 @@
     logical form. That is to say, every argument with the logical form of the
     argument under consideration is deductively valid.
 
-**premise conclusion list**: 
+**premise conclusion list**:
 
     > | 1. <span class="premise"> Cottonmouths are water moccasins.</span>
     > | 2. <span class="premise"> Water moccasins can be found only in Southeast Kansas.</span>
@@ -113,7 +113,7 @@ script letters:
 
     $\mathcal{P}, \mathcal{X}$,
 
-empty set: 
+empty set:
 
     $\emptyset$
 
@@ -124,6 +124,3 @@ bot symbol (used to represent an absurdity):
 blank underline:
 
     $\rule{1cm}{0.15mm}$
-
-
-

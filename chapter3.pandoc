@@ -73,8 +73,6 @@ just the two possible values that a sentence of SL can have. The truth
 tables for the connectives of SL, written in terms of 1s and 0s, are
 given in table 3.1.
 
-*TODO: Make the two tables side-by-side*
-*TODO: Make the subtitle more like a subtitle*
 <div class="truth-table-container" style="margin-bottom:1rem;">
   <table class="truth-table">
     <tr><th>$\Phi$</th><th>$\neg \Phi$</th></tr>
@@ -92,9 +90,9 @@ given in table 3.1.
     <tr><td>0</td>   <td>1</td>   <td>0</td>   <td>1</td>   <td>1</td>   <td>0</td></tr>
     <tr><td>0</td>   <td>0</td>   <td>0</td>   <td>0</td>   <td>1</td>   <td>1</td></tr>
    </table>
+   <caption>Table 3.1: The characteristic truth tables for the connectives of SL.</caption>
  </div>
 
- Table 3.1: The characteristic truth tables for the connectives of SL.
 
 The characteristic truth table for conjunction, for example, gives the
 truth conditions for any sentence of the form $(\Phi \& \Psi)$.
@@ -107,16 +105,17 @@ combinations of true and false for $H$ and $I$, which gives us four
 rows. We then copy the truth-values for the sentence letters and write
 them underneath the letters in the sentence.
 
-**TODO: Get rid of bolded line**
-<div class="truth-table-container">
-  <table class="truth-table">
-    <tr><th>H</th> <th>I</th> <th style="border:none;">(H &</th> <th>I)</th> <th>$\supset$ H</th></tr>
-    <tr><td>1</td> <td>1</td> <td>1</td> <td style="border:none;">1</td> <td>0</td></tr>
-    <tr><td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td></tr>
-    <tr><td>0</td> <td>1</td> <td>0</td> <td>1</td> <td>0</td></tr>
-    <tr><td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td></tr>
-  </table>
-</div>
+
+
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 (H & I)>H
+| T-T-T
+| T-F-T
+| F-T-F
+| F-F-F
+~~~
+
+
 
 So far all we've done is duplicate the first two columns. We've written
 the 'H' column twice --- once under each 'H', and the 'I' column once,
@@ -129,13 +128,13 @@ underneath the conjunction symbol. In the other three rows, at least one
 of the conjuncts is false, so the conjunction $(H \& I)$ is false. So
 we write 0s under the conjunction symbol on those rows:
 
-   $H$   $I$   $(H$      $I)$      $H$
-  ----- ----- ------ -- ------ -- -----
-                                  
-    1     1     1         1         1
-    1     0     1         0         1
-    0     1     0         1         0
-    0     0     0         0         0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 (H & I)>H
+| TTT-T
+| TFF-T
+| FFT-F
+| FFF-F
+~~~
 
 The entire sentence is a conditional $\Phi \supset \Psi$ with $(H \& I)$ as $\Phi$ and with $H$
 as $\Psi$. On the second row, for example, $(H \& I)$ is false and $H$ is
@@ -143,13 +142,13 @@ true. Since a conditional is true when the antecedent is false, we write
 a 1 in the second row underneath the conditional symbol. We continue for
 the other three rows and get this:
 
-   $H$   $I$   $(H$       $I)$      $H$
-  ----- ----- ------ --- ------ -- -----
-                                   
-    1     1           1              1
-    1     0           0              1
-    0     1           0              0
-    0     0           0              0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 (H & I)>H
+| -T-TT
+| -F-TT
+| -F-TF
+| -F-TF
+~~~
 
 The column of 1s underneath the conditional tells us that the sentence
 $(H \& I) \supset H$ is true regardless of the truth-values of $H$ and
@@ -166,12 +165,13 @@ impractical to erase whole columns or rewrite the whole table for every
 step. Although it is more crowded, the truth table can be written in
 this way:
 
-   $H$   $I$   $(H$       $I)$      $H$
-  ----- ----- ------ --- ------ -- -----
-    1     1     1     1    1         1
-    1     0     1     0    0         1
-    0     1     0     0    1         0
-    0     0     0     0    0         0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 (H & I)>H
+| TTTTT
+| TFFTT
+| FFTTF
+| FFFTF
+~~~
 
 Most of the columns underneath the sentence are only there for
 bookkeeping purposes. When you become more adept with truth tables, you
@@ -193,10 +193,11 @@ can be true or it can be false. A single sentence letter can never be
 marked both 1 and 0 on the same row. The truth table for this sentence
 looks like this:
 
-   $C$   $[($   $C$       $C$   $)$       $C$   $]$          $($   $C$       $C$   $)$
-  ----- ------ ----- --- ----- ----- --- ----- ----- -- --- ----- ----- --- ----- -----
-    1            1    1    1          1    1             0          1    1    1   
-    0            0    1    0          0    0             0          0    1    0   
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 ((C <-> C) > C) & ~ (C > C)
+| TTTTTFFTTT
+| FTFFFFFFTF
+~~~
 
 Looking at the column underneath the main connective, we see that the
 sentence is false on both rows of the table; i.e., it is false
@@ -210,16 +211,17 @@ the table for $(H \& I) \supset I$ above.
 A sentence that contains three sentence letters requires eight lines.
 For example:
 
-   $M$   $N$   $P$   $M$      $(N$       $P)$
-  ----- ----- ----- ----- -- ------ --- ------
-    1     1     1     1        1     1    1
-    1     1     0     1        1     1    0
-    1     0     1     1        0     1    1
-    1     0     0     1        0     0    0
-    0     1     1     0        1     1    1
-    0     1     0     0        1     1    0
-    0     0     1     0        0     1    1
-    0     0     0     0        0     0    0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable " trueMark="1" falseMark="0" submission="none"}
+3.2 M&(N\/P)
+| TTTTT
+| TTTTF
+| TTFTT
+| TFFFF
+| FFTTT
+| FFTTF
+| FFFTT
+| FFFFF
+~~~
 
 From this table, we know that the sentence $M\&(N\lor P)$ might be
 true or false, depending on the truth-values of $M$, $N$, and $P$.
@@ -273,12 +275,13 @@ same truth-value on every row of a complete truth table.
 Consider the sentences $\neg (A \lor B)$ and $\neg A \& \neg B$.
 Are they logically equivalent? To find out, we construct a truth table.
 
-   $A$   $B$      $(A$       $B)$       $A$          $B$
-  ----- ----- -- ------ --- ------ --- ----- -- --- -----
-    1     1        1     1    1     0    1       0    1
-    1     0        1     1    0     0    1       1    0
-    0     1        0     1    1     1    0       0    1
-    0     0        0     0    0     1    0       1    0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable " trueMark="1" falseMark="0" submission="none"}
+3.3 ~(A\/B), ~A&~B
+| FTTTFTFFT
+| FTTFFTFTF
+| FFTTTFFFT
+| TFFFTFTTF
+~~~
 
 Look at the columns for the main connectives; negation for the first
 sentence, conjunction for the second. On the first three rows, both are
@@ -317,12 +320,13 @@ Consider this argument:
 
 Is it valid? To find out, we construct a truth table.
 
-   $J$   $L$       $L$      $(J$       $L)$      L   J
-  ----- ----- --- ----- -- ------ --- ------ -- --- ---
-    1     1    0    1        1     1    1        1  
-    1     0    1    0        1     1    0        0  
-    0     1    0    1        0     1    1        1  
-    0     0    1    0        0     0    0        0  
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable " trueMark="1" falseMark="0" submission="none"}
+3.3 ~ L > (J \/ L), ~ L, J
+| FTTTTTFTT
+| TFTTTFTFT
+| FTTFTTFTF
+| TFFFFFTFF
+~~~
 
 To determine whether the argument is valid, check to see whether there
 are any rows on which both premises are assigned 1, but where the
@@ -339,12 +343,13 @@ Here is another example. Is this argument valid?
 To evaluate it, construct a truth table and see whether there is a row
 that assigns 1 to the premises and 0 to the conclusion:
 
-   $P$   $Q$      $P$   $\supset$   $Q$      $\neg$   $P$   $\neg$   $Q$
-  ----- ----- -- ----- -------- ----- -- --------- ----- --------- -----
-    1     1        1              1                  1               1
-    1     0        1              0                  1               0
-    0     1        0              1                  0               1
-    0     0        0              0                  0               0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nocounterexample immutable " trueMark="1" falseMark="0" submission="none"}
+3.3 P>Q, ~ P, ~Q
+| TTTFTFT
+| TFFFTTF
+| FTTTFFT
+| FTFTFTF
+~~~
 
 There is. On the third row, the premises are true and the conclusion is
 false. So the argument is invalid.
@@ -367,16 +372,18 @@ sentence is a conditional. In order for the conditional to be false, the
 antecedent must be true (1) and the consequent must be false (0). So we
 fill these in on the table:
 
-   $S$   $T$   $U$   $W$   $(U$       $T)$      $(S$       $W)$
-  ----- ----- ----- ----- ------ --- ------ -- ------ --- ------
-                                  1                    0  
+~~~{.TruthTable .Partial system="LogicBookSD" options="nocheck nocounterexample immutable " trueMark="1" falseMark="0" submission="none"}
+3.3 S,T,U,W : (U&T)>(S&W)
+| -----T-F-F-
+~~~
 
 In order for the $(U \& T)$ to be true, both $U$ and $T$ must be true.
 So we put a 1 under those letters:
 
-   $S$   $T$   $U$   $W$   $(U$       $T)$      $(S$       $W)$
-  ----- ----- ----- ----- ------ --- ------ -- ------ --- ------
-          1     1           1     1    1               0  
+~~~{.TruthTable .Partial system="LogicBookSD" options="nocheck nocounterexample immutable strictGivens" trueMark="1" falseMark="0" submission="none"}
+3.3 S,T,U,W : (U&T)>(S&W)
+| -TT-TTTF-F-
+~~~
 
 Remember that each instance of a given sentence letter must be assigned
 the same truth value in a given row of a truth table. You can't assign 1
@@ -389,9 +396,10 @@ we want. All that matters is that the whole sentence turns out false on
 this line. Making an arbitrary decision, we finish the table in this
 way:
 
-   $S$   $T$   $U$   $W$   $(U$       $T)$      $(S$       $W)$
-  ----- ----- ----- ----- ------ --- ------ -- ------ --- ------
-    0     1     1     0     1     1    1         0     0    0
+~~~{.TruthTable .Partial system="LogicBookSD" options="nocheck nocounterexample immutable " trueMark="1" falseMark="0" submission="none"}
+3.3 S,T,U,W : (U&T)>(S&W)
+| FTTFTTTFFFF
+~~~
 
 Showing that something is a tautology requires a complete truth table.
 Showing that something is *not* a tautology requires only a one-line
@@ -405,16 +413,30 @@ A sentence is contingent if it is neither a tautology nor a
 contradiction. So showing that a sentence is contingent requires a
 *two-line* partial truth table: The sentence must be true on one line
 and false on the other. For example, we can show that the sentence above
-is contingent with this truth table:
+is contingent with this truth table (it would have been fine to just show the two relevant rows):
 
-   $S$   $T$   $U$   $W$   $(U$       $T)$      $(S$       $W)$
-  ----- ----- ----- ----- ------ --- ------ -- ------ --- ------
-    0     1     1     0     1     1    1         0     0    0
-    0     1     0     0     0     0    1         0     0    0
+~~~{.TruthTable .Simple system="LogicBookSD" options="nocheck nodash nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.3 (U&T)>(S&W)
+| -------
+| -------
+| -------
+| -------
+| -------
+| -------
+| -------
+| -------
+| -------
+| TTTFFFF
+| -------
+| FFTTFFF
+| -------
+| -------
+| -------
+| -------
+~~~
 
 Note that there are many combinations of truth values that would have
-made the sentence true, so there are many ways we could have written the
-second line.
+made the sentence true, so had multiple choices for the second line.
 
 Showing that a sentence is *not* contingent requires providing a
 complete truth table, because it requires showing that the sentence is a
@@ -444,21 +466,48 @@ Showing that an argument is *invalid* only requires providing a one-line
 truth table: If you can produce a line on which the premises are all
 true and the conclusion is false, then the argument is invalid.
 
-::: {#table.CompleteVsPartial}
-  ---------------- ------------------------------ ------------------------------
-                                YES                             NO
-     tautology?         complete truth table       one-line partial truth table
-   contradiction?       complete truth table       one-line partial truth table
-    contingent?     two-line partial truth table       complete truth table
-    equivalent?         complete truth table       one-line partial truth table
-    consistent?     one-line partial truth table       complete truth table
-       valid?           complete truth table       one-line partial truth table
-                                                  
-  ---------------- ------------------------------ ------------------------------
 
-  Table 3.2: Do you need a complete truth table or a partial truth table? It
-  depends on what you are trying to show.
-:::
+
+<table>
+<tr>
+    <th> </th>
+    <th>YES</th>
+    <th>NO</th>
+  </tr>
+  <tr>
+    <td>tautology?</td>
+    <td>complete truth table</td>
+    <td>one-line partial truth table</td>
+  </tr>
+  <tr>
+    <td>contradiction?</td>
+    <td>complete truth table</td>
+    <td>one-line partial truth table</td>
+  </tr>
+  <tr>
+    <td>contingent?</td>
+    <td>two-line partial truth table</td>
+    <td>one-line partial truth table</td>
+  </tr>
+  <tr>
+    <td>equivalent?</td>
+    <td>complete truth table</td>
+    <td>one-line partial truth table</td>
+  </tr>
+  <tr>
+    <td>consistent?</td>
+    <td>one-line partial truth table</td>
+    <td>complete truth table</td>
+  </tr>
+  <tr>
+    <td>valid?</td>
+    <td>complete truth table</td>
+    <td>one-line partial truth table</td>
+  </tr>
+</table>
+<caption>Table 3.2: Do you need a complete truth table or a partial truth table? It
+  depends on what you are trying to show.</caption>
+
 
 Table 3.2 summarizes when a complete truth
 table is required and when a partial truth table will do. If you are
@@ -488,8 +537,9 @@ both premises are true. Let's translate this argument into SL, and
 evaluate the resulting formal argument for validity with a truth table.
 We begin with a symbolization key:
 
-> **B:** The butler is the murderer.
-> **G:** The gardener is who he says he is.
+
+> | **B:** <span class="premise"> The butler is the murderer.</span>
+> | **G:** <span class="premise"> The gardener is who he says he is.</span>
 
 With this key, the argument, rendered in SL, looks like this:
 
@@ -502,12 +552,13 @@ We'll set up a table with two atomic sentences, and check to see whether
 there is a row that assigns '1' to both premises and assigns '0' to the
 conclusion. The completed truth table looks like this:
 
-   $B$   $G$   $(B$          $G$)   $G$   $B$
-  ----- ----- ------ -- --- ------ ----- -----
-    1     1     1        0    1          
-    1     0     1        1    0          
-    0     1     0        0    1          
-    0     0     0        1    0          
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 (B\/~G), G, B
+| TTFTTT
+| TTTFFT
+| FFFTTF
+| FTTFFF
+~~~
 
 If the argument form were invalid, there'd be a line on which the first
 two bold values are '1' but the third is '0'. There is no such line, so
@@ -543,13 +594,17 @@ this form would have to be valid. For example, consider this argument:
 That argument can be translated into the same SL argument just
 evaluated, using this symbolization key:
 
-> **B:** Barney is a purple dinosaur.
-> **G:** I have a really weird-looking cat.
+> | **B:** <span class="premise"> Barney is a purple dinosaur.</span>
+> | **G:** <span class="premise"> I have a really weird-looking cat.</span>
+
 
 Since it too has a valid form in SL, it too must be a valid argument.
 *Any* argument with this form will be a valid argument.
 
-[insert with bounder - If you have an argument form that is valid in SL, then *any* English argument that is properly translatable into that argument form will be valid.]
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">If you have an argument form that is valid in SL, then *any* English argument that is properly translatable into that argument form will be valid.</p>
+
+
+
 
 Note that this is even true for arguments that have a more complex
 internal structure, like this strange argument:
@@ -567,8 +622,8 @@ however, that extra structure isn't needed to explain the validity of
 the argument. For this argument too has the same valid form as the
 previous ones, as can be seen via this symbolization key:
 
-> **B:** Canada is a democracy if and only if Poland is neither part of the European Union nor majority Catholic.
-> **G:** My dog is not lazy.
+> | **B:** <span class="premise"> Canada is a democracy if and only if Poland is neither part of the European Union nor majority Catholic.</span>
+> | **G:** <span class="premise"> My dog is not lazy.</span>
 
 For many purposes, this would be a poor choice of symbolization keys. It
 ignores the internal structure of two central sentences. But if, as
@@ -605,12 +660,13 @@ But validity, unlike truth, is a claim about *all* interpretations.
 Let's use a truth table to evaluate whether $P \lor Q$, $\neg P \therefore P \equiv Q$ is a valid argument form. To do this, we can draw the
 complete truth table for those three wffs:
 
-   $P$   $Q$      $P$   $\lor$   $Q$      $\neg$   $P$      $P$   $\equiv$   $Q$  
-  ----- ----- -- ----- -------- ----- -- --------- ----- -- ----- --------- ----- --
-    1     1        1              1                  1        1               1   
-    1     0        1              0                  1        1               0   
-    0     1        0              1                  0        0               1   
-    0     0        0              0                  0        0               0   
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" options="nocheck nocounterexample immutable" trueMark="1" falseMark="0" submission="none"}
+3.2 P\/Q, ~P, P<->Q
+| TTTFTTTT
+| TTFFTTFF
+| FTTTFFFT
+| FFFTFFTF
+~~~
 
 We then check to see whether there is any row where the disjunction and
 the negation are true and the biconditional is false. Row three, {$P=0$,
@@ -621,7 +677,7 @@ accurately, and correctly note that line three is inconsistent with the
 argument's validity, but misdescribe the situation, saying something
 like this: '*The argument is invalid when* $P=0$, $Q=1$.' This is a
 mistake because the argument isn't only invalid *in that row* --- the
-argument in invalid, *period*. That interpretation *explains why* the
+argument is invalid, *period*. That interpretation *explains why* the
 argument is invalid, but validity and invalidity are claims about *all*
 interpretations. So we shouldn't say the argument is invalid 'when'
 $P=0$, $Q=1$; it's invalid always, because of the interpretation where
@@ -653,8 +709,10 @@ that form is valid. Since this form is invalid, it is going to be
 possible to find invalid arguments of that form. For example, we could
 interpret $P$ and $Q$ thus:
 
-> **P:** Captain Hook is angry.
-> **Q:** Captain Hook has at least two daughters.
+> | **P:** <span class="premise"> Captain Hook is angry.</span>
+> | **Q:** <span class="premise"> Captain Hook has at least two daughters.</span>
+
+
 
 And of course the English argument, *Captain Hook is angry, therefore Captain Hook is angry and he has at least two daughters* is obviously
 invalid. But that doesn't mean there couldn't be *other* arguments of
@@ -662,8 +720,9 @@ this form that *are* valid. The form doesn't guarantee that they'll be
 valid, but they may be valid nevertheless. Consider this symbolization
 key:
 
-> **P:** Captain Hook has three daughters.
-> **Q:** Captain Hook has at least two daughters.
+> | **P:** <span class="premise"> Captain Hook has three daughters.</span>
+> | **Q:** <span class="premise"> Captain Hook has at least two daughters.</span>
+
 
 The resulting argument is valid: *Captain Hook has three daughters. Therefore, Captain Hook has three daughters and he has at least two daughters.*
 It is impossible for the premise to be true without the
@@ -687,16 +746,9 @@ whether the formula is tautological, contradictory, or contingent. If it
 is contingent, provide a model that satisfies it and one that falsifies
 it.
 
-   $P$   $Q$   $R$      (   $P$   $\supset$   (   (   $P$   $\supset$   $Q$   )   $\equiv$   (   $P$   $\&$   $\neg$   $R$   )   )   )   $\lor$   $R$  
-  ----- ----- ----- -- --- ----- -------- --- --- ----- -------- ----- --- --------- --- ----- ------ --------- ----- --- --- --- -------- ----- --
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+A. (P>((P>Q)<->(P&~R)))\/R
+~~~
 
 **Part B** Provide the complete truth table for
 this SL sentence: $((P \lor Q) \& (\neg P \lor \neg Q)) \equiv R$
@@ -704,153 +756,290 @@ Indicate whether it is tautological, contradictory, or contingent. If it
 is contingent, provide an assignment of truth values that satisfies it
 and one that falsifies it.
 
-[star] **Part C** Determine whether
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B. ((P \/ Q) & (~ P \/ ~ Q)) <-> R
+~~~
+
+**Part C** Determine whether
 each sentence is a tautology, a contradiction, or a contingent sentence.
 Justify your answer with a complete or partial truth table where
 appropriate.
 
-$A \supset A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.1 A>A
+~~~
 
-$\neg B \& B$
 
-$C \supset\neg C$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.2  ~B & B
+~~~
 
-$\neg D \lor D$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.3 C>~C
+~~~
 
-$(A \equiv B) \equiv \neg(A\equiv \neg B)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.4  ~D\/D
+~~~
 
-$(A\& B) \lor (B\& A)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.5  (A <-> B) <-> ~(A<-> ~B)
+~~~
 
-$(A \supset B) \lor (B \supset A)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.6 (A& B) \/ (B& A)
+~~~
 
-$\neg[A \supset (B \supset A)]$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.7 (A > B) \/ (B > A)
+~~~
 
-$(A \& B) \supset (B \lor A)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.8 ~(A > (B > A))
+~~~
 
-$A \equiv [A \supset (B \& \neg B)]$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.9 ~(A > (B > A))
+~~~
 
-$\neg(A \lor B) \equiv (\neg A \& \neg B)$
 
-$\neg(A\& B) \equiv A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.10 (A & B) > (B \/ A)
+~~~
 
-$\bigl[(A\& B) \&\neg(A\& B)\bigr] \& C$
 
-$A\supset(B\lor C)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.11 A <-> (A > (B &  ~B))
+~~~
 
-$[(A \& B) \& C] \supset B$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.12 ~(A \/ B) <-> (~A & ~B)
+~~~
 
-$(A \&\neg A) \supset (B \lor C)$
 
-$\neg\bigl[(C\lor A) \lor B\bigr]$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.13 ~(A & B) <-> A
+~~~
 
-$(B\& D) \equiv [A \equiv(A \lor C)]$
 
-[star] **Part D** Determine whether
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.14 (((A& B) & ~(A& B))) & C
+~~~
+
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.15 A>(B\/ C)
+
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.16 ((A & B) & C) > B
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.17 (A & ~A) > (B \/ C)
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.18 ~(((C\/ A) \/ B))
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+C.19 (B & D) <-> (A <->(A \/ C))
+~~~
+
+
+**Part D** Determine whether
 each pair of sentences is logically equivalent. Justify your answer with
 a complete or partial truth table where appropriate.
 
-$A$, $\neg A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.1 A, ~A
+~~~
 
-$A$, $A \lor A$
 
-$A\supset A$, $A \equiv A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.2 A, A\/A
+~~~
 
-$A \lor \neg B$, $A\supset B$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.3 A> A, A <-> A
+~~~
 
-$A \& \neg A$, $\neg B \equiv B$
 
-$\neg(A \& B)$, $\neg A \lor \neg B$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.4 A \/  ~B, A> B
+~~~
 
-$\neg(A \supset B)$, $\neg A \supset \neg B$
 
-$(A \supset B)$, $(\neg B \supset \neg A)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.5 A \/  ~A,  ~B <-> B
 
-$[(A \lor B) \lor C]$, $[A \lor (B \lor C)]$
+~~~
 
-$[(A \lor B) \& C]$, $[A \lor (B \& C)]$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.6 ~(A & B), ~ A \/ ~ B
+~~~
 
-[star] **Part E** Determine whether each set of sentences is consistent or inconsistent.
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.7 ~(A > B), ~ A > ~ B
+
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.8 (A > B), (~ B > ~A)
+
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.9 ((A \/ B) \/ C), (A \/ (B \/ C))
+
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+D.10 ((A \/ B) & C), (A \/ (B & C))
+~~~
+
+**Part E** Determine whether each set of sentences is consistent or inconsistent.
 Justify your answer with a complete or partial truth table where
 appropriate.
 
-$A\supset A$, $\neg A \supset \neg A$, $A\& A$, $A\lor A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.1 A> A, ~ A > ~ A, A& A, A\/ A
+~~~
 
-$A \& B$, $C\supset \neg B$, $C$
 
-$A\lor B$, $A\supset C$, $B\supset C$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.2 A & B, C> ~ B, C
+~~~
 
-$A\supset B$, $B\supset C$, $A$, $\neg C$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.3 A\/ B, A> C, B> C
 
-$B\&(C\lor A)$, $A\supset B$, $\neg(B\lor C)$
+~~~
 
-$A \lor B$, $B\lor C$, $C\supset \neg A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.4 A> B, B> C, A, ~ C
+~~~
 
-$A\equiv(B\lor C)$, $C\supset \neg A$, $A\supset \neg B$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.5 B & (C\/ A), A> B, ~(B\/ C)
+~~~
 
-$A$, $B$, $C$, $\neg D$, $\neg E$, $F$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.6 A \/ B, B\/ C, C> ~ A
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.7 A<->(B\/ C), C>  ~A, A> ~ B
+~~~
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+E.8 A, B, C, ~D, ~E, F
+~~~
 
 **Part F**
 
 Use a complete truth table to evaluate this argument form for validity:
 
-$(P \supset Q) \lor (Q \supset P)$
+> | 1. <span class="premise">$(P \supset Q) \lor (Q \supset P)$</span>
+> | 2. <span class="premise">$P$</span>
+> | <span class="conclusion">$P \equiv Q$</span>
 
-$P$
-
-$P\equiv Q$
 
 Indicate whether it valid or invalid. If it is invalid, provide an
 interpretation that satisfies the premises and falsifies the conclusion.
 
-[star] **Part G** Determine whether
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+F (P>Q)\/(Q>P), P, P <->Q
+~~~
+
+
+**Part G** Determine whether
 each argument form is valid or invalid. Justify your answer with a
-complete or partial truth table where appropriate.
+complete or partial truth table where appropriate. (In each case, the last column is the conclusion of the argument and the preceding ones are the premises.)
 
-$A\supset A$  $A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.1 A>A, A
+~~~
 
-$A\lor\bigl[A\supset(A\equiv A)\bigr]$  A
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.2 A\/((A>(A<-> A))), A
+~~~
 
-$A\supset(A\&\neg A)$  $\neg A$
 
-$A\equiv\neg(B\equiv A)$  $A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.3 A>(A& ~A), ~A
+~~~
 
-$A\lor(B\supset A)$  $\neg A \supset \neg B$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.4 A<->~(B<-> A), A
+~~~
 
-$A\supset B$, $B$  $A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.5 A\/(B> A),  ~A > ~B
+~~~
 
-$A\lor B$, $B\lor C$, $\neg A$  $B \& C$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.6 A>B, B, A
+~~~
 
-$A\lor B$, $B\lor C$, $\neg B$  $A \& C$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.7 A\/ B, B\/ C, ~A, B & C
+~~~
 
-$(B\& A)\supset C$, $(C\& A)\supset B$  $(C\& B)\supset A$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.8 A\/ B, B\/ C, ~B, A & C
+~~~
 
-$A\equiv B$, $B\equiv C$  $A\equiv C$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.9 (B& A)> C, (C& A)>B, (C& B)> A
+~~~
 
-[star] **Part H** Answer each
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+G.10 A<-> B, B<-> C, A<-> C
+~~~
+
+**Part H** Answer each
 of the questions below and justify your answer.
 
-Suppose that and are logically equivalent. What can you say about
+Suppose that $\Phi$ and $\Psi$ are logically equivalent. What can you say about
 $\Phi\equiv\Psi$?
 
-Suppose that $(\Phi\&\Psi)\supset\metaC{}$ is contingent. What
-can you say about the argument ", , "?
+Suppose that $(\Phi\&\Psi)\supset\Omega$ is contingent. What
+can you say about the argument:
 
-Suppose that $\{\Phi,\Psi, \metaC{}\}$ is inconsistent. What can
-you say about $(\Phi\&\Psi\&\metaC{})$?
+> | 1. <span class="premise">$\Phi$</span>
+> | 2. <span class="premise">$\Psi$</span>
+> | <span class="conclusion">$\Omega$</span>
 
-Suppose that is a contradiction. What can you say about the argument ",
-, "?
 
-Suppose that is a tautology. What can you say about the argument ", , "?
+Suppose that $\{\Phi,\Psi, \Omega$ is inconsistent. What can
+you say about $(\Phi\&\Psi\&\Omega)$?
 
-Suppose that and are logically equivalent. What can you say about
+Suppose that $\Phi$ is a contradiction. What can you say about the argument
+
+> | 1. <span class="premise">$\Phi$</span>
+> | 2. <span class="premise">$\Psi$</span>
+> | <span class="conclusion">$\Omega$</span>
+
+
+Suppose that $\Omega$ is a tautology. What can you say about the argument
+
+> | 1. <span class="premise">$\Phi$</span>
+> | 2. <span class="premise">$\Psi$</span>
+> | <span class="conclusion">$\Omega$</span>
+
+
+Suppose that $\Phi$ and $\Psi$ are logically equivalent. What can you say about
 $(\Phi\lor\Psi)$?
 
-Suppose that and are *not* logically equivalent. What can you say about
+Suppose that $\Phi$ and $\Psi$ are *not* logically equivalent. What can you say about
 $(\Phi\lor\Psi)$?
 
 **Part I** We
-could leave the biconditional () out of the language. If we did that, we
+could leave the biconditional ($\equiv$) out of the language. If we did that, we
 could still write '$A \equiv B$' so as to make sentences easier to read,
 but that would be shorthand for $(A \supset B) \& (B \supset A)$. The
 resulting language would be formally equivalent to SL, since $A \equiv B$
@@ -865,49 +1054,47 @@ this by writing sentences that are logically equivalent to each of the
 following using only parentheses, sentence letters, negation ($\neg$), and the
 material conditional ($\supset$).
 
- $A\lor B$
-
- $A\& B$
-
- $A\equiv B$
+> | 1. <span class="premise">$A \lor B$</span>
+> | 2. <span class="premise">$A\& B$</span>
+> | 3. <span class="premise">$A \equiv B$</span>
 
 We could have a language that is equivalent to SL with only negation and
 disjunction as connectives. Show this: Using only parentheses, sentence
 letters, negation ($\neg$), and disjunction ($\lor$), write sentences that are
 logically equivalent to each of the following.
 
-$A \& B$
-
-$A \supset B$
-
-$A \equiv B$
+> | 4. <span class="premise">$A \& B$</span>
+> | 5. <span class="premise">$A\supset B$</span>
+> | 6. <span class="premise">$A \equiv B$</span>
 
 The *Sheffer stroke* is a logical connective with the following
 characteristic truthtable:
 
-           $|$
-  --- --- -----
-   1   1    0
-   1   0    1
-   0   1    1
-   0   0    1
+<div class="truth=table-container">
+  <table class="truth-table">
+    <tr><th>$\Phi$</th> <th>$\Psi$</th> <th>$\Phi \mid \Psi$</th></tr>
+    <tr><td>1</td>   <td>1</td>   <td>0</td>   </tr>
+    <tr><td>1</td>   <td>0</td>   <td>1</td>   </tr>
+    <tr><td>0</td>   <td>1</td>   <td>1</td>   </tr>
+    <tr><td>0</td>   <td>0</td>   <td>1</td>   </tr>
+   </table>
+ </div>
 
-> 7. Write a sentence using the connectives of SL that is logically equivalent to $(A|B)$.
+
+> | 7. <span class="premise">Write a sentence using the connectives of SL that is logically equivalent to $(A|B)$.</span>
+
 
 Every sentence written using a connective of SL can be rewritten as a
 logically equivalent sentence using one or more Sheffer strokes. Using
 no connectives other than the Sheffer stroke, write sentences that are
 equivalent to each of the following.
 
-$\neg A$
+> | 8. <span class="premise">$\neg A$</span>
+> | 9. <span class="premise">$(A\& B)$</span>
+> | 10. <span class="premise">$(A\lor B)$</span>
+> | 11. <span class="premise">$(A\supset B)$</span>
+> | 12. <span class="premise">$(A\equiv B)$</span>
 
-$(A\& B)$
-
-$(A\lor B)$
-
-$(A\supset B)$
-
-$(A\equiv B)$
 
 **Part J**
 
@@ -921,14 +1108,18 @@ exactly one of $\Phi$ and $\Psi$ are true.
 
 Provide the truth table for $(\Phi \oplus \Psi)$.
 
-   $\Phi$   $\Psi$      $\Phi$   $\oplus$   $\Psi$  
-  ------------ ------------ -- ------------ ---------- ------------ --
-                                                                    
-                                                                    
-                                                                    
-                                                                    
+<div class="truth=table-container">
+  <table class="truth-table">
+    <tr><th>$\Phi$</th> <th>$\Psi$</th> <th>$\Phi \oplus \Psi$</th></tr>
+    <tr><td>1</td>   <td>1</td>   <td> </td>   </tr>
+    <tr><td>1</td>   <td>0</td>   <td> </td>   </tr>
+    <tr><td>0</td>   <td>1</td>   <td> </td>   </tr>
+    <tr><td>0</td>   <td>0</td>   <td> </td>   </tr>
+   </table>
+ </div>
 
-$\oplus$ is *definable* in terms of , , and . This means that there is a
+
+$\oplus$ is *definable* in terms of $\lor, \&$, and $\neg$. This means that there is a
 formula using only these latter connectives that is equivalent to ---
 true in all the same models as --- $(P \oplus Q)$. Provide such a
 formula.
