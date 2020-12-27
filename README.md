@@ -14,13 +14,13 @@
     <td>ch3</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch4</td><td>yes</td><td>no</td>
+    <td>ch4</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
     <td>ch5</td><td>no</td><td>no</td>
   </tr>
   <tr>
-    <td>ch6</td><td>yes</td><td>no</td>
+    <td>ch6</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
     <td>ch7</td><td>started</td><td>no</td>

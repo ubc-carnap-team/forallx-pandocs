@@ -129,13 +129,10 @@ assignment*. Formally, this is just a function that tells us the truth
 value of all the atomic sentences. Call this function '$a$' (for
 'assignment'). We define $a$ for all sentence letters $\mathcal{P}$, such that
 
-$$a(\mathcal{P}) =
-\left\{
-    \begin{array}{ll}
-    1 & \mbox{if \mathcal{P} is true},\\
-    0 & \mbox{otherwise.}
-    \end{array}
-\right.$$ 
+
+$$a(\mathcal{P})= 1 \text{ if } \mathcal{P} \text{ is true;}$$
+$$a(\mathcal{P})= 0 \text{ otherwise. }$$
+
 
 This means that $a$ takes any atomic sentence of SL and
 assigns it either a one or a zero; one if the sentence is true, zero if
@@ -154,23 +151,17 @@ part of the language SL. Rather, it is part of the mathematical
 machinery that we are using to describe SL. It encodes which atomic
 sentences are true and which are false.
 
+
+
 We now define the truth function, $v$, using the same recursive
 structure that we used to define a wff of SL.
 
 1.  If $\Phi$ is a sentence letter, then $v(\Phi)=a(\Phi)$.
 
-2.  If $\Phi$ is $\neg \Psi$ for some sentence , then $$v(\Phi) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $v(\Psi) = 0$},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+2.  If $\Phi$ is $\neg \Psi$ for some sentence , then $v(\Phi) =1 \text{ if } v(\Psi) = 0, \text{ and } 0 \text{ otherwise.}$
 
 3.  If $\Phi$ is $(\Psi \& \Omega)$ for some sentences $\Psi$, $\Omega$, then
-    $$v(\Phi) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $v(\Psi) = 1$ and $v(\Omega) = 1$,}\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+    $v(\Phi) = 1  \text{ if } v(\Psi) = 1 \text{ and } v(\Omega) = 1, \text{ and } 0 \text{ otherwise.}$
 
 You may be tempted to worry that this definition is circular, because it uses
 the word 'and' in trying to define 'and.' But remember, we are not
@@ -181,25 +172,16 @@ a definition of truth for sentences of SL containing the logical symbol
 that.
 
 1.  If $\Phi$ is $(\Psi\lor\Omega)$ for some sentences $\Psi$, $\Omega$, then
-    $$v(\Phi) =
-        \left\{\begin{array}{ll}
-        0 & \mbox{if $v(\Psi) = 0$ and $v(\Omega) = 0$,}\\
-        1 & \mbox{otherwise.}
-        \end{array}\right.$$
+$v(\Phi) = 0  \text{ if } v(\Psi) = 0 \text{ and } v(\Omega) = 0, \text{ and } 1 \text{ otherwise.}$
+
 
 2.  If $\Phi$ is $(\Psi\supset\Omega)$ for some sentences $\Psi$, $\Omega$, then
-    $$v(\Phi) =
-        \left\{\begin{array}{ll}
-        0 & \mbox{if $v(\Psi) = 1$ and $v(\Omega) = 0$,}\\
-        1 & \mbox{otherwise.}
-        \end{array}\right.$$
+$v(\Phi) = 0  \text{ if } v(\Psi) = 1 \text{ and } v(\Omega) = 0, \text{ and } 1 \text{ otherwise.}$
+
 
 3.  If $\Phi$ is $(\Psi\equiv\Omega)$ for some sentences $\Psi$, $\Omega$, then
-    $$v(\Phi) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $v(\Psi) = v(\Omega)$},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+$v(\Phi) = 1  \text{ if } v(\Psi) = v(\Omega), \text{ and } 0 \text{ otherwise.}$
+
 
 Since the definition of $v$ has the same structure as the definition of
 a wff, we know that $v$ assigns a value to *every* wff of SL. Since the
@@ -246,7 +228,7 @@ precisely, rather than relying on your sense of whether the argument is
 a good one. The notions can come apart in some surprising ways.
 
 Let's start with a straightforward example. Consider whether this
-entailment claim is true: 
+entailment claim is true:
 
 > $(P \& Q) \models (P \lor Q)$
 
@@ -281,7 +263,9 @@ to be true.
 So these are all true:
 
 > $P \models (P \lor \neg P)$
+
 > $Q \models (P \lor \neg P)$
+
 > $(P \& \neg P) \models (P \lor \neg P)$
 
 **4.5 Tautologies are entailed by the empty set**
@@ -302,11 +286,11 @@ can let '$\mathcal{X}$' stand in for any set of sentences in SL. (In the case of
 '$\Phi\models\Psi$' above, '$\mathcal{X}$' is the singleton set containing
 just $\Phi$.)
 
-In general, we may say that 
+In general, we may say that
 
 $\mathcal{X} \models \Psi$
 
-means that there's no interpretation satisfying every member of set 
+means that there's no interpretation satisfying every member of set
 $\mathcal{X}$ without also satisfying sentence $\Psi$.
 
 We saw in the previous section that a tautology --- an SL sentence that
@@ -321,11 +305,11 @@ absolutely every interpretation satisfies $\Phi$. That is, it says that $\Phi$ i
 tautology.
 
 By convention, we can leave the left side of an entailment claim blank,
-instead of writing in $\emptyset$. In other words, 
+instead of writing in $\emptyset$. In other words,
 
 > $\models \Phi$
 
-is shorthand for 
+is shorthand for
 
 > $\emptyset \models \Phi.$
 
@@ -333,14 +317,18 @@ So these entailment claims are true, because in each case the sentence
 on the right is a tautology:
 
 > $\models (P \lor \neg P)$
+
 > $\models (P \equiv P)$
+
 > $\models ((P \&\neg P)\supset (A \lor B))$
 
 And these entailment claims are not true, because each sentence on the
 right is not a tautology:
 
 > $\models P$
+
 > $\models (P \& \neg P)$
+
 > $\models \neg(P \supset \neg P)$
 
 (If you need help seeing why a given sentence is or is not a tautology,
@@ -350,11 +338,11 @@ row. See §3.3.)
 **4.6 Inconsistent sentences entail absurdities**
 -----------------------------------------
 
-Consider this entailment claim: 
+Consider this entailment claim:
 
 > $(P \& \neg P) \models Q$
 
-This statement is true. It says that every 
+This statement is true. It says that every
 interpretation satisfying
 $(P \& \neg P)$ also satisfies $Q$. But $(P \& \neg P)$ is a
 contradiction --- no interpretations satisfy it. So trivially, 'every'
@@ -367,7 +355,9 @@ any other contradictory sentence, or any set of sentences that are
 mutually inconsistent. These are all true:
 
 > $(P \& \neg P) \models (\neg Q \supset R)$
+
 > $P, (\neg Q \& \neg P) \models (Q \equiv P)$
+
 > $(P \& \neg P) \models ((A_1 \lor A_2) \supset \neg (A_3 \equiv (A_4 \& \neg A_2)))$
 
 You can think of evaluating an entailment claim as like checking to see
@@ -408,14 +398,18 @@ So these entailment claims are true, because the set of sentences on the
 left is not satisfiable:
 
 > $(P \& \neg P) \models \bot$
+
 > $P, (\neg Q \& \neg P) \models\bot$
+
 > $(P \equiv\neg P) \models\bot$
 
 And these entailment claims are not true, because the sentences on the
 left *can* be satisfied:
 
 > $(P \lor \neg P) \models \bot$
+
 > $P, \neg Q, (R \lor Q) \models \bot$
+
 > $\neg P, \neg Q, (P \supset \neg \neg Q) \models \bot$
 
 (If you need help seeing why a given set of sentences can be satisfied,
@@ -450,45 +444,91 @@ completed truth table to evaluate it? The Greek letters can stand for
 any arbitrary sentence of SL. The first claim has the answer filled out
 for you.
 
-$\Phi$ is a tautology. To evaluate this claim, check to see whether the
+1. $\Phi$ is a tautology. To evaluate this claim, check to see whether the
 main connective of $\Phi$ has a 1 under it in every row. If so, it is
 true.
 
-$\Phi \models \Psi$. To evaluate this claim, check to see whether\...
+2. $\Phi \models \Psi$. To evaluate this claim, check to see whether\...
 
-$\Phi$ is contingent.
+3. $\Phi$ is contingent.
 
-$\Phi \models \bot$
+4. $\Phi \models \bot$
 
-$\emptyset \models \Phi$
+5. $\emptyset \models \Phi$
 
 **Part B** Determine whether each entailment claim is true. You may construct a
 truth table to test it if you like, but these examples are simple enough
 so that you may be able to just think it through and get the right
 answer.
 
-$Q \models (P \lor Q)$
+1. $Q \models (P \lor Q)$
 
-$P, Q \models (P \lor P)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.1 Q, P\/Q
+~~~
 
-$S \models (Q \supset Q)$
+2. $P, Q \models (P \lor P)$
 
-$P \equiv Q, P \models Q$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.2 P, Q, P\/Q
+~~~
 
-$S \models (Q \supset Q)$
+3. $S \models (Q \supset Q)$
 
-$P \& \neg P \models (Q \lor \neg Q)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.3 S,Q >Q
+~~~
 
-$(P \& \neg P) \models (Q \& \neg Q)$
+4. $P \equiv Q, P \models Q$
 
-$(P \lor \neg P) \models \bot$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.4 P<->Q,P, Q
+~~~
 
-$P \lor \neg P \models Q$
+5. $P \& \neg P \models (Q \lor \neg Q)$
 
-$\models (P \lor \neg P)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.5 P&~P, Q\/~Q
+~~~
 
-$\models (P \& \neg P)$
+6. $(P \& \neg P) \models (Q \& \neg Q)$
 
-$(A \lor B) \supset \neg P \models (P \lor \neg P)$
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.6 P&~P, Q&~Q
+~~~
+
+7. $(P \lor \neg P) \models P \& \neg P$
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.7 P\/~P, P&~P
+~~~
+
+8. $P \lor \neg P \models Q$
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.8 P\/~P, Q
+~~~
+
+9. $\models (P \lor \neg P)$
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.9 P\/~P,
+~~~
+
+10. $\models (P \& \neg P)$
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.10 P&~P,
+~~~
+
+11. $(A \lor B) \supset \neg P \models (P \lor \neg P)$
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.11 (A\/B)>~P, P\/~P
+~~~
 
 $(P \equiv Q) \models ((P \& Q) \lor \neg (P \lor Q))$
+
+~~~{.TruthTable .Simple system="ichikawaJenkinsSL" trueMark="1" falseMark="0" submission="none"}
+B.2 P<->Q, (P&Q)\/~(P\/Q)
+~~~
