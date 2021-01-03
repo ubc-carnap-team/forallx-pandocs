@@ -1,13 +1,3 @@
----
-base-css:
-- https://static.carnap.io/css/tufte.css
-- https://static.carnap.io/css/tuftextra.css
----
----
-css:
-- https://carnap.io/shared/davegilbertubc@gmail.com/prettyproof.css
----
-
 Soundness and Completeness for SL Trees
 =======================================
 
