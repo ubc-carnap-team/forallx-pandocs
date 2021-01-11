@@ -744,10 +744,10 @@ indicated features, or explain why it is impossible to do so:
 **Part H** For each, indicate whether it is true or false.
 
 <blockquote>
-**1.** All arguments with true premises and true conclusions are sound.
-**2.** Only valid arguments are sound.
-**3.** If an argument to the conclusion $A$ is sound, then an argument to the conclusion not $A$ is not sound.
-**4.** All arguments with at least one impossible premise are valid.
-**5.** All invalid arguments are instances of invalid argument forms.
-**6.** No invalid arguments have impossible premises.
+> | 1. All arguments with true premises and true conclusions are sound.
+> | 2. Only valid arguments are sound.
+> | 3. If an argument to the conclusion $A$ is sound, then an argument to the conclusion not $A$ is not sound.
+> | 4. All arguments with at least one impossible premise are valid.
+> | 5. All invalid arguments are instances of invalid argument forms.
+> | 6. No invalid arguments have impossible premises.
 </blockquote>
