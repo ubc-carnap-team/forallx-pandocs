@@ -68,7 +68,7 @@ to clarify what it is we're trying to prove. Recall the resolution rule
 for disjunction:
 
 <figure>
-![](/static/img/resRuleDis.svg)
+![](/static/book-img/forallx-ubc/resRuleDis.svg)
 </figure>
 
 
@@ -77,7 +77,7 @@ disjunction rule instead of this one. Suppose, for example, that our
 rule for disjunction had been this:
 
 <figure>
-![](/static/img/resRuleDisAlt.svg)
+![](/static/book-img/forallx-ubc/resRuleDisAlt.svg)
 </figure>
 
 
@@ -96,7 +96,7 @@ that assigns 1 to $P$ and 1 to $Q$. But if we used the tree system with
 the alternate disjunction rule above, the tree would close:
 
 <figure>
-![](/static/img/treeExampleDisAlt.svg)
+![](/static/book-img/forallx-ubc/treeExampleDisAlt.svg)
 </figure>
 
 This would be a counterexample to the soundness of the SL tree system.
@@ -216,7 +216,7 @@ branch to a tree with no satisfiable branches.
 Suppose that a tree develops via the conjunction rule:
 
 <figure>
-![](/static/img/resRuleConj.svg)
+![](/static/book-img/forallx-ubc/resRuleConj.svg)
 </figure>
 
 
@@ -243,7 +243,7 @@ way of developing the tree is like that.
 Negated conjunctions develop in our system with a branching rule:
 
 <figure>
-![](/static/img/resRuleNegConj.svg)
+![](/static/book-img/forallx-ubc/resRuleNegConj.svg)
 </figure>
 
 Once again, we are assuming for the purpose of argument that our
@@ -269,7 +269,7 @@ an unsatisfiable one.
 Disjunctions branch according to this rule:
 
 <figure>
-![](/static/img/resRuleDis.svg)
+![](/static/book-img/forallx-ubc/resRuleDis.svg)
 </figure>
 
 
@@ -289,7 +289,7 @@ an unsatisfiable one. Six resolution rules remain to be considered.
 Consider again the variant disjunction rule hypothesized above:
 
 <figure>
-![](/static/img/resRuleDisAlt.svg)
+![](/static/book-img/forallx-ubc/resRuleDisAlt.svg)
 </figure>
 
 If we attempted to go through the same reasoning we've been going
@@ -306,7 +306,7 @@ this rule will never lead to an inappropriate tree closure.
 Here is the rule for negated disjunctions:
 
 <figure>
-![](/static/img/resRuleNegDis.svg)
+![](/static/book-img/forallx-ubc/resRuleNegDis.svg)
 </figure>
 
 Suppose that $\mathcal{I}(\neg(\Phi\lor\Psi))=1$. Given the
@@ -325,7 +325,7 @@ unsatisfiable one.
 The conditional rule is:
 
 <figure>
-![](/static/img/resRuleCond.svg)
+![](/static/book-img/forallx-ubc/resRuleCond.svg)
 </figure>
 
 As before, assume that the material above the branch is satisfiable; so
@@ -344,7 +344,7 @@ The rule given in Chapter
 5 for negated conditionals was this:
 
 <figure>
-![](/static/img/resRuleNegCond.svg)
+![](/static/book-img/forallx-ubc/resRuleNegCond.svg)
 </figure>
 
 
@@ -366,7 +366,7 @@ We have three more rules to consider.
 Here is the biconditional rule:
 
 <figure>
-![](/static/img/resRuleBi.svg)
+![](/static/book-img/forallx-ubc/resRuleBi.svg)
 </figure>
 
 
@@ -380,7 +380,7 @@ too can never take one from a satisfiable root to an unsatisfiable tree.
 ### **6.4.9 Negated biconditional**
 
 <figure>
-![](/static/img/resRuleNegBi.svg)
+![](/static/book-img/forallx-ubc/resRuleNegBi.svg)
 </figure>
 
 The reasoning is much as before. If our interpretation satisfies the
@@ -396,7 +396,7 @@ satisfiable, this rule will never result in an unsatisfiable tree.
 Here is our final tree resolution rule:
 
 <figure>
-![](/static/img/resRuleNegNeg.svg)
+![](/static/book-img/forallx-ubc/resRuleNegNeg.svg)
 </figure>
 
 One last time, we assume that we begin with something satisfiable; so we
@@ -450,7 +450,7 @@ Consider the unsatisfiable set of sentences, $\{\neg Q, P \& Q\}$.
 Given our conjunction rule, a tree with this root will close:
 
 <figure>
-![](/static/img/treeExampleConj.svg)
+![](/static/book-img/forallx-ubc/treeExampleConj.svg)
 </figure>
 
 In proving completeness, we wish to demonstrate that this will always be
@@ -460,14 +460,14 @@ conjunction rule that called for a branching development instead of a
 linear one, completeness would fail. Suppose we had this rule:
 
 <figure>
-![](/static/img/resRuleConjAlt.svg)
+![](/static/book-img/forallx-ubc/resRuleConjAlt.svg)
 </figure>
 
 Using this rule, the tree with root $\{\neg Q, P \& Q\}$ would
 remain open:
 
 <figure>
-![](/static/img/treeExampleConjAlt.svg)
+![](/static/book-img/forallx-ubc/treeExampleConjAlt.svg)
 </figure>
 
 
@@ -529,7 +529,7 @@ branch isn't completed until every complex formula has a check mark next
 to it.) So, given the conjunction rule,
 
 <figure>
-![](/static/img/resRuleConj.svg)
+![](/static/book-img/forallx-ubc/resRuleConj.svg)
 </figure>
 
 we know that the branch must also contain $\Phi$ and $\Psi$. If we assume that
@@ -546,7 +546,7 @@ branch is complete, you know that the negated conjunction rule has been
 applied:
 
 <figure>
-![](/static/img/resRuleNegConj.svg)
+![](/static/book-img/forallx-ubc/resRuleNegConj.svg)
 </figure>
 
 We are assuming that the negated conjunction is in an open branch. This
@@ -584,7 +584,7 @@ If a conditional is in a completed open branch, then it has been
 resolved by this branching rule:
 
 <figure>
-![](/static/img/resRuleCond.svg)
+![](/static/book-img/forallx-ubc/resRuleCond.svg)
 </figure>
 
 
@@ -611,7 +611,7 @@ Suppose a biconditional is in an open branch. If the branch is
 completed, then this rule has been performed:
 
 <figure>
-![](/static/img/resRuleBi.svg)
+![](/static/book-img/forallx-ubc/resRuleBi.svg)
 </figure>
 
 
@@ -639,7 +639,7 @@ Finally, suppose there is a double-negated sentence in our completed
 open branch. Then this rule has been performed:
 
 <figure>
-![](/static/img/resRuleNegNeg.svg)
+![](/static/book-img/forallx-ubc/resRuleNegNeg.svg)
 </figure>
 
 
@@ -677,7 +677,7 @@ result in an unsound tree system. Here again was the rule we
 considered:
 
 <figure>
-![](/static/img/resRuleDisAlt.svg)
+![](/static/book-img/forallx-ubc/resRuleDisAlt.svg)
 </figure>
 
 
@@ -705,7 +705,7 @@ satisfiable root. So adding the negation of just one of the disjuncts to
 the root will close the tree, without making the root unsatisfiable:
 
 <figure>
-![](/static/img/treeExampleDisAlt2.svg)
+![](/static/book-img/forallx-ubc/treeExampleDisAlt2.svg)
 </figure>
 
 This tree is a counterexample to soundness, using the hypothetical rule
@@ -717,7 +717,7 @@ Let's work through one more example. Suppose we changed the conjunction
 rule to this one:
 
 <figure>
-![](/static/img/resRuleConjAlt2.svg)
+![](/static/book-img/forallx-ubc/resRuleConjAlt2.svg)
 </figure>
 
 Would our system still be sound? To answer this, we assume that the
@@ -753,7 +753,7 @@ this root: $(P \equiv \neg P) \& Q$. Note that this sentence has a
 contradictory first conjunct, and a contingent, atomic second conjunct.
 
 <figure>
-![](/static/img/treeExampleConjAlt2.svg)
+![](/static/book-img/forallx-ubc/treeExampleConjAlt2.svg)
 </figure>
 
 The left branch closes after we perform the unchanged biconditional rule
@@ -776,7 +776,7 @@ put both $P \& Q$ and $\neg P$ in the root. Then we'd have an
 unsatisfiable root, but the right branch would remain open:
 
 <figure>
-![](/static/img/treeExampleConjAlt3.svg)
+![](/static/book-img/forallx-ubc/treeExampleConjAlt3.svg)
 </figure>
 
 
@@ -798,7 +798,7 @@ counterexample to the soundness of the modified system.
 1. Change the rule for conjunctions to this rule:
 
 <figure>
-![](/static/img/A1.svg)
+![](/static/book-img/forallx-ubc/A1.svg)
 </figure>
 
 
@@ -811,7 +811,7 @@ A.1 The modified system would be sound.
 2. Change the rule for conjunctions to this rule:
 
 <figure>
-![](/static/img/A2.svg)
+![](/static/book-img/forallx-ubc/A2.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -823,7 +823,7 @@ A.2 The modified system would be sound.
 3. Change the rule for conjunctions to this rule:
 
 <figure>
-![](/static/img/A3.svg)
+![](/static/book-img/forallx-ubc/A3.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -835,7 +835,7 @@ A.3 The modified system would be sound.
 4. Change the rule for disjunctions to this rule:
 
 <figure>
-![](/static/img/A4.svg)
+![](/static/book-img/forallx-ubc/A4.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -847,7 +847,7 @@ A.4 The modified system would be sound.
 5. Change the rule for disjunctions to this rule:
 
 <figure>
-![](/static/img/A5.svg)
+![](/static/book-img/forallx-ubc/A5.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -860,7 +860,7 @@ A.5 The modified system would be sound.
 6. Change the rule for conditionals to this rule:
 
 <figure>
-![](/static/img/A6.svg)
+![](/static/book-img/forallx-ubc/A6.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -872,7 +872,7 @@ A.6 The modified system would be sound.
 7. Change the rule for conditionals to this rule:
 
 <figure>
-![](/static/img/A7.svg)
+![](/static/book-img/forallx-ubc/A7.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -884,7 +884,7 @@ A.7 The modified system would be sound.
 8. Change the rule for biconditionals to this rule:
 
 <figure>
-![](/static/img/A8.svg)
+![](/static/book-img/forallx-ubc/A8.svg)
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
@@ -896,7 +896,7 @@ A.1 The modified system would be sound.
 9. Change the rule for disjunctions to this rule:
 
 <figure>
-![](/static/img/A9.svg)
+![](/static/book-img/forallx-ubc/A9.svg)
 </figure>
 
 (This would mean that one can put whatever SL sentence one likes in the rightmost branch.)
