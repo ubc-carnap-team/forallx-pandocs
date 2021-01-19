@@ -629,8 +629,16 @@ tautology, a contradiction, or a contingent sentence?
 **6.** If anyone has ever crossed the Rubicon, it was Caesar.
 </blockquote>
 
-**Part D** Look back at the sentences G1--G4 on p. 19, and consider each of the
-following sets of sentences. Which are consistent? Which are inconsistent?
+**Part D** Recall the sentences G1--G4 from section 1.6:
+
+<blockquote>
+**G1** There are at least four giraffes at the wild animal park. <br/>
+**G2** There are exactly seven gorillas at the wild animal park. <br/>
+**G3** There are not more than two Martians at the wild animal park. <br/>
+**G4** Every giraffe at the wild animal park is a Martian.
+</blockquote>
+
+Consider each of the following sets of sentences. Which are consistent? Which are inconsistent?
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
 D.1 G2, G3, and G4
