@@ -234,11 +234,9 @@ arguments from invalid arguments.
 **1.4 Validity**
 --------
 
-An argument is deductively if and only if it is impossible for all the
+An argument is deductively **valid** if and only if it is impossible for all the
 premises to be true while the conclusion is false. (We'll say a bit more
-about just what we mean by 'impossible' in
-§1.5
-below.)
+about just what we mean by 'impossible' in §1.5 below.)
 
 That's our official *definition* of validity. Once again (get used to
 this pattern), our formal definition is related to, but not quite the
@@ -269,7 +267,7 @@ conclusion would necessarily be true.
 
 Since this is a valid argument that is, in some important sense, a bad
 argument, this shows that validity isn't the only feature we care about
-in arguments. An argument is if and only if it is valid and all of its
+in arguments. An argument is **sound** if and only if it is valid and all of its
 premises are true. For example, this variant argument on the above
 argument is sound:
 
@@ -364,7 +362,7 @@ Here are a few more relevant terms we'll be working with.
 
 In considering arguments formally, we care about what would be true *if*
 the premises were true. Generally, we are not concerned with the actual
-truth value of any particular sentences --- whether they are *actually*
+truth-value of any particular sentences --- whether they are *actually*
 true or false. (As indicated above, we will be more interested in
 validity than in soundness.) Yet there are some sentences that must be
 true, just as a matter of logic.
@@ -414,7 +412,7 @@ These two sentences are both contingent. (Do you see why?) Yet they must
 have the same truth-value. If either of the sentences is true, then they
 both are; if either of the sentences is false, then they both are. When
 two sentences necessarily have the same truth value, we say that they
-are .
+are **logically equivalent**.
 
 Notice that both of these arguments are valid:
 
@@ -631,8 +629,16 @@ tautology, a contradiction, or a contingent sentence?
 **6.** If anyone has ever crossed the Rubicon, it was Caesar.
 </blockquote>
 
-**Part D** Look back at the sentences G1--G4 on p. 19, and consider each of the
-following sets of sentences. Which are consistent? Which are inconsistent?
+**Part D** Recall the sentences G1--G4 from section 1.6:
+
+<blockquote>
+**G1** There are at least four giraffes at the wild animal park. <br/>
+**G2** There are exactly seven gorillas at the wild animal park. <br/>
+**G3** There are not more than two Martians at the wild animal park. <br/>
+**G4** Every giraffe at the wild animal park is a Martian.
+</blockquote>
+
+Consider each of the following sets of sentences. Which are consistent? Which are inconsistent?
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
 D.1 G2, G3, and G4

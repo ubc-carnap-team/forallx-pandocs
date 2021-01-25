@@ -1423,7 +1423,7 @@ SL, using this symbolization key:
 > **R**: John's mother learns John's grade
 > **S**: John will be in trouble
 
-1. If John doesn't get a good grade, he won't get a good job/
+1. If John doesn't get a good grade, he won't get a good job.
 2. If John doesn't get a good grade, then if his mother learns his grade,
 he'll be in trouble.
 3. John will be in trouble, but he will get a good grade.
