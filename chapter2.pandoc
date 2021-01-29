@@ -521,7 +521,7 @@ For the following sentences, use this symbolization key:
 Sentence 21 can be
 translated partially as 'If $R$, then $B$.' We will use the symbol '$\supset$' to
 represent this conditional relationship. The sentence becomes
-$(R \supset B)$. The connective is called a . The sentence on the left-hand
+$(R \supset B)$. The connective is called a **conditional**. The sentence on the left-hand
 side of the conditional ($R$ in this example) is called the **antecedent**. The
 sentence on the right-hand side ($B$) is called the **consequent**.
 
@@ -800,7 +800,7 @@ $\neg \neg \neg \neg$ <br/>
 $A_4 \lor$
 </blockquote>
 
-None of these are sentences in SL. A meaningful expression is called a **well formed formula**.
+None of these are sentences in SL. A meaningful expression is called a **well-formed formula**.
 It is common to use the acronym *wff*; the plural is wffs.
 
 Individual sentence letters like $A$ and $G_3$ are certainly wffs. We
@@ -831,7 +831,7 @@ wff by adding a '$\neg$' symbol to the front of it.
 
 We can say similar things for each of the other connectives. For
 instance, if $\Phi$ and $\Psi$ are wffs of SL, then ($\Phi \& \Psi$) is a wff
-of SL. (That is to say, given any two wffs in SL, you can put a '$/&$'
+of SL. (That is to say, given any two wffs in SL, you can put a '$\&$'
 symbol between them, a '(' in front of the first, and a ')' after the
 second, and the whole thing will add up to a new wff.) Providing clauses
 like this for all of the connectives, we arrive at the following formal
@@ -839,7 +839,7 @@ definition for a well-formed formula of SL:
 
 1.  Every atomic sentence is a wff.
 
-2.  For all expressions and ,
+2.  For all expressions $\Phi$ and $\Psi$,
 
     1.  If is a wff, then $\neg\Phi$ is a wff.
 
