@@ -56,7 +56,7 @@ by the characteristic truth table for that connective. Truth tables list
 out all the possible combinations of truth values for the atomic wffs at
 play; each row corresponds to a possible way of assigning truth values
 to atomic sentences. ({$P=1$, $Q=1$} is one way truth values could be
-assigned; {$P=1$, $Q=1$} is another.)
+assigned; {$P=1$, $Q=0$} is another.)
 
 In the previous chapter, we wrote the characteristic truth tables with
 '1' for true and '0' for false. It is important to note, however, that
@@ -96,7 +96,7 @@ given in table 3.1.
 
 The characteristic truth table for conjunction, for example, gives the
 truth conditions for any sentence of the form $(\Phi \& \Psi)$.
-Even if the conjuncts and are long, complicated sentences, the
+Even if the conjuncts are long, complicated sentences, the
 conjunction is true if and only if both $\Phi$ and $\Psi$ are true.
 
 Let's construct a truth table for a more complicated sentence. Consider
