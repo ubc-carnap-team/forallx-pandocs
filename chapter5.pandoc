@@ -1,4 +1,4 @@
-SL Trees {#ch.sl.trees}
+SL Trees
 ========
 
 So far we have learned one way to evaluate SL arguments for validity: an
@@ -65,7 +65,7 @@ Another name for them is [trees]{.smallcaps}, because of the way they
 Ch. [\[ch.ND.proofs\]](#ch.ND.proofs){reference-type="ref"
 reference="ch.ND.proofs"} we will examine a different proof system.
 
-Satisfiability and entailment
+**5.1 Satisfiability and entailment **
 -----------------------------
 
 The method of trees is most directly a way to test for satisfiability of
@@ -802,6 +802,12 @@ sentences, is satisfiable.
 Practice Exercises {#practice-exercises .unnumbered}
 ------------------
 
+You can use this interactive widget to construct SL trees and have them automatically checked for correctness. Enter the initial set of sentences as a comma-separated list, like "A,B,C".
+
+```{.TruthTree .Prop}
+5.0 
+```
+
 If you want additional practice, you can construct trees for any of the
 SL arguments and entailment claims in the exercises for the previous two
 chapters.
@@ -812,7 +818,6 @@ $\star$
 To evaluate each of the following claims with a tree, (a) what would you
 put in the root of the tree?, and (b) if the tree closes, does that show
 that the claim is true or false?
-
 .
 
 $\{P, P \ensuremath{\supset}Q, Q \ensuremath{\supset}\ensuremath{\neg}P\} \vdash{}\bot$
@@ -855,6 +860,8 @@ $\star$
 reference="pr.sl.treeroot"} by constructing a tree. If applicable, give
 the interpretation that demonstrates the claim true or false.
 [\[tree.examples\]]{#tree.examples label="tree.examples"}
+
+
 
 **Part**  Recall the discussion of the Sheffer stroke in Chapter
 [\[ch.TruthTables\]](#ch.TruthTables){reference-type="ref"
