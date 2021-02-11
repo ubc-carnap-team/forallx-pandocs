@@ -17,45 +17,39 @@ rapidly becomes extremely cumbersome for evaluating arguments using more
 than two or three atomic sentence-letters. To evaluate an argument like
 this one, you'd need to consider four rows of a truth-table:
 
-.
+> <span class="premise">$P\ensuremath{\equiv}Q$</span>
 
-$P\ensuremath{\equiv}Q$
+> <span class="premise">$\ensuremath{\neg}Q$</span>
 
-$\ensuremath{\neg}Q$
+> <span class="premise">$\ensuremath{\neg}Q \ensuremath{\vee}(P \ensuremath{\supset}\ensuremath{\neg}Q)$</span>
 
-$\ensuremath{\neg}Q \ensuremath{\vee}(P \ensuremath{\supset}\ensuremath{\neg}Q)$
-
-$\ensuremath{\neg}P \ensuremath{\supset}Q$
+> | <span class="conclusion">$\ensuremath{\neg}P \ensuremath{\supset}Q$</span>
 
 But change just two of the atoms to new letters, and the required table
 will grow exponentially. For this argument, you'd need sixteen rows.
 
-.
+> <span class="premise">$P\ensuremath{\equiv}Q$</span>
 
-$P\ensuremath{\equiv}Q$
+> <span class="premise">$\ensuremath{\neg}A$</span>
 
-$\ensuremath{\neg}A$
+> <span class="premise">$\ensuremath{\neg}Q \ensuremath{\vee}(A \ensuremath{\supset}\ensuremath{\neg}B)$</span>
 
-$\ensuremath{\neg}Q \ensuremath{\vee}(A \ensuremath{\supset}\ensuremath{\neg}B)$
-
-$\ensuremath{\neg}P \ensuremath{\supset}B$
+> <span class="conclusion">$\ensuremath{\neg}P \ensuremath{\supset}B$</span>
 
 For this one, you'd need two hundred fifty-six!
-[\[8letterargument\]]{#8letterargument label="8letterargument"}
 
-.
 
-$A\ensuremath{\equiv}B$
+<span class="premise">$A\ensuremath{\equiv}B$</span>
 
-$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$
+<span class="premise">$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$</span>
 
-$E \ensuremath{\supset}\ensuremath{\neg}C$
+<span class="premise">$E \ensuremath{\supset}\ensuremath{\neg}C$</span>
 
-$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$
+<span class="premise">$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$</span>
 
-$\ensuremath{\neg}A \ensuremath{\,\&\,}E$
+<span class="premise">$\ensuremath{\neg}A \ensuremath{\,\&\,}E$</span>
 
-$H \ensuremath{\vee}G$
+<span class="conclusion">$H \ensuremath{\vee}G$</span>
 
 So it is useful to have alternate ways of proving entailments. In this
 chapter we will introduce a *proof system* for SL. The proofs we will
@@ -75,12 +69,12 @@ satisfiability, it also gives a way to test for validity.
 Recall from
 §[\[sec.semanticsSL\]](#sec.semanticsSL){reference-type="ref"
 reference="sec.semanticsSL"} the definition of entailment in SL:
-$\ensuremath{\mathcal{X}}{}\models\ensuremath{\varPhi}{}$ means that
+$\ensuremath{\mathcal{X}}{}\models\ensuremath{\Phi}{}$ means that
 there is no interpretation that satisfies every sentence in
-$\mathcal{X}$ but falsifies $\varPhi$. (Remember, '$\mathcal{X}$' can
+$\mathcal{X}$ but falsifies $\Phi$. (Remember, '$\mathcal{X}$' can
 stand for any set of SL sentences.) This in turn is equivalent to the
 claim that there is no interpretation that satisfies
-$\{\ensuremath{\mathcal{X}}{},\ensuremath{\neg}\ensuremath{\varPhi}{}\}$.
+$\{\ensuremath{\mathcal{X}}{},\ensuremath{\neg}\ensuremath{\Phi}{}\}$.
 Unsatisfiability can be represented with a double-turnstile with $\bot$
 on the right-hand side.
 
@@ -95,20 +89,18 @@ possible to complete the task.
 Let's begin by working through an example that illustrates the general
 idea, then come back to give precise rules for the tree method.
 
-An example: proving validity
+5.2 An example: proving validity
 ----------------------------
 
 Let's attempt to prove whether this is valid in SL:
 
-.
+<span class="premise" >$A\ensuremath{\,\&\,}B$</span>
 
-$A\ensuremath{\,\&\,}B$
+<span class="premise">$\ensuremath{\neg}(C\ensuremath{\vee}D)$</span></span>
 
-$\ensuremath{\neg}(C\ensuremath{\vee}D)$
+<span class="premise">$(\ensuremath{\neg}B \ensuremath{\vee}C) \ensuremath{\vee}E$</span>
 
-$(\ensuremath{\neg}B \ensuremath{\vee}C) \ensuremath{\vee}E$
-
-$E$
+<span class="conclusion">$E$</span>
 
 To evaluate this argument, we consider whether it's possible to satisfy
 the three premises along with the negation of the conclusion. We begin
@@ -204,213 +196,7 @@ connected; we'll consider the connection in detail in Chapter
 [\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
 reference="ch.SLsoundcomplete"}.
 
-SL Trees {#ch.sl.trees}
-========
-
-So far we have learned one way to evaluate SL arguments for validity: an
-argument is valid just in case no interpretation satisfies the premises
-but falsifies the conclusion. We can check to see whether an argument is
-valid by constructing truth tables, representing all of the possible
-interpretations, and checking to see whether any of them do so. This
-method has two main advantages: one is that it can be done in a formal
-and formulaic way --- it requires no particular rational insight, just a
-straightforward application of the rules of SL. Another is that,
-assuming you follow the rules correctly, it will always succeed in
-identifying whether the argument is valid or not.
-
-The truth-table method also has a significant disadvantage, however: it
-rapidly becomes extremely cumbersome for evaluating arguments using more
-than two or three atomic sentence-letters. To evaluate an argument like
-this one, you'd need to consider four rows of a truth-table:
-
-.
-
-$P\ensuremath{\equiv}Q$
-
-$\ensuremath{\neg}Q$
-
-$\ensuremath{\neg}Q \ensuremath{\vee}(P \ensuremath{\supset}\ensuremath{\neg}Q)$
-
-$\ensuremath{\neg}P \ensuremath{\supset}Q$
-
-But change just two of the atoms to new letters, and the required table
-will grow exponentially. For this argument, you'd need sixteen rows.
-
-.
-
-$P\ensuremath{\equiv}Q$
-
-$\ensuremath{\neg}A$
-
-$\ensuremath{\neg}Q \ensuremath{\vee}(A \ensuremath{\supset}\ensuremath{\neg}B)$
-
-$\ensuremath{\neg}P \ensuremath{\supset}B$
-
-For this one, you'd need two hundred fifty-six!
-[\[8letterargument\]]{#8letterargument label="8letterargument"}
-
-.
-
-$A\ensuremath{\equiv}B$
-
-$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$
-
-$E \ensuremath{\supset}\ensuremath{\neg}C$
-
-$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$
-
-$\ensuremath{\neg}A \ensuremath{\,\&\,}E$
-
-$H \ensuremath{\vee}G$
-
-So it is useful to have alternate ways of proving entailments. In this
-chapter we will introduce a *proof system* for SL. The proofs we will
-construct in this chapter are called [analytic tableaux]{.smallcaps}.
-Another name for them is [trees]{.smallcaps}, because of the way they
-'branch' out to represent possibilities. In
-Ch. [\[ch.ND.proofs\]](#ch.ND.proofs){reference-type="ref"
-reference="ch.ND.proofs"} we will examine a different proof system.
-
-Satisfiability and entailment
------------------------------
-
-The method of trees is most directly a way to test for satisfiability of
-a set of SL sentences. Since validity is definable in terms of
-satisfiability, it also gives a way to test for validity.
-
-Recall from
-§[\[sec.semanticsSL\]](#sec.semanticsSL){reference-type="ref"
-reference="sec.semanticsSL"} the definition of entailment in SL:
-$\ensuremath{\mathcal{X}}{}\models\ensuremath{\varPhi}{}$ means that
-there is no interpretation that satisfies every sentence in
-$\mathcal{X}$ but falsifies $\varPhi$. (Remember, '$\mathcal{X}$' can
-stand for any set of SL sentences.) This in turn is equivalent to the
-claim that there is no interpretation that satisfies
-$\{\ensuremath{\mathcal{X}}{},\ensuremath{\neg}\ensuremath{\varPhi}{}\}$.
-Unsatisfiability can be represented with a double-turnstile with $\bot$
-on the right-hand side.
-
-So if you want to tell whether an argument in SL is valid, check to see
-whether the premises, along with the negation of the conclusion, are
-jointly satisfiable. If they are, the argument is invalid. If they're
-not, the argument is valid. This is the basic idea of the tree method.
-We'll write down the sentences we're attempting to satisfy, and then
-we'll work through their consequences, in order to see whether it's
-possible to complete the task.
-
-Let's begin by working through an example that illustrates the general
-idea, then come back to give precise rules for the tree method.
-
-An example: proving validity
-----------------------------
-
-Let's attempt to prove whether this is valid in SL:
-
-.
-
-$A\ensuremath{\,\&\,}B$
-
-$\ensuremath{\neg}(C\ensuremath{\vee}D)$
-
-$(\ensuremath{\neg}B \ensuremath{\vee}C) \ensuremath{\vee}E$
-
-$E$
-
-To evaluate this argument, we consider whether it's possible to satisfy
-the three premises along with the negation of the conclusion. We begin
-by writing down the sentences we're going to attempt to satisfy.
-
-single branches, close with=$\times$, \[A$\,\&\,$B \[$\neg$(C$\vee$D),
-grouped \[($\neg$B $\vee$C) $\vee$E, grouped \[$\neg$E, grouped,
-name=negconc \] \] \] \]
-
-Notice that we're putting the *negation* of the conclusion here in line
-(4), since we're looking to see whether it's possible to satisfy the
-premises and *falsify* the conclusion. The sentences we write down at
-the beginning of the tree, we call the [root]{.smallcaps}. Trees are
-designed to show whether the root is satisfiable, and if so, how.
-
-With proof trees, the idea is to continue writing down that which our
-previous lines *already commit us to*. Consider the first line,
-$A \ensuremath{\,\&\,}B$. For this conjunction to be true, both
-conjuncts must be true. So any interpretation that satisfies the top
-four lines must also satisfy both $A$ and $B$; the truth of those
-sentences is a commitment of what we already have. Each follow from what
-is already written down. We represent this by continuing the tree with
-those sentences:
-
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped \[($\neg$B $\vee$C) $\vee$E, grouped
-\[$\neg$E, grouped \[A \[B, grouped \] \] \] \] \] \]
-
-In addition to introducing lines (5) and (6), we also add a check mark
-on (1), to indicate that we've now considered it and represented its
-consequences. Think of the check mark as saying that we've extended the
-tree in a way that encodes the information from this line.
-
-Now consider line (2). This is a negated disjunction. Disjunctions are
-true any time either disjunct is true, so this *negated* disjunction can
-only be true if *both* disjuncts are *false*. So we include new lines
-for $\neg$$C$ and $\neg$$D$, adding a check mark on line (2):
-
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped, checked \[($\neg$B $\vee$C) $\vee$E,
-grouped \[$\neg$E, grouped \[A \[B, grouped \[$\neg$C \[$\neg$D, grouped
-\] \] \] \] \] \] \] \]
-
-Line (3) is a disjunction. Unlike the previous two cases, it doesn't
-tell us what categorically *must* be the case; it says that one of two
-possibilities must be met. We represent this in our tree by *branching*
-into two different columns:
-
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped, checked \[($\neg$B $\vee$C) $\vee$E,
-grouped, checked \[$\neg$E, grouped \[A \[B, grouped \[$\neg$C
-\[$\neg$D, grouped \[$\neg$B $\vee$C \] \[E\] \] \] \] \] \] \] \] \]
-
-Think of these two branches as representing the idea that the root
-implies that at least one of these ways of continuing the tree must be
-possible.
-
-So now we have two branches to consider. Start by examining the right
-branch. It gives an atomic sentence, $E$. Notice, however, that line (4)
-was $\neg$$E$. So if we're looking for a way to satisfy (1)-(4), this
-right branch isn't a possible interpretation. It requires $E$ to be
-true, and it also requires $\neg$$E$ to be true. If a branch contains
-any sentence and also contains its negation, we know that branch doesn't
-correspond to a possible interpretation. We'll consider this branch
-*closed*, and mark this with an $\times$.
-
-The left branch is another disjunction. It too branches out into its two
-disjuncts:
-
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped, checked \[($\neg$B $\vee$C) $\vee$E,
-grouped, checked \[$\neg$E, grouped \[A \[B, grouped \[$\neg$C
-\[$\neg$D, grouped \[$\neg$B $\vee$C, checked \[$\neg$B, close\] \[C,
-close\] \] \[E, close\] \] \] \] \] \] \] \] \]
-
-Both of these disjuncts also result in closed branches. The left branch
-at (10) is the negation of (6), and the right branch is the negation of
-(7). Now every branch in this tree is closed. This corresponds to the
-idea that every possible way there could be to satisfy (1)-(4) ended up
-requiring a contradiction. There is no interpretation that satisfies
-(1)-(4). In other words, the argument we began with was valid.
-
-In the previous chapter we used the double turnstile, '$\models$', to
-represent entailment. In this chapter we will use a different but
-related symbol, the [single turnstile]{.smallcaps}, which looks like
-this: '$\vdash$'. Think of this symbol as representing *provability*. So
-in proving that $E$ follows from the premises above, we're showing that
-{$A\ensuremath{\,\&\,}B$, $\neg$$(C\ensuremath{\vee}D)$,
-$(\ensuremath{\neg}B\ensuremath{\vee}C)\ensuremath{\vee}E\} \vdash{} E$.
-
-Unsurprisingly, provability and entailment will turn out to be closely
-connected; we'll consider the connection in detail in Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"}.
-
-An example: proving invalidity {#sec.SLinvalidtree}
+5.3 An example: proving invalidity
 ------------------------------
 
 Let's work through another example to further illustrate the idea. In
@@ -418,13 +204,11 @@ Let's work through another example to further illustrate the idea. In
 reference="sec.SLtreerules"} we'll learn the formal rules for trees in
 SL. Consider this argument form:
 
-.
+> <span class="premise">$(D\ensuremath{\vee}A) \ensuremath{\,\&\,}\ensuremath{\neg}N$</span>
 
-$(D\ensuremath{\vee}A) \ensuremath{\,\&\,}\ensuremath{\neg}N$
+> <span class="premise">$N \ensuremath{\vee}\ensuremath{\neg}A$</span>
 
-$N \ensuremath{\vee}\ensuremath{\neg}A$
-
-$\ensuremath{\neg}N \ensuremath{\,\&\,}A$
+> <span class="conclusion">$\ensuremath{\neg}N \ensuremath{\,\&\,}A$</span>
 
 As before, we'll construct a tree that includes the premises and the
 negation of the conclusion at the top, and we'll attempt to find an
@@ -465,14 +249,14 @@ that satisfies the root. The branch includes three wffs that are either
 atoms or negated atoms: $\neg$$A$, $D$, and $\neg$$N$. So it suggests
 this interpretation:
 
-$$\ensuremath{\mathscr{I}} =
+$ \ensuremath{\mathscr{I}} =
 \left\{
 	\begin{array}{ll}
 	A = 0\\
 	D = 1\\
 	N = 0
 	\end{array}
-\right.$$
+\right. $
 
 You can verify this result by evaluating the premises and the conclusion
 of the argument we began with on this interpretation. Since there is an
@@ -503,14 +287,14 @@ conjunct, adding a check mark next to the conjunction. Using our Greek
 symbols once again as variables to stand in for any sentence of SL, any
 time you have this,
 
-not line numbering, single branches \[$\varPhi$$\,\&\,$$\varPsi$ \]
+not line numbering, single branches \[$\Phi$$\,\&\,$$\Psi$ \]
 
 you may extend each open branch of the tree to this:
 
-not line numbering, single branches \[$\varPhi$$\,\&\,$$\varPsi$,
-checked \[$\varPhi$ \[$\varPsi$, grouped \] \] \]
+not line numbering, single branches \[$\Phi$$\,\&\,$$\Psi$,
+checked \[$\Phi$ \[$\Psi$, grouped \] \] \]
 
-It is important to remember once again that $\varPhi$ and $\varPsi$ here
+It is important to remember once again that $\Phi$ and $\Psi$ here
 can stand for *any* sentences of SL, including complex ones.
 
 If you have extended a tree branch using the conjunction rule, we say
@@ -540,7 +324,7 @@ disjunct.
 
 Recall the characteristic truth table for the conditional in SL:
 
-   $\varPhi$   $\varPsi$   $\varPhi$$\supset$$\varPsi$
+   $\Phi$   $\Psi$   $\Phi$$\supset$$\Psi$
   ----------- ----------- -----------------------------
        1           1                    1
        1           0                    0
@@ -635,7 +419,7 @@ closure:
 If every branch is closed, the method proves that the root is
 unsatisfiable.
 
-Note that '$\varPhi$' stands in for *any* sentence of SL; it is not part
+Note that '$\Phi$' stands in for *any* sentence of SL; it is not part
 of the closure rule that one must have an atomic sentence and its
 negation. Consider for example this tree:
 
@@ -682,11 +466,11 @@ $\mathcal{X}$ closes. We use '$\nvdash{}\bot$' to indicate that a
 completed tree remains open.
 
 We will also define our single turnstile symbol so that
-$\ensuremath{\mathcal{X}}{}\vdash{} \ensuremath{\varPhi}{}$ is
+$\ensuremath{\mathcal{X}}{}\vdash{} \ensuremath{\Phi}{}$ is
 equivalent to
-$\ensuremath{\mathcal{X}}{}, \ensuremath{\neg}\ensuremath{\varPhi}{}\vdash{}\bot$.
+$\ensuremath{\mathcal{X}}{}, \ensuremath{\neg}\ensuremath{\Phi}{}\vdash{}\bot$.
 So the latter is a way of saying that the tree method shows that the
-argument from $\ensuremath{\mathcal{X}}{}$ to $\ensuremath{\varPhi}{}$
+argument from $\ensuremath{\mathcal{X}}{}$ to $\ensuremath{\Phi}{}$
 is valid.
 
 This completes the introduction of the formal rules for the SL tree
@@ -814,48 +598,50 @@ chapters.
 
 $\star$
 
-**Part**   [\[pr.sl.treeroot\]]{#pr.sl.treeroot label="pr.sl.treeroot"}
-To evaluate each of the following claims with a tree, (a) what would you
-put in the root of the tree?, and (b) if the tree closes, does that show
+**Part A**   [\[pr.sl.treeroot\]]{#pr.sl.treeroot label="pr.sl.treeroot"}
+To evaluate each of the following claims with a tree,
+> (a) what would you
+put in the root of the tree?, and
+> (b) if the tree closes, does that show
 that the claim is true or false?
 .
 
-$\{P, P \ensuremath{\supset}Q, Q \ensuremath{\supset}\ensuremath{\neg}P\} \vdash{}\bot$
+1. $\{P, P \ensuremath{\supset}Q, Q \ensuremath{\supset}\ensuremath{\neg}P\} \vdash{}\bot$
 
-$(P \ensuremath{\supset}Q) \ensuremath{\equiv}(Q \ensuremath{\supset}P)$
+2. $(P \ensuremath{\supset}Q) \ensuremath{\equiv}(Q \ensuremath{\supset}P)$
 is a tautology.
 
-The following argument is valid:
+3. The following argument is valid:
 
-$P \ensuremath{\,\&\,}Q$
+> <span class="premise">$P \ensuremath{\,\&\,}Q$</span>
 
-$\ensuremath{\neg}R \ensuremath{\supset}\ensuremath{\neg}Q$
+> <span class="premise">$\ensuremath{\neg}R \ensuremath{\supset}\ensuremath{\neg}Q$</span>
 
-$P \ensuremath{\,\&\,}R$
+> <span class="conclusion">$P \ensuremath{\,\&\,}R$</span>
 
-There is no interpretation that satisfies $A \ensuremath{\vee}B$,
+4. There is no interpretation that satisfies $A \ensuremath{\vee}B$,
 $B \ensuremath{\supset}C$, and $A \ensuremath{\equiv}C$ without also
 satisfying C.
 
-$A \ensuremath{\equiv}\ensuremath{\neg}A$ is a contradiction.
+5. $A \ensuremath{\equiv}\ensuremath{\neg}A$ is a contradiction.
 
-Every interpretation satisfying $P$, $P \ensuremath{\supset}Q$, and
+6. Every interpretation satisfying $P$, $P \ensuremath{\supset}Q$, and
 $\ensuremath{\neg}Q$ also satisfies $A$.
 
-There is at least one interpretation that satisfies
+7. There is at least one interpretation that satisfies
 $P \ensuremath{\supset}Q$,
 $\ensuremath{\neg}P \ensuremath{\vee}\ensuremath{\neg}Q$, and
 $Q \ensuremath{\supset}P$.
 
 $\star$
 
-**Part**   [\[pr.sl.agtree\]]{#pr.sl.agtree label="pr.sl.agtree"}
+**Part B**   [\[pr.sl.agtree\]]{#pr.sl.agtree label="pr.sl.agtree"}
 Evaluate the argument given on p.  by constructing a tree. If it is
 invalid, give a model demonstrating it so.
 
 $\star$
 
-**Part**  Evaluate each claim from Part
+**Part C**  Evaluate each claim from Part
 [\[pr.sl.treeroot\]](#pr.sl.treeroot){reference-type="ref"
 reference="pr.sl.treeroot"} by constructing a tree. If applicable, give
 the interpretation that demonstrates the claim true or false.
@@ -863,17 +649,20 @@ the interpretation that demonstrates the claim true or false.
 
 
 
-**Part**  Recall the discussion of the Sheffer stroke in Chapter
+**Part D**  Recall the discussion of the Sheffer stroke in Chapter
 [\[ch.TruthTables\]](#ch.TruthTables){reference-type="ref"
 reference="ch.TruthTables"}, page . That connective, if added to SL,
 would have this characteristic truth table:
 
-   $\varPhi$   $\varPsi$   $\varPhi$$|$$\varPsi$
-  ----------- ----------- -----------------------
-       1           1                 0
-       1           0                 1
-       0           1                 1
-       0           0                 1
+<div class="truth-table-container">
+<table class="truth-table">
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi | \Psi$</th></tr>
+<tr><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+</table>
+</div>
 
 What would be appropriate tree resolution rules for the Sheffer stroke,
 or the negated Sheffer stroke?
