@@ -56,8 +56,7 @@ chapter we will introduce a *proof system* for SL. The proofs we will
 construct in this chapter are called [analytic tableaux]{.smallcaps}.
 Another name for them is [trees]{.smallcaps}, because of the way they
 'branch' out to represent possibilities. In
-Ch. [\[ch.ND.proofs\]](#ch.ND.proofs){reference-type="ref"
-reference="ch.ND.proofs"} we will examine a different proof system.
+Ch. 7 we will examine a different proof system.
 
 **5.1 Satisfiability and entailment **
 -----------------------------
@@ -66,9 +65,7 @@ The method of trees is most directly a way to test for satisfiability of
 a set of SL sentences. Since validity is definable in terms of
 satisfiability, it also gives a way to test for validity.
 
-Recall from
-§[\[sec.semanticsSL\]](#sec.semanticsSL){reference-type="ref"
-reference="sec.semanticsSL"} the definition of entailment in SL:
+Recall from section 4.3 the definition of entailment in SL:
 $\ensuremath{\mathcal{X}}{}\models\ensuremath{\Phi}{}$ means that
 there is no interpretation that satisfies every sentence in
 $\mathcal{X}$ but falsifies $\Phi$. (Remember, '$\mathcal{X}$' can
@@ -192,17 +189,13 @@ in proving that $E$ follows from the premises above, we're showing that
 $(\ensuremath{\neg}B\ensuremath{\vee}C)\ensuremath{\vee}E\} \vdash{} E$.
 
 Unsurprisingly, provability and entailment will turn out to be closely
-connected; we'll consider the connection in detail in Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"}.
+connected; we'll consider the connection in detail in Chapter 6.
 
 5.3 An example: proving invalidity
 ------------------------------
 
 Let's work through another example to further illustrate the idea. In
-§[2.4](#sec.SLtreerules){reference-type="ref"
-reference="sec.SLtreerules"} we'll learn the formal rules for trees in
-SL. Consider this argument form:
+5.4 we'll learn the formal rules for trees in SL. Consider this argument form:
 
 > <span class="premise">$(D\ensuremath{\vee}A) \ensuremath{\,\&\,}\ensuremath{\neg}N$</span>
 
@@ -240,8 +233,7 @@ $\,\&\,$$\neg$N, checked \[N $\vee$$\neg$A, grouped, checked
 
 The $\uparrow$ indicates that the open branch ending in $D$ is a
 *completed* branch. (We'll precisely define 'completion' in
-§[2.6](#sec.SL.tree.completion){reference-type="ref"
-reference="sec.SL.tree.completion"}.) What this means is that this
+Section 5.6.) What this means is that this
 branch represents a way to satisfy all three sentences at the root of
 the tree. In other words, this argument form is *not* valid in SL.
 Furthermore, examining the open branch demonstrates an interpretation
@@ -263,7 +255,7 @@ of the argument we began with on this interpretation. Since there is an
 interpretation that satisfies the premises and falsifies the conclusion,
 our tree system proves the argument invalid.
 
-Resolution rules for SL trees {#sec.SLtreerules}
+5.4 Resolution rules for SL trees
 -----------------------------
 
 Hopefully the examples we've worked through have given you a decent
@@ -272,12 +264,11 @@ about it, by giving formal rules for trees. You should be able to
 recognize the following rules as a generalization of the steps of the
 proofs given above.
 
-We begin with [resolution]{.smallcaps} rules. These rules identify ways
+We begin with <span style="font-variant: small-caps">resolution</span> rules. These rules identify ways
 that tree branches can be extended, given sentences that are already in
 that branch. The rules depend on the main connective of the sentence in
 question. (If the main connective is negation, then they also depend on
 the main connective of the negand.)
-[\[SL.treerules.start\]]{#SL.treerules.start label="SL.treerules.start"}
 
 ### Conjunction
 
@@ -309,7 +300,7 @@ the negation of each conjunct. This makes sense because there are two
 ways for a negated conjunction to be true --- either conjunct can be
 false.
 
-### Disjunction {#subsec.DisjunctionTreeRule}
+### Disjunction
 
 Disjunctions branch into each disjunct.
 
@@ -330,6 +321,16 @@ Recall the characteristic truth table for the conditional in SL:
        1           0                    0
        0           1                    1
        0           0                    1
+
+<div class="truth-table-container">
+<table class="truth-table">
+<tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \supset \Psi$</th></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>1</td></tr>
+</table>
+</div>
 
 Conditionals are true any time the antecedent is false, and also any
 time the consequent is true. We can represent this with a branching tree
@@ -364,8 +365,6 @@ There is one more resolution rule, for double-negated sentences. One
 resolves a double negation by developing a linear branch with the negand
 of the negand --- i.e., the wff obtained from removing both negations
 from the left of the double-negation.
-
-[\[SL.treerules.end\]]{#SL.treerules.end label="SL.treerules.end"}
 
 ### Resolution rules summary
 
@@ -409,7 +408,7 @@ side.
 Besides the tree resolution rules, there are two more rules to our proof
 system.
 
-Branch closure rules
+5.5 Branch closure rules
 --------------------
 
 In the tree examples above, we *closed* branches when they contained
@@ -446,7 +445,7 @@ can save yourself a lot of work by noticing when branches are ready to
 mark as closed, and by thinking a bit strategically about which
 sentences to resolve first.
 
-Branch completion rules {#sec.SL.tree.completion}
+5.6 Branch completion rules
 -----------------------
 
 Here is the final piece of our formal proof system. In our examples
@@ -476,12 +475,10 @@ is valid.
 This completes the introduction of the formal rules for the SL tree
 proof system. In the remainder of this chapter, we'll work through some
 more examples and provide some advice for working through trees more
-efficiently. In Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"} we'll explain why the tree method works,
+efficiently. In Chapter 6 we'll explain why the tree method works,
 and prove why it's a good one.
 
-Resolution order
+5.7 Resolution order
 ----------------
 
 The resolution rules do not specify the order in which you should
@@ -547,7 +544,7 @@ lead to new open branches, before resolving ones that will. For just the
 same reason, it is usually more efficient to resolve those sentences
 that have linear rules before those that have branching rules.
 
-Choosing the right root {#sec.sl.treeroots}
+5.8 Choosing the right root
 -----------------------
 
 Trees are used to indicate whether the root is satisfiable. We test
@@ -571,7 +568,7 @@ tautology is a sentence that is satisfied by *every* interpretation. To
 test this claim with a tree, we'll attempt to find an interpretation
 that falsifies it, by putting its *negation* in the root. If this tree
 remains open, it shows us how to satisfy the negation, which means that
-the sentence is *not* a tautology. If it closes, then the negation is
+the sentence iss *not* a tautology. If it closes, then the negation is
 unsatisfiable, which means the sentence *is* a tautology.
 
 To find out whether a sentence is a contradiction, check and see whether
@@ -583,7 +580,7 @@ To use a tree to answer a question, the first step is always to convert
 the question into a question about whether some sentence, or set of
 sentences, is satisfiable.
 
-Practice Exercises {#practice-exercises .unnumbered}
+5.9 Practice Exercises {#practice-exercises .unnumbered}
 ------------------
 
 You can use this interactive widget to construct SL trees and have them automatically checked for correctness. Enter the initial set of sentences as a comma-separated list, like "A,B,C".
@@ -598,7 +595,7 @@ chapters.
 
 $\star$
 
-**Part A**   [\[pr.sl.treeroot\]]{#pr.sl.treeroot label="pr.sl.treeroot"}
+**Part A**
 To evaluate each of the following claims with a tree,
 > (a) what would you
 put in the root of the tree?, and
@@ -635,23 +632,31 @@ $Q \ensuremath{\supset}P$.
 
 $\star$
 
-**Part B**   [\[pr.sl.agtree\]]{#pr.sl.agtree label="pr.sl.agtree"}
-Evaluate the argument given on p.  by constructing a tree. If it is
+**Part B**
+Evaluate this argument from the beginning of the Chapter by constructing a tree.
+
+<span class="premise">$A\ensuremath{\equiv}B$</span>
+
+<span class="premise">$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$</span>
+
+<span class="premise">$E \ensuremath{\supset}\ensuremath{\neg}C$</span>
+
+<span class="premise">$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$</span>
+
+<span class="premise">$\ensuremath{\neg}A \ensuremath{\,\&\,}E$</span>
+
+<span class="conclusion">$H \ensuremath{\vee}G$</span>
+
+If it is
 invalid, give a model demonstrating it so.
 
 $\star$
 
 **Part C**  Evaluate each claim from Part
-[\[pr.sl.treeroot\]](#pr.sl.treeroot){reference-type="ref"
-reference="pr.sl.treeroot"} by constructing a tree. If applicable, give
+A by constructing a tree. If applicable, give
 the interpretation that demonstrates the claim true or false.
-[\[tree.examples\]]{#tree.examples label="tree.examples"}
 
-
-
-**Part D**  Recall the discussion of the Sheffer stroke in Chapter
-[\[ch.TruthTables\]](#ch.TruthTables){reference-type="ref"
-reference="ch.TruthTables"}, page . That connective, if added to SL,
+**Part D**  Recall the discussion of the Sheffer stroke in Chapter 3. That connective, if added to SL,
 would have this characteristic truth table:
 
 <div class="truth-table-container">
@@ -660,7 +665,7 @@ would have this characteristic truth table:
 <tr><td>1</td><td>1</td><td>0</td></tr>
 <tr><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>1</td></tr>
 </table>
 </div>
 
