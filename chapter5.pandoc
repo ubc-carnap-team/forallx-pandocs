@@ -53,7 +53,7 @@ For this one, you'd need two hundred fifty-six!
 
 So it is useful to have alternate ways of proving entailments. In this
 chapter we will introduce a *proof system* for SL. The proofs we will
-construct in this chapter are called 
+construct in this chapter are called
 <span style="font-variant: small-caps">analytic tableaux.</span>
 Another name for them is <span style="font-variant: small-caps">trees</span>, because of the way they
 'branch' out to represent possibilities. In
@@ -75,6 +75,8 @@ claim that there is no interpretation that satisfies
 $\{\ensuremath{\mathcal{X}}{},\ensuremath{\neg}\ensuremath{\Phi}{}\}$.
 Unsatisfiability can be represented with a double-turnstile with $\bot$
 on the right-hand side.
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">In general, $\Chi \models \Psi$ is equivalent to $\Chi, \neg \Psi \models \bot$.</p>
 
 So if you want to tell whether an argument in SL is valid, check to see
 whether the premises, along with the negation of the conclusion, are
@@ -105,7 +107,7 @@ the three premises along with the negation of the conclusion. We begin
 by writing down the sentences we're going to attempt to satisfy.
 
 <figure>
-![](/static/book-img/forallx-ubc/5-2-example-1.png)
+![](/static/book-img/forallx-ubc/5-2-example-1.svg)
 </figure>
 
 Notice that we're putting the *negation* of the conclusion here in line
@@ -124,7 +126,7 @@ is already written down. We represent this by continuing the tree with
 those sentences:
 
 <figure>
-![](/static/book-img/forallx-ubc/5-2-example-2.png)
+![](/static/book-img/forallx-ubc/5-2-example-2.svg)
 </figure>
 
 In addition to introducing lines (5) and (6), we also add a check mark
@@ -138,7 +140,7 @@ only be true if *both* disjuncts are *false*. So we include new lines
 for $\neg$$C$ and $\neg$$D$, adding a check mark on line (2):
 
 <figure>
-![](/static/book-img/forallx-ubc/5-2-example-3.png)
+![](/static/book-img/forallx-ubc/5-2-example-3.svg)
 </figure>
 
 Line (3) is a disjunction. Unlike the previous two cases, it doesn't
@@ -147,7 +149,7 @@ possibilities must be met. We represent this in our tree by *branching*
 into two different columns:
 
 <figure>
-![](/static/book-img/forallx-ubc/5-2-example-4.png)
+![](/static/book-img/forallx-ubc/5-2-example-4.svg)
 </figure>
 
 Think of these two branches as representing the idea that the root
@@ -167,7 +169,7 @@ The left branch is another disjunction. It too branches out into its two
 disjuncts:
 
 <figure>
-![](/static/book-img/forallx-ubc/5-2-example-5.png)
+![](/static/book-img/forallx-ubc/5-2-example-5.svg)
 </figure>
 
 Both of these disjuncts also result in closed branches. The left branch
@@ -209,7 +211,7 @@ processing line (1), which is a conjunction; its conjuncts are given in
 left branch closes.
 
 <figure>
-![](/static/book-img/forallx-ubc/5-3-example-1.png)
+![](/static/book-img/forallx-ubc/5-3-example-1.svg)
 </figure>
 
 Line (3) is a negated conjunction. A conjunction is true if and only if
@@ -220,7 +222,7 @@ the negation of line (5). The final sentence requiring resolution is the
 disjunction on line (4); it branches, and one branch closes.
 
 <figure>
-![](/static/book-img/forallx-ubc/5-3-example-2.png)
+![](/static/book-img/forallx-ubc/5-3-example-2.svg)
 </figure>
 
 The $\uparrow$ indicates that the open branch ending in $D$ is a
@@ -234,7 +236,7 @@ atoms or negated atoms: $\neg$$A$, $D$, and $\neg$$N$. So it suggests
 this interpretation:
 
 <figure>
-![](/static/book-img/forallx-ubc/5-3-interpretation-1.png)
+![](/static/book-img/forallx-ubc/5-3-interpretation-1.svg)
 </figure>
 
 
@@ -268,9 +270,8 @@ conjunct, adding a check mark next to the conjunction. Using our Greek
 symbols once again as variables to stand in for any sentence of SL, any
 time you have this,
 
-<figure>
-![](/static/book-img/forallx-ubc/conjPattern.png)
-</figure>
+<p style="text-align:center">$\Phi \& \Psi$</p>
+
 
 you may extend each open branch of the tree to this:
 
@@ -412,7 +413,7 @@ resolution rule under *each* open branch that includes that sentence.
 Here is a tree illustrating the issue.
 
 <figure>
-![](/static/book-img/forallx-ubc/5-4-example-1.png)
+![](/static/book-img/forallx-ubc/5-4-example-1.svg)
 </figure>
 
 This tree has two disjunctions in the root, so it will involve branching
@@ -440,9 +441,7 @@ In the tree examples above, we *closed* branches when they contained
 sentences along with their negations. Here is our general rule for tree
 closure:
 
-<figure>
-![](/static/book-img/forallx-ubc/SLTreeClosureRule.png)
-</figure>
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">If any branch contains some formula, that branch is <span style="font-variant: small-caps">closed</span>. Any branch that is not closed is <span style="font-variant: small-caps">open</span>. We mark closed branches with the '$\times$' symbol.<br> A tree is <span style="font-variant: small-caps">closed</span> if and only if every branch in that tree is closed.<br> A tree is <span style="font-variant: small-caps">open</span> if and only if it is not closed.</p>
 
 If every branch is closed, the method proves that the root is
 unsatisfiable.
@@ -458,7 +457,7 @@ close=:p2,!c \] \[($\neg$P $\equiv$(Q $\vee$R)), close=:p3,!c \] \] \]
 \]
 
 <figure>
-![](/static/book-img/forallx-ubc/5-5-example-1.png)
+![](/static/book-img/forallx-ubc/5-5-example-1.svg)
 </figure>
 
 In this tree, we only resolved the first sentence, using the conditional
@@ -488,9 +487,7 @@ complete. We need a formal characterization of branch completion.
 In SL, a <span style="font-variant: small-caps">resolvable</span> wff is a wff for which we have a
 resolution rule. That is, anything other than an atom or a negated atom.
 
-<figure>
-![](/static/book-img/forallx-ubc/SLTreeBranchCompletionRule.png)
-</figure>
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is <span style="font-variant: small-caps">complete</span> if and only if either it is closed, or every resolvable sentence in that branch has been resolved.<br> A tree is complete if and only if every branch in that tree is complete.</p>
 
 If there is at least one open branch in a completed tree, the tree
 method indicates that that branch corresponds to an interpretation that
@@ -528,7 +525,7 @@ we resolve the sentences in the order in which they're given:
 
 
 <figure>
-![](/static/book-img/forallx-ubc/5-7-example-1.png)
+![](/static/book-img/forallx-ubc/5-7-example-1.svg)
 </figure>
 
 Again, the justifications for particular steps are added to the right of
@@ -538,7 +535,7 @@ on line (1). This tree remains open, offering this interpretation that
 satisfies the root:
 
 <figure>
-![](/static/book-img/forallx-ubc/5-7-interpretation-1.png)
+![](/static/book-img/forallx-ubc/5-7-interpretation-1.svg)
 </figure>
 
 This tree reminds us again that if a sentence in a tree has multiple
@@ -560,7 +557,7 @@ line (3), because doing so will close off one of its new branches
 immediately. It then continues to resolve in the most efficient order:
 
 <figure>
-![](/static/book-img/forallx-ubc/5-7-example-2.png)
+![](/static/book-img/forallx-ubc/5-7-example-2.svg)
 </figure>
 
 This tree gets us to the same result much more quickly, pointing to the
@@ -594,7 +591,7 @@ tautology is a sentence that is satisfied by *every* interpretation. To
 test this claim with a tree, we'll attempt to find an interpretation
 that falsifies it, by putting its *negation* in the root. If this tree
 remains open, it shows us how to satisfy the negation, which means that
-the sentence iss *not* a tautology. If it closes, then the negation is
+the sentence is *not* a tautology. If it closes, then the negation is
 unsatisfiable, which means the sentence *is* a tautology.
 
 To find out whether a sentence is a contradiction, check and see whether
@@ -612,7 +609,7 @@ sentences, is satisfiable.
 You can use this interactive widget to construct SL trees and have them automatically checked for correctness. Enter the initial set of sentences as a comma-separated list, like "A,B,C".
 
 ```{.TruthTree .Prop}
-5.0 
+5.0
 ```
 
 If you want additional practice, you can construct trees for any of the
