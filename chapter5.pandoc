@@ -76,7 +76,7 @@ $\{\ensuremath{\mathcal{X}}{},\ensuremath{\neg}\ensuremath{\Phi}{}\}$.
 Unsatisfiability can be represented with a double-turnstile with $\bot$
 on the right-hand side.
 
-<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">In general, $\Chi \models \Psi$ is equivalent to $\Chi, \neg \Psi \models \bot$.</p>
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">In general, $\mathcal{X} \models \Psi$ is equivalent to $\mathcal{X}, \neg \Psi \models \bot$.</p>
 
 So if you want to tell whether an argument in SL is valid, check to see
 whether the premises, along with the negation of the conclusion, are
@@ -321,13 +321,6 @@ disjunct.
 
 Recall the characteristic truth table for the conditional in SL:
 
-   $\Phi$   $\Psi$   $\Phi$$\supset$$\Psi$
-  ----------- ----------- -----------------------------
-       1           1                    1
-       1           0                    0
-       0           1                    1
-       0           0                    1
-
 <div class="truth-table-container">
 <table class="truth-table">
 <tr><th>$\Phi$</th><th>$\Psi$</th><th>$\Phi \supset \Psi$</th></tr>
@@ -449,12 +442,6 @@ unsatisfiable.
 Note that '$\Phi$' stands in for *any* sentence of SL; it is not part
 of the closure rule that one must have an atomic sentence and its
 negation. Consider for example this tree:
-
-\[($\neg$$\neg$S $\,\&\,$T) $\supset$($\neg$P $\equiv$(Q $\vee$R)),
-checked \[$\neg$$\neg$S $\,\&\,$T, grouped, name=p2 \[$\neg$($\neg$P
-$\equiv$(Q$\vee$R)), grouped, name=p3 \[$\neg$($\neg$$\neg$S $\,\&\,$T),
-close=:p2,!c \] \[($\neg$P $\equiv$(Q $\vee$R)), close=:p3,!c \] \] \]
-\]
 
 <figure>
 ![](/static/book-img/forallx-ubc/5-5-example-1.svg)
@@ -616,28 +603,18 @@ If you want additional practice, you can construct trees for any of the
 SL arguments and entailment claims in the exercises for the previous two
 chapters.
 
-$\star$
 
 **Part A**
-To evaluate each of the following claims with a tree,
-> (a) what would you
-put in the root of the tree?, and
-> (b) if the tree closes, does that show
+To evaluate each of the following claims with a tree, (a) what would you
+put in the root of the tree?, and (b) if the tree closes, does that show
 that the claim is true or false?
-.
 
 1. $\{P, P \ensuremath{\supset}Q, Q \ensuremath{\supset}\ensuremath{\neg}P\} \vdash{}\bot$
 
 2. $(P \ensuremath{\supset}Q) \ensuremath{\equiv}(Q \ensuremath{\supset}P)$
 is a tautology.
 
-3. The following argument is valid:
-
-> <span class="premise">$P \ensuremath{\,\&\,}Q$</span>
-
-> <span class="premise">$\ensuremath{\neg}R \ensuremath{\supset}\ensuremath{\neg}Q$</span>
-
-> <span class="conclusion">$P \ensuremath{\,\&\,}R$</span>
+3. The argument with premises $P \& Q$, $\neg R \supset \neg Q$ and conclusion $P \& R$ is valid.
 
 4. There is no interpretation that satisfies $A \ensuremath{\vee}B$,
 $B \ensuremath{\supset}C$, and $A \ensuremath{\equiv}C$ without also
@@ -653,7 +630,6 @@ $P \ensuremath{\supset}Q$,
 $\ensuremath{\neg}P \ensuremath{\vee}\ensuremath{\neg}Q$, and
 $Q \ensuremath{\supset}P$.
 
-$\star$
 
 **Part B**
 Evaluate this argument from the beginning of the Chapter by constructing a tree.
@@ -670,10 +646,8 @@ Evaluate this argument from the beginning of the Chapter by constructing a tree.
 
 > <span class="conclusion">$H \ensuremath{\vee}G$</span>
 
-If it is
-invalid, give a model demonstrating it so.
+If it is invalid, give a model demonstrating it so.
 
-$\star$
 
 **Part C**  Evaluate each claim from Part
 A by constructing a tree. If applicable, give
