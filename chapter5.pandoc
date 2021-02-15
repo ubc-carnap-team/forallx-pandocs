@@ -23,7 +23,7 @@ this one, you'd need to consider four rows of a truth-table:
 
 > <span class="premise">$\ensuremath{\neg}Q \ensuremath{\vee}(P \ensuremath{\supset}\ensuremath{\neg}Q)$</span>
 
-> | <span class="conclusion">$\ensuremath{\neg}P \ensuremath{\supset}Q$</span>
+> <span class="conclusion">$\ensuremath{\neg}P \ensuremath{\supset}Q$</span>
 
 But change just two of the atoms to new letters, and the required table
 will grow exponentially. For this argument, you'd need sixteen rows.
@@ -39,22 +39,23 @@ will grow exponentially. For this argument, you'd need sixteen rows.
 For this one, you'd need two hundred fifty-six!
 
 
-<span class="premise">$A\ensuremath{\equiv}B$</span>
+> <span class="premise">$A\ensuremath{\equiv}B$</span>
 
-<span class="premise">$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$</span>
+> <span class="premise">$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$</span>
 
-<span class="premise">$E \ensuremath{\supset}\ensuremath{\neg}C$</span>
+> <span class="premise">$E \ensuremath{\supset}\ensuremath{\neg}C$</span>
 
-<span class="premise">$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$</span>
+> <span class="premise">$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$</span>
 
-<span class="premise">$\ensuremath{\neg}A \ensuremath{\,\&\,}E$</span>
+> <span class="premise">$\ensuremath{\neg}A \ensuremath{\,\&\,}E$</span>
 
-<span class="conclusion">$H \ensuremath{\vee}G$</span>
+> <span class="conclusion">$H \ensuremath{\vee}G$</span>
 
 So it is useful to have alternate ways of proving entailments. In this
 chapter we will introduce a *proof system* for SL. The proofs we will
-construct in this chapter are called [analytic tableaux]{.smallcaps}.
-Another name for them is [trees]{.smallcaps}, because of the way they
+construct in this chapter are called 
+<span style="font-variant: small-caps">analytic tableaux.</span>
+Another name for them is <span style="font-variant: small-caps">trees</span>, because of the way they
 'branch' out to represent possibilities. In
 Ch. 7 we will examine a different proof system.
 
@@ -91,26 +92,26 @@ idea, then come back to give precise rules for the tree method.
 
 Let's attempt to prove whether this is valid in SL:
 
-<span class="premise" >$A\ensuremath{\,\&\,}B$</span>
+> <span class="premise" >$A\ensuremath{\,\&\,}B$</span>
 
-<span class="premise">$\ensuremath{\neg}(C\ensuremath{\vee}D)$</span></span>
+> <span class="premise">$\ensuremath{\neg}(C\ensuremath{\vee}D)$</span></span>
 
-<span class="premise">$(\ensuremath{\neg}B \ensuremath{\vee}C) \ensuremath{\vee}E$</span>
+> <span class="premise">$(\ensuremath{\neg}B \ensuremath{\vee}C) \ensuremath{\vee}E$</span>
 
-<span class="conclusion">$E$</span>
+> <span class="conclusion">$E$</span>
 
 To evaluate this argument, we consider whether it's possible to satisfy
 the three premises along with the negation of the conclusion. We begin
 by writing down the sentences we're going to attempt to satisfy.
 
-single branches, close with=$\times$, \[A$\,\&\,$B \[$\neg$(C$\vee$D),
-grouped \[($\neg$B $\vee$C) $\vee$E, grouped \[$\neg$E, grouped,
-name=negconc \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-2-example-1.png)
+</figure>
 
 Notice that we're putting the *negation* of the conclusion here in line
 (4), since we're looking to see whether it's possible to satisfy the
 premises and *falsify* the conclusion. The sentences we write down at
-the beginning of the tree, we call the [root]{.smallcaps}. Trees are
+the beginning of the tree, we call the <span style="font-variant: small-caps">root</span>. Trees are
 designed to show whether the root is satisfiable, and if so, how.
 
 With proof trees, the idea is to continue writing down that which our
@@ -122,9 +123,9 @@ sentences is a commitment of what we already have. Each follow from what
 is already written down. We represent this by continuing the tree with
 those sentences:
 
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped \[($\neg$B $\vee$C) $\vee$E, grouped
-\[$\neg$E, grouped \[A \[B, grouped \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-2-example-2.png)
+</figure>
 
 In addition to introducing lines (5) and (6), we also add a check mark
 on (1), to indicate that we've now considered it and represented its
@@ -136,20 +137,18 @@ true any time either disjunct is true, so this *negated* disjunction can
 only be true if *both* disjuncts are *false*. So we include new lines
 for $\neg$$C$ and $\neg$$D$, adding a check mark on line (2):
 
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped, checked \[($\neg$B $\vee$C) $\vee$E,
-grouped \[$\neg$E, grouped \[A \[B, grouped \[$\neg$C \[$\neg$D, grouped
-\] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-2-example-3.png)
+</figure>
 
 Line (3) is a disjunction. Unlike the previous two cases, it doesn't
 tell us what categorically *must* be the case; it says that one of two
 possibilities must be met. We represent this in our tree by *branching*
 into two different columns:
 
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped, checked \[($\neg$B $\vee$C) $\vee$E,
-grouped, checked \[$\neg$E, grouped \[A \[B, grouped \[$\neg$C
-\[$\neg$D, grouped \[$\neg$B $\vee$C \] \[E\] \] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-2-example-4.png)
+</figure>
 
 Think of these two branches as representing the idea that the root
 implies that at least one of these ways of continuing the tree must be
@@ -167,11 +166,9 @@ correspond to a possible interpretation. We'll consider this branch
 The left branch is another disjunction. It too branches out into its two
 disjuncts:
 
-single branches, close with=$\times$, \[A$\,\&\,$B, checked
-\[$\neg$(C$\vee$D), grouped, checked \[($\neg$B $\vee$C) $\vee$E,
-grouped, checked \[$\neg$E, grouped \[A \[B, grouped \[$\neg$C
-\[$\neg$D, grouped \[$\neg$B $\vee$C, checked \[$\neg$B, close\] \[C,
-close\] \] \[E, close\] \] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-2-example-5.png)
+</figure>
 
 Both of these disjuncts also result in closed branches. The left branch
 at (10) is the negation of (6), and the right branch is the negation of
@@ -182,7 +179,7 @@ requiring a contradiction. There is no interpretation that satisfies
 
 In the previous chapter we used the double turnstile, '$\models$', to
 represent entailment. In this chapter we will use a different but
-related symbol, the [single turnstile]{.smallcaps}, which looks like
+related symbol, the <span style="font-variant: small-caps">single turnstile</span>, which looks like
 this: '$\vdash$'. Think of this symbol as representing *provability*. So
 in proving that $E$ follows from the premises above, we're showing that
 {$A\ensuremath{\,\&\,}B$, $\neg$$(C\ensuremath{\vee}D)$,
@@ -211,11 +208,9 @@ processing line (1), which is a conjunction; its conjuncts are given in
 (4) and (5). Line (6) processes the disjunction in line (2), and the
 left branch closes.
 
-to prove={(D$\vee$A) $\,\&\,$$\neg$N, N $\vee$$\neg$A} $\neg$N
-$\,\&\,$A, single branches, close with=$\times$, \[(D$\vee$A)
-$\,\&\,$$\neg$N, checked \[N $\vee$$\neg$A, grouped, checked
-\[$\neg$($\neg$N $\,\&\,$A), grouped \[D $\vee$A \[$\neg$N, grouped \[N,
-close \] \[$\neg$A \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-3-example-1.png)
+</figure>
 
 Line (3) is a negated conjunction. A conjunction is true if and only if
 both conjuncts are true, so it is false if at least one conjunct is
@@ -224,12 +219,9 @@ conjunct, $\neg$$\neg$$N$ and $\neg$$A$. The former closes because it's
 the negation of line (5). The final sentence requiring resolution is the
 disjunction on line (4); it branches, and one branch closes.
 
-to prove={(D$\vee$A) $\,\&\,$$\neg$N, N $\vee$$\neg$A} $\neg$N
-$\,\&\,$A, single branches, close with=$\times$, \[(D$\vee$A)
-$\,\&\,$$\neg$N, checked \[N $\vee$$\neg$A, grouped, checked
-\[$\neg$($\neg$N $\,\&\,$A), grouped, checked \[D $\vee$A, checked
-\[$\neg$N, grouped \[N, close \] \[$\neg$A \[$\neg$$\neg$N, close \]
-\[$\neg$A \[D, open\] \[A, close\] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-3-example-2.png)
+</figure>
 
 The $\uparrow$ indicates that the open branch ending in $D$ is a
 *completed* branch. (We'll precisely define 'completion' in
@@ -241,14 +233,12 @@ that satisfies the root. The branch includes three wffs that are either
 atoms or negated atoms: $\neg$$A$, $D$, and $\neg$$N$. So it suggests
 this interpretation:
 
-$ \ensuremath{\mathscr{I}} =
-\left\{
-	\begin{array}{ll}
-	A = 0\\
-	D = 1\\
-	N = 0
-	\end{array}
-\right. $
+<figure>
+![](/static/book-img/forallx-ubc/5-3-interpretation-1.png)
+</figure>
+
+
+
 
 You can verify this result by evaluating the premises and the conclusion
 of the argument we began with on this interpretation. Since there is an
@@ -278,12 +268,15 @@ conjunct, adding a check mark next to the conjunction. Using our Greek
 symbols once again as variables to stand in for any sentence of SL, any
 time you have this,
 
-not line numbering, single branches \[$\Phi$$\,\&\,$$\Psi$ \]
+<figure>
+![](/static/book-img/forallx-ubc/conjPattern.png)
+</figure>
 
 you may extend each open branch of the tree to this:
 
-not line numbering, single branches \[$\Phi$$\,\&\,$$\Psi$,
-checked \[$\Phi$ \[$\Psi$, grouped \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/resRuleConj.svg)
+</figure>
 
 It is important to remember once again that $\Phi$ and $\Psi$ here
 can stand for *any* sentences of SL, including complex ones.
@@ -300,9 +293,17 @@ the negation of each conjunct. This makes sense because there are two
 ways for a negated conjunction to be true --- either conjunct can be
 false.
 
+<figure>
+![](/static/book-img/forallx-ubc/resRuleNegConj.svg)
+</figure>
+
 ### Disjunction
 
 Disjunctions branch into each disjunct.
+
+<figure>
+![](/static/book-img/forallx-ubc/resRuleDis.svg)
+</figure>
 
 ### Negated disjunction
 
@@ -310,6 +311,10 @@ Since disjunctions are true any time either disjunct is true, they are
 only false if both disjuncts are false. So negated disjunctions are
 resolved with a linear development containing the negation of each
 disjunct.
+
+<figure>
+![](/static/book-img/forallx-ubc/resRuleNegDis.svg)
+</figure>
 
 ### Conditional
 
@@ -336,12 +341,21 @@ Conditionals are true any time the antecedent is false, and also any
 time the consequent is true. We can represent this with a branching tree
 development, similar to a disjunction.
 
+<figure>
+![](/static/book-img/forallx-ubc/resRuleCond.svg)
+</figure>
+
 ### Negated conditional
 
 As in the case of disjunction, the negation of a conditional is a
 relatively strong claim --- the only way for a conditional to be false
 is for its antecedent to be true *and* for its consequent to be false.
 We represent this with a linear development for negated conditionals:
+
+<figure>
+![](/static/book-img/forallx-ubc/resRuleNegCond.svg)
+</figure>
+
 
 ### Biconditional
 
@@ -353,11 +367,21 @@ into two new branches. But unlike in the case of our other rules, each
 new branch will contain two sentences. One branch will have both sides
 of the biconditional; the other will have both sides' *negations*:
 
+<figure>
+![](/static/book-img/forallx-ubc/resRuleBi.svg)
+</figure>
+
 ### Negated biconditional
 
 Negated biconditionals yield the same structure, but instead of new
 branches where each subsentence has the same truth value, they yield
 branches in which the subsentences have opposite values.
+
+
+
+<figure>
+![](/static/book-img/forallx-ubc/resRuleNegBi.svg)
+</figure>
 
 ### Double negation
 
@@ -365,6 +389,10 @@ There is one more resolution rule, for double-negated sentences. One
 resolves a double negation by developing a linear branch with the negand
 of the negand --- i.e., the wff obtained from removing both negations
 from the left of the double-negation.
+
+<figure>
+![](/static/book-img/forallx-ubc/resRuleNegNeg.svg)
+</figure>
 
 ### Resolution rules summary
 
@@ -383,12 +411,9 @@ after the tree has already done some branching, you must perform the
 resolution rule under *each* open branch that includes that sentence.
 Here is a tree illustrating the issue.
 
-\[(D $\,\&\,$$\neg$R) $\vee$Q, name=p1, checked \[$\neg$Q $\vee$R,
-grouped, checked, name=p2 \[D $\,\&\,$$\neg$R, just=$\vee$:p1, name=and,
-checked \[$\neg$Q, just=$\vee$:p2 \[D, just=$\,\&\,$:and \[$\neg$R,
-grouped, open\] \] \] \[R, name=R \[D, just=$\,\&\,$:and \[$\neg$R,
-grouped, close=:R,!c\] \] \] \] \[Q \[$\neg$Q, close=:!u,!c \] \[R, open
-\] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-4-example-1.png)
+</figure>
 
 This tree has two disjunctions in the root, so it will involve branching
 multiple times. We could start with either one, but this tree resolved
@@ -415,6 +440,10 @@ In the tree examples above, we *closed* branches when they contained
 sentences along with their negations. Here is our general rule for tree
 closure:
 
+<figure>
+![](/static/book-img/forallx-ubc/SLTreeClosureRule.png)
+</figure>
+
 If every branch is closed, the method proves that the root is
 unsatisfiable.
 
@@ -427,6 +456,10 @@ checked \[$\neg$$\neg$S $\,\&\,$T, grouped, name=p2 \[$\neg$($\neg$P
 $\equiv$(Q$\vee$R)), grouped, name=p3 \[$\neg$($\neg$$\neg$S $\,\&\,$T),
 close=:p2,!c \] \[($\neg$P $\equiv$(Q $\vee$R)), close=:p3,!c \] \] \]
 \]
+
+<figure>
+![](/static/book-img/forallx-ubc/5-5-example-1.png)
+</figure>
 
 In this tree, we only resolved the first sentence, using the conditional
 rule, and the tree immediately closed. The line numbers under the
@@ -452,8 +485,12 @@ Here is the final piece of our formal proof system. In our examples
 above we have used '$\uparrow$' to indicate that an open branch is
 complete. We need a formal characterization of branch completion.
 
-In SL, a [resolvable]{.smallcaps} wff is a wff for which we have a
+In SL, a <span style="font-variant: small-caps">resolvable</span> wff is a wff for which we have a
 resolution rule. That is, anything other than an atom or a negated atom.
+
+<figure>
+![](/static/book-img/forallx-ubc/SLTreeBranchCompletionRule.png)
+</figure>
 
 If there is at least one open branch in a completed tree, the tree
 method indicates that that branch corresponds to an interpretation that
@@ -489,13 +526,10 @@ $\{\ensuremath{\neg}(C \ensuremath{\,\&\,}A), D \ensuremath{\equiv}C, A \ensurem
 So we put those sentences in the root of a tree. Here's what happens if
 we resolve the sentences in the order in which they're given:
 
-\[$\neg$(C $\,\&\,$A), checked, name=p1 \[D $\equiv$C, checked, grouped,
-name=p2 \[A $\vee$B, grouped, checked, name=p3 \[$\neg$B, grouped,
-name=p4 \[$\neg$C, just=$\neg$$\,\&\,$:p1 \[D, just=$\equiv$:p2 \[C,
-grouped, close\] \] \[$\neg$D \[$\neg$C, grouped \[A, just=$\vee$:p3,
-open\] \[B, close\] \] \] \] \[$\neg$A \[D \[C, grouped \[A, close\]
-\[B, close\] \] \] \[$\neg$D \[$\neg$C, grouped \[A, close\] \[B,
-close\] \] \] \] \] \] \] \]
+
+<figure>
+![](/static/book-img/forallx-ubc/5-7-example-1.png)
+</figure>
 
 Again, the justifications for particular steps are added to the right of
 the tree for clarity. For example, '1$\neg$$\,\&\,$' indicates that line
@@ -503,15 +537,9 @@ the tree for clarity. For example, '1$\neg$$\,\&\,$' indicates that line
 on line (1). This tree remains open, offering this interpretation that
 satisfies the root:
 
-$$\ensuremath{\mathscr{I}} =
-\left\{
-	\begin{array}{ll}
-	A = 1\\
-	B = 0\\
-	C = 0\\
-	D = 0
-	\end{array}
-\right.$$
+<figure>
+![](/static/book-img/forallx-ubc/5-7-interpretation-1.png)
+</figure>
 
 This tree reminds us again that if a sentence in a tree has multiple
 open branches below it, then resolving that sentence requires that the
@@ -531,11 +559,9 @@ same root as in the previous example. This version begins by resolving
 line (3), because doing so will close off one of its new branches
 immediately. It then continues to resolve in the most efficient order:
 
-\[$\neg$(C $\,\&\,$A), checked, name=p1 \[D $\equiv$C, checked, grouped,
-name=p2 \[A $\vee$B, grouped, checked, name=p3 \[$\neg$B, grouped,
-name=p4 \[A, just=$\vee$:p3 \[$\neg$C, just=$\neg$$\,\&\,$:p1 \[D,
-just=$\equiv$:p2 \[C, grouped, close\]\] \[$\neg$D \[$\neg$C, grouped,
-open\]\] \] \[$\neg$A, close\] \] \[B, close\] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/5-7-example-2.png)
+</figure>
 
 This tree gets us to the same result much more quickly, pointing to the
 same interpretation that satisfies the root. As a general rule of thumb,
@@ -580,7 +606,7 @@ To use a tree to answer a question, the first step is always to convert
 the question into a question about whether some sentence, or set of
 sentences, is satisfiable.
 
-5.9 Practice Exercises {#practice-exercises .unnumbered}
+5.9 Practice Exercises
 ------------------
 
 You can use this interactive widget to construct SL trees and have them automatically checked for correctness. Enter the initial set of sentences as a comma-separated list, like "A,B,C".
@@ -635,17 +661,17 @@ $\star$
 **Part B**
 Evaluate this argument from the beginning of the Chapter by constructing a tree.
 
-<span class="premise">$A\ensuremath{\equiv}B$</span>
+> <span class="premise">$A\ensuremath{\equiv}B$</span>
 
-<span class="premise">$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$</span>
+> <span class="premise">$\ensuremath{\neg}B \ensuremath{\supset}(C \ensuremath{\vee}D)$</span>
 
-<span class="premise">$E \ensuremath{\supset}\ensuremath{\neg}C$</span>
+> <span class="premise">$E \ensuremath{\supset}\ensuremath{\neg}C$</span>
 
-<span class="premise">$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$</span>
+> <span class="premise">$(\ensuremath{\neg}D \ensuremath{\,\&\,}F) \ensuremath{\vee}G$</span>
 
-<span class="premise">$\ensuremath{\neg}A \ensuremath{\,\&\,}E$</span>
+> <span class="premise">$\ensuremath{\neg}A \ensuremath{\,\&\,}E$</span>
 
-<span class="conclusion">$H \ensuremath{\vee}G$</span>
+> <span class="conclusion">$H \ensuremath{\vee}G$</span>
 
 If it is
 invalid, give a model demonstrating it so.
