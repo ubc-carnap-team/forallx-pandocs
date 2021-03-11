@@ -11,11 +11,10 @@ because the basic units of the language are predicates and terms.
 
 Consider the following argument, which is valid in English:
 
-> If everyone knows logic, then either no one will be confused or
-> everyone will. Everyone will be confused only if we try to believe a
-> contradiction. Everyone knows logic. <br/>
-> $\therefore$ If we don't try to believe a contradiction, then no one will be
-> confused.
+> | <span class="premise"> If everyone knows logic, then either no one will be confused or everyone will. Everyone will be confused only if we try to believe a contradiction. Everyone knows logic. </span>
+> | <span class="conclusion"> If we don't try to believe a contradiction, then no one will be
+> confused.</span>
+
 
 In order to symbolize this in SL, we will need a symbolization key.
 
@@ -47,18 +46,18 @@ we've been discussing, the quantifier structure is not terribly
 important. The argument is valid without reference to it. As such, we
 can safely ignore it. To see this, we translate the argument to SL:
 
-> $L \supset (N \lor E)$ <br/>
-> $E \supset B$ <br/>
-> $L$ <br/>
-> $\therefore \neg B \supset N$
+> | <span class="premise">$L \supset (N \lor E)$ </span>
+> | <span class="premise"> $E \supset B$ </span>
+> | <span class="premise"> $L$</span>
+> | <span class="conclusion"> $\neg B \supset N$</span>
 
 This is a valid argument form in SL. (You can construct a truth table, a
 tree, or a natural deduction proof to confirm this.)
 
 Now consider another argument. This one is also valid in English.
 
-> Willard is a logician. All logicians wear funny hats. <br/>
-> $\therefore$ Willard wears a funny hat.
+> | <span class="premise"> Willard is a logician. All logicians wear funny hats.</span>
+> | <span class="conclusion"> Willard wears a funny hat.</span>
 
 To symbolize it in SL, we define a symbolization key:
 
@@ -68,9 +67,10 @@ To symbolize it in SL, we define a symbolization key:
 
 Now we symbolize the argument:
 
-> $L$ <br/>
-> $A$ <br/>
-> $\therefore F$
+> | <span class="premise">$L$</span>
+> | <span class="premise"> $A$</span>
+> | <span class="conclusion"> $F$</span>
+
 
 This is pretty obviously an *invalid* SL form. Nevertheless, this is
 clearly a valid argument in English. It's impossible for the premises to
@@ -98,11 +98,11 @@ SL doesn't *show* that the argument is valid. This will be the case when
 the argument's quantifier structure plays an important role in its
 validity.
 
-Similarly, if a sentence with quantifiers comes out as a 
-*tautology in SL*, then the English sentence is logically true. 
+Similarly, if a sentence with quantifiers comes out as a
+*tautology in SL*, then the English sentence is logically true.
 If it comes out as
-*contingent in SL*, then this might be because of the structure 
-of the quantifiers that gets removed when we translate into the 
+*contingent in SL*, then this might be because of the structure
+of the quantifiers that gets removed when we translate into the
 formal language.
 
 In order to symbolize arguments that rely on quantifier structure, we
@@ -112,19 +112,19 @@ language 'quantified logic', or QL.
 **8.2 Building blocks of QL**
 ----------------------------
 
-Our first key notion in QL will be **predicates**. A predicate 
-is analogous to an English description --- an expression like 
-'is a dog' or 'has black fur'. Such descriptions are not 
-sentences on their own. They are neither true nor false. They 
-are descriptions that apply to some objects, but not to others. 
-In order to be true or false, we need to specify an object: Who 
-or what is it that is said to be a dog, or to have black fur? In 
-SL, we have no way to give meaningful translations to English 
+Our first key notion in QL will be **predicates**. A predicate
+is analogous to an English description --- an expression like
+'is a dog' or 'has black fur'. Such descriptions are not
+sentences on their own. They are neither true nor false. They
+are descriptions that apply to some objects, but not to others.
+In order to be true or false, we need to specify an object: Who
+or what is it that is said to be a dog, or to have black fur? In
+SL, we have no way to give meaningful translations to English
 terms that are not full sentences. In QL, we will.
 
 The details of this will be explained in the rest of the chapter, but
 here is the basic idea: In QL, we will represent predicates with capital
-letters. For instance, we might let $D$ stand for '$\rule{1cm}{0.15mm}$ is a dog.' We will
+letters. For instance, we might let $D$ stand for '<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> is a dog.' We will
 use lower-case letters as the names of specific things. For instance, we
 might let $b$ stand for Bertie. The expression $Db$ will be a sentence
 in QL. Given this symbolization, $Db$ is a translation of the sentence
@@ -132,7 +132,7 @@ in QL. Given this symbolization, $Db$ is a translation of the sentence
 
 In order to represent quantifier structure, we will also have symbols
 that represent quantifiers. For instance, '$\exists$' will mean 'There
-is some $\rule{1cm}{0.15mm}$.' So to say that there is a dog, we can write $\exists x Dx$;
+is some <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>.' So to say that there is a dog, we can write $\exists x Dx$;
 that is: There is some $x$ such that $x$ is a dog.
 
 That will come later. We start by defining singular terms and
@@ -172,11 +172,11 @@ definite description. 'A member of Monty Python' and 'an emperor of
 China' are not definite descriptions. We'll discuss definite
 descriptions in more detail in Chapter 12.
 
-In English, the specification of a singular term may depend on 
+In English, the specification of a singular term may depend on
 context;
-'Willard' means a specific person and not just someone named 
+'Willard' means a specific person and not just someone named
 Willard;
-'P.D. Magnus' as a logical singular term means the original 
+'P.D. Magnus' as a logical singular term means the original
 author of this textbook, not the other person who has the same name. We live with
 this kind of ambiguity in English, but it is important to keep in mind
 that singular terms in QL must refer to just one specific thing.
@@ -197,25 +197,26 @@ when we introduce quantifiers.
 Simple one-place predicates are properties of individuals. They are
 things you can say about an object. Here are some one-place predicates:
 
-'$\rule{1cm}{0.15mm}$ is a dog'
+'<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> is a dog'
 
-'$\rule{1cm}{0.15mm}$ is a member of Monty Python'
+'<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> is a member of Monty Python'
 
-'$\rule{1cm}{0.15mm}$'s favourite ramen place is in Gastown'
+'<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>'s favourite ramen place is in Gastown'
 
-'An anvil was dropped from a very high height onto $\rule{1cm}{0.15mm}$'s head'
+'An anvil was dropped from a very high height onto <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>'s head'
 
-Predicates like these are called **one-place** or **modiadic**, because there is only one blank to
+
+Predicates like these are called **one-place** or **monadic**, because there is only one blank to
 fill in. A one-place predicate and a singular term combine to make a sentence.
 
 Other predicates are about the *relation* between two things. For
 instance:
 
-'$\rule{1cm}{0.15mm}$ is bigger than $\rule{1cm}{0.15mm}$'
+'<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> is bigger than <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>'
 
-'$\rule{1cm}{0.15mm}$ is to the left of $\rule{1cm}{0.15mm}$'
+'<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> is to the left of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>'
 
-'$\rule{1cm}{0.15mm}$ owes money to $\rule{1cm}{0.15mm}$'
+'<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> owes money to <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>'
 
 These are **two-place** or **dyadic** predicates, because they need to be filled in with two
 terms in order to make a sentence.
@@ -227,24 +228,24 @@ Consider the sentence, 'Buchanan Tower is North of Barber but South of
 Buchanan E.' By removing a singular term, we can recognize this sentence
 as using any of three different monadic predicates:
 
-is North of Barber but South of Buchanan E.\
+<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>is North of Barber but South of Buchanan E.
 
-Buchanan Tower is North of but South of Buchanan E.\
+Buchanan Tower is North of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> but South of Buchanan E.
 
-Buchanan Tower is North of Barber but South of .
+Buchanan Tower is North of Barber but South of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>.
 
 By removing two singular terms, we can recognize three different dyadic
 predicates:
 
-Buchanan Tower is North of but South of .\
+Buchanan Tower is North of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> but South of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>.
 
-is North of Barber but South of .\
+<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>is North of Barber but South of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>.
 
-is North of but South of Buchanan E.\
+<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>is North of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> but South of Buchanan E.
 
 By removing all three singular terms, we can recognize one or predicate:
 
-is North of but South of .\
+<span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>is North of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span> but South of <span style="border-bottom: 1px solid black; padding-left: 50px">&nbsp;</span>.
 
 If we are translating this sentence into QL, should we translate it with
 a one-, two-, or three-place predicate? It depends on what we want to be
@@ -268,60 +269,46 @@ predicates, we will not use blanks; instead, we will use variables. By
 convention, constants are listed at the end of the key. So we might
 write a key that looks like this:
 
-$x$ is angry.
+> **$Ax$:** $x$ is angry.<br/>
+> **$Hx$:** $x$ is happy.<br/>
+> **$T_1xy$:** $x$ is at least as tall as $y$.<br/>
+> **$T_2xy$:** $x$ is at least as tough as $y$.<br/>
+> **$Bxyz$:** $y$ is between $x$ and $z$. <br/>
+> **$d$:** Donald <br/>
+> **$g$:** Gregor <br/>
+> **$m$:** Marybeth
 
-$x$ is happy.
-
-$x$ is at least as tall as $y$.
-
-$x$ is at least as tough as $y$.
-
-$y$ is between $x$ and $z$.
-
-Donald
-
-Gregor
-
-Marybeth
 
 We can symbolize sentences that use any combination of these predicates
 and terms. For example:
 
-Donald is angry.
+> | 1. <span class="premise">Donald is angry.</span>
+> | 2. <span class="premise">If Donald is angry, then so are Gregor and Marybeth.</span>
+> | 3. <span class="premise">Marybeth is at least as tall and as tough as Gregor.</span>
+> | 4. <span class="premise">Donald is shorter than Gregor.</span>
+> | 5. <span class="premise">Gregor is between Donald and Marybeth.</span>
 
-If Donald is angry, then so are Gregor and Marybeth.
 
-Marybeth is at least as tall and as tough as Gregor.
 
-Donald is shorter than Gregor.
-
-Gregor is between Donald and Marybeth.
-
-Sentence [\[terms1\]](#terms1){reference-type="ref" reference="terms1"}
-is straightforward: $Ad$. The '$x$' in the key entry '$Ax$' is just a
+Sentence 1 is straightforward: $Ad$. The '$x$' in the key entry '$Ax$' is just a
 placeholder; we replace it with other terms when translating.
 
-Sentence [\[terms2\]](#terms2){reference-type="ref" reference="terms2"}
-can be paraphrased as, 'If $Ad$, then $Ag$ and $Am$.' QL has all the
+Sentence 2 can be paraphrased as, 'If $Ad$, then $Ag$ and $Am$.' QL has all the
 truth-functional connectives of SL, so we translate this as
-$Ad \supset (Ag \& Am)$.
+$Ad \supset (Ag\ \&\ Am)$.
 
-Sentence [\[terms3\]](#terms3){reference-type="ref" reference="terms3"}
-can be translated as $T_1mg \& T_2mg$.
+Sentence 3 can be translated as $T_1mg\ \&\ T_2mg$.
 
-Sentence [\[terms4\]](#terms4){reference-type="ref" reference="terms4"}
-might seem as if it requires a new predicate. If we only needed to
+Sentence 4might seem as if it requires a new predicate. If we only needed to
 symbolize this sentence, we could define a predicate like $Sxy$ to mean
 '$x$ is shorter than $y$.' However, this would ignore the logical
 connection between 'shorter' and 'taller.' Considered only as symbols of
 QL, there is no connection between $S$ and $T_1$. They might mean
 anything at all. Instead of introducing a new predicate, we paraphrase
-sentence [\[terms4\]](#terms4){reference-type="ref" reference="terms4"}
-using predicates already in our key: 'It is not the case that Donald is
+sentence 4 using predicates already in our key: 'It is not the case that Donald is
 as tall or taller than Gregor.' We can translate it as $\neg T_1dg$.
 
-Sentence [\[terms5\]](#terms5){reference-type="ref" reference="terms5"}
-requires that we pay careful attention to the order of terms in the key.
+Sentence 5 requires that we pay careful attention to the order of terms in the key.
 It becomes $Bdgm$.
 
 Quantifiers
@@ -332,23 +319,20 @@ predicates) are a new kind of logical connective; like conjunction,
 negation, etc., they can govern the interpretation of a QL sentence.
 Consider these English sentences:
 
-Everyone is happy.
+> | 6. <span class="premise">Everyone is happy.</span>
+> | 7. <span class="premise">Everyone is at least as tough as Donald.</span>
+> | 8. <span class="premise">Someone is angry.</span>
 
-Everyone is at least as tough as Donald.
 
-Someone is angry.
-
-It might be tempting to translate sentence
-[\[q.a\]](#q.a){reference-type="ref" reference="q.a"} as
-$Hd \& Hg \& Hm$. Yet this would only say that Donald, Gregor, and
+It might be tempting to translate sentence 6 as
+$Hd\ \&\ Hg\ \&\ Hm$. Yet this would only say that Donald, Gregor, and
 Marybeth are happy. We want to say that *everyone* is happy, even if we
 have not defined a constant to name them. In order to do this, we
-introduce the '$\forall$' symbol. This is called the .
+introduce the '$\forall$' symbol. This is called the **universal quantifier**.
 
 A quantifier is placed in front of the formula that it binds. It always
 comes along with an associated variable. Typically that formula will
-include the same variable. We can translate sentence
-[\[q.a\]](#q.a){reference-type="ref" reference="q.a"} as $\forall x Hx$.
+include the same variable. We can translate sentence 6 as $\forall x Hx$.
 Paraphrased partially into English, this means 'For all $x$, $x$ is
 happy.'
 
@@ -358,8 +342,7 @@ formal definition of scope later, but intuitively it is the part of the
 sentence that the quantifier quantifies over. In $\forall x Hx$, the
 scope of the universal quantifier is $Hx$.
 
-Sentence [\[q.ac\]](#q.ac){reference-type="ref" reference="q.ac"} can be
-paraphrased as, 'For all $x$, $x$ is at least as tough as Donald.' This
+Sentence 7 can be paraphrased as, 'For all $x$, $x$ is at least as tough as Donald.' This
 translates as $\forall x T_2xd$.
 
 In these quantified sentences, the variable $x$ is serving as a kind of
@@ -368,29 +351,23 @@ and put them in as $x$. There is no special reason to use $x$ rather
 than some other variable. The sentence $\forall x Hx$ means exactly the
 same thing as $\forall y Hy$, $\forall z Hz$, and $\forall x_5 Hx_5$.
 
-To translate sentence [\[q.e\]](#q.e){reference-type="ref"
-reference="q.e"}, we introduce another new symbol: the , $\exists$. Like
+To translate sentence 8, we introduce another new symbol: the **existential quantifier**, $\exists$. Like
 the universal quantifier, the existential quantifier requires a
-variable. Sentence [\[q.e\]](#q.e){reference-type="ref" reference="q.e"}
-can be translated as $\exists x Ax$. This means that there is some $x$
+variable. Sentence 8 can be translated as $\exists x Ax$. This means that there is some $x$
 which is angry. More precisely, it means that there is *at least one*
 angry person. Once again, the variable is a kind of placeholder; we
-could just as easily have translated sentence
-[\[q.e\]](#q.e){reference-type="ref" reference="q.e"} as $\exists z Az$.
+could just as easily have translated sentence 8 as $\exists z Az$.
 
 Consider these further sentences:
 
-No one is angry.
+> | 9. <span class="premise">No one is angry.</span>
+> | 10. <span class="premise">There is someone who is not happy.</span>
+> | 11. <span class="premise">Not everyone is happy.</span>
 
-There is someone who is not happy.
-
-Not everyone is happy.
-
-Sentence [\[q.ne\]](#q.ne){reference-type="ref" reference="q.ne"} can be
+Sentence 9 can be
 paraphrased as, 'It is not the case that someone is angry.' This can be
 translated using negation and an existential quantifier:
-$\neg \exists x Ax$. Yet sentence
-[\[q.ne\]](#q.ne){reference-type="ref" reference="q.ne"} could also be
+$\neg \exists x Ax$. Yet sentence 9 could also be
 paraphrased as, 'Everyone is not angry.' With this in mind, it can be
 translated using negation and a universal quantifier:
 $\forall x \neg Ax$. Both of these are acceptable translations, because
@@ -405,15 +382,14 @@ natural than the other, but there is no logical difference in
 translating with one quantifier rather than the other. For some
 sentences, it will simply be a matter of taste.
 
-Sentence [\[q.en\]](#q.en){reference-type="ref" reference="q.en"} is
+Sentence 10 is
 most naturally paraphrased as, 'There is some $x$ such that $x$ is not
 happy.' This becomes $\exists x \neg Hx$. Equivalently, we could write
 $\neg\forall x Hx$.
 
-Sentence [\[q.na\]](#q.na){reference-type="ref" reference="q.na"} is
+Sentence  11 is
 most naturally translated as $\neg\forall x Hx$. This is logically
-equivalent to sentence [\[q.en\]](#q.en){reference-type="ref"
-reference="q.en"} and so could also be translated as
+equivalent to sentence 10 and so could also be translated as
 $\exists x \neg Hx$.
 
 Universe of discourse
@@ -426,13 +402,14 @@ alive on the Earth. We certainly do not mean everyone who was ever alive
 or who will ever live. We mean something more modest: everyone in the
 building, everyone in the class, or everyone in the room.
 
-In order to eliminate this ambiguity, we will need to specify a ---
+In order to eliminate this ambiguity, we will need to specify a **universe of discourse**---
 abbreviated UD. The UD is the set of things that we are talking about.
 So if we want to talk about people in Chicago, we define the UD to be
 people in Chicago. We write this at the beginning of the symbolization
 key, like this:
 
-people in Chicago
+> **$UD$:** people in Chicago. <br/>
+
 
 The quantifiers *range over* the universe of discourse. Given this UD,
 $\forall x$ means 'Everyone in Chicago' and $\exists x$ means 'Someone
@@ -449,9 +426,10 @@ scope of this book.
 Even allowing for a UD with just one member can produce some strange
 results. Suppose we have this as a symbolization key:
 
-the Eiffel Tower
 
-$x$ is in Paris.
+> **$UD$:** the Eiffel Tower<br/>
+> **$Px$:** $x$ is in Paris.<br/>
+
 
 The sentence $\forall x Px$ might be paraphrased in English as
 'Everything is in Paris.' Yet that would be misleading. It means that
@@ -472,13 +450,11 @@ sentences will only be a matter of knowing the right way to combine
 predicates, constants, quantifiers, variables, and sentential
 connectives. Consider these sentences:
 
-Every coin in my pocket is a loonie.
+> | 12. <span class="premise">Every coin in my pocket is a loonie.</span>
+> | 13. <span class="premise">Some coin on the table is a dime.</span>
+> | 14. <span class="premise">Not all the coins on the table are loonies.</span>
+> | 15. <span class="premise">None of the coins in my pocket are dimes.</span>
 
-Some coin on the table is a dime.
-
-Not all the coins on the table are loonies.
-
-None of the coins in my pocket are dimes.
 
 In providing a symbolization key, we need to specify a UD. Since we are
 talking about coins in my pocket and on the table, the UD must at least
@@ -487,34 +463,28 @@ besides coins, we let the UD be all coins. Since we are not talking
 about any specific coins, we do not need to define any constants. So we
 define this key:
 
-all coins
+> **$UD$:** all coins<br/>
+> **$Px$:** $x$ is in my pocket.<br/>
+> **$Tx$:** $x$ is on the table.<br/>
+> **$Lx$:** $x$ is a loonie.<br/>
+> **$Dx$:** $x$ is a dime.<br/>
 
-$x$ is in my pocket.
 
-$x$ is on the table.
-
-$x$ is a loonie.
-
-$x$ is a dime.
-
-Sentence [\[quan1\]](#quan1){reference-type="ref" reference="quan1"} is
+Sentence 12 is
 most naturally translated with a universal quantifier. The universal
 quantifier says something about everything in the UD, not just about the
-coins in my pocket. Sentence [\[quan1\]](#quan1){reference-type="ref"
-reference="quan1"} means that, for any coin, *if* that coin is in my
+coins in my pocket. Sentence 12 means that, for any coin, *if* that coin is in my
 pocket, *then* it is a loonie. So we can translate it as
 $\forall x(Px \supset Lx)$.
 
-Since sentence [\[quan1\]](#quan1){reference-type="ref"
-reference="quan1"} is about coins that are both in my pocket *and* that
+Since sentence 12 is about coins that are both in my pocket *and* that
 are loonies, it might be tempting to translate it using a conjunction.
 However, the sentence $\forall x(Px \& Lx)$ would mean that
 everything in the UD is both in my pocket and a loonie: All the coins
 that exist are loonies in my pocket. This would be nice, but it means
-something very different than sentence
-[\[quan1\]](#quan1){reference-type="ref" reference="quan1"}.
+something very different than sentence 12.
 
-Sentence [\[quan2\]](#quan2){reference-type="ref" reference="quan2"} is
+Sentence 13 is
 most naturally translated with an existential quantifier. It says that
 there is some coin which is both on the table and which is a dime. So we
 can translate it as $\exists x(Tx \& Dx)$.
@@ -539,11 +509,10 @@ rule of thumb that you shouldn't be putting conditionals in the scope of
 existential quantifiers. This is pretty much never a good translation of
 any natural English sentence.
 
-Sentence [\[quan3\]](#quan3){reference-type="ref" reference="quan3"} can
+Sentence 14 can
 be paraphrased as, 'It is not the case that every coin on the table is a
 loonie.' So we can translate it as $\neg \forall x(Tx \supset Lx)$. You
-might look at sentence [\[quan3\]](#quan3){reference-type="ref"
-reference="quan3"} and paraphrase it instead as, 'Some coin on the table
+might look at sentence 14 and paraphrase it instead as, 'Some coin on the table
 is not a loonie.' You would then translate it as
 $\exists x(Tx \& \neg Lx)$. Although it is probably not obvious,
 these two translations are logically equivalent. (This is due to the
@@ -552,35 +521,33 @@ $\exists x\neg\Phi$, along with the equivalence between
 $\neg(\Phi\supset\Psi)$ and $\Phi\&\neg\Psi$. We'll be
 able to prove this later.)
 
-Sentence [\[quan4\]](#quan4){reference-type="ref" reference="quan4"} can
+Sentence 15 can
 be paraphrased as, 'It is not the case that there is some dime in my
 pocket.' This can be translated as $\neg\exists x(Px \& Dx)$. It
 might also be paraphrased as, 'Everything in my pocket is a non-dime,'
 and then could be translated as $\forall x(Px \supset \neg Dx)$. Again the
 two translations are logically equivalent. Both are correct translations
-of sentence [\[quan4\]](#quan4){reference-type="ref" reference="quan4"}.
+of sentence 15.
 
-We can now translate the argument from p. , the one that motivated the
+We can now translate the previous argument about Willard, the one that motivated the
 need for quantifiers:
 
-> Willard is a logician. All logicians wear funny hats.\
->  Willard wears a funny hat.
 
-people
+> | <span class="premise"> Willard is a logician. All logicians wear funny hats.</span>
+> | <span class="conclusion"> Willard wears a funny hat.</span>
 
-$x$ is a logician.
+> **$UD$:** people<br/>
+> **$Lx$:** $x$ is a logician.<br/>
+> **$Fx$:** $x$ wears a funny hat.<br/>
+> **$w$:** Willard<br/>
 
-$x$ wears a funny hat.
 
-Willard
 
 Translating, we get:
 
-$Lw$
-
-$\forall x(Lx \supset Fx)$
-
-$Fw$
+> | <span class="premise"> $Lw$ </span>
+> | <span class="premise">$\forall x(Lx \supset Fx)$</span>
+> | <span class="conclusion"> $Fw$</span>
 
 This captures the structure that was left out of the SL translation of
 this argument, and this is a valid argument in QL.
@@ -593,29 +560,23 @@ applies to nothing in the UD is called an predicate.
 
 Suppose we want to symbolize these two sentences:
 
-Every monkey knows sign language.
-
-Some monkey knows sign language.
+> | 16. <span class="premise">Every monkey knows sign language.</span>
+> | 17. <span class="premise">Some monkey knows sign language.</span>
 
 It is possible to write the symbolization key for these sentences in
 this way:
 
-animals
+> **$UD$:** animals<br/>
+> **$Mx$:** $x$ is a monkey.<br/>
+> **$Sx$:** $x$ knows sign language.<br/>
 
-$x$ is a monkey.
 
-$x$ knows sign language.
+Sentence 16 can now be translated as $\forall x(Mx \supset Sx)$.
 
-Sentence [\[monkey1\]](#monkey1){reference-type="ref"
-reference="monkey1"} can now be translated as $\forall x(Mx \supset Sx)$.
+Sentence 17 becomes $\exists x(Mx \& Sx)$.
 
-Sentence [\[monkey2\]](#monkey2){reference-type="ref"
-reference="monkey2"} becomes $\exists x(Mx \& Sx)$.
-
-It is tempting to say that sentence
-[\[monkey1\]](#monkey1){reference-type="ref" reference="monkey1"}
-entails sentence [\[monkey2\]](#monkey2){reference-type="ref"
-reference="monkey2"}; that is: if every monkey knows sign language, then
+It is tempting to say that sentence 16
+entails sentence 17; that is: if every monkey knows sign language, then
 it must be that some monkey knows sign language. However, the entailment
 does not hold in QL. It is possible for the sentence
 $\forall x(Mx \supset Sx)$ to be true even though the sentence
@@ -627,8 +588,7 @@ sentences would be true or false *if there were no monkeys*.
 We have defined $\forall$ and $\exists$ in such a way that
 $\forall\Phi$ is equivalent to $\neg \exists\neg \Phi$. As
 such, the universal quantifier doesn't involve the existence of anything
---- only non-existence. If sentence
-[\[monkey1\]](#monkey1){reference-type="ref" reference="monkey1"} is
+--- only non-existence. If sentence 16 is
 true, then there are *no* monkeys who don't know sign language. If there
 were no monkeys, then $\forall x(Mx \supset Sx)$ would be true and
 $\exists x(Mx \& Sx)$ would be false.
@@ -639,9 +599,7 @@ monkeys that there are know sign language.' That is, we want to be able
 to have predicates that do not (or might not) refer to anything.
 
 Third, consider: $\forall x (Px \supset Px)$. This should be a tautology.
-But if sentence [\[monkey1\]](#monkey1){reference-type="ref"
-reference="monkey1"} implied sentence
-[\[monkey2\]](#monkey2){reference-type="ref" reference="monkey2"}, then
+But if sentence 16 implied sentence 17, then
 this would imply $\exists x (Px \& Px)$. It would become a logical
 truth that for any predicate there is something that satisfies that
 predicate.
@@ -660,6 +618,17 @@ monkeys', then you would want to include appliances in the UD. Then the
 predicate $R$ would not be empty and the sentence
 $\forall x(Rx \supset Mx)$ would be false.
 
+
+<div class="boxed-statement">
+  <div>
+  -   A UD must have *at least* one member.
+  -   A predicate may apply to some, all, or no members of the UD.
+  -   A constant must pick out *exactly* one member of the UD. A member of the UD may be picked out by one constant, many constants, or none at all.
+  </div>
+</div>
+
+
+
 Picking a universe of discourse
 -------------------------------
 
@@ -671,11 +640,10 @@ meaning of sentences in QL also depends on the UD.
 Let $Rx$ mean '$x$ is a rose,' let $Tx$ mean '$x$ has a thorn,' and
 consider this sentence:
 
-Every rose has a thorn.
+> | 18. <span class="premise">Every rose has a thorn.</span>
 
 It is tempting to say that sentence
-[\[pickUDrose\]](#pickUDrose){reference-type="ref"
-reference="pickUDrose"} should be translated as $\forall x(Rx \supset Tx)$.
+18 should be translated as $\forall x(Rx \supset Tx)$.
 If the UD contains all roses, that would be correct. Yet if the UD is
 merely *things on my kitchen table*, then $\forall x(Rx \supset Tx)$ would
 only mean that every rose on my kitchen table has a thorn. If there are
@@ -683,11 +651,9 @@ no roses on my kitchen table, the sentence would be trivially true.
 
 The universal quantifier only ranges over members of the UD, so we need
 to include all roses in the UD in order to translate sentence
-[\[pickUDrose\]](#pickUDrose){reference-type="ref"
-reference="pickUDrose"}. We have two options. First, we can restrict the
+18. We have two options. First, we can restrict the
 UD to include all roses but *only* roses. Then sentence
-[\[pickUDrose\]](#pickUDrose){reference-type="ref"
-reference="pickUDrose"} becomes $\forall x Tx$. This means that
+18 becomes $\forall x Tx$. This means that
 everything in the UD has a thorn; since the UD just is the set of roses,
 this means that every rose has a thorn. This option can save us trouble
 if every sentence that we want to translate using the symbolization key
@@ -695,8 +661,7 @@ is about roses.
 
 Second, we can let the UD contain things besides roses: rhododendrons,
 rats, rifles, and whatall else. Then sentence
-[\[pickUDrose\]](#pickUDrose){reference-type="ref"
-reference="pickUDrose"} must be $\forall x(Rx \supset Tx)$.
+18 must be $\forall x(Rx \supset Tx)$.
 
 If we wanted the universal quantifier to mean *every* thing, without
 restriction, then we might try to specify a UD that contains everything.
@@ -712,55 +677,42 @@ to talk about plants, people, and cities, then the UD might be 'living
 things and places.'
 
 Suppose that we want to translate sentence
-[\[pickUDrose\]](#pickUDrose){reference-type="ref"
-reference="pickUDrose"} and, with the same symbolization key, translate
+18 and, with the same symbolization key, translate
 these sentences:
 
-Esmerelda has a rose in her hair.
-
-Everyone is cross with Esmerelda.
+> | 19. <span class="premise">Esmerelda has a rose in her hair.</span>
+> | 20. <span class="premise">Everyone is cross with Esmerelda.</span>
 
 We need a UD that includes roses (so that we can symbolize sentence
-[\[pickUDrose\]](#pickUDrose){reference-type="ref"
-reference="pickUDrose"}) and a UD that includes people (so we can
-translate sentence [\[pickUDhair\]](#pickUDhair){reference-type="ref"
-reference="pickUDhair"}--[\[pickUDcross\]](#pickUDcross){reference-type="ref"
-reference="pickUDcross"}.) Here is a suitable key:
+18) and a UD that includes people (so we can
+translate sentence 19--20.) Here is a suitable key:
 
-people and plants
 
-$x$ is a person.
 
-$x$ is a rose.
-
-$x$ has a thorn.
-
-$x$ is cross with $y$.
-
-$x$ has $y$ in their hair.
-
-Esmerelda
+> **$UD$:** people and plants<br/>
+> **$Px$:** $x$ is a person.<br/>
+> **$Rx$:** $x$ is a rose.<br/>
+> **$Tx$:** $x$ has a thorn.<br/>
+> **$Cxy$:** $x$ is cross with $y$.<br/>
+> **$Hxy$:** $x$ has $y$ in their hair.<br/>
+> **$e$:** Esmerelda<br/>
 
 Since we do not have a predicate that means '$\ldots$ has a rose in her
 hair', translating sentence
-[\[pickUDhair\]](#pickUDhair){reference-type="ref"
-reference="pickUDhair"} will require paraphrasing. The sentence says
+19 will require paraphrasing. The sentence says
 that there is a rose in Esmerelda's hair; that is, there is something
 which is both a rose and is in Esmerelda's hair. So we get:
-$\exists x(Rx \& Hex)$.
+$\exists x(Rx\ \&\ Hex)$.
 
 It is tempting to translate sentence
-[\[pickUDcross\]](#pickUDcross){reference-type="ref"
-reference="pickUDcross"} as $\forall x Cxe$. Unfortunately, this would
+20 as $\forall x Cxe$. Unfortunately, this would
 mean that every member of the UD is cross with Esmerelda --- both people
 and plants. It would mean, for instance, that the rose in Esmerelda's
 hair is cross with her. Of course, sentence
-[\[pickUDcross\]](#pickUDcross){reference-type="ref"
-reference="pickUDcross"} does not mean that.
+20 does not mean that.
 
 'Everyone' means every person, not every member of the UD. So we can
-paraphrase sentence [\[pickUDcross\]](#pickUDcross){reference-type="ref"
-reference="pickUDcross"} as, 'Every person is cross with Esmerelda.' We
+paraphrase sentence 20 as, 'Every person is cross with Esmerelda.' We
 know how to translate sentences like this: $\forall x(Px \supset Cxe)$.
 
 In general, the universal quantifier can be used to mean 'everyone' if
@@ -780,38 +732,31 @@ that you can translate directly into QL.
 
 For the next several examples, we will use this symbolization key:
 
-people
+> **$UD$:** people<br/>
+> **$Gx$:** $x$ can play guitar.<br/>
+> **$Rx$:** $x$ is a rock star.<br/>
+> **$c$:** Chris <br/>
+> **$l$:** Lemmy<br/>
 
-$x$ can play guitar.
-
-$x$ is a rock star.
-
-Chris
-
-Lemmy
 
 Now consider these sentences:
 
-If Chris can play guitar, then they are a rock star.
+> | 21. <span class="premise">If Chris can play guitar, then they are a rock star.</span>
+> | 22. <span class="premise">If a person can play guitar, then they are a rock star.</span>
 
-If a person can play guitar, then they are a rock star.
 
-Sentence [\[pronoun1\]](#pronoun1){reference-type="ref"
-reference="pronoun1"} and sentence
-[\[pronoun2\]](#pronoun2){reference-type="ref" reference="pronoun2"}
-have the same words in the consequent ('$\ldots$ they are a rock star'),
+
+Sentence 21 and sentence 22 have the same words in the consequent ('$\ldots$ they are a rock star'),
 but they cannot be translated in the same way. It helps to paraphrase
 the original sentences, replacing pronouns with explicit references.
 
-Sentence [\[pronoun1\]](#pronoun1){reference-type="ref"
-reference="pronoun1"} can be paraphrased as, 'If Chris can play guitar,
+Sentence 21 can be paraphrased as, 'If Chris can play guitar,
 then *Chris* is a rockstar.' The word 'they' in sentence
-[\[pronoun1\]](#pronoun1){reference-type="ref" reference="pronoun1"} is
+21is
 being used to refer to a specific individual, Chris. This can obviously
 be translated as $Gc \supset Rc$.
 
-Sentence [\[pronoun2\]](#pronoun2){reference-type="ref"
-reference="pronoun2"} must be paraphrased differently: 'If a person can
+Sentence 22 must be paraphrased differently: 'If a person can
 play guitar, then *that person* is a rock star.' The pronoun 'they' here
 is not about any particular person, so we need a variable. Translating
 halfway, we can paraphrase the sentence as, 'For any person $x$, if $x$
@@ -821,21 +766,19 @@ guitar is a rock star.'
 
 Consider these further sentences:
 
-If anyone can play guitar, then Lemmy can.
 
-If anyone can play guitar, then they are a rock star.
+> | 23. <span class="premise">If anyone can play guitar, then Lemmy can.</span>
+> | 24. <span class="premise">If anyone can play guitar, then they are a rock star.</span>
 
 These two sentences have the same antecedent ('If anyone can play
 guitar$\ldots$'), but they have different logical structures.
 
-Sentence [\[anyone1\]](#anyone1){reference-type="ref"
-reference="anyone1"} can be paraphrased, 'If someone can play guitar,
+Sentence 23 can be paraphrased, 'If someone can play guitar,
 then Lemmy can play guitar.' The antecedent and consequent are separate
 sentences, so it can be symbolized with a conditional as the main
 logical operator: $\exists x Gx \supset Gl$.
 
-Sentence [\[anyone2\]](#anyone2){reference-type="ref"
-reference="anyone2"} can be paraphrased, 'For anyone, if that one can
+Sentence 24 can be paraphrased, 'For anyone, if that one can
 play guitar, then that one is a rock star.' It would be a mistake to
 symbolize this with an existential quantifier, because it is talking
 about everybody. The sentence is equivalent to 'All guitar players are
@@ -844,10 +787,8 @@ rock stars.' It is best translated as $\forall x(Gx \supset Rx)$.
 The English words 'any' and 'anyone' should typically be translated
 using quantifiers. As these two examples show, they sometimes call for
 an existential quantifier (as in sentence
-[\[anyone1\]](#anyone1){reference-type="ref" reference="anyone1"}) and
-sometimes for a universal quantifier (as in sentence
-[\[anyone2\]](#anyone2){reference-type="ref" reference="anyone2"}). If
-you have a hard time determining which is required, paraphrase the
+23) and sometimes for a universal quantifier (as in sentence
+24). If you have a hard time determining which is required, paraphrase the
 sentence with an English language sentence that uses words besides 'any'
 or 'anyone.'
 
@@ -896,11 +837,10 @@ Ambiguous predicates
 
 Suppose we just want to translate this sentence:
 
-Adina is a skilled surgeon.
+> | 25. <span class="premise">Adina is a skilled surgeon.</span>
 
 Let the UD be people, let $Kx$ mean '$x$ is a skilled surgeon', and let
-$a$ mean Adina. Sentence [\[surgeon1\]](#surgeon1){reference-type="ref"
-reference="surgeon1"} is simply $Ka$.
+$a$ mean Adina. Sentence 25 is simply $Ka$.
 
 Suppose instead that we want to translate this argument:
 
@@ -911,42 +851,37 @@ Suppose instead that we want to translate this argument:
 We need to distinguish being a *skilled surgeon* from merely being a
 *surgeon*. So we define this symbolization key:
 
-people
 
-$x$ is greedy.
+> **$UD$:** people<br/>
+> **$Gx$:** $x$ is greedy.<br/>
+> **$Hx$:** The hospital will hire $x$.<br/>
+> **$Rx$:** $x$ is a surgeon.<br/>
+> **$Kx$:** $x$ is skilled.<br/>
+> **$b$:** Billy <br/>
 
-The hospital will hire $x$.
 
-$x$ is a surgeon.
-
-$x$ is skilled.
-
-Billy
 
 Now the argument can be translated in this way:
 
-[\[surgeon2\]]{#surgeon2 label="surgeon2"}
 
-$\forall x\bigl[\neg (Rx \& Kx) \supset \neg Hx\bigr]$
+> | <span class="premise">$\forall x\bigl[\neg (Rx \& Kx) \supset \neg Hx\bigr]$</span>
+> | <span class="premise"> $\forall x(Rx \supset Gx)$ </span>
+> | <span class="premise"> $Rb\ \&\ \neg Kb$</span>
+> | <span class="conclusion"> $Gb\ \&\ \neg Hb$</span>
 
-$\forall x(Rx \supset Gx)$
-
-$Rb \& \neg Kb$
-
-$Gb \& \neg Hb$
 
 Next suppose that we want to translate this argument:
 
-> [\[surgeon3\]]{#surgeon3 label="surgeon3"} Carol is a skilled surgeon
+> Carol is a skilled surgeon
 > and a tennis player. Therefore, Carol is a skilled tennis player.
 
 If we start with the symbolization key we used for the previous
 argument, we could add a predicate (let $Tx$ mean '$x$ is a tennis
 player') and a constant (let $c$ mean Carol). Then the argument becomes:
 
-$(Rc \& Kc) \& Tc$
+> | <span class="premise">$(Rc\ \&\ Kc)\ \&\ Tc$</span>
+> | <span class="conclusion">$Tc\ \&\ Kc$</span>
 
-$Tc \& Kc$
 
 This translation is a disaster! It takes what in English is a terrible
 argument and translates it as a valid argument in QL. The problem is
@@ -957,11 +892,9 @@ $K_1x$ mean '$x$ is skilled as a surgeon' and $K_2x$ mean '$x$ is
 skilled as a tennis player,' then we can symbolize the argument in this
 way:
 
-[\[surgeon3correct\]]{#surgeon3correct label="surgeon3correct"}
+> | <span class="premise">$(Rc \& K_1c) \& Tc$</span>
+> | <span class="conclusion">$Tc \& K_2c$</span>
 
-$(Rc \& K_1c) \& Tc$
-
-$Tc \& K_2c$
 
 Like the English language argument it translates, this is invalid.
 
@@ -973,8 +906,7 @@ mice, and big problems are big in different ways.
 
 Is it enough to have a predicate that means '$x$ is a skilled surgeon',
 rather than two predicates '$x$ is skilled' and '$x$ is a surgeon'?
-Sometimes. As sentence [\[surgeon1\]](#surgeon1){reference-type="ref"
-reference="surgeon1"} shows, sometimes we do not need to distinguish
+Sometimes. As sentence 25 shows, sometimes we do not need to distinguish
 between skilled surgeons and other surgeons.
 
 Must we always distinguish between different ways of being skilled,
@@ -990,95 +922,101 @@ Multiple quantifiers
 Consider this following symbolization key and the sentences that follow
 it:
 
-UD: People and dogs
+> **$UD$:** people and dogs<br/>
+> **$Dx$:** $x$ is a dog.<br/>
+> **$Fxy$:** $x$ is a friend of $y$.<br/>
+> **$Oxy$:** $x$ owns $y$.<br/>
+> **$f$:** Fifi<br/>
+> **$g$:** Gerald <br/>
 
-Dx: $x$ is a dog.
+> | 26. <span class="premise">Fifi is a dog.</span>
+> | 27. <span class="premise">Gerald is a dog owner.</span>
+> | 28. <span class="premise">Someone is a dog owner.</span>
+> | 29. <span class="premise">All of Gerald's friends are dog owners.</span>
+> | 30. <span class="premise">Every dog owner is the friend of a dog owner.</span>
 
-Fxy: $x$ is a friend of $y$.
 
-Oxy: $x$ owns $y$.
-
-f: Fifi
-
-g: Gerald
-
-Fifi is a dog.
-
-Gerald is a dog owner.
-
-Someone is a dog owner.
-
-All of Gerald's friends are dog owners.
-
-Every dog owner is the friend of a dog owner.
-
-Sentence [\[dog1\]](#dog1){reference-type="ref" reference="dog1"} is
+Sentence 26 is
 easy: $Df$.
 
-Sentence [\[dog2\]](#dog2){reference-type="ref" reference="dog2"} can be
+Sentence 27 can be
 paraphrased as, 'There is a dog that Gerald owns.' This can be
 translated as $\exists x(Dx \& Ogx)$.
 
-Sentence [\[dog3\]](#dog3){reference-type="ref" reference="dog3"} can be
+Sentence 28 can be
 paraphrased as, 'There is some $y$ such that $y$ is a dog owner.' The
 subsentence '$y$ is a dog owner' is just like sentence
-[\[dog2\]](#dog2){reference-type="ref" reference="dog2"}, except that it
+27, except that it
 is about $y$ rather than being about Gerald. So we can translate
-sentence [\[dog3\]](#dog3){reference-type="ref" reference="dog3"} as
-$\exists y \exists x(Dx \& Oyx)$.
+sentence 28 as
+$\exists y \exists x(Dx\ \&\ Oyx)$.
 
-Sentence [\[dog4\]](#dog4){reference-type="ref" reference="dog4"} can be
+Sentence 29 can be
 paraphrased as, 'Every friend of Gerald is a dog owner.' Translating
 part of this sentence, we get
-$\forall x(Fxg \supset\mbox{`$x$ is a dog owner'})$. Again, it is important
+$\forall x(Fxg \supset\text{`$x$ is a dog owner'})$. Again, it is important
 to recognize that '$x$ is a dog owner' is structurally just like
-sentence [\[dog2\]](#dog2){reference-type="ref" reference="dog2"}. Since
+sentence 27. Since
 we already have an x-quantifier, we will need a different variable for
 the existential quantifier. Any other variable will do. Using $z$,
-sentence [\[dog4\]](#dog4){reference-type="ref" reference="dog4"} can be
-translated as $\forall x\bigl[Fxg \supset\exists z(Dz \& Oxz)\bigr]$.
+sentence 29 can be
+translated as $\forall x\bigl[Fxg \supset\exists z(Dz\ \&\ Oxz)\bigr]$.
 
-Sentence [\[dog5\]](#dog5){reference-type="ref" reference="dog5"} can be
+Sentence 30 can be
 paraphrased as 'For any $x$ that is a dog owner, there is a dog owner
 who is $x$'s friend.' Partially translated, this becomes
-$$\forall x\bigl[\mbox{$x$ is a dog owner}\supset\exists y(\mbox{$y$ is a dog owner}\& Fxy)\bigr].$$
+
+
+$\forall x\bigl[\text{$x$ is a dog owner}\supset\exists y(\text{$y$ is a dog owner}\ \&\ Fxy)\bigr].$
+
+
 Completing the translation, sentence
-[\[dog5\]](#dog5){reference-type="ref" reference="dog5"} becomes
-$$\forall x\bigl[\exists z(Dz \& Oxz)\supset\exists y\bigl(\exists z(Dz \& Oyz)\& Fxy\bigr)\bigr].$$
+30 becomes
+
+$\forall x\bigl[\exists z(Dz\ \&\ Oxz)\supset\exists y\bigl(\exists z(Dz\ \&\ Oyz)\ \&\ Fxy\bigr)\bigr].$
+
+
 
 Consider this symbolization key and these sentences:
 
-people
 
-$x$ likes $y$.
 
-Imre.
+> **$UD$:** people<br/>
+> **$Lxy$:** $x$ likes $y$.<br/>
+> **$i$:** Imre<br/>
+> **$k$:** Karl<br/>
 
-Karl.
+> | 31. <span class="premise">Imre likes everyone that Karl likes.</span>
+> | 32. <span class="premise">There is someone who likes everyone who likes everyone that he likes.</span>
 
-Imre likes everyone that Karl likes.
 
-There is someone who likes everyone who likes everyone that he likes.
 
-Sentence [\[likes1\]](#likes1){reference-type="ref" reference="likes1"}
+
+
+Sentence 31
 can be partially translated as
-$\forall x(\mbox{Karl likes $x$}\supset\mbox{Imre likes $x$})$. This
+$\forall x(\text{Karl likes $x$}\supset\text{Imre likes $x$})$. This
 becomes $\forall x(Lkx\supset Lix)$.
 
-Sentence [\[likes2\]](#likes2){reference-type="ref" reference="likes2"}
+Sentence 32
 is complex. There is little hope of writing down the whole translation
 immediately, but we can proceed by small steps. An initial, partial
 translation might look like this:
-$$\exists x\ \mbox{everyone who likes everyone that $x$ likes is liked by $x$}$$
+
+$\exists x\ \text{everyone who likes everyone that $x$ likes is liked by $x$}$
+
 The part that remains in English is a universal sentence, so we
 translate further:
-$$\exists x\forall y(\mbox{$y$ likes everyone that $x$ likes}\supset\mbox{$x$ likes $y$}).$$
+
+$\exists x\forall y(\text{$y$ likes everyone that $x$ likes}\supset\text{$x$ likes $y$}).$
+
 The antecedent of the conditional is structurally just like sentence
-[\[likes1\]](#likes1){reference-type="ref" reference="likes1"}, with $y$
+31, with $y$
 and $x$ in place of Imre and Karl. So sentence
-[\[likes2\]](#likes2){reference-type="ref" reference="likes2"} can be
+32 can be
 completely translated in this way
-$$\exists x\forall y\bigl[\forall z(Lxz \supset Lyz) \supset Lxy\bigr]$$
+
+$\exists x\forall y\bigl[\forall z(Lxz \supset Lyz) \supset Lxy\bigr]$
 
 When symbolizing sentences with multiple quantifiers, it is best to
 proceed by small steps. Paraphrase the English sentence so that the
@@ -1140,26 +1078,26 @@ already contains an x-quantifier.
 
 1.  Every atomic formula is a wff.
 
-2.  If is a wff, then $\neg\Phi$ is a wff.
+2.  If $\Phi$ is a wff, then $\neg\Phi$ is a wff.
 
-3.  If and are wffs, then $(\Phi\&\Psi)$, is a wff.
+3.  If $\Phi$ and $\Psi$ are wffs, then $(\Phi\&\Psi)$, is a wff.
 
-4.  If and are wffs, $(\Phi\lor\Psi)$ is a wff.
+4.  If $\Phi$  and $\Psi$ are wffs, $(\Phi\lor\Psi)$ is a wff.
 
-5.  If and are wffs, then $(\Phi\supset\Psi)$ is a wff.
+5.  If $\Phi$  and $\Psi$ are wffs, then $(\Phi\supset\Psi)$ is a wff.
 
-6.  If and are wffs, then $(\Phi\equiv\Psi)$ is a wff.
+6.  If $\Phi$  and $\Psi$ are wffs, then $(\Phi\equiv\Psi)$ is a wff.
 
-7.  If is a wff, is a variable, and contains no -quantifiers, then
-    $\forall\script{x}\Phi$ is a wff.
+7.  If $\Phi$ is a wff, is a variable, and contains no $\mathcal{x}$-quantifiers, then
+    $\forall\mathcal{x}\Phi$ is a wff.
 
-8.  If is a wff, is a variable, and contains no -quantifiers, then
-    $\exists\script{x}\Phi$ is a wff.
+8.  If $\Phi$  is a wff, is a variable, and contains no $\mathcal{x}$-quantifiers, then
+    $\exists\mathcal{x}\Phi$ is a wff.
 
 9.  All and only wffs of QL can be generated by applications of these
     rules.
 
-Notice that the '' that appears in the definition above is not the
+Notice that the '$\mathcal{x}$' that appears in the definition above is not the
 variable $x$. It is a *meta-variable* that stands in for any variable of
 QL. So $\forall xAx$ is a wff, but so are $\forall yAy$, $\forall zAz$,
 $\forall x_4Ax_4$, and $\forall z_9Az_9$.
@@ -1173,11 +1111,11 @@ A sentence is something that can be either true or false. In SL, every
 wff was a sentence. This will not be the case in QL. Consider the
 following symbolization key:
 
-people
 
-$x$ loves $y$
+> **$UD$:** people<br/>
+> **$Lxy$:** $x$ loves $y$.<br/>
+> **$b$:** Boris<br/>
 
-Boris
 
 Consider the expression $Lzz$. It is an atomic formula: a two-place
 predicate followed by two terms. All atomic formula are wffs, so $Lzz$
@@ -1199,12 +1137,12 @@ how to interpret that variable. The scope of an $x$-quantifier, for
 instance, is the part of the formula where the quantifier tells how to
 interpret $x$.
 
-In order to be precise about this, we define a to be an occurrence of a
-variable that is within the scope of an -quantifier. A is an occurrence
-of a variable that is not bound.
+In order to be precise about this, we define a **bound variable** to be an occurrence of a
+variable $\mathcal{x}$ that is within the scope of an $\mathcal{x}$-quantifier. A **free variable** is an occurrence of a variable that is not bound.
 
 For example, consider this wff:
-$$\forall x(Ex \lor Dy) \supset \exists z(Rzx \supset Lzx)$$
+
+$\forall x(Ex \lor Dy) \supset \exists z(Rzx \supset Lzx)$
 
 The scope of the universal quantifier $\forall x$ is $(Ex \lor Dy)$, so
 the first $x$ is bound by the universal quantifier but the second and
@@ -1214,11 +1152,11 @@ both occurrences of $z$ are bound by it. Since this wff contains
 variables with no instructions for how to interpret them, we don't know
 how to evaluate it. It is not a sentence.
 
-We define a of QL as a wff of QL that contains no free variables.
+We define a **sentence** of QL as a wff of QL that contains no free variables.
 
 ### Notational conventions
 
-We will adopt the same notational conventions that we did for SL (p. ).
+We will adopt the same notational conventions that we did for SL.
 First, we may leave off the outermost parentheses of a formula. Second,
 we will sometimes use square brackets '\[' and '\]' in place of
 parentheses to increase the readability of formulae. Third, we give
@@ -1239,18 +1177,18 @@ Using the obvious interpretation key:
 -   'Every student has a friend': $\forall x (Sx \supset \exists y Fxy)$
 
 -   'Only students with friends are working':
-    $\forall x [(Sx \& Wx) \supset \exists y Fxy]$
+    $\forall x [(Sx\ \&\ Wx) \supset \exists y Fxy]$
 
 One common error is to translate sentences of this form with a different
 kind of shape --- for example, as a universal governing a conjunction,
 or as an existential governing a conditional. These are very inaccurate
 translations of these English sentences:
 
--   $\forall x (Sx \& Wx)$
+-   $\forall x (Sx\ \&\ Wx)$
 
--   $\forall x (Sx \& \exists y Fxy)$
+-   $\forall x (Sx\ \&\ \exists y Fxy)$
 
--   $\forall x [(Sx \& Wx) \& \exists y Fxy]$
+-   $\forall x [(Sx\ \&\ Wx)\ \&\ \exists y Fxy]$
 
 These say that *every* object in the UD is a student with the properties
 in question. Everyone is a student that is working; everyone is a
@@ -1269,7 +1207,7 @@ universal for sentences like these:
 
 -   $\exists x (Sx \supset \exists y Fxy)$
 
--   $\exists x [(Sx \& Wx) \supset \exists y Fxy]$
+-   $\exists x [(Sx\ \&\ Wx) \supset \exists y Fxy]$
 
 These are very weak claims. They say that there is some object in the
 domain that satisfies a certain conditional. For example,
@@ -1288,427 +1226,559 @@ conditional (everything with one property has another property) or an
 existential over a conjunction (there is something with the following
 properties).
 
-[\[pr.QLbojackall\]]{#pr.QLbojackall label="pr.QLbojackall"} Using the
-symbolization key given, translate each English-language sentence into
-QL. Hint: all of these sentences are well-translated as universals
+
+
+**Practice Exercises**
+----------------------
+
+
+**Part A** Using the symbolization key given, translate each English-language sentence into QL. Hint: all of these sentences are well-translated as universals
 governing conditionals.
 
-all humans and animals in the world of *Bojack Horseman*
+> **$UD$:** all humans and animals in the world of *Bojack Horseman*<br/>
+> **$Dx$:** $x$ is a dog.<br/>
+> **$Cx$:** $x$ is a cat.<br/>
+> **$Hx$:** $x$ is a horse.<br/>
+> **$Bx$:** $x$ is a human being.<br/>
+> **$Mx$:** $x$ is a movie star.<br/>
+> **$Lxy$:** $x$ lives with $y$.<br/>
+> **$Rxy$:** $x$ represents $y$ (as $y$'s agent).<br/>
+> **$Wxy$:** $x$ worked on a movie with $y$.<br/>
+> **$b$:** Bojack<br/>
+> **$c$:** Princess Caroline<br/>
+> **$d$:** Dianne<br/>
+> **$p$:** Mr. Peanutbutter<br/>
 
-$x$ is a dog.
 
-$x$ is a cat.
+> | 1. <span class="premise">Every movie star is a dog.</span>
+> | 2. <span class="premise">Every movie star is a dog or a cat.</span>
+> | 3. <span class="premise">All dog movie stars live with a human being.</span>
+> | 4. <span class="premise">Everyone who lives with Dianne is a movie star.</span>
+> | 5. <span class="premise">Princess Caroline represents every dog movie star.</span>
+> | 6. <span class="premise">Anyone who worked on a movie with Bojack lives with a movie star.</span>
+> | 7. <span class="premise">Only humans live with Mr. Peanutbutter.</span>
+> | 8. <span class="premise">Everyone who has ever worked on a movie with Bojack is either a dog, a
+cat, or someone who lives with a movie star.</span>
 
-$x$ is a horse.
 
-$x$ is a human being.
 
-$x$ is a movie star.
-
-$x$ lives with $y$.
-
-$x$ represents $y$ (as $y$'s agent).
-
-$x$ worked on a movie with $y$.
-
-Bojack
-
-Princess Caroline
-
-Dianne
-
-Mr. Peanutbutter
-
-Every movie star is a dog.
-
-Every movie star is a dog or a cat.
-
-All dog movie stars live with a human being.
-
-Everyone who lives with Dianne is a movie star.
-
-Princess Caroline represents every dog movie star.
-
-Anyone who worked on a movie with Bojack lives with a movie star.
-
-Only humans live with Mr. Peanutbutter.
-
-Everyone who has ever worked on a movie with Bojack is either a dog, a
-cat, or someone who lives with a movie star.
-
-[\[pr.QLbojacksome\]]{#pr.QLbojacksome label="pr.QLbojacksome"} Using
-the same symbolization key, translate each English-language sentence
+**Part B** Using the same symbolization key, translate each English-language sentence
 into QL. Hint: all of these sentences are well-translated as
 existentials governing conjunctions.
 
-Mr. Peanutbutter lives with a human.
+To enter your solutions for automatic checking, use the following keyboard shortcuts:
 
-Dianne lives with a dog who worked on a movie with Bojack.
+<div class="table">
 
-Princess Caroline represents a horse who lives with a human being.
+Symbol     Keyboard
+---------- ----------
+$\supset$          `->`, `=>`, `>`
+$\&$          `/\`, `&`, `and`
+∨          `\/`, `|`, `or`
+$\equiv$          `<->`, `<=>`
+¬          `-`, `~`, `not`
+⊥          `!?`, `_|_`
+$F_3$          `F_3`
+$\exists$          `E`
+$\forall$          `A`
+---------- ----------
 
-Some human being who worked on a movie with Mr. Peanutbutter lives with
-a dog or a cat.
+</div>
 
-Bojack worked on a movie with a human movie star.
 
-Bojack worked on a movie with a nonhuman movie star who lives with
-Dianne.
+Once you have entered your solution, press "return/enter" to have it automatically checked.
 
-[\[pr.QLbojackother\]]{#pr.QLbojackother label="pr.QLbojackother"} Using
-the same symbolization key, translate each English-language sentence
+
+
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.1 Ex(Lpx /\ Bx) : Mr. Peanutbutter lives with a human.
+|  Type answer here. (Press "return" to check.)
+~~~
+
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.2 Ex(Ldx /\ Dx /\ Wxb) : Dianne lives with a dog who worked on a movie with Bojack.
+|
+~~~
+
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.3 Ex[Rcx /\ Hx /\ Ey(By /\Lxy)] : Princess Caroline represents a horse who lives with a human being.
+|
+~~~
+
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.4 Ex(Bx /\ Wxp /\[Ey(Dy /\ Lxy)\/ E y(Cy /\ Lxy)]) : Some human being who worked on a movie with Mr. Peanutbutter lives with a dog or a cat.
+|
+~~~
+
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.5 Ex(Bx /\ Mx /\ Wbx) : Bojack worked on a movie with a human movie star.
+|
+~~~
+
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.6 Ex(~Bx /\ Mx /\ Wbx /\ Lxd) : Bojack worked on a movie with a nonhuman movie star who lives with Dianne.
+|
+~~~
+
+
+**Part C** Using the same symbolization key, translate each English-language sentence
 into QL. Hint: these should have different forms than the cases above.
 
-If Mr. Peanutbutter is a movie star, then all dogs are movie stars.
+> | 1. <span class="premise">If Mr. Peanutbutter is a movie star, then all dogs are movie stars.</span>
+> | 2. <span class="premise">A dog lives with Dianne and Princess Caroline represents a horse.</span>
+> | 3. <span class="premise">Princess Caroline represents a horse and a dog.</span>
+> | 4. <span class="premise">Princess Caroline represents everyone.</span>
+> | 5. <span class="premise">Dianne doesn't live with anyone.</span>
+> | 6. <span class="premise">ANo movie star has ever worked with both Bojack and a cat on a movie.</span>
+> | 7. <span class="premise">Princess Caroline is a cat, but she doesn't represent any cats.</span>
 
-A dog lives with Dianne and Princess Caroline represents a horse.
 
-Princess Caroline represents a horse and a dog.
 
-Princess Caroline represents everyone.
-
-Dianne doesn't live with anyone.
-
-No movie star has ever worked with both Bojack and a cat on a movie.
-
-Princess Caroline is a cat, but she doesn't represent any cats.
-
-[\[pr.QLalligators\]]{#pr.QLalligators label="pr.QLalligators"} Using
-the symbolization key given, translate each English-language sentence
+**Part D** Using the symbolization key given, translate each English-language sentence
 into QL.
 
-all animals
 
-$x$ is an alligator.
+> **$UD$:** all animals<br/>
+> **$Ax$:** $x$ is an alligator.<br/>
+> **$Mx$:** $x$ is a monkey.<br/>
+> **$Rx$:** $x$ is a reptile.<br/>
+> **$Zx$:** $x$ lives at the zoo.<br/>
+> **$Lxy$:** $x$ loves $y$.<br/>
+> **$a$:** Amos<br/>
+> **$b$:** Bouncer <br/>
+> **$c$:** Cleo<br/>
 
-$x$ is a monkey.
 
-$x$ is a reptile.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.1 Za/\Zb/\Zc : Amos, Bouncer, and Cleo all live at the zoo.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-$x$ lives at the zoo.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.2 Rb/\~Ab : Bouncer is a reptile, but not an alligator.
+|
+~~~
 
-$x$ loves $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.3 Lcb->Mb  : If Cleo loves Bouncer, then Bouncer is a monkey.
+|
+~~~
 
-Amos
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.4 (Ab/\Ac) -> (Lab/\Lac) : If both Bouncer and Cleo are alligators, then Amos loves them both.
+|
+~~~
 
-Bouncer
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.5 Ex(Rx/\Zx) : Some reptile lives at the zoo.
+|
+~~~
 
-Cleo
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.6 Ax(Ax -> Rx) : Every alligator is a reptile.
+|
+~~~
 
-Amos, Bouncer, and Cleo all live at the zoo.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.7 Ax[Zx -> (Mx \/ Ax)] : Any animal that lives at the zoo is either a monkey or an alligator.
+|
+~~~
 
-Bouncer is a reptile, but not an alligator.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.8 Ex(Rx/\~Ax): There are reptiles which are not alligators.
+|
+~~~
 
-If Cleo loves Bouncer, then Bouncer is a monkey.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.9 Ex(Rx/\Lcx) : Cleo loves a reptile.
+|
+~~~
 
-If both Bouncer and Cleo are alligators, then Amos loves them both.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.10 Ax((Mx/\Zx)->Lbx) : Bouncer loves all the monkeys that live at the zoo.
+|
+~~~
 
-Some reptile lives at the zoo.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.11 Ax[(Mx/\Lax)->Lxa] : All the monkeys that Amos loves love him back.
+|
+~~~
 
-Every alligator is a reptile.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.12 ExRx -> Ra : If any animal is a reptile, then Amos is.
+|
+~~~
 
-Any animal that lives at the zoo is either a monkey or an alligator.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.13 Ax(Ax -> Rx) : If any animal is an alligator, then it is a reptile.
+|
+~~~
 
-There are reptiles which are not alligators.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.14 Ax[(Mx/\Lcx)->Lax] : Every monkey that Cleo loves is also loved by Amos.
+|
+~~~
 
-Cleo loves a reptile.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+D.15 Ex(Mx/\Lxb/\~Lbx) : There is a monkey that loves Bouncer, but Bouncer does not reciprocate this love.
+|
+~~~
 
-Bouncer loves all the monkeys that live at the zoo.
 
-All the monkeys that Amos loves love him back.
-
-If any animal is a reptile, then Amos is.
-
-If any animal is an alligator, then it is a reptile.
-
-Every monkey that Cleo loves is also loved by Amos.
-
-There is a monkey that loves Bouncer, but Bouncer does not reciprocate
-this love.
-
-[\[pr.BarbaraEtc\]]{#pr.BarbaraEtc label="pr.BarbaraEtc"} These are
-syllogistic figures identified by Aristotle and his successors, along
+**Part E** These are syllogistic figures identified by Aristotle and his successors, along
 with their medieval names. Translate each argument into QL.
 
-Barbara
+**Barbara** All $B$s are $C$s. All $A$s are $B$s.  $\therefore$ All $A$s are $C$s.
 
-:   All $B$s are $C$s. All $A$s are $B$s.  All $A$s are $C$s.
+**Baroco** All $C$s are $B$s. Some $A$ is not $B$. $\therefore$ Some $A$ is not $C$.
 
-Baroco
+**Bocardo** Some $B$ is not $C$. All $A$s are $B$s. $\therefore$ Some $A$ is not $C$.
 
-:   All $C$s are $B$s. Some $A$ is not $B$.  Some $A$ is not $C$.
+**Celantes** No $B$s are $C$s. All $A$s are $B$s. $\therefore$ No $C$s are $A$s.
 
-Bocardo
+**Celarent**  No $B$s are $C$s. All $A$s are $B$s. $\therefore$ No $A$s are $C$s.
 
-:   Some $B$ is not $C$. All $A$s are $B$s.  Some $A$ is not $C$.
+**Cemestres** No $C$s are $B$s. No $A$s are $B$s. $\therefore$ No $A$s are $C$s.
 
-Celantes
+**Cesare** No $C$s are $B$s. All $A$s are $B$s. $\therefore$ No $A$s are $C$s.
 
-:   No $B$s are $C$s. All $A$s are $B$s.  No $C$s are $A$s.
+**Dabitis** All $B$s are $C$s. Some $A$ is $B$. $\therefore$ Some $C$ is $A$.
 
-Celarent
+**Darii** All $B$s are $C$s. Some $A$ is $B$. $\therefore$ Some $A$ is $C$.
 
-:   No $B$s are $C$s. All $A$s are $B$s.  No $A$s are $C$s.
+**Datisi** All $B$s are $C$s. Some $A$ is $B$. $\therefore$ Some $A$ is $C$.
 
-Cemestres
+**Disamis** Some $B$ is $C$. All $A$s are $B$s. $\therefore$ Some $A$ is $C$.
 
-:   No $C$s are $B$s. No $A$s are $B$s.  No $A$s are $C$s.
+**Ferison** No $B$s are $C$s. Some $A$ is $B$. $\therefore$ Some $A$ is not $C$.
 
-Cesare
+**Ferio** No $B$s are $C$s. Some $A$ is $B$. $\therefore$ Some $A$ is not $C$.
 
-:   No $C$s are $B$s. All $A$s are $B$s.  No $A$s are $C$s.
+**Festino** No $C$s are $B$s. Some $A$ is $B$. $\therefore$ Some $A$ is not $C$.
 
-Dabitis
+**Baralipton** All $B$s are $C$s. All $A$s are $B$s. $\therefore$ Some $C$ is $A$.
 
-:   All $B$s are $C$s. Some $A$ is $B$.  Some $C$ is $A$.
+**Frisesomorum** Some $B$ is $C$. No $A$s are $B$s. $\therefore$ Some $C$ is not $A$.
 
-Darii
+**Part F** Using the symbolization key given, translate each English-language
+sentence into QL.
 
-:   All $B$s are $C$s. Some $A$ is $B$.  Some $A$ is $C$.
+> **$UD$:** all animals<br/>
+> **$Dx$:** $x$ is an dog.<br/>
+> **$Sx$:** $x$ likes samurai movies.<br/>
+> **$Lxy$:** $x$ is larger than $y$.<br/>
+> **$b$:** Bertie<br/>
+> **$e$:** Emerson <br/>
+> **$f$:** Fergis<br/>
 
-Datisi
 
-:   All $B$s are $C$s. Some $A$ is $B$.  Some $A$ is $C$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.1 Db/\Sb : Bertie is a dog who likes samurai movies.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-Disamis
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.2 Db/\De/\Df : Bertie, Emerson, and Fergis are all dogs.
+|
+~~~
 
-:   Some $B$ is $C$. All $A$s are $B$s.  Some $A$ is $C$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.3 Leb/\Lfe : Emerson is larger than Bertie, and Fergis is larger than Emerson.
+|
+~~~
 
-Ferison
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.4 Ax(Dx -> Sx) : All dogs like samurai movies.
+|
+~~~
 
-:   No $B$s are $C$s. Some $A$ is $B$.  Some $A$ is not $C$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.5 Ax(Sx -> Dx) : Only dogs like samurai movies.
+|
+~~~
 
-Ferio
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.6 Ex(Dx/\Lxe) : There is a dog that is larger than Emerson.
+|
+~~~
 
-:   No $B$s are $C$s. Some $A$ is $B$.  Some $A$ is not $C$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.7 Ex(Dx/\Lxf)->Ex(Dx/\Lxe) : If there is a dog larger than Fergis, then there is a dog larger than Emerson.
+|
+~~~
 
-Festino
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.8 Ax(Lxe -> ~Sx) : No animal that likes samurai movies is larger than Emerson.
+|
+~~~
 
-:   No $C$s are $B$s. Some $A$ is $B$.  Some $A$ is not $C$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.9 ~Ex(Lxf/\Dx) : No dog is larger than Fergis.
+|
+~~~
 
-Baralipton
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.10 Ax(~Sx -> Lxb) : Any animal that dislikes samurai movies is larger than Bertie.
+|
+~~~
 
-:   All $B$s are $C$s. All $A$s are $B$s.  Some $C$ is $A$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.11 Ex((Lxb/\Lex)\/(Lxe/\Lbx)) : There is an animal that is between Bertie and Emerson in size.
+|
+~~~
 
-Frisesomorum
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.12 ~Ex(Dx/\[(Lxb/\Lex)\/(Lxe/\Lbx)]) : There is no dog that is between Bertie and Emerson in size.
+|
+~~~
 
-:   Some $B$ is $C$. No $A$s are $B$s.  Some $C$ is not $A$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.13 ~Ex(Dx/\Lxx) : No dog is larger than itself.
+|
+~~~
 
-Using the symbolization key given, translate each English-language
-sentence into QL. [\[pr.QLdogtrans\]]{#pr.QLdogtrans
-label="pr.QLdogtrans"}
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.14 Ax(Dx -> Ey(Dy /\ Lyx)) : For every dog, there is some dog larger than it.
+|
+~~~
 
-all animals
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+F.15 ExAy(Dy -> Lyx) : There is an animal that is smaller than every dog.
+|
+~~~
 
-$x$ is a dog.
 
-$x$ likes samurai movies.
+**Part G** For each argument, write a symbolization key and translate the argument into QL.
 
-$x$ is larger than $y$.
-
-Bertie
-
-Emerson
-
-Fergis
-
-Bertie is a dog who likes samurai movies.
-
-Bertie, Emerson, and Fergis are all dogs.
-
-Emerson is larger than Bertie, and Fergis is larger than Emerson.
-
-All dogs like samurai movies.
-
-Only dogs like samurai movies.
-
-There is a dog that is larger than Emerson.
-
-If there is a dog larger than Fergis, then there is a dog larger than
-Emerson.
-
-No animal that likes samurai movies is larger than Emerson.
-
-No dog is larger than Fergis.
-
-Any animal that dislikes samurai movies is larger than Bertie.
-
-There is an animal that is between Bertie and Emerson in size.
-
-There is no dog that is between Bertie and Emerson in size.
-
-No dog is larger than itself.
-
-For every dog, there is some dog larger than it.
-
-There is an animal that is smaller than every dog.
-
-[\[pr.QLarguments\]]{#pr.QLarguments label="pr.QLarguments"} For each
-argument, write a symbolization key and translate the argument into QL.
-
-Nothing on my desk escapes my attention. There is a computer on my desk.
+- Nothing on my desk escapes my attention. There is a computer on my desk.
 As such, there is a computer that does not escape my attention.
 
-All my dreams are black and white. Old TV shows are in black and white.
+- All my dreams are black and white. Old TV shows are in black and white.
 Therefore, some of my dreams are old TV shows.
 
-Neither Holmes nor Watson has been to Australia. A person could see a
+- Neither Holmes nor Watson has been to Australia. A person could see a
 kangaroo only if they had been to Australia or to a zoo. Although Watson
 has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a
 zoo.
 
-No one expects the Spanish Inquisition. No one knows the troubles I've
+- No one expects the Spanish Inquisition. No one knows the troubles I've
 seen. Therefore, anyone who expects the Spanish Inquisition knows the
 troubles I've seen.
 
-An antelope is bigger than a bread box. I am thinking of something that
+- An antelope is bigger than a bread box. I am thinking of something that
 is no bigger than a bread box, and it is either an antelope or a
 cantaloupe. As such, I am thinking of a cantaloupe.
 
-All babies are illogical. Nobody who is illogical can manage a
+- All babies are illogical. Nobody who is illogical can manage a
 crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a
 crocodile.
 
-[\[pr.QLcandies\]]{#pr.QLcandies label="pr.QLcandies"} Using the
-symbolization key given, translate each English-language sentence into
+**Part H** Using the symbolization key given, translate each English-language sentence into
 QL.
 
-candies
+> **$UD$:** candies<br/>
+> **$Cx$:** $x$ has chocolate in it.<br/>
+> **$Mx$:** $x$ has marzipan in it.<br/>
+> **$Sx$:** $x$ has sugar in it.<br/>
+> **$Tx$:** Boris has tried $x$.<br/>
+> **$Bxy$:** $x$ is better than $y$.<br/>
 
-$x$ has chocolate in it.
 
-$x$ has marzipan in it.
 
-$x$ has sugar in it.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.1 ~ExTx : Boris has never tried any candy.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-Boris has tried $x$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.2 Ax(Mx -> Sx) : Marzipan is always made with sugar.
+|
+~~~
 
-$x$ is better than $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.3 Ex~Sx : Some candy is sugar-free.
+|
+~~~
 
-Boris has never tried any candy.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.4 Ex[Cx/\~EyByx] : The very best candy is chocolate.
+|
+~~~
 
-Marzipan is always made with sugar.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.5 ~ExBxx : No candy is better than itself.
+|
+~~~
 
-Some candy is sugar-free.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.6 ~Ex(Cx/\~Sx/\Tx) : Boris has never tried sugar-free chocolate.
+|
+~~~
 
-The very best candy is chocolate.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.7 Ex(Cx/\Tx)/\Ex(Mx/\Tx)/\~Ex(Cx/\Mx/\Tx) : Boris has tried marzipan and chocolate, but never together.
+|
+~~~
 
-No candy is better than itself.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.8 Ax[Cx -> Ay(~Cy -> Bxy)] : Any candy with chocolate is better than any candy without it.
+|
+~~~
 
-Boris has never tried sugar-free chocolate.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+H.9 Ax[(Cx/\Mx)->Ay[(~Cy/\~My)->Bxy]] : Any candy with chocolate and marzipan is better than any candy that lacks both.
+|
+~~~
 
-Boris has tried marzipan and chocolate, but never together.
 
-Any candy with chocolate is better than any candy without it.
-
-Any candy with chocolate and marzipan is better than any candy that
-lacks both.
-
-[\[pr.QLpotluck\]]{#pr.QLpotluck label="pr.QLpotluck"} Using the
-symbolization key given, translate each English-language sentence into
+**Part I** Using the symbolization key given, translate each English-language sentence into
 QL.
 
-people and dishes at a potluck
+> **$UD$:** people and dishes at a potluck<br/>
+> **$Rx$:** $x$ has run out.<br/>
+> **$Tx$:** $x$ is on the table.<br/>
+> **$Fx$:** $x$ is food.<br/>
+> **$Px$:** $x$ is a person.<br/>
+> **$Lxy$:** $x$ likes $y$.<br/>
+> **$e$:** Eli<br/>
+> **$f$:** Francesca <br/>
+> **$g$:** the guacamole <br/>
 
-$x$ has run out.
 
-$x$ is on the table.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.1 Ax(Fx->Tx) : All the food is on the table.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-$x$ is food.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.2 ~Rg->Tg : If the guacamole has not run out, then it is on the table.
+|
+~~~
 
-$x$ is a person.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.3 Ax(Px->Lxg) : Everyone likes the guacamole.
+|
+~~~
 
-$x$ likes $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.4 Ex(Px/\Lxg) -> Leg : If anyone likes the guacamole, then Eli does.
+|
+~~~
 
-Eli
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.5 Ax((Fx/\Lfx) -> Rx) : Francesca only likes the dishes that have run out.
+|
+~~~
 
-Francesca
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.6 ~Ex(Px/\Lfx)/\~Ey(Py/\Lyf)  : Francesca likes no one, and no one likes Francesca.
+|
+~~~
 
-the guacamole
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.7 Ax((Px/\Lxg)->Lex) : Eli likes anyone who likes the guacamole.
+|
+~~~
 
-All the food is on the table.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.8 AxAy((Px/\Py/\Lxy/\Ley) -> Lex) : Eli likes everyone who likes anyone that he likes.
+|
+~~~
 
-If the guacamole has not run out, then it is on the table.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+I.9 Ex(Px/\Tx) -> Ay(Fy -> Ry) : If there is a person on the table already, then all of the food must have run out.
+|
+~~~
 
-Everyone likes the guacamole.
 
-If anyone likes the guacamole, then Eli does.
-
-Francesca only likes the dishes that have run out.
-
-Francesca likes no one, and no one likes Francesca.
-
-Eli likes anyone who likes the guacamole.
-
-Eli likes everyone who likes anyone that he likes.
-
-If there is a person on the table already, then all of the food must
-have run out.
-
-[\[pr.QLballet\]]{#pr.QLballet label="pr.QLballet"} Using the
-symbolization key given, translate each English-language sentence into
+**Part J** Using the symbolization key given, translate each English-language sentence into
 QL.
 
-people
 
-$x$ dances ballet.
+> **$UD$:** people<br/>
+> **$Dx$:** $x$ dances ballet.<br/>
+> **$Fx$:** $x$ is female.<br/>
+> **$Mx$:** $x$ is male.<br/>
+> **$Cxy$:** $x$ is a child of $y$.<br/>
+> **$Sxy$:** $x$ is a sibling of $y$.<br/>
+> **$e$:** Elmer<br/>
+> **$j$:** Jane <br/>
+> **$p$:** Patrick <br/>
 
-$x$ is female.
 
-$x$ is male.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.1 Ax(Cxp -> Dx) : All of Patrick's children are ballet dancers.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-$x$ is a child of $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.2 Cjp/\Fj : Jane is Patrick's daughter.
+|
+~~~
 
-$x$ is a sibling of $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.3 Ex(Cxp/\Fx)  : Patrick has a daughter.
+|
+~~~
 
-Elmer
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.4 ~ExSxj : Jane is an only child.
+|
+~~~
 
-Jane
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.5 Ax((Cxp/\Fx)->Dx)  : All of Patrick's daughters dance ballet.
+|
+~~~
 
-Patrick
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.6 ~Ex(Cxp/\Mx)  : Patrick has no sons.
+|
+~~~
 
-All of Patrick's children are ballet dancers.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.7 Ex(Cjx/\Sxe/\Fj)  : Jane is Elmer's niece.
+|
+~~~
 
-Jane is Patrick's daughter.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.8 Spe/\Mp : Patrick is Elmer's brother.
+|
+~~~
 
-Patrick has a daughter.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.9 Ax((Sxp/\Mx)->~EyCyx) : Patrick's brothers have no children.
+|
+~~~
 
-Jane is an only child.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.10 Ex(Sxj/\EyCyx/\Fj) : Jane is an aunt.
+|
+~~~
 
-All of Patrick's daughters dance ballet.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.11 Ax(Dx -> Ey(Sxy/\Fy/\Dy)) : Everyone who dances ballet has a sister who also dances ballet.
+|
+~~~
 
-Patrick has no sons.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+J.12 Ax((Mx/\Dx)->Ey(Cxy/\Dy)) : Every man who dances ballet is the child of someone who dances ballet.
+|
+~~~
 
-Jane is Elmer's niece.
 
-Patrick is Elmer's brother.
+**Part H** Identify which variables are bound and which are free.
 
-Patrick's brothers have no children.
+> | 1. <span class="premise">$\exists x Lxy \& \forall y Lyx$</span>
+> | 2. <span class="premise">$\forall x Ax \& Bx$</span>
+> | 3. <span class="premise">$\forall x (Ax \& Bx) \& \forall y(Cx \& Dy)$</span>
+> | 4. <span class="premise">$\forall x\exists y[Rxy \supset (Jz \& Kx)] \lor Ryx$</span>
+> | 5. <span class="premise">$\forall x_1(Mx_2 \equiv Lx_2x_1) \& \exists x_2 Lx_3x_2$</span>
 
-Jane is an aunt.
 
-Everyone who dances ballet has a sister who also dances ballet.
+**Part L** Identify which of the following are substitution instances of
+$\forall x Rcx$: $Rac$, $Rca$, $Raa$, $Rcb$, $Rbc$, $Rcc$, $Rcd$, $Rcx$.
 
-Every man who dances ballet is the child of someone who dances ballet.
-
-[\[pr.freeQL\]]{#pr.freeQL label="pr.freeQL"} Identify which variables
-are bound and which are free.
-
-$\exists x Lxy \& \forall y Lyx$
-
-$\forall x Ax \& Bx$
-
-$\forall x (Ax \& Bx) \& \forall y(Cx \& Dy)$
-
-$\forall x\exists y[Rxy \supset (Jz \& Kx)] \lor Ryx$
-
-$\forall x_1(Mx_2 \equiv Lx_2x_1) \& \exists x_2 Lx_3x_2$
-
-[\[pr.subinstanceQL\]]{#pr.subinstanceQL label="pr.subinstanceQL"}
 
 Identify which of the following are substitution instances of
-$\forall x Rcx$: $Rac$, $Rca$, $Raa$, $Rcb$, $Rbc$, $Rcc$, $Rcd$, $Rcx$
-
-Identify which of the following are substitution instances of
-$\exists x\forall y Lxy$: $\forall y Lby$, $\forall x Lbx$, $Lab$,
-$\exists x Lxa$
+$\exists x\forall y Lxy$: $\forall yLby$, $\forallxLbx$, $Lab$, $\exists xLxa$.
