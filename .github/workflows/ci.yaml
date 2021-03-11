@@ -1,0 +1,20 @@
+name: 'Deploy markdown files to Carnap'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        uses: carnap/actions@v1
+        with:
+          apiKey: '${{ secrets.CARNAP_API_KEY }}'
+          # make any newly created documents private
+          defaultVisibility: 'private'
+          # files to include in the upload (important: this must be quoted)
+          includeFiles: '["*.pandoc"]'
+          instanceUrl: 'https://ubc-carnap.lfcode.ca'
