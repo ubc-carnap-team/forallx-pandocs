@@ -15,7 +15,7 @@ jobs:
         with:
           apiKey: '${{ secrets.CARNAP_API_KEY }}'
           # make any newly created documents private
-          defaultVisibility: 'private'
+          defaultVisibility: 'Private'
           # files to include in the upload (important: this must be quoted)
           includeFiles: '["*.pandoc"]'
           instanceUrl: 'https://ubc-carnap.lfcode.ca'
