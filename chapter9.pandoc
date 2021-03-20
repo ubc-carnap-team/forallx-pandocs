@@ -1,29 +1,22 @@
-A formal semantics for QL {#ch.QL.models}
+
+A formal semantics for QL
 =========================
 
 In this chapter, we describe a *formal semantics* for QL. This
 corresponds to the discussion of interpretations and truth in SL given
-in Chapter [\[ch.SLmodels\]](#ch.SLmodels){reference-type="ref"
-reference="ch.SLmodels"}. Like truth in SL, truth in QL is defined
+in Chapter 4. Like truth in SL, truth in QL is defined
 relative to a particular interpretation; entailment is a matter of truth
 in all interpretations. In SL, models corresponded to assignments of
 truth values to atomic sentences. For example, here is an SL model:
 
-$$\script{I} =
-\left\{
-    \begin{array}{ll}
-    P = 0\\
-    Q = 1\\
-    R = 0
-    \end{array}
-\right.$$
+$$\mathcal{I} =\{P=0, Q=1, R=0\}$$
 
 Interpretation settles the truth value of any SL sentence one can
 construct from $P$, $Q$, and $R$. Because QL involves richer notions and
 a more complex vocabulary than SL, it requires correspondingly richer
 models and interpretations.
 
-Interpretations in QL
+**9.1 Interpretations in QL**
 ---------------------
 
 What is an interpretation in QL? Like a symbolization key for QL, an
@@ -31,21 +24,16 @@ interpretation requires a universe of discourse, a schematic meaning for
 each of the predicates, and an object that is picked out by each
 constant. For example:
 
-Marvel characters
 
-$x$ is a hero.
+> **$UD$:** Marvel characters<br/>
+> **$Hx$:** $x$ is a hero.<br/>
+> **$Sx$:** $x$ has spider powers.<br/>
+> **$m$:** Miles Morales<br/>
+> **$p$:** Peter Parker<br/>
+> **$r$:** The Red Skull<br/>
+> **$s$:** Susan Storm<br/>
+> **$u$:** Ultimate Spider-Man<br/>
 
-$x$ has spider powers.
-
-Miles Morales
-
-Peter Parker
-
-The Red Skull
-
-Susan Storm
-
-Ultimate Spider-Man
 
 This interpretation is given in terms of English descriptions. To apply
 it, you need to know some details about the characters in question. For
@@ -59,9 +47,7 @@ about Marvel comics, you may know that Miles Morales is actually the
 Ultimate Spider-Man. So $u$ and $m$ in this interpretation are two
 different names for the same member of the UD. There is no rule against
 having multiple names for the same member. (We'll discuss this issue in
-much more detail in Chapter
-[\[ch.identity\]](#ch.identity){reference-type="ref"
-reference="ch.identity"}.)
+much more detail in Chapter 12.
 
 We want our QL models to encode this kind of information too. Like a
 good SL model, a QL model shouldn't require prior knowledge of comic
@@ -84,14 +70,14 @@ for this, because a predicate by itself is neither true nor false. In
 the interpretation given above, $H$ is true *of* Peter Parker (i.e.,
 $Hp$ is true), but it makes no sense at all to ask whether $H$ on its
 own is true. It would be like asking whether the English language
-fragment '$\ldots$is a hero' is true.
+fragment '$\dots$is a hero' is true.
 
 What does an interpretation do for a predicate, if it does not make it
 true or false? An interpretation helps to pick out the objects to which
 the predicate applies. Interpreting $Hx$ to mean '$x$ is a hero' picks
 out some characters as the things that are $H$s. Formally, this is a set
 of members of the UD to which the predicate applies; this set is called
-the of the predicate.
+the **extensions** of the predicate.
 
 Some predicates have indefinitely large extensions. It would be
 impractical to try and write down all of the Marvel characters
@@ -112,7 +98,7 @@ wanted to add a one-place predicate $F$ to the key above, meaning '$x$
 is a founding member of the Fantastic Four', so we write the extension
 as a set of characters:
 
-& {Reed Richards, Susan Storm, Johnny Storm, Ben Grimm}
+$$extension(F) = \{\text{Reed Richards, Susan Storm, Johnny Storm, Ben Grimm}\}$$
 
 You do not need to know anything about comic books to be able to
 determine that, on this interpretation, $Fs$ is true: Susan Storm, whose
@@ -132,7 +118,7 @@ set of members.
 The formal significance of a predicate is determined by its extension,
 but what should we say about constants like $m$ and $s$? The meaning of
 a constant determines which member of the UD is picked out by the
-constant. The individual that the constant picks out is called the of
+constant. The individual that the constant picks out is called the **referent** of
 the constant. Both $m$ and $u$ have the same referent, since they both
 refer to the same comic book character. You can think of a constant
 letter as a name and the referent as the thing named. In English, we can
@@ -141,31 +127,30 @@ the same comic book character. In this interpretation, we also use the
 different constants '$m$' and '$u$' to refer to the same member of the
 UD.
 
-Sets
+**9.2 Sets**
 ----
 
 We use curly brackets '{' and '}' to denote sets. The members of the set
 can be listed in any order, separated by commas. This means that {foo,
 bar} and {bar, foo} are the same set.
 
-It is possible to have a set with no members in it. This is called the .
+It is possible to have a set with no members in it. This is called the **empty set**.
 The empty set is sometimes written as {}, but usually it is written as
 the single symbol $\emptyset$.
 
-Models
+**9.3 Models**
 ------
 
 As we have seen, an interpretation in QL is only formally significant
 insofar as it determines a UD, an extension for each predicate, and a
-referent for each constant. We call this formal structure a for QL.
+referent for each constant. We call this formal structure a **model** for QL.
 
 To see how this works, consider this symbolization key:
 
-The first ten natural numbers
+> **$UD$:** The first ten natural numbers<br/>
+> **$Px$:** $x$ is prime.<br/>
+> **$n_4$:** 4<br/>
 
-$x$ is prime.
-
-4
 
 Given some basic mathematical knowledge, it is obvious that $Pn_{4}$ is
 false. Let's consider the model this interpretation suggests, to show
@@ -173,9 +158,9 @@ why it makes this wff false. Instead of just giving a description in the
 UD, we can list the members as a set. We also define the extension of
 the predicate $P$, and the referent of the constant $n_{4}$:
 
-UD & $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$\
-& {2, 3, 5, 7}\
-& 4
+> $UD$:  $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$<br/>
+> $extension(P)$: $\{2,3,5,7\}$<br/>
+> $referent(n_4)$: 4<br/>
 
 This is not a full model for this interpretation, but it is a detailed
 enough partial model to show that $Pn_{4}$ is false. You do not need to
@@ -185,40 +170,43 @@ $P$. In this way, the model captures all of the formal significance of
 the interpretation.
 
 Suppose we enrich this interpretation with more predicates:
-[\[10UD\]]{#10UD label="10UD"}
 
-UD: The first ten natural numbers
-
-Ex: $x$ is even.
-
-Nx: $x$ is negative.
-
-Lxy: $x$ is less than $y$.
-
-Txyz: $x$ times $y$ equals $z$.
+> **$UD$:** The first ten natural numbers<br/>
+> **$Ex$:** $x$ is even.<br/>
+> **$Nx$:** $x$ is negative.<br/>
+> **$Lxy$:** $x$ is less than $y$.<br/>
+> **$Txyz$:** $x$ times $y$ equals $z$.<br/>
 
 What do we need to add to the model for our new predicates?
 
 The extension of $E$ is the subset $\{2, 4, 6, 8, 10\}$. There are no
 negative numbers in the UD, so $N$ has an empty extension; i.e.
-$\extension{N}=\emptyset$.
+$extension(N)=\emptyset$.
 
 Sometimes it will be convenient to represent extensions graphically,
 similar to the way we did with truth tables. We can represent the
 extensions just described for $P$, $E$, and $N$ thus:
 
-           $P$   $E$   $N$
-  -------- ----- ----- -----
-  **1**    0     0     0
-  **2**    1     1     0
-  **3**    1     0     0
-  **4**    0     1     0
-  **5**    1     0     0
-  **6**    0     1     0
-  **7**    1     0     0
-  **8**    0     1     0
-  **9**    0     0     0
-  **10**   0     1     0
+
+
+<div class="table">
+
+
+             $P$ $E$ $N$
+------------ --- --- ---
+$\textbf{1}$   0   0   0
+$\textbf{2}$   1   1   0
+$\textbf{3}$   1   0   0
+$\textbf{4}$   0   1   0
+$\textbf{5}$   1   0   0
+$\textbf{6}$   0   1   0
+$\textbf{7}$   1   0   0
+$\textbf{8}$   0   1   0
+$\textbf{9}$   0   0   0
+$\textbf{10}$   0   1   0
+------------ --- --- ---
+
+</div>
 
 The members of the UD are listed as rows; the predicates are given as
 columns. The 0s and 1s indicate whether each member satisfies each
@@ -232,15 +220,14 @@ about the relation between members. Note also that sets of pairs numbers
 aren't suitable for the extension of $L$ either, because 1 is less than
 8, but 8 is not less than 1. And the set {1,8} is the very same set as
 the set {8,1}. The solution is to have the extension of $L$ consist in a
-set of of numbers. An ordered pair is like a set with two members,
+set of **ordered pairs** of numbers. An ordered pair is like a set with two members,
 except that the order *does* matter. We write ordered pairs with angle
-brackets '$\openntuple$' and '$\closentuple$'. The ordered pair is
+brackets '$\langle$' and '$\rangle$'. The ordered pair is
 different than the ordered pair . The extension of $L$ is a collection
 of ordered pairs, all of the pairs of numbers in the UD such that the
 first number is less than the second. Writing this out completely:
 
-$\extension{L}=$ {, , , , , , , , , , , , , , , , , , , , , , , , , , ,
-, , , , , , , , , , , , , , , , }
+$$extension(L)=\{\langle 1, 2\rangle, \langle 1, 3\rangle, \langle 1, 4\rangle, \langle 1, 5\rangle, \langle 1, 6\rangle, \langle 1, 7\rangle, \langle 1, 8\rangle, \langle 1, 9\rangle, \langle 1, 10\rangle, \langle 2, 3\rangle, \langle 2, 4\rangle, \langle 2, 5\rangle, \langle 2, 6\rangle, \langle 2, 7\rangle, \langle 2, 8\rangle, \langle 2, 9\rangle, \langle 2, 10\rangle, \langle 3, 4\rangle, \langle 3, 5\rangle, \langle 3, 6\rangle, \langle 3, 7\rangle, \langle 3, 8\rangle, \langle 3, 9\rangle, \langle 3, 10\rangle, \langle 4, 5\rangle, \langle 4, 6\rangle, \langle 4, 7\rangle, \langle 4, 8\rangle, \langle 4, 9\rangle, \langle 4, 10\rangle, \langle 5, 6\rangle, \langle 5, 7\rangle, \langle 5, 8\rangle, \langle 5, 9\rangle, \langle 5, 10\rangle, \langle 6, 7\rangle, \langle 6, 8\rangle, \langle 6, 9\rangle, \langle 6, 10\rangle, \langle 7, 8\rangle, \langle 7, 9\rangle, \langle 7, 10\rangle, \langle 8, 9\rangle, \langle 8, 10\rangle \langle 9, 10\rangle \}$$
 
 Formally, the extension of a two-place predicate is a set of ordered
 pairs. Sometimes we will find it easier to represent extensions in a
@@ -250,6 +237,9 @@ below. The '0' in the first cell of the table says that is not in the
 extension of $L$; the next cell in the first row says that is. Etc.
 Sometimes drawing out a chart like this will be the easiest way to
 represent models for the extensions of two-place predicates.
+
+<div class="table">
+
 
   $Lxy$    **1**   **2**   **3**   **4**   **5**   **6**   **7**   **8**   **9**   **10**
   -------- ------- ------- ------- ------- ------- ------- ------- ------- ------- --------
@@ -264,6 +254,9 @@ represent models for the extensions of two-place predicates.
   **9**    0       0       0       0       0       0       0       0       0       1
   **10**   0       0       0       0       0       0       0       0       0       0
 
+  </div>
+
+
 The extension of a three-place predicate is a set of ordered triples
 where the predicate is true of those three things *in that order*. So
 the extension of $T$ in this model will contain ordered triples like ,
@@ -272,53 +265,69 @@ all intents and purposes two-dimensional, it is usually not convenient
 to represent 3-or-more place predicates with tables.
 
 Generally, the extension of an n-place predicate is a set of all ordered
-n-tuples ${\langle}a_1, a_2,\ldots, a_n{\rangle}$ such that $a_1$--$a_n$
-are members of the UD and the predicate is true of $a_1$--$a_n$ in that
+n-tuples ${\langle}a_1, a_2,\ldots, a_n{\rangle}$ such that $a_1$-$a_n$
+are members of the UD and the predicate is true of $a_1$-$a_n$ in that
 order.
 
-Working with models {#sec.UsingModels}
+**9.4 Extensions of 0-place predicates**
+-------------------
+
+What of a 0-place predicate? Recall from Chapter 8 that a 0-place predicate corresponds to an SL sentence letter --- it will take a truth value in an interpretation without reference to any particular objects. So a QL model will provide truth values to 0-place predicates directly, just like an SL valuation function did.
+
+This actually follows from the general description of $n$-place predicates given in the previous section: the extension of an $n$-place predicate is a set of ordered $n$-tuples. In the special case where $n=0$, the extension of the predicate will be a set of 0-tuples. But there is only one possible 0-tuple: the empty set, $\emptyset$. So there are only two possible extensions of a 0-place predicate, corresponding to the choice of whether $\emptyset$ is included in the extension or not. (Formally, the extension will either be the set containing the empty set --- \{$\emptyset$\} --- or it will be the empty set $\emptyset$ itself.)
+
+For clarity and convenience, when indicating the extension of 0-place predicates in QL models, we'll simply indicate the truth values for the sentences themselves, like we did in SL. So we might indicate the extensions of 0-place predicates, for instance, by writing
+
+
+$$P = 1, Q = 0$$
+
+instead of the more confusing
+
+$$extension(P) = \{\emptyset\}, extension(Q)=\emptyset$$
+
+So in the special case where we are \emph{only} working with 0-place predicates, QL models directly provide SL valuation functions. This is another respect in which QL is simply a generalization of SL. If you ignore the UD and the extensions of higher-place predicates, a QL model provides the same information we were using to discuss SL models in Chapter 4.
+
+
+**9.5 Working with models**
 -------------------
 
 We will use the double turnstile symbol for QL much as we did for SL.
-'$\metaA{}\models\metaB{}$' means that ' entails ': When and are two
-sentences of QL, $\metaA{}\models\metaB{}$ means that there is no model
-in which is true and is false. $\models\metaA{}$ is shorthand for
-$\emptyset\models\metaA{}$, which means that is true in every model.
+'$\Phi\models\Psi$' means that '$\Phi$ entails $\Psi$': When $\Phi$ and $\Psi$ are two
+sentences of QL, $\Phi\models\Psi$ means that there is no model
+in which is true and is false. $\models\Phi$ is shorthand for
+$\emptyset\models\Phi$, which means that is true in every model.
 This allows us to give definitions for various concepts in QL. In fact,
-we can use the same definitions offered in Chapter
-[\[ch.SLmodels\]](#ch.SLmodels){reference-type="ref"
-reference="ch.SLmodels"}.
+we can use the same definitions offered in Chapter 4.
 
-> A is a sentence that is true in every model; i.e., $\models\metaA{}$.
+> A **tautology** is a sentence that is true in every model; i.e., $\models\Phi$.
 >
-> A is a sentence that is false in every model; i.e.,
-> $\models\enot\metaA{}$.
+> A **contradiction** is a sentence that is false in every model; i.e., $\models\neg\Phi$.
 >
-> A sentence is if and only if it is neither a tautology nor a
+> A sentence is **contingent** if and only if it is neither a tautology nor a
 > contradiction.
 >
-> An argument " $\script{P}_1, \script{P}_2, \cdots$,   " is if and only
+> An argument "$\mathcal{P}_1, \mathcal{P}_2, \cdots,\therefore \Omega$" is **valid** if and only
 > if there is no model in which all of the premises are true and the
 > conclusion is false; i.e.,
-> $\{\script{P}_1,\script{P}_2,\cdots\}\models\metaC{}$. It is
+> $\{\mathcal{P}_1,\mathcal{P}_2,\cdots\}\models\Omega$. It is
 > otherwise.
 >
-> Two sentences and are if and only if both $\metaA{}\models\metaB{}$
-> and $\metaB{}\models\metaA{}$.
+> Two sentences $\Phi$ and $\Psi$ are **logically equivalent** if and only if both $\Phi\models\Psi$
+> and $\Psi\models\Phi$.
 >
-> The set $\{\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\}$ is if and only
+> The set $\{\Phi_1,\Phi_2,\Phi_3,\cdots\}$ is **consistent** if and only
 > if there is at least one model in which all of the sentences are true.
 > The set is if and only if there is no such model.
 
-Constructing models
+**9.6 Constructing models**
 -------------------
 
-Suppose we want to show that $\forall xAxx \eif Bd$ is *not* a
+Suppose we want to show that $\forall xAxx \supset Bd$ is *not* a
 tautology. This requires showing that the sentence is not true in every
 model. If we can provide an example of a model in which the sentence is
 false, then we will have shown that the sentence is not a tautology.
 
-What would such a model look like? In order for $\forall xAxx \eif Bd$
+What would such a model look like? In order for $\forall xAxx \supset Bd$
 to be false, the antecedent ($\forall x Axx$) must be true, and the
 consequent ($Bd$) must be false.
 
@@ -329,7 +338,7 @@ anything. Let's say it is Miles Morales.
 
 We want $\forall x Axx$ to be true, so we want all members of the UD to
 be paired with themself in the extension of $A$; this means that the
-extension of $A$ must be {}.
+extension of $A$ must be $\{\langle \text{Miles Morales, Miles Morales}\rangle\}$.
 
 We want $Bd$ to be false, so the referent of $d$ must not be in the
 extension of $B$. We give $B$ an empty extension.
@@ -337,17 +346,17 @@ extension of $B$. We give $B$ an empty extension.
 Since Miles is the only member of the UD, it must be the referent of
 $d$. The model we have constructed looks like this:
 
-UD & {Miles Morales}\
-& {}\
-& $\emptyset$\
-& Miles Morales
+> $UD$: $\{$Miles Morales$\}$<br/>
+> $extension(A)$: $\{\langle \text{Miles Morales, Miles Morales}\rangle\}$<br/>
+> $extension(B)$: $\emptyset$<br/>
+> $referent(d)$: Miles Morales.<br/>
 
 Strictly speaking, a model specifies an extension for *every* predicate
 of QL and a referent for *every* constant. As such, it is generally
 impossible to write down a complete model. That would require writing
 down infinitely many extensions and infinitely many referents. However,
 we do not need to consider every predicate in order to show that there
-are models in which $\forall xAxx \eif Bd$ is false. Predicates like $H$
+are models in which $\forall xAxx \supset Bd$ is false. Predicates like $H$
 and constants like $f_{13}$ make no difference to the truth or falsity
 of this sentence. It is enough to specify extensions for $A$ and $B$ and
 a referent for $d$, as we have done. This provides a *partial model* in
@@ -356,16 +365,15 @@ which the sentence is false.
 Perhaps you are wondering: What does the predicate $A$ mean in English?
 It doesn't really matter. For formal purposes, the existence of models
 like the ones described above are enough to show that
-$\forall x Axx \eif Bd$ is not a tautology. But we can offer an
+$\forall x Axx \supset Bd$ is not a tautology. But we can offer an
 interpretation in English if we like. How about this one?
 
-Miles Morales
 
-$x$ knows $y$'s biggest secret.
+> **$UD$:** Miles Morales<br/>
+> **$Axy$:** $x$ knows $y$'s biggest secret.<br/>
+> **$Bx$:** $x$'s powers derive from gamma radiation.<br/>
+> **$d$:** Miles Morales.<br/>
 
-$x$'s powers derive from gamma radiation.
-
-Miles Morales
 
 This is one way we can interpret the model above. $Add$ is true, because
 Miles does know Miles's biggest secret. (It's that he's the Ultimate
@@ -381,30 +389,31 @@ as $y$' or '$x$ and $y$ live in the same city'; $Bx$ might translate
 'Donald Trump has written a tweet about $x$'. In constructing a model
 and giving extensions for $A$ and $B$, we do not specify what English
 predicates $A$ and $B$ should be used to translate. We are concerned
-with whether the $\forall xAxx \eif Bd$ comes out true or false, and all
+with whether the $\forall xAxx \supset Bd$ comes out true or false, and all
 that matters for truth and falsity in QL is the information in the
 model: the UD, the extensions of predicates, and the referents of
 constants.
 
-We can just as easily show that $\forall xAxx \eif Bd$ is not a
+We can just as easily show that $\forall xAxx \supset Bd$ is not a
 contradiction. We need only specify a model in which
-$\forall xAxx \eif Bd$ is true; i.e., a model in which either
+$\forall xAxx \supset Bd$ is true; i.e., a model in which either
 $\forall x Axx$ is false or $Bd$ is true. Here is one such partial
 model:
 
-UD & {The Red Skull}\
-& {}\
-& {The Red Skull}\
-& The Red Skull
+> $UD$: $\{$The Red Skull$\}$<br/>
+> $extension(A)$: $\{\langle \text{The Red Skull, The Red Skull}\rangle\}$<br/>
+> $extension(B)$: $\{\text{The Red Skull}\}$<br/>
+> $referent(d)$: The Red Skull.<br/>
+
 
 I've switched our object from Miles Morales to The Red Skull to
 emphasize that it doesn't matter what object you pick. (Changing the
 examples all back to Miles would make no difference.) On this model,
-$\forall xAxx \eif Bd$ is true, because it is a conditional with a true
+$\forall xAxx \supset Bd$ is true, because it is a conditional with a true
 consequent (as well as a true antecedent). We have now shown that
-$\forall xAxx \eif Bd$ is neither a tautology nor a contradiction. By
+$\forall xAxx \supset Bd$ is neither a tautology nor a contradiction. By
 the definition of 'contingent in QL,' this means that
-$\forall xAxx \eif Bd$ is contingent. In general, showing that a
+$\forall xAxx \supset Bd$ is contingent. In general, showing that a
 sentence is contingent will require two models: one in which the
 sentence is true and another in which the sentence is false.
 
@@ -415,7 +424,7 @@ and the other to be false. We start by specifying a UD. Again, we make
 the UD reasonably small so that we can specify extensions easily. But
 this time we will need at least two members. If we only had one member
 of the domain, we wouldn't be able to illustrate the difference between
-*all* and *some*. Let's let our UD be {The Red Skull, Miles Morales}.
+*all* and *some*. Let's let our UD be $\{\text{The Red Skull, Miles Morales}\}$.
 
 We can make $\exists x Sx$ true by including something in the extension
 of $S$, and we can make $\forall x Sx$ false by leaving something out of
@@ -423,53 +432,85 @@ the extension of $S$. It does not matter which one we include and which
 one we leave out. Making Miles the only $S$, we get a partial model that
 looks like this:
 
-UD & {Miles, The Red Skull}\
-& {Miles}
+
+> $UD$: $\{$Miles, The Red Skull$\}$<br/>
+> $extension(S)$: $\{\text{Miles}\}$<br/>
 
 This partial model shows that the two sentences are *not* logically
 equivalent. $\exists x Sx$ is assigned 1 on this model, but
 $\forall x Sx$ is assigned 0.
 
-Back on p. , we said that this argument would be invalid in QL:
+Back in Chapter 8, we said that this argument would be invalid in QL:
 
-$(Rc \eand K_1c) \eand Tc$
-
-$Tc \eand K_2c$
+> | 1. <span class="premise">$(Rc\ \&\ K_1c) \& Tc$</span>
+> | <span class="conclusion">$Tc\ \&\ K_2c$</span>
 
 Now we can prove that this is so. To show that this argument is invalid,
 we need to show that there is some model in which the premise is true
 and the conclusion is false. We can construct such a model deliberately.
 Here is one way to do it:
 
-UD & {Reed Richards}\
-& {Reed Richards}\
-& {Reed Richards}\
-& $\emptyset$\
-& {Reed Richards}\
-& Reed Richards
+
+> $UD$: $\{$Reed Richards$\}$<br/>
+> $extension(T)$: $\{\text{Reed Richards}\}$<br/>
+> $extension(K_1)$: $\{\text{Reed Richards}\}$<br/>
+> $extension(K_2)$: $\emptyset$<br/>
+> $extension(R)$: $\{\text{Reed Richards}\}$<br/>
+> $referent(c)$: Reed Richards.<br/>
+
 
 Similarly, we can show that a set of sentences is consistent by
 constructing a model in which all of the sentences are true.
 
-::: {#table.ModelOrArgument}
-  ------------------------------ ----------------------------------------------------------------------- -----------------------------------------------------------------
-                                 YES                                                                     NO
-  Is a tautology?                show that must be true in any model                                     
-  Is a contradiction?            show that must be false in any model                                    
-  Is contingent?                                                                                         either show that is a tautology or show that is a contradiction
-  Are and equivalent?            show that and must have the same truth value in any model               
-  Is the set consistent?                                                                                 show that the sentences in could not all be true in any model
-  Is the argument ',  ' valid?   show that any model in which is true must be a model in which is true   
-                                                                                                         
-  ------------------------------ ----------------------------------------------------------------------- -----------------------------------------------------------------
+--------------------------------------------------------------------------------
+                           YES                         NO
+-------------------------  --------------------------- -----------------------------
+Is $\Phi$ a tautology?     -show that $\Phi$ must be   -*construct a model* in which
 
-  : It is relatively easy to answer a question if you can do it by
-  constructing a model or two. It is much harder if you need to reason
-  about all possible models. This table shows when constructing models
-  is enough.
-:::
+                            true in any model          $\Phi$ is false
 
-Reasoning about all models {#sec.allmodelreasoning}
+Is $\Phi$ a contradiction? -show that $\Phi$ must be   -*construct a model* in which
+
+                            false in any model         $\Phi$ is true
+
+Is $\Phi$ contingent?       -*construct two models*,    -either show that $\Phi$ is a
+
+                           one in which $\Phi$ is      tautology or that $\Phi$
+
+                           true and another in which   is a contradiction
+
+                           $\Phi$ is false
+
+Are $\Phi$ and $\Psi$      -show that $\Phi$ and $\Psi$ -*construct a model* in which
+
+equivalent?                must have the same          $\Phi$ and $\Psi$ have
+
+                           truth value in any          different truth values
+
+                           model
+
+Is the set $\mathbb{A}$    -*construct a model*, in    -show the sentences
+
+consistent?                which all sentences in      in $\mathbb{A}$ could not
+
+                           $\mathbb{A}$ are true       all be true in any model
+
+Is the argument            -show that any model in     -*construct a model* in
+
+$\mathcal{P}$              which $\mathcal{P}$ is      which $\mathcal{P}$ is true
+
+$\therefore$ $\Omega$      true must be a model in     and $\Omega$ is false
+
+                           which $\Omega$ is true
+--------------------------------------------------------------------------------
+
+
+
+<caption>Table 9.1: It is relatively easy to answer a question if you can do it by constructing a model or two. It is much harder if you need to reason about all possible models. This table shows when constructing models is enough.</caption>
+
+
+
+**9.7 Reasoning about all models**
 --------------------------
 
 We can show that a sentence is *not* a tautology just by providing one
@@ -481,7 +522,7 @@ model, and there are infinitely many models. This cannot be avoided just
 by constructing partial models, because there are infinitely many
 partial models.
 
-Consider, for example, the sentence $Raa\eiff Raa$. There are two
+Consider, for example, the sentence $Raa\equiv Raa$. There are two
 logically distinct partial models of this sentence that have a 1-member
 UD. There are 32 distinct partial models that have a 2-member UD. There
 are 1526 distinct partial models that have a 3-member UD. There are
@@ -490,17 +531,17 @@ infinity. In order to show that this sentence is a tautology, we need to
 show something about all of these models. There is no hope of doing so
 by dealing with them one at a time.
 
-Nevertheless, $Raa\eiff Raa$ is obviously a tautology. We can prove it
+Nevertheless, $Raa\equiv Raa$ is obviously a tautology. We can prove it
 with a simple argument:
 
-> [\[allmodels1\]]{#allmodels1 label="allmodels1"} There are two kinds
+> There are two kinds
 > of models: those with $\langle$referent(a), referent(a)$\rangle$ is in
 > the extension of $R$ and those in which it is not. In the first kind
 > of model, $Raa$ is true; by the truth table for the biconditional,
-> $Raa\eiff Raa$ is also true. In the second kind of model, $Raa$ is
-> false; this makes $Raa\eiff Raa$ true. Since the sentence is true in
+> $Raa\equiv Raa$ is also true. In the second kind of model, $Raa$ is
+> false; this makes $Raa\equiv Raa$ true. Since the sentence is true in
 > both kinds of model, and since every model is one of the two kinds,
-> $Raa\eiff Raa$ is true in every model. Therefore, it is a tautology.
+> $Raa\equiv Raa$ is true in every model. Therefore, it is a tautology.
 
 This is a sound argument; it should convince us of its conclusion. But
 note that it is not an argument in QL. Rather, it is an argument in
@@ -511,15 +552,15 @@ reason we began thinking about formal languages.
 
 There are further difficulties with this approach.
 
-Consider the sentence $\forall x(Rxx\eif Rxx)$, another obvious
-tautology. It might be tempting to reason in this way: '$Rxx\eif Rxx$ is
-true in every model, so $\forall x(Rxx\eif Rxx)$ must be true.' The
-problem is that $Rxx\eif Rxx$ is *not* true in every model. It is not a
+Consider the sentence $\forall x(Rxx\supset Rxx)$, another obvious
+tautology. It might be tempting to reason in this way: '$Rxx\supset Rxx$ is
+true in every model, so $\forall x(Rxx\supset Rxx)$ must be true.' The
+problem is that $Rxx\supset Rxx$ is *not* true in every model. It is not a
 sentence, and so it is *neither* true *nor* false. We do not yet have
-the vocabulary to say what we want to say about $Rxx\eif Rxx$. In the
+the vocabulary to say what we want to say about $Rxx\supset Rxx$. In the
 next section, we introduce the concept of *satisfaction*; after doing
 so, we will be better able to provide an argument that
-$\forall x(Rxx\eif Rxx)$ is a tautology.
+$\forall x(Rxx\supset Rxx)$ is a tautology.
 
 It is necessary to reason about an infinity of models to show that a
 sentence is a tautology. Similarly, it is necessary to reason about an
@@ -527,10 +568,9 @@ infinity of models to show that a sentence is a contradiction, that two
 sentences are equivalent, that a set of sentences is inconsistent, or
 that an argument is valid. There are other things we can show by
 carefully constructing a model or two. Table
-[1.1](#table.ModelOrArgument){reference-type="ref"
-reference="table.ModelOrArgument"} summarizes which things are which.
+9.1 summarizes which things are which.
 
-Truth in QL {#sec.TruthInQL}
+**9.8 Truth in QL**
 -----------
 
 For SL, we split the definition of truth into two parts: a truth value
@@ -541,24 +581,24 @@ could be built out of sentence letters and connectives.
 In the same way that truth for SL is always *truth given a truth value
 assignment*, truth for QL is *truth in a model*. The atomic sentences,
 again, are $n$-place predicates followed by $n$ constants, like $Pj$. It
-is true in a model if and only if the referent of $j$ is in the
-extension of $P$ in .
+is true in a model $\mathbb{M}$ if and only if the referent of $j$ is in the
+extension of $P$ in $\mathbb{M}$.
 
 We could go on in this way to define truth for all atomic sentences that
 contain only predicates and constants: Consider any sentence of the form
-$\script{R}\script{a}_1\ldots\script{a}_n$ where is an n-place predicate
-and the s are constants. It is true in if and only if
-${\langle}\referent{\script{a}_1},\ldots,\referent{\script{a}_n}{\rangle}$
-is in in .
+$\mathcal{R}\mathcal{a}_1\ldots\mathcal{a}_n$ where is an n-place predicate
+and the s are constants. It is true in $\mathbb{M}$ if and only if
+${\langle}referent(\mathcal{a}_1),\ldots,referent(\mathcal{a}_n){\rangle}$
+is in $extension(\mathcal{R})$ in $\mathbb{M}$.
 
 We could then define truth for sentences built up with sentential
 connectives in the same way we did for SL. For example, the sentence
-$(Pj \eif Mda)$ is true in if either $Pj$ is false in or $Mda$ is true
-in .
+$(Pj \supset Mda)$ is true in $\mathbb{M}$ if either $Pj$ is false in $\mathbb{M}$ or $Mda$ is true
+in $\mathbb{M}$.
 
 Unfortunately, this approach will fail when we consider sentences
 containing quantifiers. Consider $\forall x Px$. When is it true in a
-model ? The answer cannot depend on whether $Px$ is true or false in ,
+model $\mathbb{M}$? The answer cannot depend on whether $Px$ is true or false in $\mathbb{M}$,
 because the $x$ in $Px$ is a free variable. $Px$ is not a sentence. It
 is neither true nor false.
 
@@ -571,7 +611,7 @@ which are not sentences. In order to do this we will define
 satisfied, even if it does not have a truth value. We will then be able
 to define *truth* for sentences of QL in terms of satisfaction.
 
-Satisfaction
+**9.9 Satisfaction**
 ------------
 
 The formula $Px$ says, roughly, that $x$ is one of the $P$s. This cannot
@@ -590,23 +630,23 @@ this function 'a'. (The 'a' is for 'assignment', but this is not the
 same as the truth value assignment that we used in defining truth for
 SL.)
 
-The formula $Px$ is satisfied in a model by a variable assignment $a$ if
+The formula $Px$ is satisfied in a model $\mathbb{M}$ by a variable assignment $a$ if
 and only if $a(x)$, the object that $a$ assigns to $x$, is in the
-extension of P in .
+extension of P in $\mathbb{M}$.
 
 When is $\forall x Px$ satisfied? It is not enough if $Px$ is satisfied
-in by $a$, because that just means that $a(x)$ is in . $\forall x Px$
-requires that every other member of the UD be in as well.
+in $\mathbb{M}$ by $a$, because that just means that $a(x)$ is in $extension(P)$. $\forall x Px$
+requires that every other member of the UD be in $extension(P)$ as well.
 
 So we need another bit of technical notation: For any member $\pi$ of
-the UD and any variable , let $a[\pi|\script{x}]$ be the variable
+the UD and any variable , let $a[\pi|\mathcal{x}]$ be the variable
 assignment that assigns $\pi$ to but agrees with $a$ in all other
 respects. We have used $\pi$, the Greek letter *pi*, to underscore the
 fact that it is some member of the UD and not some symbol of QL.
 Suppose, for example, that the UD is presidents of the United States.
-The function $a[\mbox{Grover Cleveland}|x]$ assigns Grover Cleveland to
+The function $a[\text{Grover Cleveland}|x]$ assigns Grover Cleveland to
 the variable $x$, regardless of what $a$ assigns to $x$; for any other
-variable, $a[\mbox{Grover Cleveland}|x]$ agrees with $a$.
+variable, $a[\text{Grover Cleveland}|x]$ agrees with $a$.
 
 We can now say concisely that $\forall x Px$ is satisfied in a model by
 a variable assignment $a$ if and only if, for every object $\pi$ in the
@@ -630,68 +670,25 @@ symbol.
 We can now give a general definition of satisfaction, extending from the
 cases we have already discussed. We define a function $s$ (for
 'satisfaction') in a model such that for any wff and variable assignment
-$a$, $s(\metaA{}, a)=1$ if is satisfied in by $a$; otherwise
-$s(\metaA{}, a)=0$.
+$a$, $s(\Phi, a)=1$ if is satisfied in by $a$; otherwise
+$s(\Phi, a)=0$.
 
-1.  If is an atomic wff of the form
-    $\script{P}\script{t}_1\ldots\script{t}_n$ and $\pi_i$ is the object
-    picked out by $t_i$, then $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if ${\langle}\pi_1\ldots\pi_n{\rangle}$ is in \extension{\script{P}} in \model{M}},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+1.  If is an atomic wff of the form $\mathcal{P}\mathcal{t}_1\ldots\mathcal{t}_n$ and $\pi_i$ is the object
+    picked out by $t_i$, then $s(\Phi, a) = 1$ if $\langle\pi_1\ldots\pi_n\rangle$ is in $extension(\mathcal{P})$ in $\mathbb{M}$ and 0 otherwise. (For each term $t_i$: If $t_i$ is a constant, then $\pi_i = referent(t_i)$. If $t_i$ is a variable, then $\pi_i = a(t_i)$.)
 
-    For each term $t_i$: If $t_i$ is a constant, then
-    $\pi_i = \referent{t_i}$. If $t_i$ is a variable, then
-    $\pi_i = a(t_i)$.
+2.  If is ${\neg}\Psi$ for some wff , then $s(\Phi, a) =1 \text{ if $s(\Psi, a) = 0$}$ and 0 otherwise.
 
-2.  If is ${\enot}\metaB{}$ for some wff , then $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $s(\metaB{}, a) = 0$},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+3.  If is $(\Psi\&\Omega{})$ for some wffs $\Psi$, $\Omega$, then $s(\Phi, a) = 1  \text{ if $s(\Psi, a) = 1$ and $s(\Omega, a) = 1$,}$ and 0 otherwise.
 
-3.  If is $(\metaB{}\eand\metaC{})$ for some wffs , , then
-    $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $s(\metaB{}, a) = 1$ and $s(\metaC{}, a) = 1$,}\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+4.  If is $(\Psi\lor\Omega)$ for some wffs $\Psi$, $\Omega$, then $s(\Phi, a) =0 \text{ if $s(\Psi, a) = 0$  and $s(\Omega{}, a) = 0$,}$ and   1 otherwise.
 
-4.  If is $(\metaB{}\eor\metaC{})$ for some wffs , , then
-    $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        0 & \mbox{if $s(\metaB{}, a) = 0$  and $s(\metaC{}, a) = 0$,}\\
-        1 & \mbox{otherwise.}
-        \end{array}\right.$$
+5.  If is $(\Psi\supset\Omega)$ for some wffs $\Psi$, $\Omega$, then $s(\Phi, a) = 0  \text{ if $s(\Psi, a) = 1$ and $s(\Omega, a) = 0$}$ and 1 otherwise.
 
-5.  If is $(\metaB{}\eif\metaC{})$ for some wffs , , then
-    $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        0 & \mbox{if $s(\metaB{}, a) = 1$ and $s(\metaC{}, a) = 0$,}\\
-        1 & \mbox{otherwise.}
-        \end{array}\right.$$
+6.  If is $(\Psi\equiv\Omega)$ for some wffs $\Psi$, $\Omega$, then $s(\Phi, a) = 1  \text{ if $s(\Psi, a) = s(\Omega, a)$}$ and 0 otherwise.
 
-6.  If is $(\metaB{}\eiff\metaC{})$ for some wffs , , then
-    $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $s(\metaB{}, a) = s(\metaC{}, a)$},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+7.  If is $\forall\mathcal{x} \Psi$ for some wff $\Psi$ and some variable $\mathcal{x}, then $s(\Phi, a) = 1  \text{if $s(\Psi, a[\pi|\mathcal{x}])=1$ for every member $\pi$ of the UD}$ and 0 otherwise.
 
-7.  If is $\forall\script{x} \metaB{}$ for some wff and some variable ,
-    then $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $s(\metaB{}, a[\pi|\script{x}])=1$ for every member $\pi$ of the UD},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
-
-8.  If is $\exists\script{x} \metaB{}$ for some wff and some variable ,
-    then $$s(\metaA{}, a) =
-        \left\{\begin{array}{ll}
-        1 & \mbox{if $s(\metaB{}, a[\pi|\script{x}])=1$ for at least one member $\pi$ of the UD},\\
-        0 & \mbox{otherwise.}
-        \end{array}\right.$$
+8.  If is $\exists\mathcal{x} \Psi$ for some wff $\Psi$ and some variable $\mathcal{x}, then $s(\Phi, a) = 1 \text{if $s(\Psi, a[\pi|\mathcal{x}])=1$ for at least one member $\pi$ of the UD}$ and 0 otherwise.
 
 This definition follows the same structure as the definition of a wff
 for QL, so we know that every wff of QL will be covered by this
@@ -699,12 +696,12 @@ definition. For a model and a variable assignment $a$, any wff will
 either be satisfied or not. No wffs are left out or assigned conflicting
 values.
 
-Truth in QL {#truth-in-ql}
+**9.10 Truth in QL**
 -----------
 
 Consider a simple sentence like $\forall xPx$. By part 7 in the
 definition of satisfaction, this sentence is satisfied if $a[\pi|x]$
-satisfies $Px$ in for every $\pi$ in the UD. In other words, assign that
+satisfies $Px$ in $\mathbb{M}$ for every $\pi$ in the UD. In other words, assign that
 $x$ to any object in the UD you like, and the resultant wff will come
 out true. By part 1 of the definition, this will be the case if every
 $\pi$ is in the extension of $P$. Whether $\forall xPx$ is satisfied
@@ -716,8 +713,7 @@ in the extension of $P$.
 The same thing holds for any sentence of QL. Because all of the
 variables are bound, a sentence is satisfied or not regardless of the
 details of the variable assignment. So we can define truth in this way:
-A sentence is if and only if some variable assignment satisfies in $M$;
-is otherwise.
+A sentence $\Phi$ is **true in $\mathbb{M}$** if and only if some variable assignment satisfies $\Phi$ in $\mathbb{M}$; $\Phi$ is **false in $\mathbb{M}$** otherwise.
 
 Truth in QL is *truth in a model*. Sentences of QL are not flat-footedly
 true or false as mere symbols, but only relative to a model. A model
@@ -727,62 +723,60 @@ to truth and falsity.
 Reasoning about all models (reprise)
 ------------------------------------
 
-At the end of section [1.6](#sec.allmodelreasoning){reference-type="ref"
-reference="sec.allmodelreasoning"}, we were stymied when we tried to
-show that $\forall x(Rxx\eif Rxx)$ is a tautology. Having defined
+At the end of section 9.6, we were stymied when we tried to
+show that $\forall x(Rxx\supset Rxx)$ is a tautology. Having defined
 satisfaction, we can now reason in this way:
 
-> Consider some arbitrary model . Now consider an arbitrary member of
+> Consider some arbitrary model $\mathbb{M}$. Now consider an arbitrary member of
 > the UD; for the sake of convenience, call it $\pi$. It must be the
 > case either that $\langle\pi,\pi\rangle$ is in the extension of $R$ or
 > that it is not. If $\langle\pi,\pi\rangle$ is in the extension of $R$,
 > then $Rxx$ is satisfied by a variable assignment that assigns $\pi$ to
 > $x$ (by part 1 of the definition of satisfaction); since the
-> consequent of $Rxx\eif Rxx$ is satisfied, the conditional is satisfied
+> consequent of $Rxx\supset Rxx$ is satisfied, the conditional is satisfied
 > (by part 5). If $\langle\pi,\pi\rangle$ is not in the extension of
 > $R$, then $Rxx$ is not satisfied by a variable assignment that assigns
-> $\pi$ to $x$ (by part 1); since antecedent of $Rxx\eif Rxx$ is not
+> $\pi$ to $x$ (by part 1); since antecedent of $Rxx\supset Rxx$ is not
 > satisfied, the conditional is satisfied (by part 5). In either case,
-> $Rxx\eif Rxx$ is satisfied. This is true for any member of the UD, so
-> $\forall x(Rxx \eif Rxx)$ is satisfied by any truth value assignment
-> (by part 7). So $\forall x(Rxx \eif Rxx)$ is true in (by the
+> $Rxx\supset Rxx$ is satisfied. This is true for any member of the UD, so
+> $\forall x(Rxx \supset Rxx)$ is satisfied by any truth value assignment
+> (by part 7). So $\forall x(Rxx \supset Rxx)$ is true in $\mathbb{M}$ (by the
 > definition of truth). This argument holds regardless of the exact UD
 > and regardless of the exact extension of $R$, so
-> $\forall x(Rxx \eif Rxx)$ is true in any model. Therefore, it is a
+> $\forall x(Rxx \supset Rxx)$ is true in any model. Therefore, it is a
 > tautology.
 
 Giving arguments about all possible models typically requires clever
 combination of two strategies:
 
 1\. Divide cases between two possible kinds, such that every case must
-be one kind or the other. In the argument on p. , for example, we
+be one kind or the other. In the argument in section 9.7, for example, we
 distinguished two kinds of models based on whether or not a specific
-ordered pair was in . In the argument above, we distinguished cases in
-which an ordered pair was in and cases in which it was not.
+ordered pair was in $extension(R)$. In the argument above, we distinguished cases in
+which an ordered pair was in $extension(R)$ and cases in which it was not.
 
 2\. Consider an arbitrary object as a way of showing something more
 general. In the argument above, it was crucial that $\pi$ was just some
 arbitrary member of the UD. We did not assume anything special about it.
 As such, whatever we could show to hold of $\pi$ must hold of every
 member of the UD --- if we could show it for $\pi$, we could show it for
-anything. In the same way, we did not assume anything special about ,
-and so whatever we could show about must hold for all models.
+anything. In the same way, we did not assume anything special about $\mathbb{M}$,
+and so whatever we could show about $\mathbb{M}$ must hold for all models.
 
-Consider one more example. The argument $\forall x(Hx \eand Jx)$
-$\forall x Hx$ is obviously valid. We can only show that the argument is
+Consider one more example. The argument $\forall x(Hx\ \&\ Jx) \therefore \forall x Hx$ is obviously valid. We can only show that the argument is
 valid by considering what must be true in every model in which the
 premise is true.
 
-> Consider an arbitrary model in which the premise
-> $\forall x(Hx \eand Jx)$ is true. The conjunction $Hx \eand Jx$ is
+> Consider an arbitrary model $\mathbb{M}$ in which the premise
+> $\forall x(Hx\ \&\ Jx)$ is true. The conjunction $Hx\ \&\ Jx$ is
 > satisfied regardless of what is assigned to $x$, so $Hx$ must be also
 > (by part 3 of the definition of satisfaction). As such, $\forall x Hx$
 > is satisfied by any variable assignment (by part 7 of the definition
-> of satisfaction) and true in (by the definition of truth). Since we
-> did not assume anything about besides $\forall x(Hx \eand Jx)$ being
+> of satisfaction) and true in $\mathbb{M}$ (by the definition of truth). Since we
+> did not assume anything about $\mathbb{M}$ besides $\forall x(Hx\ \&\ Jx)$ being
 > true, $\forall x Hx$ must be true in any model in which
-> $\forall x(Hx \eand Jx)$ is true. So
-> $\forall x(Hx \eand Jx) \models \forall x Hx$.
+> $\forall x(Hx\ \&\ Jx)$ is true. So
+> $\forall x(Hx\ \&\ Jx) \models \forall x Hx$.
 
 Even for a simple argument like this one, the reasoning is somewhat
 complicated. For longer arguments, the reasoning can be insufferable.
@@ -793,212 +787,427 @@ formal proof systems. We have seen two kinds of proof systems for SL:
 the tree method, and natural deduction proofs. In the coming chapters,
 we'll extend both kinds of systems to QL as well.
 
-[\[pr.TorF1\]]{#pr.TorF1 label="pr.TorF1"} Determine whether each
-sentence is true or false in the model given.
+**Practice Exercises**
+----------------------
 
-UD & {Corwin, Benedict}\
-& {Corwin, Benedict}\
-& {Benedict}\
-& $\emptyset$\
-& Corwin
+**Part A** Determine whether each sentence is true or false in the model given.
 
-$Bc$
+> $UD$: $\{\text{Corwin, Benedict}\}$<br/>
+> $extension(A)$: $\{\text{Corwin, Benedict}\}$<br/>
+> $extension(B)$: $\{\text{Benedict}\}$<br/>
+> $extension(N)$: $\emptyset$<br/>
+> $referent(c)$: Corwin<br/>
 
-$Ac \eiff \enot Nc$
+> | 1. <span class="premise">$Bc$</span>
 
-$Nc \eif (Ac \eor Bc)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.1 True or false?
+| True.
+|  *False.
+```
 
-$\forall x Ax$
+> | 2. <span class="premise">$Ac \equiv \neg Nc$</span>
 
-$\forall x \enot Bx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.2 True or false?
+| *True.
+|   False.
+```
 
-$\exists x(Ax \eand Bx)$
+> | 3. <span class="premise">$Nc \supset (Ac \lor Bc)$</span>
 
-$\exists x(Ax \eif Nx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.3 True or false?
+| *True.
+| False.
+```
 
-$\forall x(Nx \eor \enot Nx)$
+> | 4. <span class="premise">$\forall x Ax$</span>
 
-$\exists x Bx \eif \forall x Ax$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.4 True or false?
+| *True.
+| False.
+```
 
-[\[pr.TorF2\]]{#pr.TorF2 label="pr.TorF2"} Determine whether each
-sentence is true or false in the model given.
+> | 5. <span class="premise">$\forall x \neg Bx$</span>
 
-UD & {Waylan, Willy, Johnny}\
-& {Waylan, Willy, Johnny}\
-& {Waylan, Willy}\
-& {,,}\
-& Johnny
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.5 True or false?
+| True.
+| *False.
+```
 
-$\exists x(Rxm \eand Rmx)$
+> | 6. <span class="premise">$\exists x(Ax \& Bx)$</span>
 
-$\forall x(Rxm \eor Rmx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.6 True or false?
+| *True.
+|   False.
+```
 
-$\forall x(Hx \eiff Wx)$
+> | 7. <span class="premise">$\exists x(Ax \supset Nx)$</span>
 
-$\forall x(Rxm \eif Wx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.7 True or false?
+| True.
+| *False.
+```
 
-$\forall x\bigl[Wx \eif(Hx \eand Wx)\bigr]$
+> | 8. <span class="premise">$\forall x(Nx \lor \neg Nx)$</span>
 
-$\exists x Rxx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.8 True or false?
+| *True.
+|   False.
+```
 
-$\exists x\exists y Rxy$
+> | 9. <span class="premise">$\exists x Bx \supset \forall x Ax$</span>
 
-$\forall x \forall y Rxy$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.9 True or false?
+| *True.
+|   False.
+```
 
-$\forall x \forall y (Rxy \eor Ryx)$
 
-$\forall x \forall y \forall z\bigl[(Rxy \eand Ryz) \eif Rxz\bigr]$
 
-[\[pr.TorF3\]]{#pr.TorF3 label="pr.TorF3"} Determine whether each
-sentence is true or false in the model given.
 
-UD & {Lemmy, Courtney, Eddy}\
-& {Lemmy, Courtney, Eddy}\
-& {Courtney}\
-& {Lemmy, Eddy}\
-& Courtney\
-& Eddy
 
-$Hc$
+**Part B** Determine whether each sentence is true or false in the model given.
 
-$He$
+> $UD$: $\{\text{Waylan, Willy, Johnny}\}$<br/>
+> $extension(H)$:  $\{\text{Waylan, Willy, Johnny}\}$<br/>
+> $extension(W)$:  $\{\text{Waylan, Willy}\}$<br/>
+> $extension(R)$:  $\{\langle \text{Waylan, Willy}\rangle,\langle \text{Willy, Johnny}\rangle,\langle \text{Johnny, Waylan}\rangle\}$<br/>
+> $referent(m)$: Johnny <br/>
 
-$Mc \eor Me$
 
-$Gc \eor \enot Gc$
 
-$Mc \eif Gc$
+> | 1. <span class="premise">$\exists x(Rxm \& Rmx)$</span>
 
-$\exists x Hx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.1 True or false?
+| True.
+|  *False.
+```
 
-$\forall x Hx$
+> | 2. <span class="premise">$\forall x(Rxm \lor Rmx)$</span>
 
-$\exists x \enot Mx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.2 True or false?
+| True.
+| *False.
+```
 
-$\exists x(Hx \eand Gx)$
+> | 3. <span class="premise">$\forall x(Hx \equiv Wx)$</span>
 
-$\exists x(Mx \eand Gx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.3 True or false?
+| True.
+| *False.
+```
 
-$\forall x(Hx \eor Mx)$
+> | 4. <span class="premise">$\forall x(Rxm \supset Wx)$</span>
 
-$\exists x Hx \eand \exists x Mx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.4 True or false?
+| *True.
+| False.
+```
 
-$\forall x(Hx \eiff \enot Mx)$
+> | 5. <span class="premise">$\forall x((Wx \supset(Hx \& Wx)))$</span>
 
-$\exists x Gx \eand \exists x \enot Gx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.5 True or false?
+| *True.
+| False.
+```
 
-$\forall x\exists y(Gx \eand Hy)$
+> | 6. <span class="premise">$\exists x Rxx$</span>
 
-[\[pr.InterpretationToModel\]]{#pr.InterpretationToModel
-label="pr.InterpretationToModel"} Write out the model that corresponds
-to the interpretation given.
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.6 True or false?
+| True.
+| *False.
+```
 
-UD: natural numbers from 10 to 13
+> | 7. <span class="premise">$\exists x\exists y Rxy$</span>
 
-Ox: $x$ is odd.
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.7 True or false?
+| *True.
+| False.
+```
 
-Sx: $x$ is less than 7.
+> | 8. <span class="premise">$\forall x \forall y Rxy$</span>
 
-Tx: $x$ is a two-digit number.
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.8 True or false?
+| True.
+| *False.
+```
 
-Ux: $x$ is thought to be unlucky.
+> | 9. <span class="premise">$\forall x \forall y (Rxy \lor Ryx)$</span>
 
-Nxy: $x$ is the next number after $y$.
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.9 True or false?
+| True.
+| *False.
+```
 
-[\[pr.Contingent\]]{#pr.Contingent label="pr.Contingent"} Show that each
-of the following is contingent.
+> | 10. <span class="premise">$\forall x \forall y \forall z\bigl[(Rxy \& Ryz) \supset Rxz\bigr]$</span>
 
- $Da \eand Db$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.10 True or false?
+| True.
+| *False.
+```
 
- $\exists x Txh$
 
- $Pm \eand \enot\forall x Px$
 
-$\forall z Jz \eiff \exists y Jy$
+**Part C** Determine whether each sentence is true or false in the model given.
 
-$\forall x (Wxmn \eor \exists yLxy)$
+> $UD$: $\{\text{Lemmy, Courtney, Eddy}\}$<br/>
+> $extension(G)$:  $\{\text{Lemmy, Courtney, Eddy}\}$<br/>
+> $extension(H)$:  $\{\text{ourtney}\}$<br/>
+> $extension(M)$:  $\{\text{Lemmy, Eddy}\}$ <br/>
+> $referent(c)$: Courtney <br/>
+> $referent(e)$: Eddy <br/>
 
-$\exists x (Gx \eif \forall y My)$
 
-[\[pr.NotEquiv\]]{#pr.NotEquiv label="pr.NotEquiv"} Show that the
-following pairs of sentences are not logically equivalent.
+> | 1. <span class="premise">$Hc$</span>
 
-$Ja$, $Ka$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.1 True or false?
+| *True.
+|  False.
+```
 
-$\exists x Jx$, $Jm$
+> | 2. <span class="premise">$He$</span>
 
-$\forall x Rxx$, $\exists x Rxx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.2 True or false?
+| True.
+| *False.
+```
 
-$\exists x Px \eif Qc$, $\exists x (Px \eif Qc)$
 
-$\forall x(Px \eif \enot Qx)$, $\exists x(Px \eand \enot Qx)$
+> | 3. <span class="premise">$Mc \lor Me$</span>
 
-$\exists x(Px \eand Qx)$, $\exists x(Px \eif Qx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.3 True or false?
+| *True.
+| False.
+```
 
-$\forall x(Px\eif Qx)$, $\forall x(Px \eand Qx)$
+> | 4. <span class="premise">$Gc \lor \neg Gc$</span>
 
-$\forall x\exists y Rxy$, $\exists x\forall y Rxy$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.4 True or false?
+| *True.
+| False.
+```
 
-$\forall x\exists y Rxy$, $\forall x\exists y Ryx$
+> | 5. <span class="premise">$Mc \supset Gc$</span>
 
-Show that the following sets of sentences are consistent.
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.5 True or false?
+| *True.
+| False.
+```
 
-{Ma, Na, Pa, Qa}
+> | 6. <span class="premise">$\exists x Hx$</span>
 
-{$Lee$, $Lef$, $\enot Lfe$, $\enot Lff$}
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.6 True or false?
+| *True.
+| False.
+```
 
-{$\enot (Ma \eand \exists x Ax)$, $Ma \eor Fa$, $\forall x(Fx \eif Ax)$}
+> | 7. <span class="premise">$\forall x Hx$</span>
 
-{$Ma \eor Mb$, $Ma \eif \forall x \enot Mx$}
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.7 True or false?
+| True.
+| *False.
+```
 
-{$\forall y Gy$, $\forall x (Gx \eif Hx)$, $\exists y \enot Iy$}
+> | 8. <span class="premise">$\exists x \neg Mx$</span>
 
-{$\exists x(Bx \eor Ax)$, $\forall x \enot Cx$,
-$\forall x\bigl[(Ax \eand Bx) \eif Cx\bigr]$}
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.8 True or false?
+| *True.
+| False.
+```
 
-{$\exists x Xx$, $\exists x Yx$, $\forall x(Xx \eiff \enot Yx)$}
+> | 9. <span class="premise">$\exists x(Hx \& Gx)$</span>
 
-{$\forall x(Px \eor Qx)$, $\exists x\enot(Qx \eand Px)$}
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.9 True or false?
+| *True.
+| False.
+```
 
-{$\exists z(Nz \eand Ozz)$, $\forall x\forall y(Oxy \eif Oyx)$}
+> | 10. <span class="premise">$\exists x(Mx \& Gx)$</span>
 
-{$\enot \exists x \forall y Rxy$, $\forall x \exists y Rxy$}
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.10 True or false?
+| *True.
+| False.
+```
 
-Construct models to show that the following arguments are invalid.
 
-$\forall x(Ax \eif Bx)$,  $\exists x Bx$
 
-$\forall x(Rx \eif Dx)$, $\forall x(Rx \eif Fx)$,
- $\exists x(Dx \eand Fx)$
 
-$\exists x(Px\eif Qx)$, $\exists x Px$
+> | 11. <span class="premise">$\forall x(Hx \lor Mx)$</span>
 
-$Na \eand Nb \eand Nc$,  $\forall x Nx$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.11 True or false?
+| *True.
+| False.
+```
 
-$Rde$, $\exists x Rxd$,  $Red$
+> | 12. <span class="premise">$\exists x Hx \& \exists x Mx$</span>
 
-$\exists x(Ex \eand Fx)$, $\exists x Fx \eif \exists x Gx$,
- $\exists x(Ex \eand Gx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.12 True or false?
+| *True.
+| False.
+```
 
-$\forall x Oxc$, $\forall x Ocx$,  $\forall x Oxx$
+> | 13. <span class="premise">$\forall x(Hx \equiv \neg Mx)$</span>
 
-$\exists x(Jx \eand Kx)$, $\exists x \enot Kx$, $\exists x \enot Jx$,
- $\exists x(\enot Jx \eand \enot Kx)$
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.13 True or false?
+| *True.
+| False.
+```
 
-$Lab \eif \forall x Lxb$, $\exists x Lxb$,  $Lbb$
+> | 14. <span class="premise">$\exists x Gx \& \exists x \neg Gx$</span>
 
-[\[pr.SemanticsEssay\]]{#pr.SemanticsEssay label="pr.SemanticsEssay"}
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.14 True or false?
+| True.
+| *False.
+```
 
-Many logic books define consistency and inconsistency in this way: " A
-set $\{\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\}$ is inconsistent if and
+> | 15. <span class="premise">$\forall x\exists y(Gx \& Hy)$</span>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+C.15 True or false?
+| *True.
+| False.
+```
+
+
+
+
+
+**Part D** Write out the model that corresponds to the interpretation given.
+
+> **$UD$:** natural numbers from 10 to 13<br/>
+> **$Ox$:** $x$ is odd.<br/>
+> **$Sx$:** $x$ is less than 7.<br/>
+> **$Tx$:** $x$ is a two-digit number.<br/>
+> **$Ux$:** $x$ is thought to be unlucky.<br/>
+> **$Nxy$:** $x$ is the next number after $y$.<br/>
+
+
+**Part E** Show that each of the following is contingent.
+
+1. $Da \& Db$
+
+2. $\exists x Txh$
+
+3. $Pm \& \neg\forall x Px$
+
+4. $\forall z Jz \equiv \exists y Jy$
+
+5. $\forall x (Wxmn \lor \exists yLxy)$
+
+6. $\exists x (Gx \supset \forall y My)$
+
+**Part F** Show that the following pairs of sentences are not logically equivalent.
+
+1. $Ja$, $Ka$
+
+2. $\exists x Jx$, $Jm$
+
+3. $\forall x Rxx$, $\exists x Rxx$
+
+4. $\exists x Px \supset Qc$, $\exists x (Px \supset Qc)$
+
+5. $\forall x(Px \supset \neg Qx)$, $\exists x(Px \& \neg Qx)$
+
+6. $\exists x(Px \& Qx)$, $\exists x(Px \supset Qx)$
+
+7. $\forall x(Px\supset Qx)$, $\forall x(Px \& Qx)$
+
+8. $\forall x\exists y Rxy$, $\exists x\forall y Rxy$
+
+9. $\forall x\exists y Rxy$, $\forall x\exists y Ryx$
+
+
+**Part G** Show that the following sets of sentences are consistent.
+
+1. ${Ma, Na, Pa, Qa}$
+
+2. {$Lee$, $Lef$, $\neg Lfe$, $\neg Lff$}
+
+3. {$\neg (Ma \& \exists x Ax)$, $Ma \lor Fa$, $\forall x(Fx \supset Ax)$}
+
+4. {$Ma \lor Mb$, $Ma \supset \forall x \neg Mx$}
+
+5. {$\forall y Gy$, $\forall x (Gx \supset Hx)$, $\exists y \neg Iy$}
+
+6. {$\exists x(Bx \lor Ax)$, $\forall x \neg Cx$,
+$\forall x\bigl[(Ax \& Bx) \supset Cx\bigr]$}
+
+7. {$\exists x Xx$, $\exists x Yx$, $\forall x(Xx \equiv \neg Yx)$}
+
+8. {$\forall x(Px \lor Qx)$, $\exists x\neg(Qx \& Px)$}
+
+9. {$\exists z(Nz \& Ozz)$, $\forall x\forall y(Oxy \supset Oyx)$}
+
+10. {$\neg \exists x \forall y Rxy$, $\forall x \exists y Rxy$}
+
+**Part H** Construct models to show that the following arguments are invalid.
+
+
+
+
+1. $\forall x(Ax \supset Bx)$,  $\therefore \exists x Bx$
+
+2. $\forall x(Rx \supset Dx)$, $\forall x(Rx \supset Fx)$,
+ $\therefore \exists x(Dx \& Fx)$
+
+3. $\exists x(Px\supset Qx)$, $\therefore \exists x Px$
+
+4. $Na \& Nb \& Nc$,  $\therefore \forall x Nx$
+
+5. $Rde$, $\exists x Rxd$,  $\therefore Red$
+
+6. $\exists x(Ex \& Fx)$, $\exists x Fx \supset \exists x Gx$,
+ $\therefore \exists x(Ex \& Gx)$
+
+7. $\forall x Oxc$, $\forall x Ocx$,  $\therefore \forall x Oxx$
+
+8. $\exists x(Jx \& Kx)$, $\exists x \neg Kx$, $\exists x \neg Jx$,
+ $\therefore \exists x(\neg Jx \& \neg Kx)$
+
+9. $Lab \supset \forall x Lxb$, $\exists x Lxb$,  $\therefore Lbb$
+
+**Part I**
+
+1. Many logic books define consistency and inconsistency in this way: " A
+set $\{\Phi_1,\Phi_2,\Phi_3,\cdots\}$ is inconsistent if and
 only if
-$\{\metaA{}_1,\metaA{}_2,\metaA{}_3,\cdots\}\models(\metaB{}\eand\enot\metaB{})$
-for some sentence . A set is consistent if it is not inconsistent."
+$\{\Phi_1,\Phi_2,\Phi_3,\cdots\}\models(\Psi\ \&\ \neg\Psi)$
+for some sentence . A set is consistent if it is not inconsistent." Does this definition lead to any different sets being consistent than
+the definition in Chapter 4? Explain your answer.
 
-Does this definition lead to any different sets being consistent than
-the definition on p. ? Explain your answer.
-
- Our definition of truth says that a sentence is if and only if some
-variable assignment satisfies in $M$. Would it make any difference if we
-said instead that is if and only if *every* variable assignment
-satisfies in $M$? Explain your answer.
+2. Our definition of truth says that a sentence $\Phi$ is true in $\mathbb{M}$ if and only if some
+variable assignment satisfies $\Phi$ in $\mathbb{M}$. Would it make any difference if we
+said instead that $\Phi$ is true in $\mathbb{M}$ if and only if *every* variable assignment
+satisfies $\Phi$ in $\mathbb{M}$? Explain your answer.
