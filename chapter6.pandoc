@@ -60,7 +60,7 @@ system is the first important metalogical theorem we will prove in this
 chapter. (A 'metalogical' theorem is a theorem *about* logic.)
 
 
-<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">**soundness**: If a tree closes, that guarantees that its root is unsatisfiable. In other words: $\mathcal{X} \vdash \bot \rightarrow \mathcal{X} \models \bot$</p>
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">**soundness**: If a tree closes, that guarantees that its root is unsatisfiable. In other words: $\mathcal{X} \vdash \bot \Rightarrow \mathcal{X} \models \bot$</p>
 
 
 Here is a way to illustrate that soundness is a substantive result, and
@@ -427,7 +427,7 @@ tree method will never erroneously "prove\" that a root is
 unsatisfiable. Equivalently, tree closure guarantees unsatisfiability of
 the root. The tree method is sound.
 
-<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">If a tree closes, that guarantees that its root is unsatisfiable. In other words: $\mathcal{X} \vdash \bot \rightarrow mathcal{X} \models \bot$</p>
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">If a tree closes, that guarantees that its root is unsatisfiable. In other words: $\mathcal{X} \vdash \bot \Rightarrow \mathcal{X} \models \bot$</p>
 
 **6.5 Completeness**
 ------------
@@ -888,7 +888,7 @@ A.7 The modified system would be sound.
 </figure>
 
 ```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
-A.1 The modified system would be sound.
+A.8 The modified system would be sound.
 |  Yes.
 | *No.
 ```

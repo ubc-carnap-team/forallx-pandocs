@@ -311,7 +311,7 @@ as tall or taller than Gregor.' We can translate it as $\neg T_1dg$.
 Sentence 5 requires that we pay careful attention to the order of terms in the key.
 It becomes $Bdgm$.
 
-Quantifiers
+**8.5 Quantifiers**
 -----------
 
 We are now ready to introduce quantifiers. Quantifiers (unlike names and
@@ -392,7 +392,7 @@ most naturally translated as $\neg\forall x Hx$. This is logically
 equivalent to sentence 10 and so could also be translated as
 $\exists x \neg Hx$.
 
-Universe of discourse
+**8.6 Universe of discourse**
 ---------------------
 
 Given the symbolization key we have been using, $\forall xHx$ means
@@ -442,7 +442,7 @@ It is a rule in QL that each constant will pick out exactly one member
 of the UD. (There is no rule prohibiting multiple different constants
 from referring to the same member of the UD.)
 
-Translating to QL
+**8.7 Translating to QL**
 -----------------
 
 We now have the basic pieces of QL. Translating more complicated
@@ -552,7 +552,7 @@ Translating, we get:
 This captures the structure that was left out of the SL translation of
 this argument, and this is a valid argument in QL.
 
-Empty predicates
+**8.8 Empty predicates**
 ----------------
 
 A predicate need not apply to anything in the UD. A predicate that
@@ -629,7 +629,7 @@ $\forall x(Rx \supset Mx)$ would be false.
 
 
 
-Picking a universe of discourse
+**8.9 Picking a universe of discourse**
 -------------------------------
 
 The appropriate symbolization of an English language sentence in QL will
@@ -719,7 +719,7 @@ In general, the universal quantifier can be used to mean 'everyone' if
 the UD contains only people. If there are people and other things in the
 UD, then 'everyone' must be treated as 'every person'.
 
-Translating pronouns
+**8.10 Translating pronouns**
 --------------------
 
 When translating to QL, it is important to understand the structure of
@@ -792,7 +792,7 @@ an existential quantifier (as in sentence
 sentence with an English language sentence that uses words besides 'any'
 or 'anyone.'
 
-Quantifiers and scope
+**8.11 Quantifiers and scope**
 ---------------------
 
 In the sentence $\exists x Gx \supset Gl$, the scope of the existential
@@ -832,7 +832,7 @@ main connective. For example, in $\exists x Gx \supset Gl$, the main
 quantifier is the conditional; the existential is part of the
 antecedent.
 
-Ambiguous predicates
+**8.12 Ambiguous predicates**
 --------------------
 
 Suppose we just want to translate this sentence:
@@ -916,7 +916,7 @@ argument that is just about dogs, it is fine to define a predicate that
 means '$x$ is big.' If the UD includes dogs and mice, however, it is
 probably best to make the predicate mean '$x$ is big for a dog.'
 
-Multiple quantifiers
+**8.13 Multiple quantifiers**
 --------------------
 
 Consider this following symbolization key and the sentences that follow
@@ -1024,7 +1024,7 @@ logical structure is readily symbolized in QL. Then translate piecemeal,
 replacing the daunting task of translating a long sentence with the
 simpler task of translating shorter formulae.
 
-Grammaticality rules for QL
+**8.14 Grammaticality rules for QL**
 ---------------------------
 
 In this section, we provide a formal definition for a *well-formed
@@ -1051,9 +1051,9 @@ QL and write them down, in any order, and you have an expression.
 
 ### Well-formed formulae
 
-By definition, a is either a constant or a variable.
+By definition, a **term** of QL is either a constant or a variable.
 
-An is an n-place predicate followed by $n$ terms. $n$ here can be any
+An **atomic formula** of QL is an n-place predicate followed by $n$ terms. $n$ here can be any
 non-negative integer, including 0. (A 0-place predicate is an atomic
 formula of QL just on its own. It does not require the addition of a
 term for meaningfulness or a truth value. Note that SL atoms are 0-place
@@ -1165,7 +1165,7 @@ conjuncts when writing long series of conjunctions. Fourth, we may
 similarly leave out parentheses between each pair of disjuncts when
 writing long series of disjunctions.
 
-Common student errors
+**8.15 Common student errors**
 ---------------------
 
 A sentence that says everything with one property also has another

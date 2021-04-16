@@ -1,4 +1,5 @@
-Identity {#ch.identity}
+
+Identity
 ========
 
 This chapter extends QL by adding logical resources for discussion of
@@ -19,48 +20,44 @@ logical notion of identity than that. We begin by examining some of
 these motivations. Identity will strengthen QL, increasing its
 expressive power in many ways.
 
-Motivating identity as a logical category {#sec.identitymotivation}
+**12.1 Motivating identity as a logical category**
 -----------------------------------------
 
 Consider this sentence:
 
-Only you can prevent forest fires.
+> | 1. <span class="premise">Only you can prevent forest fires.</span>
 
 How should we translate it into QL? Here is one simple option. We could
 use this symbolization key:
 
-people
+> **$UD$:** people<br/>
+> **$Px$:** only $x$ can prevent forest fires<br/>
+> **$u$:** you<br/>
 
-only $x$ can prevent forest fires
-
-you
 
 And then we could translate sentence
-[\[onlyyou\]](#onlyyou){reference-type="ref" reference="onlyyou"}
+1
 straightforwardly as $Pu$. This might be adequate for some purposes, but
 this translation misses out on a key fact about sentence
-[\[onlyyou\]](#onlyyou){reference-type="ref" reference="onlyyou"}.
-Notice that sentence [\[onlyyou\]](#onlyyou){reference-type="ref"
-reference="onlyyou"} is inconsistent with sentence
-[\[onlyher\]](#onlyher){reference-type="ref" reference="onlyher"}:
+1.
+Notice that sentence 1 is inconsistent with sentence
+2:
 
-Only your mother can prevent forest fires.
+> | 2. <span class="premise">Only your mother can prevent forest fires.</span>
 
 If we add a name for your mother to the symbolization key above,
 
-your mother
+> **$u$:** your mother<br/>
 
-we can translate sentence [\[onlyher\]](#onlyher){reference-type="ref"
-reference="onlyher"} as $Pm$. The problem is that $Pu$ and $Pm$ are
+we can translate sentence 2 as $Pm$. The problem is that $Pu$ and $Pm$ are
 obviously consistent in QL, as this simple model demonstrates:
 
-UD & {$u$, $m$}\
-& {$u$, $m$}
+> $UD$= {$u$, $m$}<br/>
+> $extension(P)$= {$u$, $m$}<br/>
 
 The 'only' in each sentence has just been made a part of the predicate,
 in a way that ignores its logical force. (Compare the analogous
-discussion in the Introduction to Chapter
-[\[ch.QL\]](#ch.QL){reference-type="ref" reference="ch.QL"} that
+discussion in the Introduction to <a href="https://ubc-carnap.lfcode.ca/book/8">Chapter 8</a> that
 motivated extending SL with predicates and quantifiers.) If *only* you
 can prevent forest fires, that means that no one *else* --- i.e., no one
 who *is not* you --- can prevent forest fires. We don't yet have the
@@ -68,61 +65,64 @@ logical vocabulary to express these thoughts in a strong enough way.
 
 These sentences give rise to a related issue:
 
-Peter Parker lives in Queens.
+> | 3. <span class="premise">Peter Parker lives in Queens.</span>
+> | 4. <span class="premise">Peter Parker is Spider-Man.</span>
+> | 5. <span class="premise">Spider-Man lives in Queens.</span>
 
-Peter Parker is Spider-Man.
 
-Spider-Man lives in Queens.
 
 Here is a natural interpretation key for these sentences, given the
 resources we've seen so far.
 
-people and places
+> **$UD$:** people and places<br/>
+> **$Lxy$:** $x$ lives in $y$<br/>
+> **$Ixy$:** $x$ is $y$<br/>
+> **$p$:** Peter Parker<br/>
+> **$s$:** Spider-Man<br/>
+> **$q$:** Queens<br/>
 
-$x$ lives in $y$
 
-$x$ is $y$
 
-Peter Parker
+Then sentences 3--5 can be translated thus:
 
-Spider-Man
+> | 3. <span class="premise">$Lpq$</span>
+> | 4. <span class="premise">$Ips$</span>
+> | 5. <span class="premise">$Lsq$</span>
 
-Queens
 
-Then sentences [\[ppq\]](#ppq){reference-type="ref"
-reference="ppq"}--[\[sq\]](#sq){reference-type="ref" reference="sq"} can
-be translated thus:
 
-$Lpq$
-
-$Ips$
-
-$Lsq$
-
-But the argument from the English [\[ppq\]](#ppq){reference-type="ref"
-reference="ppq"} and [\[pps\]](#pps){reference-type="ref"
-reference="pps"} to [\[sq\]](#sq){reference-type="ref" reference="sq"}
+But the argument from the English 3 adn 4 to 5
 seems valid, whereas the corresponding argument form is obviously
 invalid in QL. This model satisfies the premises and falsifies the
 conclusion:
 
-UD & {p, s, q}\
-&
+> $UD$= {$p$, $s$, $q$}<br/>
 
-  $Lxy$   p    s    q
-  ------- ---- ---- ----
-  p       \-   \-   1
-  s       \-   \-   0
-  q       \-   \-   \-
+> $extension(L)$ =
 
-\
-&
 
-  $Ixy$   p    s    q
-  ------- ---- ---- ----
-  p       \-   1    \-
-  s       \-   \-   \-
-  q       \-   \-   \-
+<div class="table">
+
+$Lxy$   p    s    q
+------- ---- ---- ----
+p       \-   \-   1
+s       \-   \-   0
+q       \-   \-   \-
+
+</div>
+
+> $extension(I)$ =
+
+<div class="table">
+
+$Ixy$   p    s    q
+------- ---- ---- ----
+p       \-   1    \-
+s       \-   \-   \-
+q       \-   \-   \-
+
+</div>
+
 
 Given the interpretation key above, this is a model where Peter is
 Spider-Man, but where Peter and Spider-Man do not live in the same
@@ -134,34 +134,30 @@ different interpretations and extensions.
 
 Here is a third example.
 
-Mozart composed *Le Nozze di Figaro*.
+> | 6. <span class="premise">Mozart composed *Le Nozze di Figaro*.</span>
+> | 7. <span class="premise">Mozart composed *Don Giovanni*.</span>
+> | 8. <span class="premise">Mozart composed at least two things.</span>
 
-Mozart composed *Don Giovanni*.
-
-Mozart composed at least two things.
 
 We introduce the obvious interpretation key:
 
-people and operas
+> **$UD$:** people and operas<br/>
+> **$Cxy$:** $x$ composed $y$<br/>
+> **$m$:** Mozart<br/>
+> **$n$:** *Le Nozze di Figaro*<br/>
+> **$g$:** *Don Giovanni*<br/>
 
-$x$ composed $y$
 
-Mozart
-
-*Le Nozze di Figaro*
-
-*Don Giovanni*
 
 Then we might translate the argument thus:
 
-$Cmn$
+> | <span class="premise"> $Cmn$</span>
+> | <span class="premise"> $Cmg$</span>
+> | <span class="conclusion"> $\exists x Cmx\ \&\ \exists y Cmy$</span>
 
-$Cmg$
-
-$\exists x Cmx \eand \exists y Cmy$
 
 This is a valid argument form. But the problem is that
-$\exists x Cmx \eand \exists y Cmy$ is a very bad translation of 'Mozart
+$\exists x Cmx\ \&\ \exists y Cmy$ is a very bad translation of 'Mozart
 composed at least two things'. Notice that it is the conjunction of two
 existentials, each of which says that Mozart composed at least one
 thing. Suppose he composed only one thing; then each conjunct is true,
@@ -176,7 +172,7 @@ logical relationships having to do with identity, we need special
 logical vocabulary to do so. Just as we introduced the '$\forall$' and
 '$\exists$' formalisms to reflect logical facts about quantifiers, we
 also need a special symbol for identity. That symbol will be '$=$'. Like
-our other logical symbols --- '', '', '$\forall$', etc. --- its meaning
+our other logical symbols --- '$\supset$', '$\neg$', '$\forall$', etc. --- its meaning
 will be fixed as part of our language. Interpretation keys tell us what
 predicates like $Fx$ mean; they don't get to specify the meaning of the
 logical terms.
@@ -191,55 +187,54 @@ of QL; it can be specified descriptively as 'quantified logic with
 identity'. (The choice about whether to introduce a new language name is
 a purely conventional one; we're here just following ordinary practice.)
 
-=
--
+**12.2 =**
+------
 
 We revise the definitions of grammaticality and truth in QL to add the
 following stipulation:
 
-For any two names and , '$\script{a}{=}\script{b}$' is an atomic
+For any two names and , '$\mathscr{a}{=}\mathscr{b}$' is an atomic
 sentence in QL. It is true in a model just in case, in that model, the
 referent of is the same object as the referent of ; i.e., the model
 assigns and to the same object. For example, here is a model:
 
-UD & {Peter Parker, Aunt May}\
-& Peter Parker\
-& Peter Parker\
-& Aunt May
+> $UD$= {Peter Parker, Aunt May}<br/>
+> $referent(p)$= Peter Parker<br/>
+> $referent(s)$= Peter Parker<br/>
+> $referent(m)$= Aunt May<br/>
+
 
 In this model, $p{=}s$ is true, and $p{=}m$ and $s{=}m$ are false. We'll
 introduce a familiar shorthand for negating identity claims;
-$s {\neq} m$ is our preferred abbreviation for $s{=}m$. (Remember that
-'$s{=}m$' is an atomic sentence, so '$s {=} m$' is the negation of that
+$s {\neq} m$ is our preferred abbreviation for $\neg s{=}m$. (Remember that
+'$s{=}m$' is an atomic sentence, so '$\neg s {=} m$' is the negation of that
 sentence. It is tempting, when one looks at that sentence, to attach the
 negation only to $s$, so that the sentence says that the 'negation of
 $s$' is identical to $m$. But this way of reading it ultimately makes no
 sense; names do not have negations in QL. Only sentences do. This is
 part of the reason we will usually prefer to write $s {\neq} m$, rather
-than the potentially confusing $s{=}m$. But if you do see or write the
+than the potentially confusing $\neg s{=}m$. But if you do see or write the
 latter, remember that the negation applies to the whole identity claim.)
 
 A logical notion of identity is just what is needed to overcome the
 shortcomings of the translations in the introduction to this chapter.
 
-Identity and 'no one else'
+**12.3 Identity and 'no one else'**
 --------------------------
 
-Consider again sentence [\[onlyyou\]](#onlyyou){reference-type="ref"
-reference="onlyyou"}:
+Consider again sentence 1:
 
-Only you can prevent forest fires.
+> | 1. <span class="premise">Only you can prevent forest fires.</span>
 
 In the introduction we tried translating this into QL with a predicate
 'only can prevent forest fires'; now we can reflect its logical
 structure more fully. So we'll let our predicate just indicate the
 ability to prevent forest fires:
 
-people
+> **$UD$:** people<br/>
+> **$Px$:** $x$ can prevent forest fires<br/>
+> **$u$:** you<br/>
 
-$x$ can prevent forest fires
-
-you
 
 If only you can prevent forest fires, that means that you can prevent
 forest fires, and, moreover, no one *else* --- no one who is not you ---
@@ -248,17 +243,17 @@ forest fires: $Pu$. Now we must say that no one else can prevent forest
 fires. Another way to say that is this: it is *not* the case that there
 is someone *who is not you* who can prevent forest fires. So you can
 think of that as a negated existential:
-$\enot \exists x (x {\neq} u \eand Px)$. Putting these two pieces
+$\neg \exists x (x {\neq} u\ \&\ Px)$. Putting these two pieces
 together as a conjunction, we can translate sentence
-[\[onlyyou\]](#onlyyou){reference-type="ref" reference="onlyyou"} as:
+1 as:
 
-$Pu \eand \enot \exists x (x {\neq} u \eand Px)$
+$$Pu\ \&\ \neg \exists x (x {\neq} u \&\ Px)$$
 
 A second way of characterizing the 'no one else' clause would translate
 it as a universal claim, saying, of everything, that if it is not you,
 then it cannot prevent forest fires:
-$\forall x (x {\neq} u \eif \enot Px)$. This is equivalent to
-$\enot \exists x (x {\neq} u \eand Px)$; either is an acceptable
+$\forall x (x {\neq} u \supset \neg Px)$. This is equivalent to
+$\neg \exists x (x {\neq} u\ \&\ Px)$; either is an acceptable
 translation. (By the end of this chapter we'll be able to prove this
 equivalence.)
 
@@ -267,24 +262,23 @@ talk about objects *other than* ones just mentioned. For example,
 suppose we want to say that Rebecca only thinks about herself. She
 thinks about herself, and there is no one else that she thinks about.
 Using $r$ for Rebecca and $Txy$ for '$x$ thinks about $y$', we could
-say: $$Trr \eand \enot \exists x (x {\neq} r \eand Trx)$$
+say:
+
+$$Trr \&\ \neg \exists x (x {\neq} r \&\ Trx)$$
 
 There are more examples of similar kinds of translation exercises in the
 practice problems at the end of this chapter.
 
-Identical objects satisfy identical predicates
+**12.4 Identical objects satisfy identical predicates**
 ----------------------------------------------
 
-In §[1.1](#sec.identitymotivation){reference-type="ref"
-reference="sec.identitymotivation"}, we saw that treating identity as a
+In §12.1, we saw that treating identity as a
 simple predicate prevented the validity of intuitively valid arguments
 like this one:
 
-Peter Parker lives in Queens.
-
-Peter Parker is Spider-Man.
-
-Spider-Man lives in Queens.
+> | 3. <span class="premise">Peter Parker lives in Queens.</span>
+> | 4. <span class="premise">Peter Parker is Spider-Man.</span>
+> | 5. <span class="premise">Spider-Man lives in Queens.</span>
 
 The problem was that if the extension of the identity predicate can
 simply be presented in a model, without regard for the other features of
@@ -311,51 +305,50 @@ If Peter is Spider-Man, then everything true of Peter is also true of
 Spider-Man. So this argument form, unlike the first translation we
 attempted, is valid in QL:
 
-$Lpq$
+> | <span class="premise"> $Lpq$</span>
+> | <span class="premise"> $p{=}s$</span>
+> | <span class="conclusion"> $Lsq$</span>
 
-$p{=}s$
 
-$Lsq$
 
-In §[1.7](#sec.identity.trees){reference-type="ref"
-reference="sec.identity.trees"} below we'll extend our tree method to
+In §12.7 below we'll extend our tree method to
 claims with identity, which will give us a formal means for proving the
 validity of arguments like this one. (The natural deduction system for
-QL given in Chapter [\[ch.QLND\]](#ch.QLND){reference-type="ref"
-reference="ch.QLND"} will give us another.)
+QL given in <a href="https://ubc-carnap.lfcode.ca/book/13">Chapter 13</a>
+ will give us another.)
 
-Quantity {#sec.quantity}
+**12.5 Quantity**
 --------
 
 Identity also lets us talk about quantity in a way that wasn't available
-before. In §[1.1](#sec.identitymotivation){reference-type="ref"
-reference="sec.identitymotivation"} we observed some challenges with
+before. In §12.1 we observed some challenges with
 translating claims about the number of objects that satisfy a particular
 description. For example, we struggled with sentences like 'Mozart
 composed more than one opera'. But identity makes such claims
 straightforward.
 
-people and operas
+> **$UD$:** people and operas<br/>
+> **$Cxy$:** $x$ composed $y$<br/>
+> **$Ox$:** $x$ is an opera<br/>
+> **$m$:** Mozart<br/>
+> **$n$:** *Le Nozze di Figaro*<br/>
+> **$g$:** *Don Giovanni*<br/>
 
-$x$ composed $y$
 
-$x$ is an opera
-
-Mozart
-
-*Le Nozze di Figaro*
-
-*Don Giovanni*
-
-We want to say that there are two things, that have the following
+We want to say that there are two things that have the following
 features: they are different from each other, they are both operas, and
 they are both composed by Mozart. A double-existential sentence, listing
 those conjuncts, will suffice:
-$$\exists x \exists y (x {\neq} y \eand Ox \eand Oy \eand Cmx \eand Cmy)$$
+
+$$\exists x \exists y (x {\neq} y\ \&\ Ox\ \&\ Oy\ \&\ Cmx\ \&\ Cmy)$$
+
 Strictly speaking, QL conjunctions only have two conjuncts, so to write
 this sentence scrupulously, we'd need to include brackets to signify
 that we're talking about conjunctions of conjunctions:
-$$\exists x \exists y (x {\neq} y \eand [(Ox \eand Oy) \eand (Cmx \eand Cmy)])$$
+
+$$\exists x \exists y (x {\neq} y\ \&\ [(Ox\ \&\ Oy)\ \&\ (Cmx\ \&\ Cmy)])$$
+
+
 In sentences like these --- and the longer ones listing more conditions
 that will feature soon --- it is usually preferable for readability to
 leave these internal brackets out. We will write as if our system allows
@@ -367,9 +360,9 @@ This sentence says that Mozart wrote at least two operas. To say that he
 wrote at least *three* operas would require another quantifier with a
 new variable $z$, and the specification that $z$ be an opera, written by
 Mozart, and non-identical to both of the ones previously mentioned:
-$$\begin{gathered}
-\exists x \exists y \exists z (x {\neq} y \eand x {\neq} z \eand y {\neq} z \eand 
-Ox \eand Oy \eand Oz \eand Cmx \eand Cmy \eand Cmz)\end{gathered}$$
+
+$$\exists x \exists y \exists z (x {\neq} y\ \&\ x {\neq} z\ \&\ y {\neq} z\ \&\
+Ox\ \&\ Oy\ \&\ Oz\ \&\ Cmx\ \&\ Cmy\ \&\ Cmz)$$
 
 As you can see, these sentences get long and complicated rather quickly.
 
@@ -378,8 +371,8 @@ no more, and no fewer. There are two reasonably natural choices for how
 to say that. One is to conjoin the first QL sentence of this section ---
 Mozart composed at least two operas --- with the negation of the second
 --- Mozart did not compose at least three operas. The result is:
-$$\begin{gathered}
-\exists x \exists y (x {\neq} y \eand Ox \eand Oy \eand Cmx \eand Cmy) \eand \\ \enot \exists x \exists y \exists z (x {\neq} y \eand x {\neq} z \eand y {\neq} z \eand Ox \eand Oy \eand Oz \eand Cmx \eand Cmy \eand Cmz)\end{gathered}$$
+
+$$\exists x \exists y (x {\neq} y\ \&\ Ox\ \&\ Oy\ \&\ Cmx\ \&\ Cmy)\ \&\ \neg \exists x \exists y \exists z (x {\neq} y\ \&\ x {\neq} z\ \&\ y {\neq} z\ \&\ Ox\ \&\ Oy\ \&\ Oz\ \&\ Cmx\ \&\ Cmy\ \&\ Cmz)$$
 
 A slightly more efficient way of saying the same thing, rather than
 conjoining a new negated triple existential, would be to add, within the
@@ -388,14 +381,18 @@ opera composed by Mozart is one of the two mentioned in that first
 conjunction. To say that any opera composed by Mozart is either $x$ or
 $y$ is to say that, for any $z$, if $z$ is an opera composed by Mozart,
 then it is either $x$ or $y$. In other words:
-$\forall z [(Oz \eand Cmz) \eif (z{=}x \eor z{=}y)]$. So another way to
-say that Mozart composed exactly two operas is: $$\begin{gathered}
-\exists x \exists y ((x {\neq} y  \eand  Ox \eand Oy \eand  Cmx \eand Cmy) \eand \forall z [(Oz \eand Cmz) \eif (z{=}x \eor z{=}y)])\end{gathered}$$
+
+$$\forall z [(Oz \&\ Cmz) \supset (z{=}x \lor z{=}y)]$$
+
+So another way to
+say that Mozart composed exactly two operas is:
+
+$$\exists x \exists y ((x {\neq} y\  \&\  Ox\ \&\ Oy\ \&\  Cmx\ \&\ Cmy)\ \&\ \forall z [(Oz\ \&\ Cmz) \supset (z{=}x \lor z{=}y)])$$
 
 So identity gives us a way to talk about quantities, albeit not a
 particularly efficient one.
 
-Definite descriptions {#sec.defdesc}
+**12.6 Definite descriptions**
 ---------------------
 
 In 1905, Bertrand Russell famously characterized *definite descriptions*
@@ -416,26 +413,24 @@ three things: there is a baby, there's no other baby than that one, and
 that baby is hungry. That second element, the uniqueness claim, can be
 expressed in QL with identity.
 
-People in this house
 
-$x$ is a baby.
-
-$x$ is hungry.
-
-Jonathan
+> **$UD$:** People in this house<br/>
+> **$Bx$:** $x$ is a baby.<br/>
+> **$Hx$:** $x$ is hungry.<br/>
+> **$j$:** Jonathan<br/>
 
 A sentence like 'Jonathan is hungry' is straightforwardly translated as
 $Hj$. According to Russell's theory of definite descriptions, 'the baby
 is hungry' has a much more complex logical form: there is a baby $x$,
 there is no baby other than $x$, and $x$ is hungry.
 
-$$\exists x [Bx \eand \enot \exists y (By \eand y {\neq} x) \eand Hx]$$
+$$\exists x [Bx\ \&\ \neg \exists y (By\ \&\ y {\neq} x)\ \&\ Hx]$$
 
 One of the interesting features of Russell's theory is that 'the baby is
 not hungry' is not the negation of 'the baby is hungry'. Instead, the
 negation applies only to the hunger predication in the last conjunct:
 
-$$\exists x [Bx \eand \enot \exists y (By \eand y {\neq} x) \eand \enot Hx]$$
+$$\exists x [Bx\ \&\ \neg \exists y (By\ \&\ y {\neq} x)\ \&\ \neg Hx]$$
 
 The reason Russell designed his theory this way was that he thought that
 both of these sentences equally implied that there is a baby. If there
@@ -453,19 +448,17 @@ us because it provides an interesting and useful case for translation of
 sentences into QL with identity.
 
 The general statement of Russell's theory of definite descriptions is,
-if you have a sentence applying a predicate to the referent of a
-definite description , translate it thus: there is something that is ,
-there is nothing other than that is , and is .
+if you have a sentence applying a predicate $\mathcal{P}$ to the referent of a
+definite description $\mathcal{D}$, translate it thus: there is something $\mathscr{x}$ that is $\mathcal{D}$,
+there is nothing other than $\mathscr{x}$ that is $\mathcal{D}$, and $\mathscr{x}$ is $\mathcal{P}$.
 
-Identity and trees {#sec.identity.trees}
+**12. 7 Identity and trees**
 ------------------
 
 Because we have extended QL to include claims of identity, we also need
 to modify our tree system. Notice that if we do not do so, the system
-will not be complete. For example, the rules offered in Chapter
-[\[ch.QLsoundcomplete\]](#ch.QLsoundcomplete){reference-type="ref"
-reference="ch.QLsoundcomplete"} do not provide a way to demonstrate that
-$Fa, \enot Fb, a{=}b \models \bot$, even though those sentences are
+will not be complete. For example, the rules offered in <a href="https://ubc-carnap.lfcode.ca/book/11">Chapter 11</a> do not provide a way to demonstrate that
+$Fa, \neg Fb, a{=}b \models \bot$, even though those sentences are
 obviously inconsistent. Since each of those sentences are atoms or
 negated atoms in QL, there is nothing to resolve, and there is no
 contradiction to close the tree. We need to add new rules to deal with
@@ -473,12 +466,16 @@ identity.
 
 Here is an obvious one:
 
-Recall that '' just means the sentence you get by replacing every '' in
-with ''. With this rule, we can easily demonstrate that the set of
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">If a branch contains an identity claim $a=b$ and some sentence $\Phi$, then you may add $\Phi[a\Rightarrow b]$ or $\Phi[b\Rightarrow a]$ to the branch.</p>
+
+
+Recall that '$\Phi[a\Rightarrow b]$' just means the sentence you get by replacing every '$a$' in
+with '$b$'. With this rule, we can easily demonstrate that the set of
 sentences mentioned above closes:
 
-to prove={Fa, Fb, a=b} \[Fa \[Fb, grouped \[a=b, grouped \[Fb, just=1, 3
-=, close=2, 4\] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/12-7-1.svg)
+</figure>
 
 We will add this rule to our tree system. Notice that it is not a
 *resolution* rule --- we do not put a check mark next to either sentence
@@ -487,8 +484,7 @@ referenced. They may be used again.
 Since our tree system is supposed to be *complete*, we need to *ensure*
 that the tree will close; it's not enough that we have a rule that
 allows that it might. So, as in the case of the general rules discussed
-in Chapter [\[ch.QLTrees\]](#ch.QLTrees){reference-type="ref"
-reference="ch.QLTrees"}, we will also add an additional requirement
+in <a href="https://ubc-carnap.lfcode.ca/book/10">Chapter 10</a>, we will also add an additional requirement
 governing branch completion. What we need is to make sure that we've
 made enough identity substitutions to demonstrate everything that needs
 demonstrating. The way we'll do this is by requiring, for every identity
@@ -498,28 +494,35 @@ that direction on every atomic sentence or negated atomic sentence in
 the branch.
 
 More precisely stated, an open branch is complete only if, for any
-identity claim $\script{a}{=}\script{b}$ in the branch, either, for any
-atomic sentence or negated atomic sentence containing in the branch, is
-in the branch, or, for any atomic sentence or negated atomic sentence
-containing in the branch, is in the branch.
+identity claim $a=b$ in the branch, either, for any atomic sentence or negated atomic sentence
+$\Phi$ containing $a$ in the branch, $\Phi[a \Rightarrow b]$ is in the branch, or, for any atomic
+sentence or negated atomic sentence $\Phi$ containing $b$ in the branch, $\Phi[b \Rightarrow a]$ is in the branch.
 
 So, adding this requirement to the definition of branch completion given
-on page , we get:
+in <a href="https://ubc-carnap.lfcode.ca/book/10">Chapter 10</a>, we get:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is **complete** if and only if either (i) it is closed, or (ii) all of the following conditions have been met:</br></br>
+1. Every resolvable sentence in the branch has been resolved; </br>
+2. For every general quantified sentence $\Phi$ and every name $a$ in
+the branch, the $a$ instance of $\Phi$ is in the branch;</br>
+and 3. For every identity claim $a=b$ in the branch, either: (a) for every atomic sentence or negated atomic sentence $\Phi$ containing $a$ in the branch, $\Phi[a \Rightarrow b]$ is in the branch, or (b) for every atomic sentence or negated atomic sentence $\Phi$ containing $b$ in the branch, $\Phi[b \Rightarrow a]$ is in the branch.</p>
 
 We must also add one more rule to our tree system. Previously we said
 that branches only close when they contain some sentence along with its
 negation. We add one more condition that suffices for branch closure. If
-any branch contains a sentence $\script{a}{\neq}\script{a}$, then that
+any branch contains a sentence $a \neq a$, then that
 branch closes. In no model can something be non-identical with itself.
 
-Adding this to the rule given on page :
+Adding this to the rule given in  <a href="https://ubc-carnap.lfcode.ca/book/10">Chapter 10</a>:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch closes if and only if either (i) it contains some sentence $\Phi$ along with its negation, $\neg \Phi$, or (ii) it contains, for some name $a$, the sentence $a\neq a$.</p>
 
 We need this rule, for example, to prove with a tree that
 $\forall x \:  a{=}x$ is inconsistent with $\exists x \:  x{\neq}a$:
 
-to prove={x a=x, x xa} \[x a=x, subs=b \[x xa, grouped, checked=b \[b a,
-just=2 $\exists$ \[a=b, just=1 $\forall$ \[bb, just=3, 4 =, close=5 \]
-\] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/12-7-2.svg)
+</figure>
 
 We must also take care, when constructing models from completed open
 branches, to respect identity claims. If for example the sentence
@@ -528,19 +531,16 @@ two different objects, b and c --- instead, we'll just pick one of them
 as the object indicated, and assign both names to it. For example,
 consider this tree:
 
-\[x (Rax x=b), subs=a, b, c \[x Rax, grouped, checked=c \[Rac, just=2
-$\exists$ \[Raa a=b, just=1 $\forall$, checked \[Rab b=b, grouped,
-just=1 $\forall$, checked \[Rac c=b, grouped, just=1 $\forall$, checked
-\[Rac, just=6 , close=3, 7 \] \[c=b \[Rab, just=3, 7 = \[Rab, just=5 ,
-close=8, 9\] \[b=b \[Raa, just=4 , open \] \[a=b \[Rbb, just=8, 10 =
-\[Rbc, just=3, 10 =, open \] \] \] \] \] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/12-7-3.svg)
+</figure>
 
 We end up with two open branches. We only need one to demonstrate that
 the root is satisfiable, but it is useful practice to consider both.
 Let's begin with the shorter open branch to the left, that completes at
 line 10. Examining that branch, we see three names, $a$, $b$, and $c$,
 and three atomic sentences concerning the extension of $R$: $Rac$,
-$Rab$, and $\enot Raa$. Using our previous method for constructing
+$Rab$, and $\neg Raa$. Using our previous method for constructing
 models, we would have posited a three-object UD and related those
 objects via $R$ in the appropriate way. Now, however, we also have
 identity claims to consider. There are two identity claims in the
@@ -555,16 +555,21 @@ letters because they are easy to keep track of.)
 
 So the model suggested by the first open branch here is:
 
-UD & {a, b}\
-& a\
-& b\
-& b\
-&
+> $UD$= {a,b}<br/>
+> $referent(a)$= a<br/>
+> $referent(b)$= b<br/>
+> $referent(c)$= b<br/>
+> $extension(R)$ =
 
-  $Rxy$   $a$   $b$         
-  ------- ----- ----- -- -- --
-  $a$     0     1           
-  $b$     \-    \-          
+<div class="table">
+
+$Rxy$   $a$   $b$
+------- ----- ----- -- -- --
+$a$     0     1
+$b$     \-    \-
+
+</div>
+
 
 The longer open branch includes additional identity claims. It includes
 $a{=}b$ and $c{=}b$, which of course implies that all three of these
@@ -572,15 +577,20 @@ names are names for the same object. So the UD for the model
 corresponding to the right branch will have only one object, which all
 three names denote.
 
-UD & {a}\
-& a\
-& a\
-& a\
-&
+> $UD$= {a}<br/>
+> $referent(a)$= a<br/>
+> $referent(b)$= a<br/>
+> $referent(c)$= a<br/>
+> $extension(R)$ =
 
-  $Rxy$   $a$      
-  ------- ----- -- --
-  $a$     1        
+<div class="table">
+
+$Rxy$   $a$
+------- -----
+$a$     1
+
+</div>
+
 
 It it sometimes helpful, for an intuitive grip on what is going on in
 these trees, to think about an English translation alongside the
@@ -590,247 +600,317 @@ line 2 says that $a$ loves at least one person. The tree works out two
 ways that might be: the one and only person $a$ loves could be $a$, or
 it could be someone else.
 
-[\[pr.QL-ID-spies\]]{#pr.QL-ID-spies label="pr.QL-ID-spies"} Using the
+**Practice Exercises**
+----------------------
+
+
+To enter your solutions for automatic checking, use the following keyboard shortcuts:
+
+<div class="table">
+
+Symbol     Keyboard
+---------- ----------
+$\supset$          `->`, `=>`, `>`
+$\&$          `/\`, `&`, `and`
+∨          `\/`, `|`, `or`
+$\equiv$          `<->`, `<=>`
+¬          `-`, `~`, `not`
+⊥          `!?`, `_|_`
+$=$          `=`
+$a\neq b$          `~a=b`
+$F_3$          `F_3`
+$\exists$          `E`
+$\forall$          `A`
+---------- ----------
+
+</div>
+
+
+Once you have entered your solution, press "return/enter" to have it automatically checked. For variables, use 'x,y,z'. If you need more, use subscripts: '$x_1, x_2, x_3$'.
+
+
+**Part A** Using the
 symbolization key given, translate each English-language sentence into
 QL with identity. For sentences containing definite descriptions, assume
 Russell's theory.
 
-people
+> **$UD$:** people<br/>
+> **$Kx$:** $x$ knows the combination to the safe.<br/>
+> **$Sx$:** $x$ is a spy.<br/>
+> **$Vx$:** $x$ is a vegetarian.<br/>
+> **$Tx$:** $x$ trusts $y$.<br/>
+> **$h$:** Hofthor<br/>
+> **$i$:** Ingmar<br/>
 
-$x$ knows the combination to the safe.
 
-$x$ is a spy.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.1 (Sh/\ ~Ex(Vx/\Sx)) : Hofthor is a spy, but no vegetarian is a spy.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-$x$ is a vegetarian.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.2 (~Ki -> ~ExKx) : No one knows the combination to the safe unless Ingmar does.
+|
+~~~
 
-$x$ trusts $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.3 ~Ex(Sx/\Kx) : No spy knows the combination to the safe.
+|
+~~~
 
-Hofthor
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.4 (~Vh/\~Vi) : Neither Hofthor nor Ingmar is a vegetarian.
+|
+~~~
 
-Ingmar
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.5 Ex(Vx/\Thx) : Hofthor trusts a vegetarian.
+|
+~~~
 
-Hofthor is a spy, but no vegetarian is a spy.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.6 Ax(Txi->Ey(Txy/\Vy)) : Everyone who trusts Ingmar trusts a vegetarian.
+|
+~~~
 
-No one knows the combination to the safe unless Ingmar does.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.7 Ax(Txi -> Ey(Txy/\Ez(Tyz/\Vz))): Everyone who trusts Ingmar trusts someone who trusts a vegetarian.
+|
+~~~
 
-No spy knows the combination to the safe.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.8 (Ki/\~∃x(Kx/\~x=i)) : Only Ingmar knows the combination to the safe.
+|
+~~~
 
-Neither Hofthor nor Ingmar is a vegetarian.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.9 (Tih/\~Ex(Tix/\~x=h)) : Ingmar trusts Hofthor, but no one else.
+|
+~~~
 
-Hofthor trusts a vegetarian.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.10 Ex(Kx/\~Ey(Ky/\~x=y)/\Vx) : The person who knows the combination to the safe is a vegetarian.
+|
+~~~
 
-Everyone who trusts Ingmar trusts a vegetarian.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+A.11 Ex(Kx/\~Ey(Ky/\~x=y)/\~Sx) : The person who knows the combination to the safe is not a spy.
+|
+~~~
 
-Everyone who trusts Ingmar trusts someone who trusts a vegetarian.
 
-Only Ingmar knows the combination to the safe.
 
-Ingmar trusts Hofthor, but no one else.
-
-The person who knows the combination to the safe is a vegetarian.
-
-The person who knows the combination to the safe is not a spy.
-
-[\[pr.QL-ID-cards\]]{#pr.QL-ID-cards label="pr.QL-ID-cards"} Using the
+**Part B** Using the
 symbolization key given, translate each English-language sentence into
 QL with identity. For sentences containing definite descriptions, assume
 Russell's theory.
 
-cards in a standard deck
 
-$x$ is black.
+> **$UD$:** cards in a standard deck<br/>
+> **$Bx$:** $x$ is black.<br/>
+> **$Cx$:** $x$ is a club.<br/>
+> **$Dx$:** $x$ is a deuce.<br/>
+> **$Jx$:** $x$ is a jack.<br/>
+> **$Mx$:** $x$ is a man with an axe.<br/>
+> **$Ox$:** $x$ is one-eyed.<br/>
+> **$Wx$:** $x$ is wild.<br/>
 
-$x$ is a club.
 
-$x$ is a deuce.
 
-$x$ is a jack.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.1 Ax(Cx -> Bx) : All clubs are black cards.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-$x$ is a man with an axe.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.2 ~ExWx : There are no wild cards.
+|
+~~~
 
-$x$ is one-eyed.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.3 ExEy(Cx/\Cy/\~x=y) : There are at least two clubs.
+|
+~~~
 
-$x$ is wild.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.4 ExEy(Jx/\Ox/\Jy/\Oy/\~x=y) : There is more than one one-eyed jack.
+|
+~~~
 
-All clubs are black cards.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.5 AxAyAz((Jx/\Ox/\Jy/\Oy/\Jz/\Oz)->(x=y\/x=z\/y=z)) : There are at most two one-eyed jacks.
+|
+~~~
 
-There are no wild cards.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.6 ExEy(Jx/\Bx/\Jy/\By/\~x=y/\Az((Jz/\Bz)->(x=z\/y=z))) : There are exactly two black jacks.
+|
+~~~
 
-There are at least two clubs.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.7 Ex_1Ex_2Ex_3Ex_4(Dx_1 /\ Dx_2 /\ Dx_3 /\ Dx_4 /\ ~x_1=x_2 /\ ~x_1=x_3 /\ ~x_1=x_4 /\ ~x_2=x_3 /\ ~x_2=x_4 /\ ~x_3=x_4/\ ¬Ey(Dy /\ ~y=x_1 /\ ~y=x_2 /\ ~y=x_3 /\ ~y=x_4)): There are exactly four deuces.
+|
+~~~
 
-There is more than one one-eyed jack.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.8 Ex(Dx/\Cx/\Ay((Dy/\Cy) -> x=y)/\Bx) : The deuce of clubs is a black card.
+|
+~~~
 
-There are at most two one-eyed jacks.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.9 Ax((Ox/\Jx) -> Wx)/\Ex(Mx/\Ay(My -> x=y)/\Wx) : One-eyed jacks and the man with the axe are wild.
+|
+~~~
 
-There are exactly two black jacks.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.10 Ex(Dx/\Cx/\Ay((Dy/\Cy) -> x=y)/\Wx) -> Ex(Wx/\Ay(Wy -> x=y)) : If the deuce of clubs is wild, then there is exactly one wild card.
+|
+~~~
 
-There are exactly four deuces.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.11 Ex(Mx/\Ay(My->x=y)/\~Jx) : The man with the axe is not a jack.
+|
+~~~
 
-The deuce of clubs is a black card.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+B.12 ExEz(Dx/\Cx/\Mz/\Ay((Dy/\Cy) -> x=y)/\Ay((My -> z=y)/\~x=z)) : The deuce of clubs is not the man with the axe.
+|
+~~~
 
-One-eyed jacks and the man with the axe are wild.
-
-If the deuce of clubs is wild, then there is exactly one wild card.
-
-The man with the axe is not a jack.
-
-The deuce of clubs is not the man with the axe.
-
-[\[pr.QLbuffy\]]{#pr.QLbuffy label="pr.QLbuffy"} Using the symbolization
+**Part C** Using the symbolization
 key given, translate each English-language sentence into QL with
 identity.
 
-people, generations, and monsters
 
-$x$ is a generation.
+> **$UD$:** people, generations, and monsters <br/>
+> **$Gx$:** $x$ is a generation.<br/>
+> **$Hx$:** $x$ is human.<br/>
+> **$Sx$:** $x$ is a slayer.<br/>
+> **$Vx$:** $x$ is a vampire.<br/>
+> **$Dx$:** $x$ is a demon.<br/>
+> **$Wx$:** $x$ is awerewolf.<br/>
+> **$Fx$:** $x$ is a force of darkness.<br/>
+> **$Axy$:** $x$ will stand against $y$.<br/>
+> **$Bxy$:** $x$ is born in generation $y$.<br/>
+> **$Kxy$:** $x$ will kick $y$.<br/>
+> **$b$:** Buffy<br/>
+> **$f$:** Faith<br/>
+> **$w$:** Willow<br/>
 
-$x$ is human.
 
-$x$ is a slayer.
 
-$x$ is a vampire.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.1 Ex(Bbx/\Bwx) : Buffy and Willow were born unto the same generation.
+|  Type answer here. (Press "return" to check.)
+~~~
 
-$x$ is a demon.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.2 AxAy(Ez(Gz/\Sx/\Sy/\Bxz/\Byz) -> x=y) : There is no more than one slayer born in each generation.
+|
+~~~
 
-$x$ is a werewolf.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.3 Ex(Sx/\~x=b/\Fx) : A slayer other than Buffy is one of the forces of darkness.
+|
+~~~
 
-$x$ is a force of darkness.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.4 Ax[(Fx/\~Wx) -> Awx] : Willow will stand against any force of darkness other than a werewolf.
+|
+~~~
 
-$x$ will stand against $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.5 Ax(~x=f -> Kfx) : Faith will kick everyone except herself.
+|
+~~~
 
-$x$ is born in generation $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.6 Ax(Ey(Sy/\Axy/\~Ez((Vz\/Dz)/\Kxz))->Kbx) : Buffy will kick anyone who stands against a slayer, unless they are also kicking vampires or demons.
+|
+~~~
 
-$x$ will kick $y$.
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.7 Ax(Gx -> Ey(Sy /\ Byx)) : In every generation a slayer is born.
+|
+~~~
 
-Buffy
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.8 Ax(Gx->Ey(Sy/\Byx/\Az[(Vz\/Dz\/Fz)->Ayz])) : In every generation a slayer is born. She will stand against the vampires, demons, and forces of darkness.
+|
+~~~
 
-Faith
+~~~{.Translate .FOL system="ichikawaJenkinsQL" submission="none"}
+C.9 Ax(Gx->Ey(Sy/\Byx/\Az[(Vz \/ Dz \/ Fz) -> Ayz] /\Ay_2(Az[(Vz \/ Dz \/ Fz) -> Ay_2z] -> y_2=y))) : In every generation a slayer is born. She alone will stand against the vampires, demons, and forces of darkness.
+|
+~~~
 
-Willow
+**Part D**
 
-Buffy and Willow were born unto the same generation.
-
-There is no more than one slayer born in each generation.
-
-A slayer other than Buffy is one of the forces of darkness.
-
-Willow will stand against any force of darkness other than a werewolf.
-
-Faith will kick everyone except herself.
-
-Buffy will kick anyone who stands against a slayer, unless they are also
-kicking vampires or demons.
-
-In every generation a slayer is born.
-
-In every generation a slayer is born. She will stand against the
-vampires, demons, and forces of darkness.
-
-In every generation a slayer is born. She alone will stand against the
-vampires, demons, and forces of darkness.
 
 Using the symbolization key given, translate each English-language
 sentence into QL with identity. For sentences containing definite
 descriptions, assume Russell's theory.
 
-animals in the world
 
-$x$ is in Farmer Brown's field.
+> **$UD$:**  animals in the world<br/>
+> **$Bx$:** $x$ is in Farmer Brown’s field.<br/>
+> **$Hx$:** $x$ is a horse.<br/>
+> **$Px$:** $x$ is a pegasus.<br/>
+> **$Wx$:** $x$ has wings.<br/>
 
-$x$ is a horse.
 
-$x$ is a Pegasus.
+> | 1. <span class="premise">There are at least three horses in the world.</span>
+> | 2. <span class="premise">There are at least three animals in the world.</span>
+> | 3. <span class="premise">There is more than one horse in Farmer Brown’s field.</span>
+> | 4. <span class="premise">There are three horses in Farmer Brown’s field.</span>
+> | 5. <span class="premise">There is a single winged creature in Farmer Brown’s field; any other creatures in the field must be wingless.</span>
+> | 6. <span class="premise">The Pegasus is a winged horse.</span>
+> | 7. <span class="premise">The animal in Farmer Brown’s field is not a horse.</span>
+> | 8. <span class="premise">The horse in Farmer Brown’s field does not have wings.</span>
 
-$x$ has wings.
 
-There are at least three horses in the world.
-
-There are at least three animals in the world.
-
-There is more than one horse in Farmer Brown's field.
-
-There are three horses in Farmer Brown's field.
-
-There is a single winged creature in Farmer Brown's field; any other
-creatures in the field must be wingless.
-
-The Pegasus is a winged horse.
-
-The animal in Farmer Brown's field is not a horse.
-
-The horse in Farmer Brown's field does not have wings.
-
+**Part E**
 Construct a model to demonstrate each of the following. If you wish, you
 can draw a tree to help you answer these questions; however, it is good
 conceptual practice to tackle some of these questions directly by
 thinking about just what you'd need to put in your model.
-[\[pr.IdentityModels\]]{#pr.IdentityModels label="pr.IdentityModels"}
 
-Show that $\{{\enot}Raa, \forall x (x{=}a \eor Rxa)\}$ is consistent.
+> | 1. <span class="premise">Show that $\{{\neg}Raa, \forall x (x{=}a \lor Rxa)\}$ is consistent.</span>
+> | 2. <span class="premise"> Show that $\{\forall x\forall y\forall z(x{=}y \lor y{=}z \lor x{=}z), \exists x\exists y\ x{\neq} y\}$ is consistent.</span>
+> | 3. <span class="premise">Show that $\{\forall x\forall y\ x{=}y, \exists x\ x {\neq} a\}$ is inconsistent.</span>
+> | 4. <span class="premise">Show that $\exists x (x {=} h \&\ x {=} i)$ is contingent.</span>
+> | 5. <span class="premise">Show that {$\exists x\exists y(Zx \&\ Zy \&\ x{=}y)$, $\neg Zd$,$d{=}s$} is consistent.</span>
+> | 6. <span class="premise">Show that '$\forall x(Dx \supset \exists y Tyx)$ $\therefore$ $\exists y \exists z\ y{\neq} z$' is invalid.</span>
 
- Show that $\{\forall x\forall y\forall z(x{=}y \eor y{=}z \eor x{=}z),
-\exists x\exists y\ x{\neq} y\}$ is consistent.
 
- Show that $\{\forall x\forall y\ x{=}y, \exists x\ x {\neq} a\}$ is
-inconsistent.
 
-Show that $\exists x (x {=} h \eand x {=} i)$ is contingent.
-
-Show that {$\exists x\exists y(Zx \eand Zy \eand x{=}y)$, $\enot Zd$,
-$d{=}s$} is consistent.
-
-Show that '$\forall x(Dx \eif \exists y Tyx)$
- $\exists y \exists z\ y{\neq} z$' is invalid.
-
+**Part F**
 Construct a tree to test the following entailment claims. If they are
 false, provide a model that demonstrates this.
-[\[pr.IdentityTrees\]]{#pr.IdentityTrees label="pr.IdentityTrees"}
 
- $\models \forall x \forall y (x{=}y \eif y{=}x)$
+> | 1. <span class="premise">$\models \forall x \forall y (x{=}y \supset y{=}x)$</span>
+> | 2. <span class="premise">$\models \forall x \exists y x{=}y$ </span>
+> | 3. <span class="premise">$\models \exists x \forall y  x{=}y$</span>
+> | 4. <span class="premise">$\exists x \forall y  x{=}y \models \forall x \forall y (Rxy \supset Ryx)$</span>
+> | 5. <span class="premise">$\models \neg \forall x \forall y \forall z [(Axy\ \&\ Azx\ \&\ y{=}z) \supset Axx]$</span>
+> | 6. <span class="premise">$\forall x \forall y  x{=}y \models \exists x Fx \supset \forall x Fx$</span>
+> | 7. <span class="premise">$\forall x (x{=}a \lor x{=}b), Ga \supset \neg Gb \models \neg \exists x \exists y \exists z (Gx\ \&\ Gy\ \&\ \neg Gz)$</span>
+> | 8. <span class="premise">$\forall x (Fx \supset x{=}f), \exists x (Fx \lor \forall y y{=}x) \models Ff$</span>
+> | 9. <span class="premise">$\exists x \exists y Dxy \models \forall x_{1} \forall x_{2} \forall x_{3} \forall x_{4} [(Dx_{1}x_{2} \&\ Dx_{3}x_{4}) \supset (x_{2}{\neq}x_{3} \lor Dx_{1}x_{4})]$</span>
 
- $\models \forall x \exists y \: x{=}y$
 
- $\models \exists x \forall y \: x{=}y$
+**Part G**
+In §12.5 we looked at two different translations of 'Mozart wrote exactly two operas'. Use trees to prove that they are equivalent.
 
-$\exists x \forall y \: x{=}y \models \forall x \forall y (Rxy \eiff Ryx)$
-
-$\models \enot \forall x \forall y \forall z [(Axy \eand Azx \eand y{=}z) \eif Axx]$
-
-$\forall x \forall y \: x{=}y \models \exists x Fx \eiff \forall x Fx$
-
-$\forall x (x{=}a \eor x{=}b), Ga \eiff \enot Gb \models \enot \exists x \exists y \exists z (Gx \eand Gy \eand \enot Gz)$
-
-$\forall x (Fx \eif x{=}f), \exists x (Fx \eor \forall y \: y{=}x) \models Ff$
-
-$\exists x \exists y Dxy \models \forall x_{1} \forall x_{2} \forall x_{3} \forall x_{4} [(Dx_{1}x_{2} \eand Dx_{3}x_{4}) \eif (x_{2}{\neq}x_{3} \eor Dx_{1}x_{4})]$
-
-In §[1.5](#sec.quantity){reference-type="ref" reference="sec.quantity"}
-we looked at two different translations of 'Mozart wrote exactly two
-operas'. Use trees to prove that they are equivalent.
-
+**Part H**
 Translate these arguments into QL with identity, and evaluate them for
 validity with a tree. (Don't be surprised or discouraged if some of
 these trees end up very complex.)
-[\[pr.IdentityArguments\]]{#pr.IdentityArguments
-label="pr.IdentityArguments"}
 
-Dudley will threaten anyone who threatens anyone. Therefore, Dudley will
-threaten himself.
 
-The exam is easy. Therefore every exam Sheila took was easy. (Use
-Russell's theory of definite descriptions.)
-
-Three wise men visited Jesus. Every wise man who visited Jesus gave
-Jesus a gift. Therefore, Jesus received more than one gift.
-
-Worf is the only Klingon in Starfleet. Everyone in Starfleet is brave.
-All brave Klingons are warriors. Therefore, there is at least one brave
-warrior in Starfleet.
-
-Worf is the only Klingon in Starfleet. Everyone in Starfleet is brave.
-All brave Klingons are warriors. Therefore, there is exactly one brave
-warrior in Starfleet.
-
-Every person likes every kind of sandwich that is tasty. Jack is a
-person. Jack likes exactly one kind of sandwich. Therefore, no more than
-one kind of sandwich is tasty.
+> | 1. <span class="premise">Dudley will threaten anyone who threatens anyone. Therefore, Dudley will threaten himself.</span>
+> | 2. <span class="premise">The exam is easy. Therefore every exam Sheila took was easy. (Use Russell's theory of definite descriptions.)</span>
+> | 3. <span class="premise">Three wise men visited Jesus. Every wise man who visited Jesus gave Jesus a gift. Therefore, Jesus received more than one gift.</span>
+> | 4. <span class="premise">Worf is the only Klingon in Starfleet. Everyone in Starfleet is brave. All brave Klingons are warriors. Therefore, there is at least one brave warrior in Starfleet.</span>
+> | 5. <span class="premise">Worf is the only Klingon in Starfleet. Everyone in Starfleet is brave. All brave Klingons are warriors. Therefore, there is at exactly one brave warrior in Starfleet.</span>
+> | 6. <span class="premise">Every person likes every kind of sandwich that is tasty. Jack is a person. Jack likes exactly one kind of sandwich. Therefore, no more than one kind of sandwich is tasty.</span>

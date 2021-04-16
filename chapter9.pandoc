@@ -720,7 +720,7 @@ true or false as mere symbols, but only relative to a model. A model
 provides the meaning of the symbols, insofar as it makes any difference
 to truth and falsity.
 
-Reasoning about all models (reprise)
+**9.11 Reasoning about all models (reprise)**
 ------------------------------------
 
 At the end of section 9.6, we were stymied when we tried to

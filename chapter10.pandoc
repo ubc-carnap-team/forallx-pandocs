@@ -1,8 +1,7 @@
-QL Trees {#ch.QLTrees}
+QL Trees
 ========
 
-In Chapter [\[ch.QL.models\]](#ch.QL.models){reference-type="ref"
-reference="ch.QL.models"} we saw that the more structured models of QL
+In <a href="https://ubc-carnap.lfcode.ca/book/9">Chapter 9</a> we saw that the more structured models of QL
 make reasoning about all possible models rather complex. In SL, where a
 model was just an assignment of truth values to atomic sentences,
 reasoning about all models was relatively straightforward: we could
@@ -11,17 +10,14 @@ a method for considering claims about validity or satisfiability as the
 truth table method. So we must rely more heavily on proof systems.
 
 This chapter considers a tree method for QL. Like the tree method for SL
-discussed in Chapter
-[\[ch.sl.trees\]](#ch.sl.trees){reference-type="ref"
-reference="ch.sl.trees"}, the QL tree method is a method that attempts
+discussed in <a href="https://ubc-carnap.lfcode.ca/book/5">Chapter 5</a>, the QL tree method is a method that attempts
 to generate an interpretation satisfying a given set of sentences. When
 it succeeds, it shows a way to satisfy them; when it fails, it shows
 that they are unsatisfiable. As we did in the initial presentation of
-trees in Chapter [\[ch.sl.trees\]](#ch.sl.trees){reference-type="ref"
-reference="ch.sl.trees"}, we'll begin by working through a couple of
+trees in <a href="https://ubc-carnap.lfcode.ca/book/9">Chapter 5</a>, we'll begin by working through a couple of
 examples at an intuitive level, before laying out the formal tree rules.
 
-Trees with fixed domains {#sec.fixedrules}
+**10.1 Trees with fixed domains**
 ------------------------
 
 Let's begin with a simplifying assumption. Let's suppose that we're only
@@ -34,8 +30,9 @@ sentences:
 $\{\forall x (Fx \ensuremath{\supset}Gx), \ensuremath{\neg}\exists x Gx, \exists x (Fx \ensuremath{\vee}Gx)\}$.
 To evaluate this question, we put those sentences in the root of a tree.
 
-\[x (Fx $\supset$Gx), name=p1, \[$\neg$x Gx, grouped, name=p2, \[x (Fx
-$\vee$Gx), grouped, name=p3, \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-1-1.svg)
+</figure>
 
 Let's start by considering the universal claim on line 1. A universal
 says that each of its instances are true. Since at the moment we are
@@ -44,18 +41,17 @@ just two names, $a$ and $b$, corresponding to our two objects. So we can
 just write down the two instances as a linear development. We also put a
 check at line 1 to indicate that we've resolved that sentence.
 
-\[x (Fx $\supset$Gx), name=p1, checked \[$\neg$x Gx, grouped, name=p2,
-\[x (Fx $\vee$Gx), grouped, name=p3, \[Fa $\supset$Ga, \[Fb $\supset$Gb,
-grouped, \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-1-2.svg)
+</figure>
 
 Next let's consider the negated existential at line 2. It says that each
 instance is false. So it develops into the negation of both instances,
 and we add a check mark at line 2.
 
-\[x (Fx $\supset$Gx), name=p1, checked \[$\neg$x Gx, grouped, name=p2,
-checked \[x (Fx $\vee$Gx), grouped, name=p3, \[Fa $\supset$Ga, \[Fb
-$\supset$Gb, grouped, \[$\neg$Ga \[$\neg$Gb, grouped \] \] \] \] \] \]
-\]
+<figure>
+![](/static/book-img/forallx-ubc/10-1-3.svg)
+</figure>
 
 There is one more quantified sentence to resolve, on line 3, but before
 we do that, let's handle the conditionals on lines 4 and 5. We do these
@@ -63,11 +59,9 @@ exactly the same way we handled conditionals in SL trees. They each
 branch into the negation of the antecedent and the consequent; the
 latter branch closes each time.
 
-\[x (Fx $\supset$Gx), name=p1, checked \[$\neg$x Gx, grouped, name=p2,
-checked \[x (Fx $\vee$Gx), grouped, name=p3, \[Fa $\supset$Ga, checked
-\[Fb $\supset$Gb, grouped, checked \[$\neg$Ga, name=Ga \[$\neg$Gb,
-grouped, name=Gb \[$\neg$Fa \[$\neg$Fb \] \[Gb, close=:Gb, !c\] \] \[Ga,
-close=:Ga, !c \] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-1-4.svg)
+</figure>
 
 Now let's look at line 3. It is an existential claim, so it says that at
 least one of its instances are true. Again, we're assuming for now that
@@ -75,13 +69,9 @@ there are only two instances. So we branch into them those two
 disjunctions at line 10. After that, we apply the approach to
 disjunctions from SL trees, and the tree closes.
 
-\[x (Fx $\supset$Gx), name=p1, checked \[$\neg$x Gx, grouped, name=p2,
-checked \[x (Fx $\vee$Gx), grouped, name=p3, \[Fa $\supset$Ga, checked
-\[Fb $\supset$Gb, grouped, checked \[$\neg$Ga, name=Ga \[$\neg$Gb,
-grouped, name=Gb \[$\neg$Fa, name=Fa \[$\neg$Fb, name=Fb \[Fa $\vee$Ga
-\[Fa, close=:Fa, !c\] \[Ga, close=:Ga, !c\] \] \[Fb $\vee$Gb \[Fb,
-close=:Fb, !c\] \[Gb, close=:Gb, !c\] \] \] \[Gb, close=:Gb, !c\] \]
-\[Ga, close=:Ga, !c \] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-1-5.svg)
+</figure>
 
 The closed tree indicates that our attempt to find a model satisfying
 the root has failed. We're not quite in a position to say that we've
@@ -100,11 +90,9 @@ To find out, we put both sentences in the root of a tree, and continue
 as before. We start by taking both instances of each universal claim,
 then process the two conditionals. This tree remains open.
 
-\[x Fxa, name=p1, checked \[y (Gy $\supset$$\neg$Fya), grouped, name=p2,
-checked \[Faa, name=Faa \[Fba, name=Fba, grouped \[Ga
-$\supset$$\neg$Faa, checked \[Gb $\supset$$\neg$Fba, grouped, checked
-\[$\neg$Ga \[$\neg$Gb, open\] \[$\neg$Fba, close=:Fba, !c\] \]
-\[$\neg$Faa, close=:Faa, !c\] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-1-6.svg)
+</figure>
 
 As in SL trees, a completed QL tree with an open branch describes a way
 of satisfying the root. We're assuming a two-object UD; for simplicity,
@@ -120,21 +108,30 @@ of $G$.
 Here is a partial model that suffices to satisfy the root of the above
 tree:
 
-r@ = l UD & $\{a, b\}$\
-$\mbox{extension}(G)$ &
+> $UD$ =  $\{a,b\}$<br/>
+> $extension(G)$ =
 
-          $G$
-  ------- -----
-  **a**   0
-  **b**   0
+<div class="table">
 
-\
-$\mbox{extension}(F)$ &
+             $G$
+------------ ---
+$\textbf{a}$   0
+$\textbf{b}$   0
 
-  $Fxy$   **a**   **b**
-  ------- ------- -------
-  **a**   1       \-
-  **b**   1       \-
+</div>
+
+> $extension(F)$ =
+
+<div class="table">
+
+$Fxy$        $\textbf{a}$  $\textbf{b}$
+------------ ------------- --------------
+$\textbf{a}$   1             -
+$\textbf{b}$   1             -
+
+</div>
+
+
 
 Notice that we've put blanks for two of the cells in the extension of
 $Fxy$. That is to indicate that it doesn't matter whether or not
@@ -144,7 +141,7 @@ $Fbb$, $\neg$$Fab$, nor $\neg$$Fbb$ appeared in the open branch.) So the
 tree method for QL is similar to that for SL in this respect as well. An
 open branch in a completed tree describes a way to satisfy the root.
 
-Generalizing the tree method
+**10.2 Generalizing the tree method**
 ----------------------------
 
 Trees are supposed to show something about *all* possible models, not
@@ -152,7 +149,7 @@ only those with two-object UDs. So we don't want our official tree rules
 to build in the idea that there are just two objects. For a three-object
 UD, we'd want our universal statements to develop into all three
 instances, and we'd want our existentials to branch into the three
-instances. For a ten-object UD like the one described on page , we'd
+instances. For a ten-object UD like the one described in Section 9.3, we'd
 need to give ten instances. For an infinite UD like the set of all
 natural numbers, we'd need an *infinite* number of developments.
 Obviously such rules would be impractical, to say the least. Worse than
@@ -161,18 +158,19 @@ we should be thinking of. So we need a version of the tree rules that is
 flexible as to domain size.
 
 In order to state our rule formally, we need one new bit of formalism.
-For any QL wff $\varPhi$, a constant $\mathscr{c}$, and variable
-$\mathscr{x}$, define $\varPhi$ to mean the wff that we get by replacing
-every occurrence of $\mathscr{x}$ in $\varPhi$ with $\mathscr{c}$. So
+For any QL wff $\Phi$, a constant $\mathscr{c}$, and variable
+$\mathscr{x}$, define $\Phi[x \Rightarrow \mathscr{c}]$ to mean the wff that we get by replacing
+every occurrence of $\mathscr{x}$ in $\Phi$ with $\mathscr{c}$. So
 for example,
-$$Fx\hspace{.15em}\raisebox{.3ex}{\fbox{$x\Rightarrow a$}} = Fa$$
+
+$$Fx[x\Rightarrow a] = Fa$$
 
 For any quantified QL sentence
-$\forall \ensuremath{\mathscr{x}} \ensuremath{\varPhi}{}$ or
-$\exists \ensuremath{\mathscr{x}} \ensuremath{\varPhi}{}$, we call
-$\varPhi$ a [substitution instance]{.smallcaps} of
-$\forall x\ensuremath{\varPhi}{}$ and $\exists x\ensuremath{\varPhi}{}$,
-and $c$ is called the [instantiating constant]{.smallcaps}.
+$\forall \ensuremath{\mathscr{x}} \ensuremath{\Phi}{}$ or
+$\exists \ensuremath{\mathscr{x}} \ensuremath{\Phi}{}$, we call
+$\Phi[x \Rightarrow \mathscr{a}]$  a **substitution instance** of
+$\forall x\ensuremath{\Phi}{}$ and $\exists x\ensuremath{\Phi}{}$,
+and $\mathscr{c}$ is called the **instantiating constant**.
 
 This, more formally, is the same notion we were working with in our
 discussion of trees for models with two-object UDs. For example:
@@ -189,12 +187,16 @@ discussion of trees for models with two-object UDs. For example:
 With this terminology in hand, we can begin with our official tree
 rules.
 
-Existentials
+**10.3 Existentials**
 ------------
 
 This will be our official tree rule for existentials:
 
-Just as $\varPhi$ stands in for any sentence of QL, the $\mathscr{x}$ is
+<figure>
+![](/static/book-img/forallx-ubc/10-3-1.svg)
+</figure>
+
+Just as $\Phi$ stands in for any sentence of QL, the $\mathscr{x}$ is
 meant to stand in for any variable, and $\mathscr{a}$ stands in for any
 name. The requirement that the name be *new* means that the name chosen
 for the substitution instance must be a name that has not appeared
@@ -212,8 +214,9 @@ also a name for some object we've already been discussing.
 
 For example, consider this tree:
 
-\[Fa \[x $\neg$Fx, grouped, name=p2, checked=b \[$\neg$Fb,
-just=$\exists$:p2\] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-3-2.svg)
+</figure>
 
 The appropriate substitution instance of the existential on line 2 is
 $Fb$, not $Fa$, because $a$ is a name that is already in use. We want to
@@ -223,10 +226,14 @@ satisfiable. Note also that in marking the existential as having been
 processed, we also make a note of the instantiating constant. That's why
 there is a $b$ next to the check mark in line 2.
 
-Universals
+**10.4 Universals**
 ----------
 
 Here is the tree rule for universals.
+
+<figure>
+![](/static/book-img/forallx-ubc/10-4-1.svg)
+</figure>
 
 The universal rule, like the existential rule, invites you to take an
 instance. But unlike the existential rule, we don't limit ourselves to
@@ -234,16 +241,15 @@ instances with new names. The other major difference is that one can use
 this rule multiple times. That makes this rule different from all the
 other tree rules we've seen so far. You're not necessarily finished
 processing a universal sentence after you've performed the rule once. We
-mark this by indicating a $\backslash$ instead of a next to the
+mark this by indicating a $\backslash$ instead of a $\checkmark$ next to the
 universal sentence.
 
 Here is an example illustrating the importance of taking multiple
 instances. Here is a partially completed tree.
 
-\[x (Fx $\,\&\,$Gx), name=p1, subs=a \[$\neg$Fa $\vee$$\neg$Gb, grouped,
-name=p2, checked \[Fa $\,\&\,$Ga, name=p3, just=$\forall$:p1, checked
-\[Fa, just=$\ensuremath{\,\&\,}$:p3 \[Ga, grouped \[$\neg$Fa,
-just=$\vee$:p2, close\] \[$\neg$Gb \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-4-2.svg)
+</figure>
 
 The root of this tree is pretty obviously unsatisfiable, but so far, the
 tree hasn't closed. On line 3 we take the $a$ instance of the universal
@@ -251,12 +257,9 @@ at line 1, but the tree won't close until we take the $b$ instance as
 well. We can do so at any time. In this way of developing the tree, we
 take that instance at line 7, and then the tree will close:
 
-\[x (Fx $\,\&\,$Gx), name=p1, subs=a,b \[$\neg$Fa $\vee$$\neg$Gb,
-grouped, name=p2, checked \[Fa $\,\&\,$Ga, name=p3, just=$\forall$:p1,
-checked \[Fa, just=$\ensuremath{\,\&\,}$:p3 \[Ga, grouped \[$\neg$Fa,
-just=$\vee$:p2, close\] \[$\neg$Gb \[Fb $\,\&\,$Gb, just=$\forall$:p1,
-checked, name=con \[Fb, just=$\,\&\,$:con \[Gb, grouped, close \] \] \]
-\] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-4-3.svg)
+</figure>
 
 Of course, we could also have taken the $b$ instance at the same time as
 we took the $a$ instance on line 3, and the tree would have worked just
@@ -265,7 +268,7 @@ can go back to universal claims that have already been considered, to
 take an additional instance. (Later on, we will see some examples of
 trees that *require* this kind of backtracking.)
 
-Negated existentials
+**10.5 Negated existentials**
 --------------------
 
 Negated existential claims are quite similar to universals. They say
@@ -275,11 +278,15 @@ rule will allow us to take as many instances as we like; this time, we
 take the instances of the *negation* of the wff in the scope of the
 quantifier.
 
+<figure>
+![](/static/book-img/forallx-ubc/10-5-1.svg)
+</figure>
+
 For example, if $\ensuremath{\neg}\exists x Fx$ is in the tree, one can
 use the negated existential rule to develop a tree branch with
 $\neg$$Fa$, $\neg$$Fb$, etc.
 
-Negated universals
+**10.6 Negated universals**
 ------------------
 
 Conversely, a negated universal is similar to an existential. It says
@@ -288,16 +295,17 @@ like the existential rule, we only perform it once (marking it with a
 check), and ensuring that we use a new name, so as not to assume
 anything in particular about the instance chosen.
 
-[\[negunrule\]]{#negunrule label="negunrule"}
+<figure>
+![](/static/book-img/forallx-ubc/10-6-1.svg)
+</figure>
 
-Whither branching?
+**10.7 Whither branching?**
 ------------------
 
 When we learned the tree rules for sentential connectives, there was an
 important distinction between *linear* rules and *branching* rules. We
 retained this when we assumed two-object domains in
-§[1.1](#sec.fixedrules){reference-type="ref"
-reference="sec.fixedrules"}, where universal quantifiers had linear
+§10.1, where universal quantifiers had linear
 rules, and existentials had branching rules. Our new quantifier rules,
 however, all have the same linear shape. Nothing branches. Why not?
 
@@ -318,33 +326,30 @@ So instead we just take one instance, but give it a new name, which may
 or may not be co-referential with another name we've already considered.
 The novelty of the name is playing the functional role of branching.
 
-The other development rules
+**10.8 The other development rules**
 ---------------------------
 
 So far this chapter we've introduced four tree development rules for QL:
 we have rules for universals, existentials, negated universals, and
 negated existentials. There are nine more resolution rules, but they are
-all familiar: they are the same nine resolution rules given in Chapter
-[\[ch.sl.trees\]](#ch.sl.trees){reference-type="ref"
-reference="ch.sl.trees"}. We'll use all the same resolution rules for
+all familiar: they are the same nine resolution rules given in  <a href="https://ubc-carnap.lfcode.ca/book/5">Chapter 5</a>. We'll use all the same resolution rules for
 conjunction, negated conjunction, disjunction, negated disjunction,
 conditional, negated conditional, biconditional, negated biconditional,
-and double negation as we did before. They were introduced on pp. --.
+and double negation as we did before. They were introduced in Chapter 5.
 
-Branch closure rules {#branchclosure.defined}
+**10.9 Branch closure rules**
 --------------------
 
 Our branch closure rules also remain unchanged. A branch closes if and
-only if it contains some sentence $\varPhi$ along with its negation,
-$\neg$$\varPhi$. We mark closed branches with an $\times$.
+only if it contains some sentence $\Phi$ along with its negation,
+$\neg$$\Phi$. We mark closed branches with an $\times$.
 
-Tree completion rules
+**10.10 Tree completion rules**
 ---------------------
 
 The completion rules, however, require a modification. The SL tree
 completion rule, given in
-§[\[sec.SL.tree.completion\]](#sec.SL.tree.completion){reference-type="ref"
-reference="sec.SL.tree.completion"}, said that a branch was complete if
+§5.6, said that a branch was complete if
 every sentence, other than atoms and negated atoms, has been resolved.
 In the QL tree system we need for our tree completion rules to take
 account of the fact that some sentences need to be acted on multiple
@@ -354,16 +359,17 @@ one likes; we need our completion rules to ensure that we've taken
 
 For example, this should not count as a completed tree:
 
-\[x (Fx $\supset$Ga), name=p1, subs=a \[$\neg$Ga, grouped \[Fb, grouped
-\[Fa $\supset$Ga, checked \[$\neg$Fa\] \[Ga, close\] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-10-1.svg)
+</figure>
 
 Our universal rule can be processed multiple times. This tree has only
 taken the $a$ instance of $(Fx \ensuremath{\supset}Ga)$; if it also took
 the $b$ instance, the tree would close:
 
-\[x (Fx $\supset$Ga), name=p1, subs=a,b \[$\neg$Ga, grouped \[Fb,
-grouped \[Fa $\supset$Ga, checked \[$\neg$Fa \[Fb $\supset$Ga, checked
-\[$\neg$Fb, close\] \[Ga, close\] \] \] \[Ga, close\] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-10-2.svg)
+</figure>
 
 We don't want this tree to count as complete until it's taken both the
 $a$ and the $b$ instance. The universal says that every instance must be
@@ -382,16 +388,16 @@ we've taken that instance as well. Once again, this is why we use the
 $\backslash$ instead of a . We can't be sure that we're finished with
 that line until we've done the rest of the tree.
 
-A wff is [resolvable]{.smallcaps} if it is the kind of wff that gets a
+A wff is **resolvable** if it is the kind of wff that gets a
 check mark upon processing it. (That's everything except for atoms,
 negated atoms, universals, and negated existentials.) A wff is
-[general]{.smallcaps} if it is a universal or a negated existential.
+**general** if it is a universal or a negated existential.
 Here is our new tree completion rule:
 
-[\[branchcompletion.defined\]]{#branchcompletion.defined
-label="branchcompletion.defined"}
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is **complete** if and only if either (i) it is closed, or (ii) every resolvable sentence in the branch has been resolved, and for every general sentence and every name $a$ in the branch, the $a$ instance of that general sentence has been taken.
+A tree is complete if and only if every branch in that tree is complete.</p>
 
-Resolution order
+**10.11 Resolution order**
 ----------------
 
 As in the SL tree system, the rules do not indicate any particular
@@ -412,17 +418,18 @@ $Gb \ensuremath{\supset}\forall x \ensuremath{\neg}Fx$ and
 $\exists x Fx$ entail $\neg$$Gb$. We begin by putting the first two
 sentences and the negation of the third in the root of a tree:
 
-\[Gb $\supset$x $\neg$Fx, name=p1 \[x Fx, grouped, name=p2
-\[$\neg$$\neg$Gb, grouped, name=p3 \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-11-1.svg)
+</figure>
 
 Ordinarily, it is efficient not to branch too early. But in this case,
 if we look ahead a step, we can see that resolving the conditional on
 line 1 will close one branch immediately. So that's a good place to
 start.
 
-\[Gb $\supset$x $\neg$Fx, name=p1, checked \[x Fx, grouped, name=p2
-\[$\neg$$\neg$Gb, grouped, name=p3 \[$\neg$Gb, close=:p3, !c,
-just=$\supset$:p1 \] \[x $\neg$Fx \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-11-2.svg)
+</figure>
 
 From here we have three choices to consider: lines 2, 3, and 4. Line 3
 pretty obviously won't get us anywhere interesting, so let's consider
@@ -431,10 +438,9 @@ usually a good rule of thumb to do the new instances first --- that way
 we'll have more information when we make decisions about which instances
 to take for the general rules. So let's take the $a$ instance of line 2.
 
-\[Gb $\supset$x $\neg$Fx, name=p1, checked \[x Fx, grouped, name=p2,
-checked=a \[$\neg$$\neg$Gb, grouped, name=p3 \[$\neg$Gb, close=:p3, !c,
-just=$\supset$:p1 \] \[x $\neg$Fx \[Fa, just=$\exists$:p2, name=fa \] \]
-\] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-11-3.svg)
+</figure>
 
 Now we turn our attention to the universal at line 4. We can take
 whatever instance we want. Let's be intelligent about it. The $b$
@@ -442,11 +448,9 @@ instance wouldn't do anything interesting; $Fb$ won't interact with that
 $\neg$$\neg$$Gb$ in any helpful way. But the $a$ instance will close the
 tree. So we take that one.
 
-\[Gb $\supset$x $\neg$Fx, name=p1, checked \[x Fx, grouped, name=p2,
-checked=a \[$\neg$$\neg$Gb, grouped, name=p3 \[$\neg$Gb, close=:p3, !c,
-just=$\supset$:p1 \] \[x $\neg$Fx, subs=a, name=all \[Fa,
-just=$\exists$:p2, name=fa \[$\neg$Fa, just=$\forall$:all, close=:fa, !c
-\] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-11-4.svg)
+</figure>
 
 Planning ahead can help make your trees more efficient. The general
 principle you should keep in mind is, if you have a choice for what
@@ -454,7 +458,7 @@ resolvable sentence to resolve, or what instance of a general sentence
 to take, make a choice that will allow you to close branches more
 quickly.
 
-Infinite trees
+**10.12 Infinite trees**
 --------------
 
 In the SL tree system, every development of the tree took us closer to a
@@ -471,8 +475,9 @@ existentials and negated universals require that new names be
 introduced. Often, we can introduce the new names before dealing with
 the general instances, as in this completed tree:
 
-\[x Fx, name=p1, checked=a \[x Gx, grouped, name=p2, subs=a \[Fa,
-just=$\exists$:p1 \[Ga, just=$\forall$:p2, open \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-12-1.svg)
+</figure>
 
 In this tree, we introduce the name $a$ for the existential, then take
 the instance for the one and only name in the branch for the universal,
@@ -488,8 +493,9 @@ line 2.
 To resolve that existential, we must use a new name. So on line 3, we
 take the $b$ instance from line 2.
 
-\[x y Rxy, name=p1, subs=a \[y Ray, just=1 $\forall$, checked=b \[Rab,
-just=2 $\exists$ \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-12-2.svg)
+</figure>
 
 This tree has not closed, but note that it is not complete. We haven't
 taken the $b$ instance of the universal on line 1. When we do so, we
@@ -497,10 +503,9 @@ will find ourselves with another existential on line 4; it in turn
 requires an instance involving a new name, and the process will continue
 indefinitely.
 
-\[x y Rxy, name=p1, subs=a,b,c \[y Ray, just=1 $\forall$, checked=b
-\[Rab, just=2 $\exists$ \[y Rby, just=1 $\forall$, checked=c \[Rbc,
-just=4 $\exists$ \[y Rcy, just=1 $\forall$, checked=d \[Rcd, just=5
-$\exists$ \[⋮\] \] \] \] \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-12-3.svg)
+</figure>
 
 As the pattern makes clear, this tree will never close, but it will also
 never be complete. It will just keep taking instances of an existential
@@ -514,13 +519,13 @@ should be in the extension of $R$; line 5 says that
 $\mathopen{<}$b, c$\mathclose{>}$ should too. There is a clear pattern
 that tells us what $R$'s extension must be like:
 
-  ----------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    $\mbox{extension}(R)$ $\{\mbox{\ensuremath{\mathopen{<}}a, b\ensuremath{\mathclose{>}}}, \mbox{\ensuremath{\mathopen{<}}b, c\ensuremath{\mathclose{>}}}, \mbox{\ensuremath{\mathopen{<}}c, d\ensuremath{\mathclose{>}}}, \mbox{\ensuremath{\mathopen{<}}d, e\ensuremath{\mathclose{>}}}, \ldots\}$
-  ----------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+> $extension(R)$ = $\{\langle a, b \rangle, \langle b, c \rangle, \langle c,d \rangle, \langle d,e \rangle \dots\}$
 
 Or we can represent it graphically, thus:
 
-r@ = l $\mbox{extension}(R)$ &
+
+<div class="table">
+
 
   $Rxy$   a    b    c    d    ...
   ------- ---- ---- ---- ---- -----
@@ -529,6 +534,10 @@ r@ = l $\mbox{extension}(R)$ &
   c       \-   \-   \-   1    \-
   d       \-   \-   \-   \-   1
   ⋮       \-   \-   \-   \-   \-
+
+
+</div>
+
 
 The blanks indicate that it doesn't matter whether those pairs fall
 under the extension of $R$ or not.
@@ -552,6 +561,9 @@ chart above. The blanks mean it doesn't matter whether you include them.
 A model that included every ordered pair in the extension of $R$ would
 be an example of the kind of model indicated:
 
+<div class="table">
+
+
   $Rxy$   a   b   c   d   ...
   ------- --- --- --- --- -----
   a       1   1   1   1   1
@@ -560,16 +572,17 @@ be an example of the kind of model indicated:
   d       1   1   1   1   1
   ⋮       1   1   1   1   1
 
+</div>
+
 Once we put it this way, we can see that the $R$ predicate needn't draw
 any distinctions between the various objects in the domain. Each object
 could be the same, as far as $R$ is concerned. So we could even offer a
 simpler model, with a UD comprising a simple object that is $R$-related
 to itself.
 
-  ----------------------- -------------------------------------
-                       UD {a}
-    $\mbox{extension}(R)$ {$\mathopen{<}$a, a$\mathclose{>}$}
-  ----------------------- -------------------------------------
+> $UD$ = $\{a\}$ </br>
+> $extension(R)$ = $\{\langle a, a \rangle\}$ </br>
+
 
 When a tree continues indefinitely, the root is satisfiable; you can
 describe a model for it using an infinite domain, taking advantage of
@@ -581,12 +594,19 @@ names with subscripts. Everything is straightforward up until line 6; at
 line 7, we need to go back and take a second instance of line 2, and the
 infinite cycle begins.
 
+<figure>
+![](/static/book-img/forallx-ubc/10-12-6.svg)
+</figure>
+
 If we continued drawing the tree, we'd take the $a_{4}$ instance of the
 universal at line 2 on line 15, then introduce a new name by resolving
 that universal. The tree will continue forever, again with a clear
 pattern. Lines 5, 9, 13, etc. tell us that for every integer $i$,
 $Ra_{1}a_{i}$=0. Lines 6, 10, 14, etc. tell us that for every $i > 1$,
 $Ra_{i}a_{1}$=1. Or in chart form:
+
+<div class="table">
+
 
   $Rxy$     $a_{1}$   $a_{2}$   $a_{3}$   $a_{4}$   ...
   --------- --------- --------- --------- --------- -----
@@ -595,6 +615,8 @@ $Ra_{i}a_{1}$=1. Or in chart form:
   $a_{3}$   1         \-        \-        \-        \-
   $a_{4}$   1         \-        \-        \-        \-
   ⋮         1         \-        \-        \-        \-
+
+</div>
 
 This chart describes the extension of $R$ that, as part of a model with
 the infinite UD {$a_{1}$, $a_{2}$, $a_{3}$, ...}, would satisfy
@@ -610,24 +632,26 @@ $a_{2}$, as far as this model is concerned. So a two-object model would
 also suffice to satisfy this sentence. Here is a graphical
 representation of the denotation for $R$:
 
-  $Rxy$     $a_{1}$   $a_{2}$         
+<div class="table">
+
+
+  $Rxy$     $a_{1}$   $a_{2}$
   --------- --------- --------- -- -- --
-  $a_{1}$   0         0               
-  $a_{2}$   1         \-              
+  $a_{1}$   0         0
+  $a_{2}$   1         \-
 
-Or, describing the model in question with sets and n-tuples:
+</div>
 
-  ----------------------- -------------------------------------------------
-                       UD {$a_{1}$, $a_{2}$}
-    $\mbox{extension}(R)$ {$\mathopen{<}$$a_{2}$, $a_{1}$$\mathclose{>}$}
-  ----------------------- -------------------------------------------------
+
+> $UD$ = $\{a_1, a_2\}$ </br>
+> $extension(R)$ = $\{\langle a_2, a_1 \rangle\}$ </br>
+
 
 The reasoning involved in collapsing models with infinite domains into
 finite ones centrally involves reasoning about what distinctions are
 required: do we need to suppose that the objects named are *different
 objects*, or can we treat it as a case of multiple names for the *same
-thing*. In Chapter [\[ch.identity\]](#ch.identity){reference-type="ref"
-reference="ch.identity"}, we'll foreground this kind of question in more
+thing*. In Chapter <a href="https://ubc-carnap.lfcode.ca/book/12">Chapter 12</a>, we'll foreground this kind of question in more
 detail, and introduce a way to talk about it in QL.
 
 Note that, for purposes of answering questions about entailment, you
@@ -639,7 +663,7 @@ that question: yes, there is an infinite model for it. It's not
 necessary, for the question of whether there is any model satisfying the
 root, to determine whether there is a *finite* model that does so.
 
-Common student errors
+**10.13 Common student errors**
 ---------------------
 
 ### Using old names
@@ -653,8 +677,9 @@ rules.
 
 For example, this tree is a mistake:
 
-\[x y $\neg$Rxy, subs=a \[Rab, grouped \[y $\neg$Ray, just=1 $\forall$,
-checked=b \[$\neg$Rab, just=3 $\exists$, close=2, 4 \] \] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-13-1.svg)
+</figure>
 
 Line 3 here is fine; but at line 4, this tree takes the $b$ instance of
 the existential on line 3, even though $b$ appeared in line 2. The
@@ -669,72 +694,59 @@ don't use the universal rule. This sentence is a conjunction, so you
 must perform the conjunction rule on it. That will give you a universal,
 at which point you can take an instance.
 
-Practice Exercises {#practice-exercises .unnumbered}
+**Practice Exercises**
 ------------------
 
-$\star$
 
-**Part**   [\[pr.QL.trees.tautology\]]{#pr.QL.trees.tautology
-label="pr.QL.trees.tautology"} Use a tree to test whether the following
+**Part A** Use a tree to test whether the following
 sentences are tautologies. If they are not tautologies, describe a model
 on which they are false.
 
-.
+1. $\forall x \forall y (Gxy \ensuremath{\supset}\exists z Gxz)$
 
-$\forall x \forall y (Gxy \ensuremath{\supset}\exists z Gxz)$
+2. $\forall x Fx \ensuremath{\vee}\forall x (Fx \ensuremath{\supset}Gx)$
 
-$\forall x Fx \ensuremath{\vee}\forall x (Fx \ensuremath{\supset}Gx)$
+3. $\forall x (Fx \ensuremath{\supset}(\ensuremath{\neg}Fx \ensuremath{\supset}\forall y Gy))$
 
-$\forall x (Fx \ensuremath{\supset}(\ensuremath{\neg}Fx \ensuremath{\supset}\forall y Gy))$
+4. $\exists x (Fx \ensuremath{\vee}\ensuremath{\neg}Fx)$
 
-$\exists x (Fx \ensuremath{\vee}\ensuremath{\neg}Fx)$
+5. $\exists x Jx \ensuremath{\equiv}\ensuremath{\neg}\forall x \ensuremath{\neg}Jx$
 
-$\exists x Jx \ensuremath{\equiv}\ensuremath{\neg}\forall x \ensuremath{\neg}Jx$
+6. $\forall x (Fx \ensuremath{\vee}Gx) \ensuremath{\supset}(\forall y Fy \ensuremath{\vee}\exists x Gx)$
 
-$\forall x (Fx \ensuremath{\vee}Gx) \ensuremath{\supset}(\forall y Fy \ensuremath{\vee}\exists x Gx)$
 
-$\star$
-
-**Part**   [\[pr.QL.trees.validity\]]{#pr.QL.trees.validity
-label="pr.QL.trees.validity"} Use a tree to test whether the following
+**Part B** Use a tree to test whether the following
 argument forms are valid. If they are not, give a model as a
 counterexample.
 
-.
 
-$Fa$, $Ga$,
-$\ldotp\dot{}\,\ldotp$ $\forall x (Fx \ensuremath{\supset}Gx)$
+1. $Fa$, $Ga$, $\therefore$ $\forall x (Fx \ensuremath{\supset}Gx)$
 
-$Fa$, $Ga$,
-$\ldotp\dot{}\,\ldotp$ $\exists x (Fx \ensuremath{\,\&\,}Gx)$
+2. $Fa$, $Ga$,$\therefore$ $\exists x (Fx \ensuremath{\,\&\,}Gx)$
 
-$\forall x \exists y Lxy$,
-$\ldotp\dot{}\,\ldotp$ $\exists x \forall y Lxy$
+3. $\forall x \exists y Lxy$,$\therefore$ $\exists x \forall y Lxy$
 
-$\exists x (Fx \ensuremath{\,\&\,}Gx)$, $Fb \ensuremath{\equiv}Fa$,
-$Fc \ensuremath{\supset}Fa$, $\ldotp\dot{}\,\ldotp$ $Fa$
+4. $\exists x (Fx \ensuremath{\,\&\,}Gx)$, $Fb \ensuremath{\equiv}Fa$,
+$Fc \ensuremath{\supset}Fa$, $\therefore$ $Fa$
 
-$\forall x \exists y Gyx$,
-$\ldotp\dot{}\,\ldotp$ $\forall x \exists y (Gxy \ensuremath{\vee}Gyx)$
+5. $\forall x \exists y Gyx$,
+$\therefore$ $\forall x \exists y (Gxy \ensuremath{\vee}Gyx)$
 
-**Part**  
-[\[pr.QL.trees.translation.and.validity\]]{#pr.QL.trees.translation.and.validity
-label="pr.QL.trees.translation.and.validity"} Translate each argument
+**Part C** Translate each argument
 into QL, specifying a UD, then use a tree to evaluate the resulting form
 for validity. If it is invalid, give a model as a counterexample.
 
-.
 
-Every logic student is studying. Deborah is not studying. Therefore,
+1. Every logic student is studying. Deborah is not studying. Therefore,
 Deborah is not a logic student.
 
-Kirk is a white male Captain. Therefore, some Captains are white.
+2. Kirk is a white male Captain. Therefore, some Captains are white.
 
-The Red Sox are going to win the game. Every team who wins the game will
+3. The Red Sox are going to win the game. Every team who wins the game will
 be celebrated. Therefore, the Red Sox will be celebrated.
 
-The Red Sox are going to win the game. Therefore, the Yankees are not
+4. The Red Sox are going to win the game. Therefore, the Yankees are not
 going to win the game.
 
-All cats make Frank sneeze, unless they are hairless. Some hairless cats
+5. All cats make Frank sneeze, unless they are hairless. Some hairless cats
 are cuddly. Therefore, some cuddly things make Frank sneeze.

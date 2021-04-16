@@ -1,26 +1,25 @@
-Soundness and Completeness for QL Trees {#ch.QLsoundcomplete}
+Soundness and Completeness for QL Trees
 =======================================
 
-In Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"} we proved that our SL tree method works
+In <a href="https://ubc-carnap.lfcode.ca/book/6">Chapter 6</a> we proved that our SL tree method works
 the way it is supposed to: any tree that closed was guaranteed to have a
 root that was unsatisfiable in SL, and any completed tree that remained
 open was guaranteed to describe an SL model that satisfies the root.
 These two theorems together are called *soundness* and *completeness*.
 
-These definitions were first given on pages and . They are equally
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">**soundness**: If a tree closes, that guarantees that its root is unsatisfiable. In other words: $\mathcal{X} \vdash \bot \rightarrow \mathcal{X} \models \bot$.</br></br>
+**completeness** If a root is unsatisfiable, that guarantees that the
+tree will close. In other words: $\mathcal{X} \models \bot \Rightarrow \mathcal{X} \vdash \bot$</p>
+
+These definitions were first given in sections 6.2 and 6.5. They are equally
 applicable to our extended tree system for QL. The system introduced in
-Chapter [\[ch.QLTrees\]](#ch.QLTrees){reference-type="ref"
-reference="ch.QLTrees"} is also sound and complete. The rules are
+<a href="https://ubc-carnap.lfcode.ca/book/10">Chapter 10</a> is also sound and complete. The rules are
 designed in a way so as to guarantee that if the tree closes, there is
 no model for the root (sound), and to guarantee that an open branch
 describes a model for the root (complete). The proofs for these two
-theorems are structurally very similar to the proofs given in Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"}.
+theorems are structurally very similar to the proofs given in <a href="https://ubc-carnap.lfcode.ca/book/6">Chapter 6</a>.
 
-Soundness
+**11.1 Soundness**
 ---------
 
 If our tree method is sound, then there is no possible set of QL
@@ -29,19 +28,24 @@ possible tree method is sound. For example, suppose we dropped the
 requirement, for a negated universal, that one take an instance with a
 new name.
 
-In other words, suppose we replaced this rule (introduced on page )
+In other words, suppose we replaced this rule (introduced in <a href="https://ubc-carnap.lfcode.ca/book/10">Chapter 10</a>)
 
-not line numbering \[, checked= \[, just=where is *new* \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-6-1.svg)
+</figure>
 
 with this alternate one:
 
-not line numbering \[, checked= \[, just=for *any* \] \]
+<figure>
+![](/static/book-img/forallx-ubc/11-1-1.svg)
+</figure>
 
-If we had this rule, there would be counterexamples to soundness ---
-trees with satisfiable roots, which nevertheless closed. Here is an
+If we had this rule, there would be counterexamples to soundness---trees with satisfiable roots, which nevertheless closed. Here is an
 example:
 
-\[Fa \[x Fx, grouped \[Fa, just=2 alṫ$\forall$, close=1, 3\] \] \]
+<figure>
+![](/static/book-img/forallx-ubc/11-1-2.svg)
+</figure>
 
 This tree is a counterexample to the soundness of the alternate tree
 system just described. To prove that our system is sound is to prove
@@ -49,9 +53,7 @@ that our actual rules do not allow for this kind of tree. To prove this,
 we'll begin by assuming that is satisfiable, and demonstrate from that
 assumption that at least one branch of any tree that develops according
 to our rules will remain open. As in the case of the parallel discussion
-in Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"}, our proof will be a recursive one. We
+in <a href="https://ubc-carnap.lfcode.ca/book/6">Chapter 6</a>, our proof will be a recursive one. We
 will demonstrate that, if the tree *starts* with a set of satisfiable
 sentences, then, for each legal way the tree may develop, at least one
 branch will continue to have a set of satisfiable sentences. This is
@@ -62,9 +64,7 @@ never jointly satisfiable.
 Suppose, then, we have some satisfiable set of sentences in the root of
 a tree. If the root is satisfiable, then there is some model that
 satisfies it. Call this interpretation $\mathcal{I}$. We prove that, if
-our tree follows the rules given in Chapter
-[\[ch.QLTrees\]](#ch.QLTrees){reference-type="ref"
-reference="ch.QLTrees"}, then $\mathcal{I}$ doesn't just satisfy the
+our tree follows the rules given in <a href="https://ubc-carnap.lfcode.ca/book/10">Chapter 10</a>, then $\mathcal{I}$ doesn't just satisfy the
 root --- it satisfies every sentence in any completed branch. We will
 prove this recursively.
 
@@ -111,8 +111,7 @@ processing rule. The thirteen kinds of sentences are:
 Fortunately, we've already proven what we need to prove for the first
 nine items on the list. Our QL tree method uses all the same rules as
 the SL method did for the sentential connectives; we proved in
-§[\[sec.sl.soundnessproof.begin\]](#sec.sl.soundnessproof.begin){reference-type="ref"
-reference="sec.sl.soundnessproof.begin"}, for each of those rules, that
+<a href="https://ubc-carnap.lfcode.ca/book/6">§6.4</a>, for each of those rules, that
 it has the key property: if some interpretation $\mathcal{I}$ satisfies
 what comes above the rule, then the development below it is also
 satisfiable. (Indeed, we proved there that the very same interpretation,
@@ -124,68 +123,62 @@ of the next four subsections.
 
 ### Existentials
 
-Suppose some satisfiable set of QL sentences is developed according to
+Suppose some satisfiable set of QL sentences $\mathcal{X}$ $\mathscr{X}$ is developed according to
 the existential rule:
 
-not line numbering \[, checked= \[, just=where is *new* \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-3-1.svg)
+</figure>
 
-We assume that $\mathcal{I}$ models , which includes some existential
-$\exists\script{x}\metaA{}$. We want to prove that there is a model for
-the expanded branch which comprises both and
-$\metaA{}\substitute{\script{x}}{\script{a}}$, i.e.,
-$\metaSetX{} \cup \metaA{}\substitute{\script{x}}{\script{a}}$ (the set
+We assume that $\mathcal{I}$ models $\mathcal{X}$, which includes some existential
+$\exists\mathscr{x}\Phi$. We want to prove that there is a model for
+the expanded branch which comprises both $\mathcal{X}$ and
+$\Phi[\mathscr{x} \Rightarrow a]$, i.e.,
+$\mathcal{X} \cup \Phi[\mathscr{x} \Rightarrow a]$ (the set
 containing and the new development sentence too). Unlike in the parallel
 proof for the sentential rules, we cannot assume that $\mathcal{I}$
 itself satisfies our new development, because our new development
 introduces a new name; we cannot assume that $\mathcal{I}$ included any
-assignment for the new name . But we *can* be assured that $\mathcal{I}$
+assignment for the new name $a$. Nor, if it did, are we sure that the object $a$ denotes satisfies $\Phi$. But we *can* be assured that $\mathcal{I}$
 can be expanded into a new, similar interpretation,
-$\mathcal{I}\mbox{*}$, which does include . Moreover, since we know that
-$\mathcal{I}$ satisfied the existential $\exists\script{x}\metaA{}$, we
+$\mathcal{I}^*$, which does include $a$. Moreover, since we know that
+$\mathcal{I}$ satisfied the existential $\exists\mathscr{X}\Phi$, we
 know that there was some object in $\mathcal{I}$'s domain that satisfied
-. So it will be possible to construct our new interpretation
-$\mathcal{I}\mbox{*}$ so that it includes the new name, and assigns it
+$\Phi$. So it will be possible to construct our new interpretation
+$\mathcal{I}^*$ so that it includes the new name, and assigns it
 to that object. This will ensure that
-$\mathcal{I}\mbox{*}(\metaA{}\substitute{\script{x}}{\script{a}})=1$.
-And since $\mathcal{I}\mbox{*}$ is just like $\mathcal{I}$ with respect
-to everything other than --- and since we are assured that was not in
-(the rule requires that it be new) --- $\mathcal{I}\mbox{*}$ will
-satisfy in just the same way that $\mathcal{I}$ did.
+$\mathcal{I}^*(\Phi[\mathscr{x}\Rightarrow a])=1$.
+And since $\mathcal{I}^*$ is just like $\mathcal{I}$ with respect
+to everything other than $a$--- and since we are assured that $a$ was not in $\mathcal{X}$
+(the rule requires that it be new) --- $\mathcal{I}^*$ will
+satisfy $\mathcal{X}$ in just the same way that $\mathcal{I}$ did.
 
-In other words, assuming that $\mathcal{I}$ satisfies every sentence in
-a branch before the existential rule is performed, there is guaranteed
-to be a new interpretation, $\mathcal{I}\mbox{*}$, which is an extension
-of $\mathcal{I}$ that includes a new name attached to an object in the
-UD satisfying the existential, which satisfies everything in the branch
-up to the point after the existential rule is performed. That is to say,
-like the nine sentential rules considered in Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"}, the existential rule can never take you
-from a satisfiable branch to an unsatisfiable one.
+This will be clearer with an example. Suppose $\exists x Fx$ is part of a satisfiable set of sentences. So assume that $\mathcal{I}$ interprets it. The tree resolution for rule for existentials requires that one take an instance corresponding to a new name. Suppose this is done thus:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-1-3.svg)
+</figure>
+
+We cannot simply say that since some model $\mathcal{I}$ satisfies the existential $\exists x Fx$, it thereby must also satisfy $Fa$; plenty of interpretations satisfy the former while falsifying the latter. But what we can say, since $a$ is a new name, with no previous commitments specific to it earlier in the tree, is that we can construct a model $\mathcal{I}^*$ that satisfies every sentence above in the tree (in this case, just the one existential), and that also satisfies the new development (in this case, $Fa$). We do so by assigning the name $a$ to refer to some object that is $F$ in $\mathcal{I}$. We’re sure there is such an object there because it is stipulated that $\mathcal{I}$ satisfies the existential.
+
+In general, assuming that $\mathcal{I}$ satisfies every sentence in a branch before the existential rule is performed, there is guaranteed to be a new interpretation, $\mathcal{I}^*$, which is an extension of $\mathcal{I}$ that includes a new name attached to an object in the UD satisfying the existential, which satisfies everything in the branch up to the point after the existential rule is performed. That is to say, like the nine sentential rules considered in <a href="https://ubc-carnap.lfcode.ca/book/6">Chapter 6</a>
+, the existential rule can never take you from a satisfiable branch to an unsatisfiable one.
 
 ### Universals
 
 Suppose a branch of a tree uses the rule for universals:
 
-not line numbering \[, subs= \[, just=for *any* \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-4-1.svg)
+</figure>
 
-Assume that the set of QL sentences above this development is
-satisfiable. Then some model $\mathcal{I}$ makes it true. The universal
-rule allows an instance to be developed using any name, so, as before,
-we cannot guarantee that $\mathcal{I}$ makes the development true,
-because $\mathcal{I}$ may or may not interpret the name ; but as before,
-we can be assured if it doesn't, we can extend the interpretation to
-include it. So consider a new model $\mathcal{I}\mbox{*}$, which
-includes the name . If wasn't interpreted by $\mathcal{I}$, then it can
-be assigned to any element of the UD. Since the rest of $\mathcal{I}$ is
-unchanged, and since $\mathcal{I}(\forall \script{x}\metaA{})=1$, we
-know that our new extended interpretation will satisfy
-$\metaA{}\substitute{\script{x}}{\script{a}}$ too.
+
+Assume that the set of QL sentences $\mathcal{X}$ above this development is satisfiable. Then some model $\mathcal{I}$ makes it true. The universal rule allows an instance to be developed using any name, so, as before, we cannot guarantee that $\mathcal{I}$ makes the development true, because $\mathcal{I}$ may or may not interpret the name $a$; but as before, we can be assured if it doesn’t, we can extend the interpretation to include it. So consider a new model $\mathcal{I}^*$, which includes the name $a$. If $a$ wasn’t interpreted by $\mathcal{I}$, then it can be assigned to any element of the UD. Since the rest of $\mathcal{I}$ is unchanged, and since $\mathcal{I}(\forall \mathscr{x} \Phi) = 1$, we know that our new extended interpretation will satisfy $\Phi[\mathscr{x} \Rightarrow a]$ too.
 
 That is to say, once again, if we assume that $\mathcal{I}$ satisfies
 every sentence in a branch before the universal rule is performed, there
 is guaranteed to be a model --- either the very same one, $\mathcal{I}$,
-or a modification of it, $\mathcal{I}\mbox{*}$, which assigns a new name
+or a modification of it, $\mathcal{I}^*$, which assigns a new name
 to any object in the UD, which satisfies everything in the branch up to
 the point after the universal rule is performed. In other words, the
 universal rule can never take you from a satisfiable branch to an
@@ -202,27 +195,20 @@ of sentences to an unsatisfiable one.
 
 The reasoning behind soundness for the negated existential rule is
 exactly parallel to that for the universal rule. We begin by assuming
-that some negated universal $\enot\exists\script{x}\metaA{}$, is
+that some negated universal $\neg\exists\mathscr{x}\Phi$, is
 satisfied by $\mathcal{I}$. Here is the rule for negated existentials:
 
-not line numbering \[, subs= \[, just=for *any* \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-5-1.svg)
+</figure>
 
-We want to prove that the result of this rule is also satisfied, either
-by $\mathcal{I}$ itself (if was interpreted in $\mathcal{I}$), or by an
-extension of it $\mathcal{I}\mbox{*}$, that preserves the satisfaction
-of everything above (if was a new name). Since $\mathcal{I}$ satisfies
-$\enot\exists\script{x}\metaA{}$, it makes every substitution instance
-for of false. If was interpreted by $\mathcal{I}$ already, then
-$\mathcal{I}(\metaA{}\substitute{\script{x}}{\script{a}})=0$. If it
-wasn't, the new model $\mathcal{I}\mbox{*}$ will assign the new name to
-some object in the UD of the original model; since no object in that
-model satisfied ,
-$\mathcal{I}\mbox{*}(\metaA{}\substitute{\script{x}}{\script{a}})=0$.
-Either way, our interpretation falsifies , and so satisfies that
-sentence's negation, which is the continuation of the branch.
 
-So this rule too can never take us from a satisfiable set of QL
-sentences to an unsatisfiable one.
+
+We want to prove that the result of this rule is also satisfied, either by $\mathcal{I}$ itself (if $a$ was interpreted in $\mathcal{I}$), or by an extension of it $\mathcal{I}^*$, that preserves the satisfaction of everything above (if $a$ was a new name). Since $\mathcal{I}$ satisfies $\neg \exists \mathscr{x} \Phi$, it makes every substitution instance for $\mathscr{x}$ of $\Phi$ false. If $a$ was interpreted by $\mathcal{I}$ already, then $\mathcal{I}(\Phi[\mathscr{x} \Rightarrow a])=0$. If it wasn’t, the new model $\mathcal{I}^*$ will assign the new name to some object in the UD of the original model; since no object in that model satisfied $\Phi$, $\mathcal{I}^*(\Phi[\mathscr{x} \Rightarrow a]) = 0$. Either way, our interpretation falsifies $\Phi [\mathscr{x} \Rightarrow a]$, and so satisfies that sentence’s negation, which is the continuation of the branch.
+
+So this rule too can never take us from a satisfiable set of QL sentences to an unsatisfiable one.
+
+
 
 ### Negated Universal
 
@@ -230,16 +216,18 @@ Negated universals are similar to existentials. Assume that a negated
 universal is part of a set of sentences satisfied by $\mathcal{I}$, and
 that this rule is then applied:
 
-not line numbering \[, checked= \[, just=where is *new* \] \]
+<figure>
+![](/static/book-img/forallx-ubc/10-6-1.svg)
+</figure>
 
-Construct a new interpretation $\mathcal{I}\mbox{*}$, which differs from
+
+Construct a new interpretation $\mathcal{I}^*$, which differs from
 $\mathcal{I}$ only in that it includes an interpretation of the new name
-, and assigns that name to some object that falsifies . We know there is
-at least one such object because we are assuming that $\mathcal{I}$
+$a$, and assigns that name to some object that falsifies $\Phi$. We know there is at least one such object because we are assuming that $\mathcal{I}$
 satisfies the negated universal. Then our new interpretation
-$\mathcal{I}\mbox{*}$ satisfies the new development of the branch. It
+$\mathcal{I}^*$ satisfies the new development of the branch. It
 also satisfies everything above the branch, just like $\mathcal{I}$ did,
-because nothing above the branch included the name .
+because nothing above the branch included the name $a$.
 
 That last bit of reasoning relied centrally on the requirement that
 we're taking a new name. We saw in the introduction to this chapter that
@@ -258,7 +246,7 @@ the branch starts with a satisfiable set of sentences, the branch will
 never close. But that's just what soundness says: if the root is
 satisfiable, the tree is guaranteed to remain open. Soundness is proven.
 
-Completeness
+**11.2 Completeness**
 ------------
 
 Completeness says that if a branch of a completed tree remains open,
@@ -266,18 +254,14 @@ then the root is satisfiable. We prove this by assuming that we have an
 open completed branch, and use it to construct an interpretation that
 satisfies every sentence in that branch, which includes the root. The
 proof for completeness of our QL tree system is structurally just like
-the one given in Chapter
-[\[ch.SLsoundcomplete\]](#ch.SLsoundcomplete){reference-type="ref"
-reference="ch.SLsoundcomplete"}.
+the one given in <a href="https://ubc-carnap.lfcode.ca/book/6">Chapter 6</a>.
+
 
 Given a completed open branch, we construct a model $\mathcal{I}$, based
-on that branch, as follows: for any predicate $\script{F}$, if some QL
-atom $\script{F}\script{a}_{1}, \ldots, \script{a}_{n}$ is in the branch
+on that branch, as follows: for any predicate $\mathscr{F}$,  if some QL
+atom $\mathscr{F}a_{1}, \dots, a_{n}$ is in the branch
 --- i.e., if $P$ or $Fa$ or $Rab$ is in the branch --- then
-$\mathcal{I}$ makes that atom true, by putting in the extension of
-$\script{F}$. And if
-$\enot \script{F}\script{a}_{1}, \ldots, \script{a}_{n}$ is in the
-branch, $\mathcal{I}$ excludes from the extension of $\script{F}$, thus
+$\mathcal{I}$ makes that atom true, $\mathcal{F}$ by putting <$a_1,\dots,a_n$> in the extension of $\mathcal{F}$.And if $\neg \mathscr{F} a_{1}, \dots, a_{n}$ is in the branch, $\mathcal{I}$ excludes <$a_1, \dots, a_n$> from the extension of $\mathscr{F}$, thus
 making the negation of the atom true. This is of course just the way
 that we construct interpretations from open branches of completed trees.
 
@@ -286,8 +270,8 @@ branch, it is made true by $\mathcal{I}$. The QL atoms trivially meet
 this criterion --- $\mathcal{I}$ was designed precisely to satisfy them.
 We will prove by induction that every possible QL sentence also meets
 this criterion. In
-§[\[sec.completenessproof\]](#sec.completenessproof){reference-type="ref"
-reference="sec.completenessproof"} we showed, for each propositional
+<a href="https://ubc-carnap.lfcode.ca/book/6">§6.6</a>
+ we showed, for each propositional
 connective, if you construct a more complex SL sentence out of simpler
 SL sentences that have this criterion, the more complex one will too.
 That proof carries on unchanged here. So it remains only to show that
@@ -296,15 +280,15 @@ the same is true of our four quantifier rules.
 ### Existential
 
 Consider an existential --- a QL sentence of the form
-$\exists \script{x} \metaA{}$. We need to prove that if it is in the
+$\exists \mathscr{x} \Phi$. We need to prove that if it is in the
 open, completed branch, $\mathcal{I}$ satisfies it. Since the branch is
 complete, we know that the existential rule has been performed to
 resolve this sentence. So the branch includes a substitution instance of
-that used a new name. For our present purposes, it doesn't actually
+$\Phi$ that used a new name. For our present purposes, it doesn't actually
 matter whether the name was new --- the fact that there is some instance
-of in the branch already is enough to prove what we need to prove. Since
-there is an instance of in the branch, if it is satisfied by
-$\mathcal{I}$, the existential $\exists \script{x} \metaA{}$ must be
+of $\Phi$ in the branch already is enough to prove what we need to prove. Since
+there is an instance of $\Phi$ in the branch, if it is satisfied by
+$\mathcal{I}$, the existential $\exists \mathscr{x} \Phi$ must be
 satisfied by $\mathcal{I}$ too.
 
 So, just as we showed for the nine sentential rules, the existential
@@ -314,40 +298,32 @@ existential development, must also satisfy the existential above it.
 
 ### Universal
 
-Suppose a universal sentence $\forall \script{x} \metaA{}$ appears in a
-completed open branch. Since the branch is complete, that means that,
-for every name in the branch, is also in the branch. We therefore assume
-that $\mathcal{I}$ satisfies each ; so $\mathcal{I}$ must also satisfy
-$\forall \script{x} \metaA{}$. Because the UD for $\mathcal{I}$ includes
-only those names that occur in the branch, every instance of is
-included, so the universal is true.
 
-Once again, any interpretation that satisfies everything below the
-universal development, must also satisfy the universal above it.
+Suppose a universal sentence $\forall \mathscr{x} \Phi$ appears in a completed open branch. Since the branch is complete, that means that, for every name $a$ in the branch, $\Phi[\mathscr{x}\Rightarrow a]$
+is also in the branch. We therefore assume that $\mathcal{I}$ satisfies each $\Phi[\mathscr{x}\Rightarrow a]$; so $\mathcal{I}$ must also satisfy $\forall \mathscr{x}\Phi$. Because the UD for $\mathcal{I}$ includes only those names that occur in the branch, every instance of $\Phi$ is included, so the universal is true.
+
+Once again, any interpretation that satisfies everything below the universal development, must also satisfy the universal above it.
 
 ### Negated Existential
 
 Negated existentials work just like universals. If
-$\enot \exists \script{x} \metaA{}$ is in a completed open branch, then
-for every name in $\mathcal{I}$, is below it in the branch. And if
-$\mathcal{I}$ satisfies each of these negations, it will also satisfy
-the negated existential.
+$\neg \exists \mathscr{x} \Phi$ is in a completed open branch, then
+for every name $a$ in $\mathcal{I}$, $\neg \Phi [\mathscr{x} \Rightarrow a]$ is below it in the branch. And if $\mathcal{I}$ satisfies each of these negations, it will also satisfy the negated existential.
 
 ### Negated Universal
 
 Negated universals work just like existentials. If
-$\enot \forall \script{x} \metaA{}$ is in the branch, then some instance
+$\neg \forall \mathscr{x} \Phi$ is in the branch, then some instance
 of the negation is in the branch below. If $\mathcal{I}$ satisfies some
-instance of , then, given the definition of truth for negation and
+instance of $\neg \Phi$, then, given the definition of truth for negation and
 universals in QL, it will also satisfy
-$\enot \forall \script{x} \metaA{}$.
+$\neg \forall \mathscr{x} \Phi$.
 
 ### Summarizing the completeness proof
 
 The sentence shapes just considered, combined with the nine shapes
 considered in
-§[\[sec.completenessproof\]](#sec.completenessproof){reference-type="ref"
-reference="sec.completenessproof"}, correspond to all the possible QL
+<a href="https://ubc-carnap.lfcode.ca/book/6">§6.6</a>, correspond to all the possible QL
 sentences. So we have proven that, for any possible QL sentence , if an
 interpretation satisfies the simpler sentences below it in the branch,
 that interpretation also satisfies itself. Since we also have a recipe
@@ -356,39 +332,264 @@ satisfy the atoms, we can prove by induction that it can satisfy
 everything in the branch, including the root. A completed open branch
 guarantees a satisfiable root. Completeness is proven.
 
-[\[pr.QLalttrees-sound\]]{#pr.QLalttrees-sound
-label="pr.QLalttrees-sound"} Following are possible modifications to our
+**Part A**
+
+Following are possible modifications to our
 QL tree system. For each, imagine a system that is like the system laid
 out in this chapter, except for the indicated change. Would the modified
 tree system be sound? If so, explain how the proof given in this chapter
 would extend to a system with this rule; if not, give a tree that is a
 counterexample to the soundness of the modified system.
 
-Change the rule for existentials to this rule:
+1. Change the rule for existentials to this rule:
 
-Change the rule for existentials to this rule:
+<figure>
+![](/static/book-img/forallx-ubc/11-A1.svg)
+</figure>
 
-Change the rule for existentials to this rule:
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.1 The modified system would be sound.
+| Yes.
+| *No.
+```
 
-Change the rule for universals to this rule:
 
-Change the rule for existentials to this rule:
+2. Change the rule for existentials to this rule:
 
-Change the rule for universals to this rule:
+<figure>
+![](/static/book-img/forallx-ubc/11-A2.svg)
+</figure>
 
-Change the rule for conjunction to this rule:
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.2 The modified system would be sound.
+| Yes.
+| *No.
+```
 
-Change this requirement (given on page )\... \...to this one:
 
-Change the branch completion requirement to:
+3. Change the rule for existentials to this rule:
 
-Change the branch completion requirement to:
+<figure>
+![](/static/book-img/forallx-ubc/11-A3.svg)
+</figure>
 
-[\[pr.QLalttrees-complete\]]{#pr.QLalttrees-complete
-label="pr.QLalttrees-complete"} For each of the rule modifications given
-in Part
-[\[pr.QLalttrees-sound\]](#pr.QLalttrees-sound){reference-type="ref"
-reference="pr.QLalttrees-sound"}, would the modified tree system be
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.3 The modified system would be sound.
+|  Yes.
+| *No.
+```
+
+4. Change the rule for universals to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A4.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.4 The modified system would be sound.
+| *Yes.
+|  No.
+```
+
+5. Change the rule for existentials to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-5.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.5 The modified system would be sound.
+| *Yes.
+|  No.
+```
+
+6. Change the rule for universals to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A6.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.6 The modified system would be sound.
+| *Yes.
+|   No.
+```
+
+
+7. Change the rule for conjunction to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A7.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.7 The modified system would be sound.
+| *Yes.
+|   No.
+```
+
+8. Change this requirement (given in section 10.10)...
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is **complete** if and only if either (i) it is closed, or (ii) every resolvable sentence in every branch has been resolved, and for every general sentence and every name $a$ in the branch, the $a$ instance of that general sentence has been taken.</p>
+
+... to this one:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is **complete** if and only if either (i) it is closed, or (ii) every resolvable sentence in every branch has been resolved, and for every general sentence, *at least one instance of* that
+general sentence has been taken.</p>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.8 The modified system would be sound.
+|  *Yes.
+|  No.
+```
+
+9. Change the branch completion requirement to:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">...and for every general sentence and every name $a$ *that is above that general sentence in the branch*, the $a$ instance of that general sentence has been taken.</p>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.9 The modified system would be sound.
+| *Yes.
+|   No.
+```
+
+10. Change the branch completion requirement to:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">...and for every general sentence and every name $a$ in the branch, the $a$ instance of that general sentence has been taken, *and at least one additional new instance of that general sentence has also been taken*.</p>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+A.10 The modified system would be sound.
+| *Yes.
+|   No.
+```
+
+
+
+
+**Part B** For each of the rule modifications given
+in Part A, would the modified tree system be
 complete? If so, explain how the proof given in this chapter would
 extend to a system with this rule; if not, give a tree that is a
 counterexample to the completeness of the modified system.
+
+1. Change the rule for existentials to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A1.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.1 The modified system would be complete.
+| *Yes.
+| No.
+```
+
+
+2. Change the rule for existentials to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A2.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.2 The modified system would be complete.
+| *Yes.
+| No.
+```
+
+
+3. Change the rule for existentials to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A3.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.3 The modified system would be complete.
+|  *Yes.
+|  No.
+```
+
+4. Change the rule for universals to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A4.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.4 The modified system would be complete.
+|  Yes.
+|  *No.
+```
+
+5. Change the rule for existentials to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-5.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.5 The modified system would be complete.
+| *Yes.
+|  No.
+```
+
+6. Change the rule for universals to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A6.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.6 The modified system would be complete.
+|  Yes.
+|  *No.
+```
+
+
+7. Change the rule for conjunction to this rule:
+
+<figure>
+![](/static/book-img/forallx-ubc/11-A7.svg)
+</figure>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.7 The modified system would be complete.
+| *Yes.
+|   No.
+```
+
+8. Change this requirement (given in section 10.10)...
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is **complete** if and only if either (i) it is closed, or (ii) every resolvable sentence in every branch has been resolved, and for every general sentence and every name $a$ in the branch, the $a$ instance of that general sentence has been taken.</p>
+
+... to this one:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">A branch is **complete** if and only if either (i) it is closed, or (ii) every resolvable sentence in every branch has been resolved, and for every general sentence, *at least one instance of* that
+general sentence has been taken.</p>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.8 The modified system would be complete.
+|  Yes.
+|  *No.
+```
+
+9. Change the branch completion requirement to:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">...and for every general sentence and every name $a$ *that is above that general sentence in the branch*, the $a$ instance of that general sentence has been taken.</p>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.9 The modified system would be complete.
+|  Yes.
+|  *No.
+```
+
+10. Change the branch completion requirement to:
+
+<p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">...and for every general sentence and every name $a$ in the branch, the $a$ instance of that general sentence has been taken, *and at least one additional new instance of that general sentence has also been taken*.</p>
+
+```{.QualitativeProblem .MultipleChoice submission="none" options="check"}
+B.10 The modified system would be complete.
+| *Yes.
+|   No.
+```
