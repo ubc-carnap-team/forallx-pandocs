@@ -501,7 +501,7 @@ $\mathcal{P}$              which $\mathcal{P}$ is      which $\mathcal{P}$ is tr
 
 $\therefore$ $\Omega$      true must be a model in     and $\Omega$ is false
 
-                           which $\Omega$ is true
+valid?                     which $\Omega$ is true
 --------------------------------------------------------------------------------
 
 
@@ -686,9 +686,9 @@ $s(\Phi, a)=0$.
 
 6.  If is $(\Psi\equiv\Omega)$ for some wffs $\Psi$, $\Omega$, then $s(\Phi, a) = 1  \text{ if $s(\Psi, a) = s(\Omega, a)$}$ and 0 otherwise.
 
-7.  If is $\forall\mathcal{x} \Psi$ for some wff $\Psi$ and some variable $\mathcal{x}, then $s(\Phi, a) = 1  \text{if $s(\Psi, a[\pi|\mathcal{x}])=1$ for every member $\pi$ of the UD}$ and 0 otherwise.
+7.  If is $\forall\mathcal{x} \Psi$ for some wff $\Psi$ and some variable $\mathcal{x}$, then $s(\Phi, a) = 1  \text{if $s(\Psi, a[\pi|\mathcal{x}])=1$ for every member $\pi$ of the UD}$ and 0 otherwise.
 
-8.  If is $\exists\mathcal{x} \Psi$ for some wff $\Psi$ and some variable $\mathcal{x}, then $s(\Phi, a) = 1 \text{if $s(\Psi, a[\pi|\mathcal{x}])=1$ for at least one member $\pi$ of the UD}$ and 0 otherwise.
+8.  If is $\exists\mathcal{x} \Psi$ for some wff $\Psi$ and some variable $\mathcal{x}$, then $s(\Phi, a) = 1 \text{if $s(\Psi, a[\pi|\mathcal{x}])=1$ for at least one member $\pi$ of the UD}$ and 0 otherwise.
 
 This definition follows the same structure as the definition of a wff
 for QL, so we know that every wff of QL will be covered by this

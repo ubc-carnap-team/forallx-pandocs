@@ -1,4 +1,16 @@
-Natural Deduction Proofs in QL {#ch.QLND}
+---
+base-css:
+- https://static.carnap.io/css/tufte.css
+- https://static.carnap.io/css/tuftextra.css
+---
+---
+css:
+- https://ubc-carnap.lfcode.ca/shared/davegilbertubc@gmail.com/prettyproofUBC.css
+---
+
+
+
+Natural Deduction Proofs in QL
 ==============================
 
 Trees employ a kind of 'brute force' strategy for proving entailment
@@ -8,9 +20,7 @@ strategy, but in some cases they can become very tedious and complex. It
 is useful to have a proof system that allows one to reason in a more
 targeted way --- especially if you already have an intuitive
 understanding of why a given argument should be expected to turn out
-valid. As we did in Chapter
-[\[ch.ND.proofs\]](#ch.ND.proofs){reference-type="ref"
-reference="ch.ND.proofs"} for SL, in this chapter we will consider a
+valid. As we did in Chapter 7 for SL, in this chapter we will consider a
 natural deduction system for quantified logic. As in the case of trees,
 our QL natural deduction system is an extension of the one we learned
 previously for SL.
@@ -23,7 +33,7 @@ won't go through the proof in this book, but the natural deduction is
 both sound and complete. That means that there are natural deductions
 proofs corresponding to all and only the valid arguments in QL.
 
-Natural Deduction: the basics
+**13.1 Natural Deduction: the basics**
 -----------------------------
 
 In a natural deduction system, one begins by writing down the
@@ -34,9 +44,7 @@ assumptions may be made and discharged along the way. If one succeeds in
 writing down the conclusion of the argument on a new line, with no
 additional undischarged assumptions, consistent with the natural
 deduction rules, one has proven that the conclusion follows from those
-premises. If you need a refresher on how that works, review Chapter
-[\[ch.ND.proofs\]](#ch.ND.proofs){reference-type="ref"
-reference="ch.ND.proofs"}.
+premises. If you need a refresher on how that works, review Chapter 7.
 
 Our QL system will use all the same sentential rules that our SL system
 did. All the introduction and elimination rules for the sentential
@@ -46,39 +54,60 @@ the Quick Reference guide at the end of this book.) We'll add
 introduction and elimination rules for the existential and universal
 quantifiers, and some other derived rules as well.
 
-Basic quantifier rules
+**13.2 Basic quantifier rules**
 ----------------------
 
 Recall the relationship between quantified sentences and their
 instances. The sentence $Pa$ is a particular instance of the general
-claim $\forall x Px$. For any wff , constant , and variable , we define
-to mean the wff that we get by replacing every occurrence of in with .
-is called a of $\forall x\metaA{}$ and $\exists x\metaA{}$, and is
-called the . This should be familiar from our discussion of our tree
-rules for quantifiers in Chapter
-[\[ch.QLTrees\]](#ch.QLTrees){reference-type="ref"
-reference="ch.QLTrees"}. We will also use this notation to describe our
+claim $\forall x Px$. For any wff $\Phi$, constant $c$, and variable $\mathcal{x}$, we define
+$\Phi[\mathcal{x} \Rightarrow c]$ to mean the wff that we get by replacing every occurrence of $\mathcal{x}$ in $\Phi$ with $c$.
+$\Phi[\mathcal{x} \Rightarrow c]$ is called a **substitution instance** of $\forall x\Phi$ and $\exists x\Phi$, and is
+called the **instantiating constant**. This should be familiar from our discussion of our tree
+rules for quantifiers in Chapter 10. We will also use this notation to describe our
 quantifier rules.
 
-### Universal elimination
+### **13.2.1 Universal elimination**
 
 If you have $\forall x Ax$, it is legitimate to infer, of anything, that
 it is $A$. You can infer $Aa$, or $Ab$, or $Az$, or $Ad_3$, etc.. This
 is, you can infer any substitution instance -- in short, you can infer
-$A\script{c}$ for any constant . This is the general form of the
+$Ac$ for any constant $c$. This is the general form of the
 universal elimination rule ($\forall$E):
+
+<figure>
+![](/static/book-img/forallx-ubc/13-2-1.svg)
+</figure>
+
 
 Remember that the box mark for a substitution instance is not a symbol
 of QL, so you cannot write it directly in a proof. Instead, you write
-the substituted sentence with the constant replacing all occurrences of
-the variable in , as in this example:
+the substituted sentence with the constant $c$ replacing all occurrences of
+the variable $\mathcal{x}$ in $\Phi$, as in this example:
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="proof">
+    <div class="last-premise">$\forall x (Mx \supset Rxd)$</div>
+    <div>$Ma \supset Rad$</div>
+    <div>$Md \supset Rdd$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>$\forall$E 1</div>
+    <div>$\forall$E 1</div>
+  </div>
+</div>
 
 This rule is very similar to the tree rule for universals, which, in our
 tree system, allowed one to develop a branch containing a universal with
 any instance of it one likes. Here you are permitted to write down any
 instance you like on a new line.
 
-### Existential introduction
+### **13.2.2 Existential introduction**
 
 When is it legitimate to infer $\exists x Ax$? If you know that
 something is an $A$ --- for instance, if you have $Aa$ available in the
@@ -86,13 +115,48 @@ proof.
 
 This is the existential introduction rule ($\exists$I):
 
-It is important to notice that is not necessarily a substitution
-instance. We write it with double boxes to show that the variable does
-not need to replace all occurrences of the constant . You can decide
+<figure>
+![](/static/book-img/forallx-ubc/13-2-2.svg)
+</figure>
+
+It is important to notice that $\Phi[[\mathcal{x} \Rightarrow c]]$ is not necessarily a substitution
+instance. We write it with double boxes (or double "[[" and "]]", to make it a bit easier) to show that the variable does
+not need to replace all occurrences of the constant $c$. You can decide
 which occurrences to replace and which to leave in place. For example,
 each of lines 2--6 can be justified by $\exists$I:
 
-### Universal introduction
+
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <div class="proof">
+    <div class="last-premise">$Ma \supset Rad$</div>
+    <div>$\exists x (Mx \supset Rax)$</div>
+    <div>$\exists x (Mx \supset Rxd)$</div>
+    <div>$\exists x (Mx \supset Rad)$</div>
+    <div>$\exists y \exists x (Mx \supset Ryd)$</div>
+    <div>$\exists z \exists y \exists x (Mx \supset Ryz)$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>$\exists$I 1</div>
+    <div>$\exists$I 1</div>
+    <div>$\exists$I 1</div>
+    <div>$\exists$I 1</div>
+    <div>$\exists$I 1</div>
+  </div>
+</div>
+
+
+
+### **13.2.3 Universal introduction**
 
 A universal claim like $\forall x Px$ would be proven if every
 substitution instance of it had been proven, if every sentence $Pa$,
@@ -102,25 +166,86 @@ $Pb$, $\ldots$, $Pj_2$, $\ldots$, $Ps_7$, $\ldots$, and so on to
 infinity. There are infinitely many constants in QL, and so this process
 would never come to an end.
 
-Consider a simple argument: $\forall x Mx$,  $\forall y My$
+Consider a simple argument: $\forall x Mx$,  $\therefore \forall y My$
 
 It makes no difference to the meaning of the sentence whether we use the
 variable $x$ or the variable $y$, so this argument is obviously valid.
 Suppose we begin in this way:
 
+
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <div class="proof">
+    <div class="last-premise">$\forall x Mx$</div>
+    <div>$Ma$</div>
+  </div>
+  <div class="justification">
+    <div>want $\forall y My$</div>
+    <div>$\forall E$ 1</div>
+  </div>
+</div>
+
 We have derived $Ma$. Nothing stops us from using the same justification
 to derive $Mb$, $\ldots$, $Mj_2$, $\ldots$, $Ms_7$, $\ldots$, and so on
 until we run out of space or patience. We have effectively shown the way
-to prove $M\script{c}$ for any constant . From this, $\forall y My$
+to prove $Mc$ for any constant $c$. From this, $\forall y My$
 follows.
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="proof">
+    <div class="last-premise">$\forall x Mx$</div>
+    <div>$Ma$</div>
+    <div>$\forall y My$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>$\forall E$ 1</div>
+    <div>$\forall I$ 2</div>
+  </div>
+</div>
+
 
 It is important here that $a$ was just some arbitrary constant. We had
 not made any special assumptions about it. If $a$ had already been
 mentioned, say as a premise in the argument, then this would not show
 anything about *all* $y$. For example:
 
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="proof">
+    <div class="last-premise">$\forall x Rxa$</div>
+    <div>$Raa$</div>
+    <div>$\forall y Ryy$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>$\forall E$ 1</div>
+    <div>not allowed!</div>
+  </div>
+</div>
+
+
+
 This is the schematic form of the universal introduction rule
 ($\forall$I):
+
+<figure>
+![](/static/book-img/forallx-ubc/13-2-3.svg)
+</figure>
+
 
 $^\ast$ The constant must not occur in any undischarged assumption.
 
@@ -130,9 +255,40 @@ undischarged assumption and for any variable.
 Note also that the constant may not occur in any *undischarged*
 assumption, but it may occur as the assumption of a subproof that we
 have already closed. For example, here is a valid proof of
-$\forall z(Dz \eif Dz)$ that does not use any premises.
+$\forall z(Dz \supset Dz)$ that does not use any premises.
 
-### Existential elimination
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div class="proof">
+    <div class="tri-proof">
+      <div class="num">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div class="proof">
+        <div class="last-premise">$Df$</div>
+        <div>$Df$</div>
+      </div>
+    </div>
+    <div>$Df \supset Df$</div>
+    <div>$\forall z (Dz \supset Dz)$</div>
+  </div>
+  <div class="justification">
+    <div>want $Df$</div>
+    <div>R 1</div>
+    <div>$\supset$I 1-2</div>
+    <div>$\forall$I 3</div>
+  </div>
+</div>
+
+
+### **13.2.4 Existential elimination**
 
 A sentence with an existential quantifier tells us that there is *some*
 member of the UD that satisfies a formula. For example, $\exists x Sx$
@@ -141,12 +297,12 @@ tells us (roughly) that there is at least one $S$. It does not tell us
 conclude $Sa$, $Sf_{23}$, or any other substitution instance of the
 sentence. What can we do?
 
-Suppose that we knew both $\exists x Sx$ and $\forall x(Sx \eif Tx)$. We
+Suppose that we knew both $\exists x Sx$ and $\forall x(Sx \supset Tx)$. We
 could reason in this way:
 
 > Since $\exists x Sx$, there is something that is an $S$. We do not
 > know which constants refer to this thing, if any do, so call this
-> thing 'Ishmael'. From $\forall x(Sx \eif Tx)$, it follows that if
+> thing 'Ishmael'. From $\forall x(Sx \supset Tx)$, it follows that if
 > Ishmael is an $S$, then it is a $T$. Therefore, Ishmael is a $T$.
 > Because Ishmael is a $T$, we know that $\exists x Tx$.
 
@@ -166,18 +322,24 @@ analogous rule within our tree system, we will use names that are *new*
 the conclusion you are aiming for.)
 
 A constant that is used to stand in for whatever it is that satisfies an
-existential claim is called a . Reasoning with the proxy must all occur
+existential claim is called a **proxy**. Reasoning with the proxy must all occur
 inside a subproof, and the proxy cannot be a constant that is doing work
 elsewhere in the proof.
 
 This is the schematic form of the existential elimination rule
 ($\exists$E):
 
+
+<figure>
+![](/static/book-img/forallx-ubc/13-2-4.svg)
+</figure>
+
+
 $^\ast$ The constant must not appear outside the subproof.
 
-Remember that the proxy constant cannot appear in , the sentence you
+Remember that the proxy constant cannot appear in $\Psi$, the sentence you
 prove using $\exists$E. (It would actually be enough just to require
-that the proxy constant not appear in $\exists\script{x}\metaA{}$, in ,
+that the proxy constant not appear in $\exists\mathcal{x}\Phi$, in $\Psi$,
 or in any undischarged assumption. In recognition of the fact that it is
 just a place holder that we use inside the subproof, though, we require
 an entirely new constant which does not appear anywhere else in the
@@ -196,32 +358,236 @@ before your proof is complete, so you should only make an assumption
 that goes beyond your premises when you have a plan for discharging it.
 
 With this rule, we can give a formal proof that $\exists x Sx$ and
-$\forall x(Sx \eif Tx)$ together entail $\exists x Tx$.
+$\forall x(Sx \supset Tx)$ together entail $\exists x Tx$.
 
-### Quantifier negation
 
-$\enot\exists \script{x}\enot\metaA{}$ is logically equivalent to
-$\forall \script{x}\metaA{}$. The first says that *nothing falsifies* ;
-the second says *everything satisfies* . In QL, they are provably
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+  </div>
+  <div class="proof">
+    <div>$\exists x Sx$</div>
+    <div class="last-premise">$\forall x (Sx \supset Tx)$</div>
+    <div class="tri-proof">
+      <div class="num">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div class="proof">
+        <div class="last-premise">$Sa$</div>
+        <div>$Sa \supset Ta$</div>
+        <div>$Ta$</div>
+        <div>$\exists x Tx$</div>
+      </div>
+    </div>
+    <div>$\exists x Tx$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>want $\exists x Tx$</div>
+    <div>for $\exists$E</div>
+    <div>$\forall$E 2</div>
+    <div>$\supset$E 3, 4</div>
+    <div>$\exists$I 5</div>
+    <div>$\exists$I 1, 3-6</div>
+  </div>
+</div>
+
+### **13.2.4 Quantifier negation**
+
+$\neg\exists \mathcal{x} \neg\Phi$ is logically equivalent to
+$\forall \mathcal{x}\Phi$. The first says that *nothing falsifies* $\Phi$;
+the second says *everything satisfies* $\Phi$. In QL, they are provably
 equivalent. Here is a proof schema for half of that equivalence via a
-natural deduction reductio. For any wff , variable , and new name :
+natural deduction reductio. For any wff $\Phi$, variable $\mathcal{x}$, and new name $a$:
 
-$^\ast$ Where name does not appear outside the subproof.
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+
+  <div class="proof">
+    <div class="last-premise">$\forall \mathcal{x} \Phi\mathcal{x}$</div>
+
+    <div class="tri-proof">
+      <div class="num">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div class="proof">
+        <div class="last-premise">$\exists \mathcal{x} \neg \Phi\mathcal{x}$</div>
+
+        <div class="tri-proof">
+          <div class="num">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="proof">
+            <div class="last-premise">$\neg \Phi [\mathcal{x} \Rightarrow a^*]$</div>
+
+            <div class="tri-proof">
+              <div class="num">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+              </div>
+              <div class="proof">
+                <div class="last-premise">$\forall \mathcal{x} \Phi\mathcal{x}$</div>
+                <div>$\Phi [\mathcal{x} \Rightarrow a^*]$</div>
+                <div>$\neg \Phi [\mathcal{x} \Rightarrow a^*]$</div>
+              </div>
+            </div>
+
+            <div>$\neg \forall \mathcal{x}\Phi\mathcal{x}$</div>
+          </div>
+        </div>
+
+        <div>$\neg \forall \mathcal{x}\Phi\mathcal{x}$</div>
+        <div>$\forall \mathcal{x} \Phi\mathcal{x}$</div>
+      </div>
+    </div>
+    <div>$\neg \exists \mathcal{x}\neg \Phi\mathcal{x}$</div>
+  </div>
+
+  <div class="justification">
+    <div>want $\neg \exists  \mathcal{x} \neg \Phi\mathcal{x}$</div>
+    <div>for reductio</div>
+    <div>for $\exists$E</div>
+    <div>for reductio</div>
+    <div>$\forall$E 1</div>
+    <div>R 3</div>
+    <div>$\neg$I 4-5, 4-6</div>
+    <div>$\exists$E 2, 3-7</div>
+    <div>R 1</div>
+    <div>$\neg$I 2-9, 2-8</div>
+  </div>
+</div>
+
+$^\ast$ Where name $a$ does not appear outside the subproof.
 
 This is a proof *schema* --- it is not itself a proof in QL, as its
 lines are not QL sentences. But it describes how a proof of this form
 can be given. For example, here is one instance of the above schema:
 
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+
+  <div class="proof">
+    <div class="last-premise">$\forall y Ay$</div>
+
+    <div class="tri-proof">
+      <div class="num">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+      </div>
+      <div class="proof">
+        <div class="last-premise">$\exists y \neg Ay$</div>
+
+        <div class="tri-proof">
+          <div class="num">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="proof">
+            <div class="last-premise">$\neg Ac$</div>
+
+            <div class="tri-proof">
+              <div class="num">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+              </div>
+              <div class="proof">
+                <div class="last-premise">$\forall y Ay$</div>
+                <div>$Ac$</div>
+                <div>$\neg Ac$</div>
+              </div>
+            </div>
+
+            <div>$\neg \forall yAy$</div>
+          </div>
+        </div>
+
+        <div>$\neg \forall yAy$</div>
+        <div>$\forall y Ay$</div>
+      </div>
+    </div>
+    <div>$\neg \exists y\neg Ay$</div>
+  </div>
+
+  <div class="justification">
+    <div>want $\neg \exists  y \neg Ay$</div>
+    <div>for reductio</div>
+    <div>for $\exists$E</div>
+    <div>for reductio</div>
+    <div>$\forall$E 1</div>
+    <div>R 3</div>
+    <div>$\neg$I 4-5, 4-6</div>
+    <div>$\exists$E 2, 3-7</div>
+    <div>R 1</div>
+    <div>$\neg$I 2-9, 2-8</div>
+  </div>
+</div>
+
+
+
 (Note that this proof encodes the same form of reasoning one would
 employ to demonstrate via a tree that
-$\forall y Ay \models \enot \exists y \enot Ay$. As an exercise: draw
+$\forall y Ay \models \neg \exists y \neg Ay$. As an exercise: draw
 out the tree to compare it.)
 
 In order to fully demonstrate that
-$\enot\exists \script{x}\enot\metaA{}$ is logically equivalent to
-$\forall \script{x}\metaA{}$, we would also need a second proof that
-assumes $\enot\exists \script{x}\enot\metaA{}$ and derives
-$\forall \script{x}\metaA{}$. We leave that proof as an exercise for the
+$\neg\exists \mathcal{x}\neg\Phi$ is logically equivalent to
+$\forall \mathcal{x}\Phi$, we would also need a second proof that
+assumes $\neg\exists \mathcal{x}\neg\Phi$ and derives
+$\forall \mathcal{x}\Phi$. We leave that proof as an exercise for the
 reader.
 
 It will often be useful to translate between quantifiers by adding or
@@ -229,61 +595,117 @@ subtracting negations in this way, so we add two derived rules for this
 purpose. These rules are called quantifier negation (QN):
 
   ------------------------------------------------------------------------------------- ----
-    $\enot\forall\script{x}\metaA{} \Longleftrightarrow \exists\script{x}\enot\metaA{}$ 
-    $\enot\exists\script{x}\metaA{} \Longleftrightarrow \forall\script{x}\enot\metaA{}$ QN
+    $\neg\forall\mathcal{x}\Phi \Longleftrightarrow \exists\mathcal{x}\neg\Phi$
+    $\neg\exists\mathcal{x}\Phi \Longleftrightarrow \forall\mathcal{x}\neg\Phi$ QN
   ------------------------------------------------------------------------------------- ----
 
 QN is a replacement rule. Like our SL replacement rules (DeMorgan,
 Double Negation, etc.), it can be used on whole sentences or on
 subformulae.
 
-Identity Introduction
----------------------
+
+**13.3 Identity Introduction**
+----------------------
+
 
 The introduction rule for identity is very simple. Everything is
 identical to itself; so, for any name , one may write --- regardless of
 what one has on the previous lines of the proof --- that
-$\script{a}{=}\script{a}$:
+$a=a$:
+
+
+<div class="tri-proof">
+  <div class="num">
+    <div>&nbsp;</div>
+  </div>
+  <div class="proof">
+    <div>$a=a$</div>
+  </div>
+  <div class="justification">
+    <div>=I</div>
+  </div>
+</div>
 
 The =I rule is unlike our other rules in that it does not require
 referring to any prior lines of the proof. We need only cite the rule
 itself; it does not reference any previous line numbers.
 
-Identity Elimination
---------------------
+**13.4 Identity Elimination**
+----------------------
+
 
 If you have shown that $a{=}b$, then anything that is true of $a$ must
 also be true of $b$. For any sentence with $a$ in it, you can replace
 some or all of the occurrences of $a$ with $b$ and produce an equivalent
 sentence. For example, if you already know $Raa$, then you are justified
 in concluding $Rab$, $Rba$, $Rbb$. Recall that
-$\metaA{}\substitutesome{a}{b}$ is the sentence produced by replacing
+$\Phi[[a \Rightarrow b]]$ is the sentence produced by replacing
 $a$ in with $b$. This is not the same as a substitution instance,
 because $b$ may replace some or all occurrences of $a$. The identity
 elimination rule (=E) justifies replacing terms with other terms that
 are identical to it:
 
+<figure>
+![](/static/book-img/forallx-ubc/13-4-1.svg)
+</figure>
+
 Here is a simple proof of an instance of the *transitivity of identity*.
-Let's prove that if $a{=}b$ and $b{=}c$, then $a{=}c$:
+Let's prove that if $a=b$ and $b=c$, then $a=c$:
 
-æp æp
 
-At line 4, we took advantage of the identity claim $b{=}c$ on line 3,
-and replaced the $b$ in line 2 with a $c$. Then we used the familiar I
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  <div class="proof">
+  <div class="tri-proof">
+    <div class="num">
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+    </div>
+    <div class="proof">
+      <div class="last-premise">$a=a\ \&\ b=c$</div>
+      <div>$a=b$</div>
+      <div>$b=c$</div>
+      <div>$a=c$</div>
+    </div>
+  </div>
+    <div>$(a=b\ \&\ b=c) \supset a=c$</div>
+  </div>
+  <div class="justification">
+    <div>want $a=c$</div>
+    <div>&E 1</div>
+    <div>&E 1</div>
+    <div>=E 2,3</div>
+    <div>=$\supset$I 1-4</div>
+  </div>
+</div>
+
+
+At line 4, we took advantage of the identity claim $b=c$ on line 3,
+and replaced the $b$ in line 2 with a $c$. Then we used the familiar $\supset$I
 rule to discharge the assumption of line 1, proving the conditional we
 were aiming for.
 
-Translation and evaluation
---------------------------
+
+
+**13.5 Translation and evaluation**
+----------------------
+
 
 Consider this argument: There is only one button in my pocket. There is
 a blue button in my pocket. So there is no non-blue button in my pocket.
 
 We begin by defining a symbolization key:
 
-UD: buttons in my pocket
-
-Bx: $x$ is blue.
+> **$UD$:** buttons in my pocket<br/>
+> **$Bx$:** $x$ is blue<br/>
 
 Because we have no need to discuss anything other than buttons in my
 pocket, we've restricted the UD accordingly. If we included other things
@@ -292,25 +714,94 @@ predicates corresponding to being a button and things' locations. The
 simple version here is adequate for our present needs. The argument is
 translated as:
 
-$\forall x \forall y\ x{=}y$
 
-$\exists x Bx$
 
-$\enot \exists x \enot Bx$
+> | <span class="premise">1. $\forall x \forall y\ x{=}y$</span>
+> | <span class="premise">2. $\exists x Bx$</span>
+> | <span class="premise">3. $\therefore \neg \exists x \neg Bx$</span>
+
 
 So the set-up for a natural deduction proof will be:
+
+
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="proof">
+    <div>$\forall x \forall y x=y$</div>
+    <div class="last-premise">$\exists x Bx$</div>
+    <div></div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>want $\neg \exists x \neg Bx$</div>
+    <div>&nbsp;</div>
+  </div>
+</div>
+
+
 
 There are various strategies one might employ. Here are two clues that
 point toward one promising strategy. Note again that we have an
 existential on line 2 --- this suggests existential elimination as a
 possible strategy. Note also that we are aiming for
-$\enot \exists x \enot Bx$, which equivalent to
-$\enot \enot \forall x Bx$ by QN. This in turn is equivalent, by DN, to
+$\neg \exists x \neg Bx$, which equivalent to
+$\neg \neg \forall x Bx$ by QN. This in turn is equivalent, by DN, to
 $\forall x Bx$, which suggests that universal introduction is going to
 be an important step. If we introduce an assumption with a proxy
 instance of $\exists x Bx$, we'll be able to work toward a generic
 instance of $Bx$. In this example, we'll take $e$ as our proxy, and show
 that $Bf$ follows from $\exists x Bx$:
+
+
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+  </div>
+  <div class="proof">
+    <div>$\forall x \forall y x=y$</div>
+    <div class="last-premise">$\exists x Bx$</div>
+
+      <div class="tri-proof">
+        <div class="num">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </div>
+        <div class="proof">
+          <div class="last-premise">$Be$</div>
+          <div> $\forall y\ e=y$</div>
+          <div>$e=f$</div>
+          <div>$Bf$</div>
+        </div>
+      </div>
+
+    <div>$Bf$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>want $\neg \exists x \neg Bx$</div>
+    <div>for $\exists$E</div>
+    <div>$\forall$E 1</div>
+    <div>$\forall$E 4</div>
+    <div>$=$E 5,3</div>
+    <div>$\exists$E 2, 3-6</div>
+  </div>
+</div>
+
+
+
 
 By line 7, we have discharged the assumption about the proxy --- we
 won't use the name $e$ any more --- we have established that $Bf$
@@ -319,12 +810,63 @@ that does not appear in any undischarged assumption --- we can perform
 universal introduction on that instance. This in turn lets us complete
 the proof via the two substitution rules mentioned above:
 
-Natural deduction strategy
---------------------------
 
-All the strategy advice given in
-§[\[sec.SL.ND.strategy\]](#sec.SL.ND.strategy){reference-type="ref"
-reference="sec.SL.ND.strategy"} is equally applicable to natural
+<div class="tri-proof">
+  <div class="num">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+  <div class="proof">
+    <div>$\forall x \forall y x=y$</div>
+    <div class="last-premise">$\exists x Bx$</div>
+
+      <div class="tri-proof">
+        <div class="num">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </div>
+        <div class="proof">
+          <div class="last-premise">$Be$</div>
+          <div> $\forall y\ e=y$</div>
+          <div>$e=f$</div>
+          <div>$Bf$</div>
+        </div>
+      </div>
+
+    <div>$Bf$</div>
+    <div>$\forall x Bx$</div>
+    <div>$\neg \neg \forall x Bx$</div>
+    <div>$\neg \exists x\neg  Bx$</div>
+  </div>
+  <div class="justification">
+    <div>&nbsp;</div>
+    <div>want $\neg \exists x \neg Bx$</div>
+    <div>for $\exists$E</div>
+    <div>$\forall$E 1</div>
+    <div>$\forall$E 4</div>
+    <div>$=$E 5,3</div>
+    <div>$\exists$E 2, 3-6</div>
+    <div>$\forall$I 7</div>
+    <div>DN 8</div>
+    <div>QN 9</div>
+  </div>
+</div>
+
+**13.6 Natural deduction strategy**
+----------------------
+
+
+All the strategy advice given in Section 7.12 is equally applicable to natural
 deduction proofs in QL. Review the suggestions there for general advice
 for natural deduction proofs. Applied to our new QL rules, if you have a
 universal, you can think about taking any instances that look useful.
@@ -333,18 +875,20 @@ existential, consider using the existential elimination rule, which
 begins by assuming an instance with a proxy, then deriving a conclusion
 that does not contain that proxy name.
 
-Showing $\enot \exists x\metaA{}$ can also be hard, and it is often
-easier to show $\forall x\enot \metaA{}$ and use the QN rule.
+Showing $\neg \exists x\Phi$ can also be hard, and it is often
+easier to show $\forall x\neg \Phi$ and use the QN rule.
 
-Soundness and completeness
+
+
+**13.6 Soundness and completeness**
 --------------------------
 
 The proofs for soundness and completeness of our natural deduction
 system are beyond the scope of this textbook. But if you are interested
 in thinking through how those proofs would go, here are a few hints to
 get you started. Soundness in a natural deduction system amounts to the
-claim that if any sentence is derivable from a set of sentences , then
-$\metaSetX{}\models\metaA{}$. To prove this, you would need to
+claim that if any sentence $\Phi$ is derivable from a set of sentences $\mathcal{X}$, then
+$\mathcal{X}\models\Phi$. To prove this, you would need to
 demonstrate that any possible natural deduction proof meets this
 constraint. This is trivial for 'proofs' that only contain premises;
 you'd next have to show, for every possible way of extending the proof
@@ -363,171 +907,348 @@ that there is a proof corresponding to every QL entailment. The way to
 do this is to find an algorithmic procedure that is guaranteed to find a
 proof if one exists, and to prove that this is so. One good way to do
 this is to take advantage of the proven completeness of our *tree*
-system for QL, presented in Chapter
-[\[ch.QLsoundcomplete\]](#ch.QLsoundcomplete){reference-type="ref"
-reference="ch.QLsoundcomplete"}, and find a way to demonstrate that any
+system for QL, presented in Chapter 11, and find a way to demonstrate that any
 tree proof can be converted to a natural deduction proof. Here is a hint
 if you'd like to undertake that project: the tree method encodes the
 same kind of reasoning that reductio proofs do.
 
-[\[pr.justifyQLproof\]]{#pr.justifyQLproof label="pr.justifyQLproof"}
-Provide a justification (rule and line numbers) for each line of proof
+
+**Practice Exercises**
+----------------------
+
+
+**Part A** Provide a justification (rule and line numbers) for each line of proof
 that requires one.
 
-2
 
-[\[pr.someQLproofs\]]{#pr.someQLproofs label="pr.someQLproofs"} Provide
-a natural deduction proof of each claim.
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.1 AxEy(Rxy\/Ryx), Ax -Rmx  :|-: Ex Rxm
+|AxEy(Rxy\/Ryx) :PR
+|Ax -Rmx :PR
+|Ey(Rmy \/ Rym)
+| Rma \/Ram :AS
+| -Rma
+| Ram
+| ExRxm
+|Ex Rxm
+~~~
 
-$\vdash \forall x Fx \eor \enot \forall x Fx$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.2 Ax(EyLxy -> AzLzx), Lab  :|-: Ax Lxx
+|Ax(EyLxy -> AzLzx) :PR
+|Lab :PR
+|EyLay -> AzLza
+|EyLay
+|AzLza
+|Lca
+|EyLcy -> AzLzc
+|EyLcy
+|AzLzc
+|Lcc
+|AxLxx
+~~~
 
-$\{\forall x(Mx \eiff Nx), Ma\eand\exists x Rxa\}\vdash \exists x Nx$
 
-$\{\forall x(\enot Mx \eor Ljx), \forall x(Bx\eif Ljx), \forall x(Mx\eor Bx)\}\vdash \forall xLjx$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.3 Ax(Jx -> Kx), ExAyLxy, AxJx  :|-: Ex(Kx & Lxx)
+|Ax(Jx -> Kx) :PR
+|ExAyLxy :PR
+|AxJx :PR
+| AyLay:AS
+| Ja
+| Ja->Ka
+| Ka
+| Laa
+| Ka&Laa
+| Ex(Kx & Lxx)
+|Ex(Kx & Lxx)
+~~~
 
-$\forall x(Cx \eand Dt)\vdash \forall xCx \eand Dt$
 
-$\exists x(Cx \eor Dt)\vdash \exists x Cx \eor Dt$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.4 :|-: ExMx \/ Ax-Mx
+| -(ExMx \/ Ax-Mx) :AS
+| -ExMx/\-Ax-Mx
+| -ExMx
+| Ax-Mx
+| -∀x-Mx
+|ExMx \/ Ax-Mx
+~~~
 
-Provide a proof of the argument about Billy on p. .
 
-[\[pr.BarbaraEtc.proof1\]]{#pr.BarbaraEtc.proof1
-label="pr.BarbaraEtc.proof1"} Look back at Part
-[\[pr.BarbaraEtc\]](#pr.BarbaraEtc){reference-type="ref"
-reference="pr.BarbaraEtc"} on p. . Provide proofs to show that each of
-the argument forms is valid in QL.
 
-[\[pr.QLproofsNDe\]]{#pr.QLproofsNDe label="pr.QLproofsNDe"} Provide a
-natural deduction proof of each claim.
 
-$\forall x \forall y Gxy\vdash\exists x Gxx$
+**Part B** Provide a natural deduction proof of each claim.
 
-$\forall x \forall y (Gxy \eif Gyx) \vdash \forall x\forall y (Gxy \eiff Gyx)$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.1 :|-: AxFx \/ -AxFx
+~~~
 
-$\{\forall x(Ax\eif Bx), \exists x Ax\} \vdash \exists x Bx$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.2 Ax(Mx -> Nx), Ma/\ ExRxa :|-: Ex Nx
+~~~
 
-$\{Na \eif \forall x(Mx \eiff Ma), Ma, \enot Mb\}\vdash \enot Na$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.3 Ax(-Mx \/ Ljx), Ax(Bx -> Ljx), Ax(Mx \/ Bx) :|-: AxLjx
+~~~
 
-$\vdash\forall z (Pz \eor \enot Pz)$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.4 Ax(Cx /\ Dt) :|-: AxCx /\ Dt
+~~~
 
-$\vdash\forall x Rxx\eif \exists x \exists y Rxy$
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.5 Ex(Cx /\ Dt) :|-: Ex Cx \/ Dt
+~~~
 
-$\vdash\forall y \exists x (Qy \eif Qx)$
 
-Show that each pair of sentences is provably equivalent.
 
-$\forall x (Ax\eif \enot Bx)$, $\enot\exists x(Ax \eand Bx)$
+**Part C** Provide a proof of the argument about Billy from Chapter 8:
 
-$\forall x (\enot Ax\eif Bd)$, $\forall x Ax \eor Bd$
+The hospital will only hire a skilled surgeon. All surgeons are greedy. Billy is a surgeon, but is not skilled. Therefore, Billy is greedy, but the hospital will not hire him.
 
-$\exists x Px \eif Qc$, $\forall x (Px \eif Qc)$
 
-Show that each of the following is provably inconsistent.
+**Part D** Look back at Part E from Chapter 8. Provide proofs to show that each of the
+argument forms is valid in QL.
 
-{$Sa\eif Tm$, $Tm \eif Sa$, $Tm \eand \enot Sa$}
 
-{$\enot\exists x Rxa$, $\forall x \forall y Ryx$}
 
-{$\enot\exists x \exists y Lxy$, $Laa$}
+**Part E** Provide a natural deduction proof of each claim.
 
-{$\forall x(Px \eif Qx)$, $\forall z(Pz \eif Rz)$, $\forall y Py$,
-$\enot Qa \eand \enot Rb$}
 
-[\[pr.likes\]]{#pr.likes label="pr.likes"} Write a symbolization key for
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.1 Ax Ay Gxy :|-: Ex Gxx
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.2 Ax Ay (Gxy -> Gyx) :|-: Ax Ay (Gxy -> Gyx)
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.3 Ax(Ax -> Bx), Ex Ax :|-: Ex Bx
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.4 Na -> Ax(Mx -> Ma), Ma, -Mb :|-: -Na
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.5 :|-: Az (Pz \/ -Pz)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.6 :|-:  Ax Rxx -> Ex Ey Rxy
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.7 :|-: Ay Ex (Qy -> Qx)
+~~~
+
+
+
+
+**Part F** Show that each pair of sentences is provably equivalent.
+
+1. $\forall x (Ax\supset \neg Bx)$, $\neg\exists x(Ax \&\ Bx)$
+
+2. $\forall x (\neg Ax\supset Bd)$, $\forall x Ax \lor Bd$
+
+3. $\exists x Px \supset Qc$, $\forall x (Px \supset Qc)$
+
+Here is a blank proof box for you to check your work in:
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part G** Show that each of the following is provably inconsistent.
+
+1. {$Sa\supset Tm$, $Tm \supset Sa$, $Tm \&\ \neg Sa$}
+
+2. {$\neg\exists x Rxa$, $\forall x \forall y Ryx$}
+
+3. {$\neg\exists x \exists y Lxy$, $Laa$}
+
+4. {$\forall x(Px \supset Qx)$, $\forall z(Pz \supset Rz)$, $\forall y Py$,
+$\neg Qa\ \&\ \neg Rb$}
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+
+
+**Part H** Write a symbolization key for
 the following argument, translate it, and prove it:
 
-> There is someone who likes everyone who likes everyone that first
-> person likes. Therefore, there is someone who likes themself.
+There is someone who likes everyone who likes everyone that first
+person likes. Therefore, there is someone who likes themself.
 
-[\[pr.identity\]]{#pr.identity label="pr.identity"} Provide a proof of
-each claim.
 
-$\{Pa \eor Qb, Qb \eif b{=}c, \enot Pa\}\vdash Qc$
 
-$\{m{=}n \eor n{=}o, An\}\vdash Am \eor Ao$
 
-$\{\forall x \: x{=}m, Rma\}\vdash \exists x Rxx$
+**Part I** Provide a proof of each claim.
 
-$\enot \exists x \: x {\neq} m \vdash \forall x\forall y (Px \eif Py)$
+1. $\{Pa \lor Qb, Qb \supset b{=}c, \neg Pa\}\vdash Qc$
 
-$\forall x\forall y(Rxy \eif x{=}y)\vdash Rab \eif Rba$
+2. $\{m{=}n \lor n{=}o, An\}\vdash Am \lor Ao$
 
-$\{\exists x Jx, \exists x \enot Jx\}\vdash \exists x \exists y\ x{\neq} y$
+3. $\{\forall x \: x{=}m, Rma\}\vdash \exists x Rxx$
 
-$\{\forall x(x{=}n \eiff Mx), \forall x(Ox \eor \enot Mx)\}\vdash On$
+4. $\neg \exists x \: x {\neq} m \vdash \forall x\forall y (Px \supset Py)$
 
-$\{\exists x Dx, \forall x(x{=}p \eiff Dx)\}\vdash Dp$
+5. $\forall x\forall y(Rxy \supset x{=}y)\vdash Rab \supset Rba$
 
-$\{\exists x\bigl[Kx \eand \forall y(Ky \eif x{=}y) \eand Bx\bigr], Kd\}\vdash Bd$
+6. $\{\exists x Jx, \exists x \neg Jx\}\vdash \exists x \exists y\ x{\neq} y$
 
-$\vdash Pa \eif \forall x(Px \eor x {\neq} a)$
+7. $\{\forall x(x{=}n \supset Mx), \forall x(Ox \lor \neg Mx)\}\vdash On$
 
-[\[pr.QLequivornot\]]{#pr.QLequivornot label="pr.QLequivornot"} For each
+8. $\{\exists x Dx, \forall x(x{=}p \supset Dx)\}\vdash Dp$
+
+9. $\{\exists x\bigl[Kx \&\ \forall y(Ky \supset x{=}y) \&\ Bx\bigr], Kd\}\vdash Bd$
+
+10. $\vdash Pa \supset \forall x(Px \lor x {\neq} a)$
+
+Here is a proof box to work in:
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part J** For each
 of the following pairs of sentences: If they are logically equivalent in
 QL, give proofs to show this. If they are not, construct a model to show
 this.
 
-$\forall x Px \eif Qc$, $\forall x (Px \eif Qc)$
+1. $\forall x Px \supset Qc$, $\forall x (Px \supset Qc)$
 
-$\forall x Px \eand Qc$, $\forall x (Px \eand Qc)$
+2. $\forall x Px \&\ Qc$, $\forall x (Px \&\ Qc)$
 
-$Qc \eor \exists x Qx$, $\exists x (Qc \eor Qx)$
+3. $Qc \lor \exists x Qx$, $\exists x (Qc \lor Qx)$
 
-$\forall x\forall y \forall z Bxyz$, $\forall x Bxxx$
+4. $\forall x\forall y \forall z Bxyz$, $\forall x Bxxx$
 
-$\forall x\forall y Dxy$, $\forall y\forall x Dxy$
+5. $\forall x\forall y Dxy$, $\forall y\forall x Dxy$
 
-$\exists x\forall y Dxy$, $\forall y\exists x Dxy$
+6. $\exists x\forall y Dxy$, $\forall y\exists x Dxy$
 
-[\[pr.QLvalidornot\]]{#pr.QLvalidornot label="pr.QLvalidornot"} For each
+**Part K** For each
 of the following arguments: If it is valid in QL, give a proof. If it is
 invalid, construct a model to show that it is invalid.
 
-$\forall x\exists y Rxy$,  $\exists y\forall x Rxy$
+1. $\forall x\exists y Rxy$,  $\exists y\forall x Rxy$
 
-$\exists y\forall x Rxy$,  $\forall x\exists y Rxy$
+2. $\exists y\forall x Rxy$,  $\forall x\exists y Rxy$
 
-$\exists x(Px \eand \enot Qx)$,  $\forall x(Px \eif \enot Qx)$
+3. $\exists x(Px \&\ \neg Qx)$,  $\forall x(Px \supset \neg Qx)$
 
-$\forall x(Sx \eif Ta)$, $Sd$,  $Ta$
+4. $\forall x(Sx \supset Ta)$, $Sd$,  $Ta$
 
-$\forall x(Ax\eif Bx)$, $\forall x(Bx \eif Cx)$,
- $\forall x(Ax \eif Cx)$
+5. $\forall x(Ax\supset Bx)$, $\forall x(Bx \supset Cx)$,
+ $\forall x(Ax \supset Cx)$
 
-$\exists x(Dx \eor Ex)$, $\forall x(Dx \eif Fx)$,
- $\exists x(Dx \eand Fx)$
+6. $\exists x(Dx \lor Ex)$, $\forall x(Dx \supset Fx)$,
+ $\exists x(Dx \&\ Fx)$
 
-$\forall x\forall y(Rxy \eor Ryx)$,  $Rjj$
+7. $\forall x\forall y(Rxy \lor Ryx)$,  $Rjj$
 
-$\exists x\exists y(Rxy \eor Ryx)$,  $Rjj$
+8. $\exists x\exists y(Rxy \lor Ryx)$,  $Rjj$
 
-$\forall x Px \eif \forall x Qx$, $\exists x \enot Px$,
- $\exists x \enot Qx$
+9. $\forall x Px \supset \forall x Qx$, $\exists x \neg Px$,
+ $\exists x \neg Qx$
 
-$\exists x Mx \eif \exists x Nx$, $\enot \exists x Nx$,
- $\forall x \enot Mx$
+10. $\exists x Mx \supset \exists x Nx$, $\neg \exists x Nx$,
+ $\forall x \neg Mx$
 
-[\[pr.QLND.trees1\]]{#pr.QLND.trees1 label="pr.QLND.trees1"} Look at the
-arguments given in Chapter
-[\[ch.QLTrees\]](#ch.QLTrees){reference-type="ref"
-reference="ch.QLTrees"}, Problem Part
-[\[pr.QL.trees.translation.and.validity\]](#pr.QL.trees.translation.and.validity){reference-type="ref"
-reference="pr.QL.trees.translation.and.validity"} (page ). For those
+**Part L** Look at the
+arguments given in Chapter 10, Problem Part C. For those
 arguments whose QL translations are valid, prove their validity via
 natural deduction.
 
-[\[pr.QLND.trees2\]]{#pr.QLND.trees2 label="pr.QLND.trees2"} Look at the
-entailment claims given in Chapter
-[\[ch.identity\]](#ch.identity){reference-type="ref"
-reference="ch.identity"}, Problem Part
-[\[pr.IdentityTrees\]](#pr.IdentityTrees){reference-type="ref"
-reference="pr.IdentityTrees"} (page ). For those entailment claims that
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part M** Look at the
+entailment claims given in Chapter 12, Problem Part F. For those entailment claims that
 are true, prove them via natural deduction.
 
-[\[pr.QLND.trees3\]]{#pr.QLND.trees3 label="pr.QLND.trees3"} Look at the
-arguments given in Chapter
-[\[ch.identity\]](#ch.identity){reference-type="ref"
-reference="ch.identity"}, Problem Part
-[\[pr.IdentityArguments\]](#pr.IdentityArguments){reference-type="ref"
-reference="pr.IdentityArguments"} (page ). For those arguments whose QL
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part N** Look at the
+arguments given in Chapter 12, Problem Part H. For those arguments whose QL
 translations are valid, prove their validity via natural deduction.
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+
+<script>
+  // Get top level div.tri-proof
+  let triProofs = [...document.querySelectorAll('article > .tri-proof')];
+
+  triProofs.forEach((triProof) => {
+    let lastPremiseRowNums = getLastPremiseRowNumbers(triProof);
+    let subProofRowNums = getSubProofRowNumbers(triProof.querySelector('.proof'));
+    let nums = triProof.querySelector('.num');
+    let justifications = triProof.querySelector('.justification');
+    lastPremiseRowNums.forEach((lastPremiseRowNum) => {
+      nums && nums.children[lastPremiseRowNum].classList.add('m-lp');
+      justifications && justifications.children[lastPremiseRowNum].classList.add('m-lp');
+    });
+    subProofRowNums.forEach((subProofRowNum) => {
+      nums && nums.children[subProofRowNum].classList.add('m-sp');
+      justifications && justifications.children[subProofRowNum].classList.add('m-sp');
+    });
+  });
+
+  function getLastPremiseRowNumbers(root) {
+    let q = [];
+    q.push(root);
+    let rowNumber = -1, rowNumbers = [];
+    while (q.length !== 0) {
+      let node = q.shift();
+      if (node.classList.contains('tri-proof')) {
+        q.unshift(node.querySelector('.proof'));
+        continue;
+      }
+      if (node.classList.contains('proof')) {
+        q.unshift(...node.children);
+        continue;
+      }
+      rowNumber++;
+      if (node.classList.contains('last-premise')) {
+        rowNumbers.push(rowNumber);
+      }
+    }
+    return rowNumbers;
+  }
+
+  function getSubProofRowNumbers(root) {
+    let q = [];
+    q.push(root);
+    let rowNumber = 0, rowNumbers = [];
+    while (q.length !== 0) {
+      let node = q.shift();
+      if (node.classList.contains('proof')) {
+        q.unshift(...node.children)
+        if (node.endProof && q.length > 0) {
+          q[0].endProof = true;
+        }
+        continue;
+      }
+      if (node.classList.contains('tri-proof')) {
+        if (q.length > 0) {
+          q[0].endProof = true;
+        }
+        q.unshift(node.querySelector('.proof'));
+        rowNumbers.push(rowNumber);
+        continue;
+      }
+      if (node.endProof) {
+        rowNumbers.push(rowNumber);
+      }
+      rowNumber++;
+    }
+    return rowNumbers;
+  }
+</script>

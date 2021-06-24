@@ -1,5 +1,7 @@
 # forallx-pandocs
 
+All chapters have now been preliminarily completed.
+
 <table>
   <tr>
     <th>chapter</th><th>basic formatting</th><th>completed</th>
@@ -8,7 +10,7 @@
     <td>ch1</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch2</td><td>all except one link to appendix page (marked as TODO)</td><td>yes</td>
+    <td>ch2</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
     <td>ch3</td><td>yes</td><td>yes</td>
@@ -17,31 +19,31 @@
     <td>ch4</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch5</td><td>no</td><td>no</td>
+    <td>ch5</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
     <td>ch6</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch7</td><td>started</td><td>no</td>
+    <td>ch7</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch8</td><td>no</td><td>no</td>
+    <td>ch8</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch9</td><td>no</td><td>no</td>
+    <td>ch9</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch10</td><td>no</td><td>no</td>
+    <td>ch10</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch11</td><td>no</td><td>no</td>
+    <td>ch11</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch12</td><td>no</td><td>no</td>
+    <td>ch12</td><td>yes</td><td>yes</td>
   </tr>
   <tr>
-    <td>ch13</td><td>no</td><td>no</td>
+    <td>ch13</td><td>yes</td><td>yes</td>
   </tr>
 </table>
 

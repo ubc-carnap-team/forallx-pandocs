@@ -52,8 +52,8 @@ a list of syntactically-defined rules.
 **6.2 Soundness**
 ---------
 
-If a tree with root $mathcal{X}$ closes, we interpret that as the system telling us
-that $mathcal{X}$ is unsatisfiable. If our system is a good one, then a tree will
+If a tree with root $\mathcal{X}$ closes, we interpret that as the system telling us
+that $\mathcal{X}$ is unsatisfiable. If our system is a good one, then a tree will
 never mislead us in this respect. Tree closure should guarantee
 unsatisfiability. We call this property **soundness**. The soundness of our SL tree
 system is the first important metalogical theorem we will prove in this
