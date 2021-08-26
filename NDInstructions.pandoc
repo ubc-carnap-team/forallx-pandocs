@@ -1,0 +1,101 @@
+
+Instructions for Natural Deduction Proofs in SL
+===============================================
+
+To write sentences of SL or QL, you can use the following keyboard shortcuts:
+
+To enter sentences into the proof construction window, use the following keyboard shortcuts:
+
+<div class="table">
+
+Symbol     Keyboard
+---------- ----------
+$\supset$          `->`, `=>`, `>`
+$\&$          `/\`, `&`, `and`
+∨          `\/`, `|`, `or`
+$\equiv$          `<->`, `<=>`
+¬          `-`, `~`, `not`
+⊥          `!?`, `_|_`
+$F_3$          `F_3`
+$\exists$          `E`
+$\forall$          `A`
+---------- ----------
+
+</div>
+
+## An example derivation
+
+We will work through a sample derivation to illustrate how to construct and check proofs. Consider the example given in section 13.2.4 of the textbook: $\exists x Sx, Ax(Sx -> Tx) \vdash \exists x Tx$.
+
+First, we need to enter in our premises. To do this, simply type the first premise ($\exists x Sx$) into line one using the above keyboard shortcuts. (Notice that a display window should pop up on the side where the proof will be nicely rendered.) Once you have entered the sentence, you need to enter a justification. In this case, the justification is just "PR", short for "premise". Make sure to leave a space after the sentence and before the ":". However, make sure there is no space between the ":" and the label "PR". Press enter and then enter the second premise on line two, in the same manner. This is what you should get (you can edit this and change it if you want to see what happens):
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+Ex.1 Ex Sx, Ax(Sx -> Tx) :|-: Ex Tx
+|Ex Sx :PR
+|Ax(Sx -> Tx) :PR
+~~~
+
+Notice that a horizontal line will automatically appear beneath the premise. You can always add more premises to the beginning of the proof. As long as they are labelled as premises, the program will know to add a horizontal line beneath them.
+
+Now we can begin the proof. Recall how this was proved in the text: the main body of the proof is a subproof with the aim of using $\exists$E. This means we need to start a subproof. In order to do this, just go to a new line (you can use the window above), press enter from line 2 to create a line three, and then just push the space bar once. This will automatically start a subproof.
+
+In this case, we want the assumption of the subproof to be $Sa$. So type this in. In the justification spot, since this is an assumption for a subproof, you should write ":AS". Remember to add a space after the formula but make sure not to add a space between the ":" and "AS". If you have entered everything correctly in the window above, your proof should now look like this:
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+Ex.1 Ex Sx, Ax(Sx -> Tx) :|-: Ex Tx
+|Ex Sx :PR
+|Ax(Sx -> Tx) :PR
+| Sa :AS
+~~~
+
+The next line should be the result of applying $\forall$E to line 2. This is still occurring in the scope of the subproof that begins on line 3. So, to enter the new formula (use the window above to try it out for yourself), start a new line and then press the space bar (to indicate you are working in the subproof), and then type the formula, in this case "$Sa \supset Ta". Here, however, we will need to add a justification. In this case, the correct justification is $\supset$E. But we also need to add the line number(s). In this case there is just one, and it is line 2. So, type the formula, followed by a space, followed by ":AE", followed by a space, followed by the numeral "2". It should look like this:
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+Ex.1 Ex Sx, Ax(Sx -> Tx) :|-: Ex Tx
+|Ex Sx :PR
+|Ax(Sx -> Tx) :PR
+| Sa :AS
+| Sa -> Ta :AE 2
+~~~
+
+If you put your cursor in the above proof window and either press enter to create a new line, you will see that proof automatically updates and displays itself to the right of the entry window. In addition, you should see little "+" signs next to all the lines you have entered so far. If you see a question mark or a triangle warning symbol, that means  there is a mistake. Hovering your mouse over the symbol will give you a hint about what the mistake is. Usually it will either be that you have entered a string that is not a wff, or perhaps you have cited the incorrect rule or the incorrect line numbers.
+
+Assuming everything is correct, we can move on with the proof. With lines 3 and 4, we can clearly use $\supset$E to obtain $Ta$. Let's do that. (Again, you can edit the latest window above). Make sure to remember to add a space at the beginning to indicate that you are still working in the same subproof. Then write "Ta :->E 3,4". When you press enter to start a new line, you should see the "+" symbol next to the line you have just written, like this:
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+Ex.1 Ex Sx, Ax(Sx -> Tx) :|-: Ex Tx
+|Ex Sx :PR
+|Ax(Sx -> Tx) :PR
+| Sa :AS
+| Sa -> Ta :AE 2
+| Ta :->E 3,4
+~~~
+
+Finishing up this subproof, we can write in "\exists x Tx" at line 6. The justification is $\exists$I applied to line 5:
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+Ex.1 Ex Sx, Ax(Sx -> Tx) :|-: Ex Tx
+|Ex Sx :PR
+|Ax(Sx -> Tx) :PR
+| Sa :AS
+| Sa -> Ta :AE 2
+| Ta :->E 3,4
+| ExTx :EI 5
+~~~
+
+Lastly, we can close the subproof and write the desired conclusion, $\exists x Tx$ on the final line. Notice that this should not be in the subproof. Thus, make sure you don't enter a space before writing the formula. This will close the subproof you were working in. The $\exists$E rule requires a line number as well as the range of a subproof. In this case, the line number is 1 and the range is 3-6. Separate these with commas, just like in the text. If you have entered everything correctly, you should see the "+" on every line, and the top bar, where the derivation you are trying to solve is written, should now appear green. This means everything is correct!
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+Ex.1 Ex Sx, Ax(Sx -> Tx) :|-: Ex Tx
+|Ex Sx :PR
+|Ax(Sx -> Tx) :PR
+| Sa :AS
+| Sa -> Ta :AE 2
+| Ta :->E 3,4
+| ExTx :EI 5
+|Ex Tx :EE 1, 3-6
+~~~

@@ -1,0 +1,218 @@
+
+
+Chapter 7 Problems
+==============================
+
+
+
+**Practice Exercises**
+----------------------
+
+
+**Part A** Provide a justification (rule and line numbers) for each line of proof
+that requires one.
+
+
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.1 W>-B, A&W, B\/(J&K) :|-: K
+|W>-B :PR
+|A&W :PR
+|B\/(J&K) :PR
+|W
+|-B
+|J&K
+|K
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.2 L<->-O, L\/-O :|-: L
+|L<->-O :PR
+|L\/-O :PR
+| -L :AS
+| -O
+| L
+| -L
+|L
+~~~
+
+
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.3 Z->(C&-N), -Z -> (N&-C) :|-: N\/C
+|Z->(C&-N) :PR
+|-Z -> (N&-C) :PR
+| -(N\/C) :AS
+| -N&-C
+|   Z :AS
+|   C&-N
+|   C
+|   -C
+| -Z
+| N& -C
+| N
+| -N
+|N\/C
+~~~
+
+
+**Part B** Give a proof for each argument in SL.
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.1 K&L :|-: K<->L
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.2 A->(B->C) :|-: (A&B)->C
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.3 P&(P\/R), P->-R :|-: Q\/E
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.4 (C&D)\/E :|-: E\/D
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.5 -F-> G, F->H :|-: G\/H
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.6 (X&Y)\/(X&Z), -(X&D), (D\/M) :|-: M
+~~~
+
+
+**Part C** Give a proof for each argument in SL.
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.1 Q->(Q&-Q) :|-: -Q
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.2 J->-J :|-: -J
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.3 E\/F, F\/G, -F :|-: E&G
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.4 A<->B, B<->C :|-: A<->C
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.5 M\/(N->M) :|-: -M->-N
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.6 S<->T :|-: S<->(T\/S)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.7 (M\/N)&(O\/P),N->P,-P :|-: M&O
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+C.8 (Z&K)\/(K&M),K->D :|-: D
+~~~
+
+
+**Part D** Show that each of the following sentences is a theorem in SL.
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+D.1 :|-: O->O
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+D.2 :|-: N\/-N
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+D.3  :|-: -(P&-P)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+D.4  :|-: -(A->-C)->(A->C)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+D.5 :|-: J <-> [J \/ (L & -L)]
+~~~
+
+**Part E** Show that each of the following pairs of sentences are provably equivalent in SL.
+
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.1a ----G :|-: G
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.1b G :|-: ----G
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.2a T->S :|-: -S->-T
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.2b -S->-T :|-: T->S
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.3a R<->E :|-: E<->R
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.3b E<->R :|-: R<->E
+~~~
+
+~~~{.ProofChecker .ZachTFL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.4a -G<->H :|-: -(G<->H)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.4b -(G<->H) :|-: -G<->H
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.5a U-> I :|-: -(U&-I)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.5b -(U&-I) :|-: U-> I
+~~~
+
+**Part F** Provide proofs for each of the following
+
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+F.1 M&(-N->-M) :|-: (N&M)\/-M
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+F.2 C->(E&G),-C->G :|-: G
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+F.3 (Z&K)<->(Y&M),D&(D->M):|-: Y->Z
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsSL options="fonts popout resize render indent" submission="none" guides="fitch"}
+F.4 (W\/X)\/(Y\/Z), X->Y , -Z:|-: W\/Y
+~~~
+
+
+**Part G** For the following, provide proofs using only the basic rules. The proofs will be longer than proofs of the same claims would be using the derived rules.
+
+1. Show that MT is a legitimate derived rule. Using only the basic rules, prove the following: $\Phi\supset\Psi$, $\neg\Psi$, $\therefore \neg \Phi$.
+2. Show that Comm is a legitimate rule for the biconditional. Using only the basic rules, prove that $\PhI \equiv \Psi$ and $\Psi \equiv \Phi$ are equivalent.
+3. Using only the basic rules, prove the following instance of DeMorgan’s Laws: $(\neg A\ \&\ \negB)$, $\therefore neg(A \lor B)$.
+4. Show that $\equiv$ex is a legitimate derived rule. Using only the basic rules, prove that $D \equiv E$ and $(D \supset E)\ \&\ (E \supset D)$ are equivalent.
+
+
+**Part H**
+
+1. If you know that $\Phi \vdash \Psi$, what can you say about $(\Phi\&\Omega) \vdash \Psi$? Explain your answer.
+2. If you know that $\Phi\vdash \Psi$, what can you say about $(\Phi \lor \Omega) \vdash \Psi$? Explain your answer.

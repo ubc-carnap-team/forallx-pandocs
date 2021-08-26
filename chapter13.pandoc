@@ -1,12 +1,3 @@
----
-base-css:
-- https://static.carnap.io/css/tufte.css
-- https://static.carnap.io/css/tuftextra.css
----
----
-css:
-- https://ubc-carnap.lfcode.ca/shared/davegilbertubc@gmail.com/prettyproofUBC.css
----
 
 
 
@@ -915,6 +906,12 @@ same kind of reasoning that reductio proofs do.
 
 **Practice Exercises**
 ----------------------
+
+<a href="./NDInstructions.pandoc">Here</a> is a set of instructions about how to use the natural deduction proof construction/checking tool.
+
+Also, if you click <a href="./chapter13Problems.pandoc">here</a>, you can find a slightly more user-friendly version (including real-time rendering of your proofs) of the below exercises.
+
+
 
 
 **Part A** Provide a justification (rule and line numbers) for each line of proof

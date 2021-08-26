@@ -1,0 +1,273 @@
+
+
+Chapter 13 Problems
+==============================
+
+
+**Practice Exercises**
+----------------------
+
+
+**Part A** Provide a justification (rule and line numbers) for each line of proof
+that requires one.
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.1 AxEy(Rxy\/Ryx), Ax -Rmx  :|-: Ex Rxm
+|AxEy(Rxy\/Ryx) :PR
+|Ax -Rmx :PR
+|Ey(Rmy \/ Rym)
+| Rma \/Ram :AS
+| -Rma
+| Ram
+| ExRxm
+|Ex Rxm
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.2 Ax(EyLxy -> AzLzx), Lab  :|-: Ax Lxx
+|Ax(EyLxy -> AzLzx) :PR
+|Lab :PR
+|EyLay -> AzLza
+|EyLay
+|AzLza
+|Lca
+|EyLcy -> AzLzc
+|EyLcy
+|AzLzc
+|Lcc
+|AxLxx
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.3 Ax(Jx -> Kx), ExAyLxy, AxJx  :|-: Ex(Kx & Lxx)
+|Ax(Jx -> Kx) :PR
+|ExAyLxy :PR
+|AxJx :PR
+| AyLay:AS
+| Ja
+| Ja->Ka
+| Ka
+| Laa
+| Ka&Laa
+| Ex(Kx & Lxx)
+|Ex(Kx & Lxx)
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+A.4 :|-: ExMx \/ Ax-Mx
+| -(ExMx \/ Ax-Mx) :AS
+| -ExMx/\-Ax-Mx
+| -ExMx
+| Ax-Mx
+| -∀x-Mx
+|ExMx \/ Ax-Mx
+~~~
+
+
+
+
+**Part B** Provide a natural deduction proof of each claim.
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.1 :|-: AxFx \/ -AxFx
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.2 Ax(Mx -> Nx), Ma/\ ExRxa :|-: Ex Nx
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.3 Ax(-Mx \/ Ljx), Ax(Bx -> Ljx), Ax(Mx \/ Bx) :|-: AxLjx
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.4 Ax(Cx /\ Dt) :|-: AxCx /\ Dt
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+B.5 Ex(Cx /\ Dt) :|-: Ex Cx \/ Dt
+~~~
+
+
+
+**Part C** Provide a proof of the argument about Billy from Chapter 8:
+
+The hospital will only hire a skilled surgeon. All surgeons are greedy. Billy is a surgeon, but is not skilled. Therefore, Billy is greedy, but the hospital will not hire him.
+
+
+**Part D** Look back at Part E from Chapter 8. Provide proofs to show that each of the
+argument forms is valid in QL.
+
+
+
+**Part E** Provide a natural deduction proof of each claim.
+
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.1 Ax Ay Gxy :|-: Ex Gxx
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.2 Ax Ay (Gxy -> Gyx) :|-: Ax Ay (Gxy -> Gyx)
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.3 Ax(Ax -> Bx), Ex Ax :|-: Ex Bx
+~~~
+
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.4 Na -> Ax(Mx -> Ma), Ma, -Mb :|-: -Na
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.5 :|-: Az (Pz \/ -Pz)
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.6 :|-:  Ax Rxx -> Ex Ey Rxy
+~~~
+
+~~~{.ProofChecker .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+E.7 :|-: Ay Ex (Qy -> Qx)
+~~~
+
+
+
+
+**Part F** Show that each pair of sentences is provably equivalent.
+
+1. $\forall x (Ax\supset \neg Bx)$, $\neg\exists x(Ax \&\ Bx)$
+
+2. $\forall x (\neg Ax\supset Bd)$, $\forall x Ax \lor Bd$
+
+3. $\exists x Px \supset Qc$, $\forall x (Px \supset Qc)$
+
+Here is a blank proof box for you to check your work in:
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part G** Show that each of the following is provably inconsistent.
+
+1. {$Sa\supset Tm$, $Tm \supset Sa$, $Tm \&\ \neg Sa$}
+
+2. {$\neg\exists x Rxa$, $\forall x \forall y Ryx$}
+
+3. {$\neg\exists x \exists y Lxy$, $Laa$}
+
+4. {$\forall x(Px \supset Qx)$, $\forall z(Pz \supset Rz)$, $\forall y Py$,
+$\neg Qa\ \&\ \neg Rb$}
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+
+
+**Part H** Write a symbolization key for
+the following argument, translate it, and prove it:
+
+There is someone who likes everyone who likes everyone that first
+person likes. Therefore, there is someone who likes themself.
+
+
+
+
+**Part I** Provide a proof of each claim.
+
+1. $\{Pa \lor Qb, Qb \supset b{=}c, \neg Pa\}\vdash Qc$
+
+2. $\{m{=}n \lor n{=}o, An\}\vdash Am \lor Ao$
+
+3. $\{\forall x \: x{=}m, Rma\}\vdash \exists x Rxx$
+
+4. $\neg \exists x \: x {\neq} m \vdash \forall x\forall y (Px \supset Py)$
+
+5. $\forall x\forall y(Rxy \supset x{=}y)\vdash Rab \supset Rba$
+
+6. $\{\exists x Jx, \exists x \neg Jx\}\vdash \exists x \exists y\ x{\neq} y$
+
+7. $\{\forall x(x{=}n \supset Mx), \forall x(Ox \lor \neg Mx)\}\vdash On$
+
+8. $\{\exists x Dx, \forall x(x{=}p \supset Dx)\}\vdash Dp$
+
+9. $\{\exists x\bigl[Kx \&\ \forall y(Ky \supset x{=}y) \&\ Bx\bigr], Kd\}\vdash Bd$
+
+10. $\vdash Pa \supset \forall x(Px \lor x {\neq} a)$
+
+Here is a proof box to work in:
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part J** For each
+of the following pairs of sentences: If they are logically equivalent in
+QL, give proofs to show this. If they are not, construct a model to show
+this.
+
+1. $\forall x Px \supset Qc$, $\forall x (Px \supset Qc)$
+
+2. $\forall x Px \&\ Qc$, $\forall x (Px \&\ Qc)$
+
+3. $Qc \lor \exists x Qx$, $\exists x (Qc \lor Qx)$
+
+4. $\forall x\forall y \forall z Bxyz$, $\forall x Bxxx$
+
+5. $\forall x\forall y Dxy$, $\forall y\forall x Dxy$
+
+6. $\exists x\forall y Dxy$, $\forall y\exists x Dxy$
+
+**Part K** For each
+of the following arguments: If it is valid in QL, give a proof. If it is
+invalid, construct a model to show that it is invalid.
+
+1. $\forall x\exists y Rxy$,  $\exists y\forall x Rxy$
+
+2. $\exists y\forall x Rxy$,  $\forall x\exists y Rxy$
+
+3. $\exists x(Px \&\ \neg Qx)$,  $\forall x(Px \supset \neg Qx)$
+
+4. $\forall x(Sx \supset Ta)$, $Sd$,  $Ta$
+
+5. $\forall x(Ax\supset Bx)$, $\forall x(Bx \supset Cx)$,
+ $\forall x(Ax \supset Cx)$
+
+6. $\exists x(Dx \lor Ex)$, $\forall x(Dx \supset Fx)$,
+ $\exists x(Dx \&\ Fx)$
+
+7. $\forall x\forall y(Rxy \lor Ryx)$,  $Rjj$
+
+8. $\exists x\exists y(Rxy \lor Ryx)$,  $Rjj$
+
+9. $\forall x Px \supset \forall x Qx$, $\exists x \neg Px$,
+ $\exists x \neg Qx$
+
+10. $\exists x Mx \supset \exists x Nx$, $\neg \exists x Nx$,
+ $\forall x \neg Mx$
+
+**Part L** Look at the
+arguments given in Chapter 10, Problem Part C. For those
+arguments whose QL translations are valid, prove their validity via
+natural deduction.
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part M** Look at the
+entailment claims given in Chapter 12, Problem Part F. For those entailment claims that
+are true, prove them via natural deduction.
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
+
+**Part N** Look at the
+arguments given in Chapter 12, Problem Part H. For those arguments whose QL
+translations are valid, prove their validity via natural deduction.
+
+~~~{.Playground .IchikawaJenkinsQL options="fonts popout resize render indent" submission="none" guides="fitch"}
+~~~
